@@ -4,6 +4,11 @@
 	Email: jorge.bigarte@gmail.com
 	Portfolio: https://sites.google.com/site/jorgerosaportfolio
 	With love to ASCR!
+	
+	Info for developers only: No 3D models on the screen?...
+	May fail to load 3D models if running from desktop PC! (Ok in Firefox, failed on Chrome and IE)
+	Since some browsers security simply dont allow scripts to access to your local files in your HD.
+	But if its launched online, everything is OK!
 	*/	
 	
 	// --------------------------------------------------------------------------
@@ -171,7 +176,7 @@
 	function fill() {	
 	
 	// Progressbar:
-	var progressbar = document.getElementById('progressbar');	
+	var progressbar = document.getElementById('progressbar');
 	var loadingmanager = new THREE.LoadingManager();
 	// Loading...
 	loadingmanager.onProgress = function (item, loaded, total) {
