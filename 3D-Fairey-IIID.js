@@ -10,8 +10,8 @@
 	// --------------------------------------------------------------------------
 	
 	// This Model Specific Variables:
-	var path = '3D-eBike-SEVENTEEN/';
-	var distance = 88;
+	var path = '3D-Fairey-IIID/';
+	var distance = 680; // 650
 
 	// --------------------------------------------------------------------------
 	// --------------------------------------------------------------------------
@@ -19,7 +19,7 @@
 	
 	// Internet Browser has WebGl?...
 	if (!Detector.webgl){
-	document.getElementById('info').innerHTML = 'INFORMAÇÃO:<br />O seu navegador não suporta WebGL.<br />Não é possível apresentar o modelo em 3D.';
+	document.getElementById('info').innerHTML = 'INFO: Your browser does not support WebGL.';
 	};
 	
 	
@@ -70,16 +70,16 @@
 	scene = new THREE.Scene();	
 	
 	// Global light:
-	ambientlight = new THREE.AmbientLight(0x303030); // 0xCCCCCC - Hexadecimal color (recommended)
+	ambientlight = new THREE.AmbientLight(0x303030); // ex: 0x303030, ex: 0xFFFFFF, ex: 0xCCCCCC - Hexadecimal color (recommended)
 	scene.add(ambientlight);
 				
 	// Fog:
 	// scene.fog = new THREE.FogExp2(0xBBBBBB, 0.0010); // Near
 				
 	// Camera: (Normal)
-	camera = new THREE.PerspectiveCamera(25, window.innerWidth/window.innerHeight, 1.0, 5000); // Normal FOV is 45, PerspectiveCamera( fov, aspect, near, far )
+	camera = new THREE.PerspectiveCamera(25, window.innerWidth/window.innerHeight, 1.0, 3000); // Normal FOV is 45, PerspectiveCamera( fov, aspect, near, far )
 	scene.add(camera); // Attach first!
-	camera.position.set(0, 64, distance);
+	camera.position.set(0, -110.0, distance);
 	// camera.position.set(0, 64, distance);
 	// camera.target.set(0, 77, 0); // view direction perpendicular to XY-plane
 	camera.castShadow = false;
@@ -93,47 +93,49 @@
 	light1.castShadow = true;
 	light1.receiveShadow = false;
 	// light1.shadowMapVisible = true;
-	light1.shadow.mapSize.width  = 128; // 1024
-	light1.shadow.mapSize.height = 128; // 1024
+	light1.shadow.mapSize.width  = 1024; // 1024
+	light1.shadow.mapSize.height = 1024; // 1024
 	light1.shadow.camera.near = 1;
-	light1.shadow.camera.far = 100;
+	light1.shadow.camera.far = 500;
 	light1.shadow.camera.fov = THREE.Math.radToDeg(2*light1.angle);	
-	light1.intensity = 1.00;
+	light1.intensity = 0.30;
+	
+	/*
 	// Light 1 Target:
 	var light1target = new THREE.Object3D();
 	camera.add(light1target); // Attach first!
 	light1target.name = 'lightTarget1';	
-	light1target.position.set(0, 120, 0);	
+	light1target.position.set(0, 70.0, 0);	
 	light1target.add(light1);
-	light1target.castShadow = false;
+	light1target.castShadow = true;
 	light1target.receiveShadow = false;
 	// Add a target to this light:
 	light1.target = light1target;
 	light1.visible = false; // Light is OFF
-	
+	*/	
 				
 	// Controls:
 	controls = new THREE.OrbitControls(camera, renderer.domElement);				
-	controls.target.set(0, 64, 0); // View direction
+	controls.target.set(0, 70.0, 0); // View direction
 	controls.autoRotate = false;	
 	controls.enableRotate = true;
 	controls.enableZoom = false;
 	controls.enablePan = false;
 	controls.enableDamping = false;
 	// Movements:
-	controls.autoRotateSpeed = 1.0;
+	controls.autoRotateSpeed = 4.0;
 	controls.dampingFactor = 0.25; // 0.25 is default
-	controls.rotationSpeed = 0.5;
-	controls.movementSpeed = 0.5;
+	controls.rotationSpeed = 0.50;
+	controls.movementSpeed = 0.50;
 	controls.lookSpeed = 0.05;
-    controls.rollSpeed = 0.5;
+    controls.rollSpeed = 0.50;
 	// Zoom:
-	controls.zoomSpeed = 0.5; // 1.0 is default
+	controls.zoomSpeed = 0.50; // 1.0 is default
 	controls.minDistance = distance;
 	controls.maxDistance = 250;
 	// Where to stop Y rotation:
-	controls.minPolarAngle = Math.PI/8; // radians (Altura maxima)
-	controls.maxPolarAngle = Math.PI/2 - 0.09; // radians (Altura minima), - 0.05 para evitar transparencies glitches (sombra que vem com o modelo)
+	// controls.minPolarAngle = Math.PI/8; // radians (Altura maxima)
+	// controls.maxPolarAngle = Math.PI/2 - 0.05; // radians (Altura minima), - 0.05 para evitar transparencies glitches (sombra que vem com o modelo)
 
 	// controls.mouseButtons = { PAN:THREE.MOUSE.LEFT, ZOOM:THREE.MOUSE.MIDDLE, ORBIT:THREE.MOUSE.RIGHT }; // swapping left and right buttons
 	// THREE.MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 0 };
@@ -145,7 +147,7 @@
 	controls.autoRotate = false;
 	});
 	
-	// restart autorotate after the last interaction & an idle time has passed
+	// Restart autorotate after the last interaction & an idle time has passed
 	controls.addEventListener('end', function(){
 	autorotatetimeout = setTimeout(function(){
 	controls.autoRotate = true;
@@ -170,9 +172,12 @@
 	// Function: Create 3D World	
 	function fill() {	
 	
+	// Loading manager:
+	var loadingmanager = new THREE.LoadingManager();
+	
+	/*
 	// Progressbar:
 	var progressbar = document.getElementById('progressbar');	
-	var loadingmanager = new THREE.LoadingManager();
 	// Loading...
 	loadingmanager.onProgress = function (item, loaded, total) {
 	progressbar.style.width = (loaded/total*100) + '%';
@@ -183,22 +188,23 @@
 	progressbar.style.display = 'none';      // Hide
 	progressbar.style.visibility = 'hidden'; // Hide
 	// document.getElementById('info').innerHTML = 'Botão esquerdo do RATO: <strong>Rotação</strong>';
-	console.log('All items were loaded!');   // Write to console...	
+	console.log('All items loaded...');   // Write to console...	
 	};
 	// Error...
 	loadingmanager.onError = function () {
 	progressbar.style.display = 'none';        // Hide
 	progressbar.style.visibility = 'hidden';   // Hide
-    console.log('There has been an error...'); // Write to console...
-	};	
+    console.log('Loading error...'); // Write to console...
+	};
+	*/	
+
 	
 	// Tool: Degrees Function
 	var setDegrees = function(degree) { return degree*(Math.PI/180); };
 	
-	
 	// 1) 3D Model: Create the SKY (Background)
-	var skygeometry = new THREE.SphereGeometry(4000, 12, 12);
-	skytexture = new THREE.TextureLoader(loadingmanager).load(path+'maps/sky.jpg', function(material) {
+	var skygeometry = new THREE.SphereGeometry(800, 12, 12);
+	skytexture = new THREE.TextureLoader(loadingmanager).load(path+'sky.jpg', function(material) {
     material = new THREE.MeshBasicMaterial({ map:skytexture }); // MeshBasicMaterial == No affected by lights
     var skymesh = new THREE.Mesh(skygeometry, material);	
     scene.add(skymesh);
@@ -206,32 +212,34 @@
 	skymesh.castShadow = false;
 	skymesh.receiveShadow = false;
 	});	
+
 	
 		
-	// 2) 3D Model: Load the Vehicle
+	// 2) 3D Model: Load the Model
 	var mtlLoader = new THREE.MTLLoader(loadingmanager);
 	mtlLoader.setTexturePath(path);
 	mtlLoader.setPath(path);
-	mtlLoader.load('ebike.mtl', function(materials) {
+	mtlLoader.load('plane.mtl', function(materials) {
 	materials.preload();
 	var objLoader = new THREE.OBJLoader(loadingmanager);					
 	objLoader.setMaterials(materials);
 	objLoader.setPath(path);
-	objLoader.load('ebike.obj', function (object) {
+	objLoader.load('plane.obj', function (object) {
 	scene.add(object); // Attach first!
-	object.name = 'myVehicle';
+	object.name = 'myModel';
 	object.scale.set(1,1,1);
-	object.position.set(0, 50.0, 0);
+	object.position.set(0, 70.0, 0);
 	// object.rotateY(-Math.PI/2.8);  // To start with a lateral view
-	object.rotateY(setDegrees(-130)); // To start with a lateral view
+	object.rotateY(setDegrees(-60)); // To start with a lateral view
 	// object.renderOrder = 2;
-	set_materials_for('myVehicle');
-	create_mirror_effect_for('Espelho_001');
-	create_mirror_effect_for('Espelho_002');
+	set_materials_for('myModel');
+	// create_mirror_effect_for('Espelho_001');
+	// create_mirror_effect_for('Espelho_002');
 	// create_reflexes_for('Body_01'); --- TODO
 	});	
 	});	
 
+	
 	// Make these materials double sided:
 	function set_materials_for(name) {
 	var object = scene.getObjectByName(name, true);
@@ -249,10 +257,10 @@
 	}; 
 	});
 	};
-	};	
+	};
 	
 
-	
+	/*
 	// Create real-time mirrors: (material from camera)
 	mirrorscamera = new THREE.CubeCamera(50, 5000, 64); // Since the sky, to be reflected, is at 4000...
 	mirrors = new THREE.MeshPhongMaterial({ side:THREE.FrontSide, emissive:0xFFFFFF, envMap:mirrorscamera.renderTarget });
@@ -275,9 +283,11 @@
 	} else {
 	console.log( 'Mirror: Missing node: ' + name ); // Write to console...		
 	};
-	};	
+	};
+	*/
 	
 	
+	/*
 	// 3) Lines: Create Lines...
 	var groupinfos = new THREE.Object3D(); // Create an empty container
 	scene.add(groupinfos); // Attach first!
@@ -359,6 +369,7 @@
 	sprite.castShadow = false;
 	sprite.receiveShadow = false;	
 	});
+	*/
 
 	
 	/*
@@ -383,15 +394,14 @@
 	*/
 	
 	
+	/*
 	// Add this infos group to the main scene:	
 	groupinfos.rotateY(setDegrees(-40)); // To match lines with the main model rotation
 	groupinfos.visible = true;
-
-	
+	*/	
 	
 	
 	/*
-
 	// load a texture, set wrap mode to repeat
 	var original = new THREE.TextureLoader().load(path+'maps/text_metallics.jpg');
 	var reflex = new THREE.TextureLoader().load(path+'maps/reflex.jpg');
@@ -438,7 +448,7 @@
 	
 
 	
-	
+	/*
 	// 3) 2D Stuff: Create Sprites
 	var spriteTitleTextureLoader = new THREE.TextureLoader(loadingmanager).load(path+'maps/sprite_title.png', function(material) {	
 	material = new THREE.SpriteMaterial({ map:spriteTitleTextureLoader }); // SpriteMaterial == No affected by lights
@@ -451,6 +461,7 @@
 	sprite.castShadow = false;
 	sprite.receiveShadow = false;	
 	});	
+	*/
 	
 	
 	}; // End: fill()
@@ -462,11 +473,11 @@
 	// Lights:
 	function lightwaiting() {
 	// setTimeout(function (){ light1.visible = true; }, 1000); // Delay 1000 == 1 Second	
-	setTimeout(function (){ light1.visible = true; lightIsOn = true; ambientlight.color.setHex(0xCACACA); }, 500); // Delay 1000 == 1 Second	
+	setTimeout(function (){ light1.visible = true; lightIsOn = true; ambientlight.color.setHex(0xCCCCCC); }, 1000); // Delay 1000 == 1 Second	
 	};
 	// Starts now the rotation:
 	function rotationwaiting() {
-	setTimeout(function (){ controls.autoRotate = true; rotationStarted = true; }, 600); // Delay 1000 == 1 Second	
+	setTimeout(function (){ controls.autoRotate = true; rotationStarted = true; }, 1000); // Delay 1000 == 1 Second	
 	};	
 	
 	
@@ -495,7 +506,7 @@
 	// Render Elements:
 	if (renderer != null){ renderer.render(scene, camera); };
 	// Render real-time Mirrors:
-	if (mirrorscamera != null){ mirrorscamera.updateCubeMap(renderer, scene); };
+	// if (mirrorscamera != null){ mirrorscamera.updateCubeMap(renderer, scene); };
 	// Effects:
 	// composer.render();	
 	// Mirror: (Must be after main renderer!... Else sometimes render, sometimes not)
