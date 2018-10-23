@@ -70,7 +70,7 @@
 	scene = new THREE.Scene();	
 	
 	// Global light:
-	ambientlight = new THREE.AmbientLight(0x303030); // ex: 0x303030, ex: 0xFFFFFF, ex: 0xCCCCCC - Hexadecimal color (recommended)
+	ambientlight = new THREE.AmbientLight(0x1A1A1A); // ex: 0x303030, ex: 0xFFFFFF, ex: 0xCCCCCC - Hexadecimal color (recommended)
 	scene.add(ambientlight);
 				
 	// Fog:
@@ -96,7 +96,7 @@
 	light1.shadow.mapSize.width  = 1024; // 1024
 	light1.shadow.mapSize.height = 1024; // 1024
 	light1.shadow.camera.near = 1;
-	light1.shadow.camera.far = 500;
+	light1.shadow.camera.far = 3000;
 	light1.shadow.camera.fov = THREE.Math.radToDeg(2*light1.angle);	
 	light1.intensity = 0.30;
 	
@@ -512,7 +512,7 @@
 	// Lights:
 	function lightwaiting() {
 	// setTimeout(function (){ light1.visible = true; }, 1000); // Delay 1000 == 1 Second	
-	setTimeout(function (){ light1.visible = true; lightIsOn = true; ambientlight.color.setHex(0xCCCCCC); }, 1000); // Delay 1000 == 1 Second	
+	setTimeout(function (){ light1.visible = true; lightIsOn = true; ambientlight.color.setHex(0x5A5A5A); }, 1000); // Delay 1000 == 1 Second	
 	};
 	// Starts now the rotation:
 	function rotationwaiting() {
