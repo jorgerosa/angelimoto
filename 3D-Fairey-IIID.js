@@ -215,32 +215,58 @@
 
 	
 		
-	// 2) 3D Model: Load the Model
+	// 2) 3D Model: Plane Model
 	var mtlLoader = new THREE.MTLLoader(loadingmanager);
 	mtlLoader.setTexturePath(path);
 	mtlLoader.setPath(path);
-	mtlLoader.load('plane.mtl', function(materials) {
-	materials.preload();
+	mtlLoader.load('FAIREY-III.mtl', function(materials) {
+	materials.preload();	
 	var objLoader = new THREE.OBJLoader(loadingmanager);					
 	objLoader.setMaterials(materials);
 	objLoader.setPath(path);
-	objLoader.load('plane.obj', function (object) {
+	objLoader.load('FAIREY-III.obj', function (object) {
 	scene.add(object); // Attach first!
-	object.name = 'myModel';
+	object.name = 'Model1';
 	object.scale.set(1,1,1);
 	object.position.set(0, 70.0, 0);
 	// object.rotateY(-Math.PI/2.8);  // To start with a lateral view
-	object.rotateY(setDegrees(-60)); // To start with a lateral view
+	// object.rotateY(setDegrees(-60)); // To start with a lateral view
 	// object.renderOrder = 2;
-	set_materials_for('myModel');
+	set_materials_for('Model1');
 	// create_mirror_effect_for('Espelho_001');
 	// create_mirror_effect_for('Espelho_002');
 	// create_reflexes_for('Body_01'); --- TODO
 	});	
 	});	
-
 	
-	// Make these materials double sided:
+	// 3) 3D Model: Helice Model
+	var mtlLoader = new THREE.MTLLoader(loadingmanager);
+	mtlLoader.setTexturePath(path);
+	mtlLoader.setPath(path);
+	mtlLoader.load('FAIREY-III-HELICE.mtl', function(materials) {
+	materials.preload();	
+	var objLoader = new THREE.OBJLoader(loadingmanager);					
+	objLoader.setMaterials(materials);
+	objLoader.setPath(path);
+	objLoader.load('FAIREY-III-HELICE.obj', function (object) {
+	scene.add(object); // Attach first!
+	object.name = 'Model2';
+	object.scale.set(1,1,1);
+	object.position.set(-0.0, 62.0, 54.0);
+	// object.rotateY(-Math.PI/2.8);  // To start with a lateral view
+	// object.rotateY(setDegrees(-60)); // To start with a lateral view
+	// object.renderOrder = 2;
+	set_materials_for('Model2');
+	// create_mirror_effect_for('Espelho_001');
+	// create_mirror_effect_for('Espelho_002');
+	// create_reflexes_for('Body_01'); --- TODO
+	});	
+	});
+	
+	// THREE.SceneUtils.attach( child, scene, parent );
+	// THREE.SceneUtils.attach( 'Model2', scene, 'Model1' );
+	
+	// Make all materials double sided:
 	function set_materials_for(name) {
 	var object = scene.getObjectByName(name, true);
 	if (object!=null){
@@ -259,7 +285,7 @@
 	};
 	};
 	
-
+	
 	/*
 	// Create real-time mirrors: (material from camera)
 	mirrorscamera = new THREE.CubeCamera(50, 5000, 64); // Since the sky, to be reflected, is at 4000...
@@ -467,8 +493,20 @@
 	}; // End: fill()
 	
 	
+	// --------------------------------------------------------------------------
+	
 
-
+	// Animation: Rotation (for Helice)
+	function rotation_animation(name) {
+	var object = scene.getObjectByName(name, true);
+	if (object!=null){
+	object.traverse( function(node) {
+	if (node!=null){
+	node.rotation.z -= 0.35;
+	};
+	});
+	};
+	};
 	
 	// Lights:
 	function lightwaiting() {
@@ -479,7 +517,6 @@
 	function rotationwaiting() {
 	setTimeout(function (){ controls.autoRotate = true; rotationStarted = true; }, 1000); // Delay 1000 == 1 Second	
 	};	
-	
 	
 	// Global:
 	function onWindowResize() {
@@ -505,6 +542,10 @@
 	if (controls != null){ controls.update(); };
 	// Render Elements:
 	if (renderer != null){ renderer.render(scene, camera); };
+	
+	
+	
+	rotation_animation('Model2');
 	// Render real-time Mirrors:
 	// if (mirrorscamera != null){ mirrorscamera.updateCubeMap(renderer, scene); };
 	// Effects:
