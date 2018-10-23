@@ -11,7 +11,7 @@
 	
 	// This Model Specific Variables:
 	var path = '3D-Fairey-IIID/';
-	var distance = 680; // 650
+	var distance = 650; // 650
 
 	// --------------------------------------------------------------------------
 	// --------------------------------------------------------------------------
@@ -203,14 +203,15 @@
 	var setDegrees = function(degree) { return degree*(Math.PI/180); };
 	
 	// 1) 3D Model: Create the SKY (Background)
-	var skygeometry = new THREE.SphereGeometry(800, 12, 12);
-	skytexture = new THREE.TextureLoader(loadingmanager).load(path+'sky.jpg', function(material) {
+	var skygeometry = new THREE.SphereGeometry(500, 8, 8);
+	skytexture = new THREE.TextureLoader(loadingmanager).load(path+'World-Map.jpg', function(material) {
     material = new THREE.MeshBasicMaterial({ map:skytexture }); // MeshBasicMaterial == No affected by lights
     var skymesh = new THREE.Mesh(skygeometry, material);	
     scene.add(skymesh);
-	skymesh.material.side = THREE.BackSide;
+	// skymesh.material.side = THREE.BackSide; // Side to render
+	skymesh.scale.x = -1; // Flip mesh (texture) horizontally
 	skymesh.castShadow = false;
-	skymesh.receiveShadow = false;
+	skymesh.receiveShadow = false;	
 	});	
 
 	
