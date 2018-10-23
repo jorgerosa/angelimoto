@@ -502,7 +502,7 @@
 	if (object!=null){
 	object.traverse( function(node) {
 	if (node!=null){
-	node.rotation.z -= 0.35;
+	node.rotation.z -= 0.15;
 	};
 	});
 	};
