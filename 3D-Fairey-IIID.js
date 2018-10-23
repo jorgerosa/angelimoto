@@ -539,7 +539,7 @@
 	// Turn ON Lights & Start the Screen Rotation & Start Helice Rotation:
 	if(!lightIsOn){ lightwaiting(); };
 	if(lightIsOn && !rotationStarted){ rotationwaiting(); };
-	if(!lightIsOn){ rotation_animation('Model2'); };
+	if(lightIsOn){ rotation_animation('Model2'); };
 	// Controls:
 	if (controls != null){ controls.update(); };
 	// Render Elements:
