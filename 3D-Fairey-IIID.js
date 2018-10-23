@@ -536,17 +536,15 @@
 	function draw() {	
 	// Debug Only:
 	// console.log( 'Camera X: ' + camera.position.x );   // Write to console...
-	// Turn ON Lights & Start the Rotation:
+	// Turn ON Lights & Start the Screen Rotation & Start Helice Rotation:
 	if(!lightIsOn){ lightwaiting(); };
 	if(lightIsOn && !rotationStarted){ rotationwaiting(); };
+	if(!lightIsOn){ rotation_animation('Model2'); };
 	// Controls:
 	if (controls != null){ controls.update(); };
 	// Render Elements:
 	if (renderer != null){ renderer.render(scene, camera); };
 	
-	
-	
-	rotation_animation('Model2');
 	// Render real-time Mirrors:
 	// if (mirrorscamera != null){ mirrorscamera.updateCubeMap(renderer, scene); };
 	// Effects:
