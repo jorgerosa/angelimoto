@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>GOING Magazine</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GOING Magazine - Your Tourism and Culture Magazine">
+<meta name="author" content="GOING Magazine">
+<meta name="robots" content="index" />
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-103177989-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- Bootstrap core CSS -->
+<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+<!-- Website CSS -->
+<link type="text/css" href="css/main.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link type="text/css" href="css/font-awesome/font-awesome.min.css" rel="stylesheet">
+<!-- Player CSS -->
+<link type="text/css" href="js/soundmanagerv297a/360player.css" rel="stylesheet">
+<!-- Idiom Selector -->
+<link type="text/css" href="js/idiom.selector.js" rel="stylesheet">
+<!-- Javascripts -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="js/jquery.vegas.js"></script>
+<!-- <script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script> -->
+<!-- <script type="text/javascript" src="http://malsup.github.com/jquery.easing.1.3.js"></script> -->
+<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- IE-only canvas fix --> <!--[if IE]><script type="text/javascript" src="js/soundmanagerv297a/script/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="js/soundmanagerv297a/script/berniecode-animator.js"></script>
+<script type="text/javascript" src="js/soundmanagerv297a/script/soundmanager2.js"></script>
+<script type="text/javascript" src="js/soundmanagerv297a/script/360player.js"></script>
+<script type="text/javascript">
+function resizeIframeNews() { // News Iframe Height
+document.getElementById("iframeNews").style.height = '0px'; // Reset height
+document.getElementById("iframeNews").style.height = document.getElementById("iframeNews").contentWindow.document.body.scrollHeight + 20 + 'px'; // New height
+}
+</script>
+</head>
+
+<body id="pageBody" oncontextmenu="return false;" onresize="javascript:resizeIframeNews();">
+<!-- Welcome Audio -->
+<audio autoplay="autoplay">
+<source src="audios/welcome1.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- Effect: Snow -->
+<canvas id="effectSnow" class="effectSnow"></canvas>
+<script type="text/javascript" src="js/site-effects/snow.js"></script>
+
+
+<!-- Header Area -->
+<div id="top" class="header">
+<div class="vert-text">
+<div class="parent-responsive"><a href="#news"><img class="child-responsive" alt="GOING Magazine" src="images/LOGO.png"/></a></div>
+<ul class="list-inline">
+<li class="share"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.goingmagazine.pt" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li> <!-- Share: Facebook -->
+<li class="share"><a href="https://twitter.com/home?status=http://www.goingmagazine.pt" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li> <!-- Share: Twitter -->
+<li class="share"><a href="https://plus.google.com/share?url=http://www.goingmagazine.pt" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li> <!-- Share: Google Plus -->
+<li class="share"><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.goingmagazine.pt&title=GOING&nbsp;Magazine&summary=GOING&nbsp;Magazine&nbsp;-&nbsp;Your&nbsp;Tourism&nbsp;and&nbsp;Culture&nbsp;Magazine&source=http://www.goingmagazine.pt" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a></li> <!-- Share: LinkedIn -->
+<li class="share"><a href="https://pinterest.com/pin/create/button/?url=http://www.goingmagazine.pt/images/share.jpg&media=http://www.goingmagazine.pt/images/share.jpg&description=GOING&nbsp;Magazine&nbsp;-&nbsp;Your&nbsp;Tourism&nbsp;and&nbsp;Culture&nbsp;Magazine" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a></li> <!-- Share: Pinterest -->
+<li class="share"><a href="mailto:?subject=GOING&nbsp;Magazine&body=GOING&nbsp;Magazine&nbsp;-&nbsp;Your&nbsp;Tourism&nbsp;and&nbsp;Culture&nbsp;Magazine,&nbsp;at&nbsp;http://www.goingmagazine.pt" target="_blank"><i class="fa fa-envelope fa-3x"></i></a></li> <!-- Share: Email -->
+</ul>	
+<br />
+<div style="margin-top:-15px; margin-bottom:15px;"><small><em id="comment"> </em></small></div>
+<a id="explo" href="#news" class="btn btn-top">Explore</a>
+</div>
+</div>
+<!-- <video style="width:100%; height:100%; z-index:-1000;" width="100%" height="100%" autoplay loop muted><source src="videos/video-loop-1.webm" type="video/webm"></video> -->
+<!-- /Header Area -->
+
+
+
+<!-- Navigation -->
+<div id="nav">
+<nav class="navbar navbar-new">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobilemenu">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="#" class="navbar-brand"><strong>GO</strong><small>ING Magazine</small></a>
+</div>
+<div class="collapse navbar-collapse" id="mobilemenu">
+<ul class="nav navbar-nav navbar-right text-center">
+<li><a id="menu1" href="#top"><i class="service-icon fa fa-home"></i> Start</a></li>
+<li><a id="menu2" href="#news"><i class="service-icon fa fa-fire"></i> News</a></li>
+<li><a id="menu3" href="#edition"><i class="service-icon fa fa-file"></i> Editions</a></li>
+<li><a id="menu4" href="#about"><i class="service-icon fa fa-info-circle"></i> About</a></li>
+<li><a id="menu5" href="#contact"><i class="service-icon fa fa-envelope"></i> Contacts</a></li>
+<li><a id="menu6" href="javascript:idiomEN();"><img src="images/flag_en.png" alt="" style="border:0px;"></a></li>
+<li><a id="menu7" href="javascript:idiomPT();"><img src="images/flag_pt.png" alt="" style="border:0px;"></a></li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div>
+</nav>
+</div>
+<!-- /Navigation -->
+
+
+<!-- News -->
+<div id="news" class="news">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center">
+<h2 id="header1"><i class="service-icon fa fa-fire"></i> News</h2>
+<hr class="hr_dark">
+</div>
+<iframe id="iframeNews" class="iframe1" style="width:100%;" src="" onload="javascript:resizeIframeNews();"></iframe> <!-- "src" to be filled with the javascript in bottom of this page -->
+</div>
+</div>
+</div>
+<!-- /News -->
+
+
+<!-- Magazine -->
+<div id="edition">
+<div class="container">
+<div class="col-md-8 col-md-offset-2 text-center">
+<h2 id="header2" style="color:#ffffff;"><i class="service-icon fa fa-file"></i> Editions</h2>
+<div style="color:#ffffff;"><i class="service-icon fa fa-keyboard-o"></i> <small id="infos01">To flip pages you may use your cursor keys too.</small></div>
+
+<i class="service-icon fa fa-file-o"></i> <small id="infos02">Select the edition: </small>
+<a style="color:#ffffff; font-weight:bold;" href="javascript:magazineN1();">N.1</a> | <!-- javascript in bottom of this page -->
+<a style="color:#ffffff; font-weight:bold;" href="javascript:magazineN2();">N.2</a> | <!-- javascript in bottom of this page -->
+<a style="color:#ffffff; font-weight:bold;" href="javascript:magazineN3();">N.3</a>   <!-- javascript in bottom of this page -->
+
+</div>
+<iframe name="iframe1" class="iframe1" src="magazines.html?magazinenumber=3&pagestotal=84"></iframe><!-- (SET THE DAFAULT MAGAZINE) Query string needed for "magazines.html" and "magazine.js" -->
+<!-- Music -->
+<div style="width:100%; text-align:center; color:#ffffff; margin-bottom:10px;"><i class="service-icon fa fa-music"></i> <small id="infos03">Select a music:</small></div>
+<div style="display:block; margin:auto; height:70px; width:240px; margin-bottom:20px;">
+<div class="ui360" style="display:inline-block;"><a href="audios/ascending_the_vale.mp3"></a></div>
+<div class="ui360" style="display:inline-block;"><a href="audios/crossing_the_chasm.mp3"></a></div>
+<div class="ui360" style="display:inline-block;"><a href="audios/too_cool.mp3"></a></div>
+</div>
+<!-- /Music -->
+</div>
+</div>
+<!-- /Magazine -->
+
+
+<!-- Carousel-Pubs -->
+<div id="carousel">
+<iframe class="iframe2" src="carousel-pubs.html"></iframe>
+</div>
+<!-- /Carousel-Pubs -->
+
+
+<!-- About -->
+<div id="about" class="about_us">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center">
+<h2 id="header3"><i class="service-icon fa fa-info-circle"></i> About</h2>
+<hr class="hr_dark">
+</div>
+<div id="texts01" class="col-md-8 col-md-offset-2 text-center"><!-- TEXTS WILL BE HERE --></div>
+</div>
+</div>
+</div>
+<!-- /About -->
+
+
+<!-- Contact -->
+<div id="contact">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-4 text-center">
+<h2 id="header4"><i class="service-icon fa fa-envelope"></i> Contacts</h2>
+<hr class="hr_dark">
+</div>		  
+<div id="texts02" class="col-md-8 col-md-offset-2 text-center"><!-- TEXTS WILL BE HERE --></div>		  
+</div>
+</div>
+</div>
+<!-- /Contact -->
+
+
+<!-- Ficha Tecnica -->
+<div id="fichatecnica" class="fichatecnica">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center">
+<strong>Estatuto Editorial e Ficha Técnica:</strong> <a href="#" onclick="return false;" id="showbutton1">View</a><br />
+<small><em>(Texts in Portuguese only)</em></small>
+<div id="showtexts1" class="col-md-8 col-md-offset-2 text-left" style="display:none;">
+<div class="divsRow">
+<div class="divOne" style="text-align:left; font-size:80%;">
+
+<strong>Estatuto Editorial</strong><br />
+<br />
+<strong>1) Caracterização e princípios:</strong><br />
+<br />
+A GOING Magazine é uma revista trimestral de informação cultural e turística, propriedade da SUNWIRES, Lda. que, através do texto e da imagem, divulga uma ampla cobertura dos mais importantes e significativos sítios e locais de interesse nacional e internacional,
+em todos os domínios de interesse.<br />
+Em cada trimestre são desenvolvidos diversos temas, complementados por múltiplos conteúdos que abrangem os objetivos da publicação.<br />
+A sua disponibilização em território nacional e no estrangeiro será efetuada através de distribuição direta junto de instituições e delegações de turismo, embaixadas, hotelaria e restauração, companhias aéreas e outras de interesse cultural e turístico, e ainda pela
+edição on-line do site da revista na Internet e sua colocação em diversos suportes informáticos.<br />
+A sua comercialização será também efetuada através dos canais usuais de distribuição de publicações periódicas.<br />
+<br />
+<strong>2) Objetivos:</strong><br />
+<br />
+<strong>A nível regional e local:</strong><br />
+• Divulgar e promover locais de interesse, sua identidade, história, património e cultura;<br />
+• Divulgar e promover diversas iniciativas urbanas e rurais;<br />
+• Destacar e divulgar terras, costumes e tradições;<br />
+• Promover e divulgar empreendimentos locais, artesanato e turismo de qualidade;<br />
+• Assegurar a divulgação de acontecimentos e eventos regionais;<br />
+<strong>A nível nacional e internacional:</strong><br />
+• Divulgar através da criação de sinergias entre o conhecimento geográfico e o conhecimento do sector turístico em Portugal e no Mundo, resultados de viagens, visitas turísticas, visitas culturais e artigos de opinião e entrevistas sobre Cultura Geral, História, Geografia e Usos e Costumes do Homem;<br />
+• Divulgar projetos inovadores que revelem novas possibilidades do desenvolvimento local;<br />
+• Divulgar e promover experiências internacionais;<br />
+• Divulgação de trabalhos nacionais e internacionais na área do desenvolvimento local e global;<br />
+• Contribuir para uma maior compreensão e conhecimento mútuo entre as diferentes culturas no mundo.<br />
+<em>A direção editorial da revista responsabiliza-se por um controlo regular de credibilidade dos conteúdos dos artigos publicados.</em><br />
+<br />
+<strong>3) Orientação:</strong><br />
+<br />
+• A GOING Magazine é independente de quaisquer poderes políticos e/ou económicos, não estando ao serviço de qualquer orientação pública ou doutrinária.<br />
+• A GOING Magazine rege-se, no exercício da sua atividade, pelo cumprimento rigoroso das normas éticas e deontológicas do jornalismo.<br />
+• A GOING Magazine defende o pluralismo de opinião, sem prejuízo de poder assumir as suas próprias posições.<br />
+• A GOING Magazine pauta-se pelo princípio de que os factos e as opiniões devem ser claramente separadas: os primeiros são intocáveis e as segundas são livres.<br />
+• Compromete-se igualmente, a revista GOING Magazine, a cumprir o código deontológico, e os direitos e deveres da constituição portuguesa e da E.R.C.
+
+</div>
+<div class="divSeparator"></div>
+<div class="divOne" style="text-align:left; font-size:80%;">
+
+<strong>Ficha Técnica</strong><br />
+<br />
+Diretor / Editor: Rui Chumbinho<br />
+Director Executivo: Pedro Martins<br />
+Editora: Sunwires, Lda.<br />
+Produção Gráfica: Sunwires, Lda.<br />
+Paginação e Composição Gráfica: Jorge Rosa<br />
+Redacção: Rui Chumbinho, Margarida Bernardes, Isaura Oliveira<br />
+Publicidade: Rui Chumbinho, Pedro Martins, Isaura Faria<br />
+publicidade@goingmagazine.pt<br />
+Fotografias / Imagens: Guilherme Cardoso, Rui Chumbinho<br />
+Capa: Jorge Rosa, Sunwires, Lda<br />
+Tradução: Sunwires, Lda.<br />
+Apoios: CM-Cascais, Embaixada de Marrocos, CM-Elvas, Federação Portuguesa de Ténis<br />
+Impressão e acabamento: Lisgráfica S.A.<br />
+Estrada Consiglieri Pedroso, 90 - Casal de Sta. Leopoldina,<br />
+2730-053 Barcarena<br />
+Distribuição em Portugal: VASP - Distribuidora<br />
+de Publicações, Lda.<br />
+Periodicidade: Trimestral<br />
+Tiragem Média: 25.000 exemplares<br />
+N.º Registo ERC: 126937<br />
+Depósito Legal nº: 423752/17<br />
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- /Ficha Tecnica -->
+
+
+<!-- Apoios -->
+<div id="apoios" class="about_us">
+<div class="container">
+<div class="text-center">
+<h2 id="header5">Adventure Partners</h2>
+</div>
+</div>
+<!-- Carousel-Apoios -->
+<div id="carousel">
+<iframe class="iframe2" src="carousel-apoios.html"></iframe>
+</div>
+<!-- /Carousel-Apoios -->
+<div style="width:100%; text-align:center; font-size:80%;">
+<br />
+<small>Powered by: <a href="http://www.sunwires.pt" target="_blank">SunWires</a> ® - Dev: Jorge Rosa - Copyright &copy; <a href="http://www.sunwires.pt" target="_blank">SunWires</a> ® 2017</small><br />
+<small>Music Copyright &copy; Kevin MacLeod - <a href="https://incompetech.com" target="_blank">Incompetech</a> 2017</small>
+</div>
+</div>
+<!-- /Apoios -->	
+	
+
+
+
+
+<!-- Change Idiom -->
+<script type="text/javascript">
+function idiomPT() { 
+/* Each line is: Find element by ID, Get and replace text, set text */ 
+/* Main Menus */
+var t=$('#explo').html(); t=t.replace('Explore', 'Explorar'); $('#explo').html(t);
+var t=$('#menu1').html(); t=t.replace('Start', 'Início'); $('#menu1').html(t);
+var t=$('#menu2').html(); t=t.replace('News', 'Notícias'); $('#menu2').html(t);
+var t=$('#menu3').html(); t=t.replace('Editions', 'Edições'); $('#menu3').html(t);
+var t=$('#menu4').html(); t=t.replace('About', 'Acerca'); $('#menu4').html(t);
+var t=$('#menu5').html(); t=t.replace('Contacts', 'Contactos'); $('#menu5').html(t);
+/* Headers */
+var t=$('#header1').html(); t=t.replace('News', 'Notícias'); $('#header1').html(t);
+var t=$('#header2').html(); t=t.replace('Editions', 'Edições'); $('#header2').html(t);
+var t=$('#header3').html(); t=t.replace('About', 'Acerca'); $('#header3').html(t);
+var t=$('#header4').html(); t=t.replace('Contacts', 'Contactos'); $('#header4').html(t);
+var t=$('#header5').html(); t=t.replace('Adventure Partners', 'Parceiros de Aventuras'); $('#header5').html(t);
+/* Infos */
+var t=$('#infos01').html(); t=t.replace('To flip pages you may use your cursor keys too', 'Para folhear as páginas também pode usar as teclas do cursor'); $('#infos01').html(t);
+var t=$('#infos02').html(); t=t.replace('Select the edition', 'Seleccione a edição'); $('#infos02').html(t);
+var t=$('#infos03').html(); t=t.replace('Select a music', 'Escolha uma música'); $('#infos03').html(t);
+/* Big Text */
+document.getElementById('texts01').innerHTML = "<strong>GO</strong>ING Magazine <small>®</small> é um producto da <strong>SunWires</strong> <small>®</small><br /><small><i>Esta revista tem todos os seus conteúdos em Português e em Inglês.</i></small><br /><br />Criada com muito cuidado, pretende trazer a leitura para um patamar mais elevado. Para atingir os objectivos a que nos propomos, damos enorme atenção e amor a todos os seus conteúdos. Começando pelo próprio design, artigos ricos em informação e claros, e sempre com fotos de qualidade. Pretende assim, ser uma ferramenta prática e poderosa para todos os sonhadores e exploradores do nosso país e do mundo.<br /><br />Por favor, sinta-se muito <strong>bem-vindo</strong> para ser nosso parceiro nesta grande aventura até ao...<br />Desconhecido... E mais além... So, let´s <strong>GO</strong><small>ING</small>!...";
+/* Big Text */
+document.getElementById('texts02').innerHTML = "<small><strong>GO</strong><small>ING Magazine</small><br />Director / Editor: Rui Chumbinho<br />Director Coordenador: Pedro Martins<br /><br /><strong>Escritório</strong><br />Edifício República<br />Avenida da República, 1º E - Alcoitão<br />2645-143 Alcabideche<br />Portugal<br /><br />Telefone: (+351) 211 357 991<br /><a href='mailto:info@goingmagazine.pt' target='_blank'>info@goingmagazine.pt</a><br /><a href='http://www.goingmagazine.pt' target='_self'>www.goingmagazine.pt</a><br /><br /><strong>Departamento de Marketing</strong><br />Pretende publicitar ou ser nosso parceiro de aventura?<br />Contacte-nos por telefone ou utilize este email:<br /><a href='mailto:publicidade@goingmagazine.pt' target='_blank'>publicidade@goingmagazine.pt</a><br /><br /><strong>SunWires</strong><br /><a href='mailto:geral@sunwires.pt' target='_blank'>geral@sunwires.pt</a><br /><a href='http://www.sunwires.pt' target='_blank'>www.sunwires.pt</a><br /><br /></small><div class='parent-responsive'><img class='child-responsive' alt='QRCode' src='images/qrcode.jpg'/></div><small>www.goingmagazine.pt</small>";
+/* Change News Iframe */
+top.document.getElementById('iframeNews').setAttribute("src", "news-PT.html");
+}
+function idiomEN() { 
+/* Each line is: Find element by ID, Get and replace text, set text */ 
+/* Main Menus */
+var t=$('#explo').html(); t=t.replace('Explorar', 'Explore'); $('#explo').html(t);
+var t=$('#menu1').html(); t=t.replace('Início', 'Start'); $('#menu1').html(t);
+var t=$('#menu2').html(); t=t.replace('Notícias', 'News'); $('#menu2').html(t);
+var t=$('#menu3').html(); t=t.replace('Edições', 'Editions'); $('#menu3').html(t);
+var t=$('#menu4').html(); t=t.replace('Acerca', 'About'); $('#menu4').html(t);
+var t=$('#menu5').html(); t=t.replace('Contactos', 'Contacts'); $('#menu5').html(t);
+/* Headers */
+var t=$('#header1').html(); t=t.replace('Notícias', 'News'); $('#header1').html(t);
+var t=$('#header2').html(); t=t.replace('Edições', 'Editions'); $('#header2').html(t);
+var t=$('#header3').html(); t=t.replace('Acerca', 'About'); $('#header3').html(t);
+var t=$('#header4').html(); t=t.replace('Contactos', 'Contacts'); $('#header4').html(t);
+var t=$('#header5').html(); t=t.replace('Parceiros de Aventuras', 'Adventure Partners'); $('#header5').html(t);
+/* Infos */
+var t=$('#infos01').html(); t=t.replace('Para folhear as páginas também pode usar as teclas do cursor', 'To flip pages you may use your cursor keys too'); $('#infos01').html(t);
+var t=$('#infos02').html(); t=t.replace('Seleccione a edição', 'Select the edition'); $('#infos02').html(t);
+var t=$('#infos03').html(); t=t.replace('Escolha uma música', 'Select a music'); $('#infos03').html(t);
+/* Big Text */
+document.getElementById('texts01').innerHTML = "<strong>GO</strong>ING Magazine <small>®</small> is a product from <strong>SunWires</strong> <small>®</small> Corporation.<br /><small><i>This magazine is written both in Portuguese and English.</i></small><br /><br />Created very carefully, it intends to start a new way to bring the published press to a new level. To achieve this we give great atention and love to all contents. From the design itself, the rich and very readable news and articles with high quality photos. Itends to be a very handy and powerfull tool for all dreamers and explorers of our country and our world.<br /><br />Please, feel <strong>very welcome</strong> to be our partner in this great adventure to the...<br />Unknown... And beyond... So, let´s <strong>GO</strong><small>ING</small>!...";
+/* Big Texts */
+document.getElementById('texts02').innerHTML = "<small><strong>GO</strong><small>ING Magazine</small><br />Director / Editor: Rui Chumbinho<br />Coordination Director: Pedro Martins<br /><br /><strong>Office</strong><br />Edifício República<br />Avenida da República, 1º E - Alcoitão<br />2645-143 Alcabideche<br />Portugal<br /><br />Phone: (+351) 211 357 991<br /><a href='mailto:info@goingmagazine.pt' target='_blank'>info@goingmagazine.pt</a><br /><a href='http://www.goingmagazine.pt' target='_self'>www.goingmagazine.pt</a><br /><br /><strong>Marketing Department</strong><br />Want to advertise or be our adventure partener?<br />Contact us by phone or use this email:<br /><a href='mailto:publicidade@goingmagazine.pt' target='_blank'>publicidade@goingmagazine.pt</a><br /><br /><strong>SunWires</strong><br /><a href='mailto:geral@sunwires.pt' target='_blank'>geral@sunwires.pt</a><br /><a href='http://www.sunwires.pt' target='_blank'>www.sunwires.pt</a><br /><br /></small><div class='parent-responsive'><img class='child-responsive' alt='QRCode' src='images/qrcode.jpg'/></div><small>www.goingmagazine.pt</small>";
+/* Change News Iframe */
+top.document.getElementById('iframeNews').setAttribute("src", "news-EN.html");
+}
+/* By default: */
+idiomPT();
+</script>
+<!-- /Change Idiom -->
+
+
+
+
+<!-- Navbar -->
+<script type="text/javascript">
+$(document).ready(function() { $('#nav').scrollToFixed(); });
+</script>
+<!-- /Navbar -->
+
+<!-- Magazine + Pages Number (Edition Selector - For Iframe Refresh) -->
+<script type="text/javascript">
+function magazineN1() { var iframe = document.getElementsByName('iframe1')[0]; iframe.src = 'magazines.html?magazinenumber=1&pagestotal=16';  }
+function magazineN2() { var iframe = document.getElementsByName('iframe1')[0]; iframe.src = 'magazines.html?magazinenumber=2&pagestotal=100'; }
+function magazineN3() { var iframe = document.getElementsByName('iframe1')[0]; iframe.src = 'magazines.html?magazinenumber=3&pagestotal=84';  }
+</script>
+<!-- Magazine + Pages Number (/Edition Selector - For Iframe Refresh) -->
+
+<!-- Music -->
+<script type="text/javascript">
+soundManager.setup({
+url: 'js/soundmanagerv297a/script',
+debugMode: false, // enable debugging output (console.log() with HTML fallback) 
+useHTML5Audio: true,
+onready: function() {
+soundManager.createSound('songID_', selectedSong);
+},
+ontimeout: function() {}
+});
+</script>
+<!-- /Music -->
+
+<!-- Slideshow Background  -->
+<script type="text/javascript">
+$.vegas('slideshow', {
+delay:5000, backgrounds:[
+{ src:'images/Going_001.jpg', fade:2000 },
+{ src:'images/Going_002.jpg', fade:2000 },
+{ src:'images/Going_003.jpg', fade:2000 },
+{ src:'images/Going_004.jpg', fade:2000 },
+{ src:'images/Going_005.jpg', fade:2000 },
+{ src:'images/Going_006.jpg', fade:2000 },
+{ src:'images/Going_007.jpg', fade:2000 },
+{ src:'images/Going_008.jpg', fade:2000 },
+{ src:'images/Going_009.jpg', fade:2000 },
+{ src:'images/Going_010.jpg', fade:2000 },
+{ src:'images/Going_011.jpg', fade:2000 },
+{ src:'images/Going_012.jpg', fade:2000 },
+{ src:'images/Going_013.jpg', fade:2000 },
+{ src:'images/Going_014.jpg', fade:2000 },
+{ src:'images/Going_015.jpg', fade:2000 },
+{ src:'images/Going_016.jpg', fade:2000 },
+{ src:'images/Going_017.jpg', fade:2000 },
+{ src:'images/Going_018.jpg', fade:2000 },
+{ src:'images/Going_019.jpg', fade:2000 },
+{ src:'images/Going_020.jpg', fade:2000 }   
+]
+})('overlay', { src:'images/overlay.png' });
+</script>
+<!-- /Slideshow Background -->
+
+<!-- Show/Hide div -->
+<script type="text/javascript">
+$(document).ready(function() {
+$('#showbutton1').click(function() {
+$('#showtexts1').slideToggle("fast");
+});
+});
+</script>
+<!-- /Show/Hide div -->
+
+<!-- Mixitup: Grid -->
+<script type="text/javascript">
+$(function(){ $('#Grid').mixitup(); });
+</script>
+<!-- /Mixitup: Grid -->	
+
+<!-- Smooth Scrolling -->
+<script type="text/javascript">
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+|| location.hostname == this.hostname) {
+
+var target = $(this.hash);
+target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+if (target.length) {
+$('html,body').animate({
+scrollTop: target.offset().top
+}, 1000);
+return false;
+}
+}
+});
+});
+</script>
+<!-- /Smooth Scrolling -->
+
+</body>
+</html>

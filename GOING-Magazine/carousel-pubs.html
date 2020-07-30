@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Carousel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex" />
+<!-- Carousel CSS -->
+<link type="text/css" href="js/slick-1.6.0/slick/jorge-theme.css" rel="stylesheet">
+<!-- Javascript -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slick-1.6.0/slick/slick.min.js"></script>
+<style type="text/css">
+body {
+cursor:default;
+border:0px;
+background:#transparent;
+background-color:rgba(0,0,0,0.0);
+color:#000000;
+overflow:hidden;
+overflow-x:hidden;
+overflow-y:hidden;
+margin:0px;
+margin-top:0px;
+}
+</style>
+</head>
+<body style="background:#transparent;" oncontextmenu="return false;">
+
+<div id="carousel" class="carousel" style="margin-left:40px; margin-right:40px;">
+<div><a href="http://www.landrover.pt/vehicles/discovery/index.html" target="_blank"><img alt="IMG" src="images-pubs/001.jpg"></a></div>
+<div><a href="http://www.conferenciasdoestoril.com/en" target="_blank"><img alt="IMG" src="images-pubs/002.jpg"></a></div>
+<div><a href="http://leaoholandes.com" target="_blank"><img alt="IMG" src="images-pubs/003.jpg"></a></div>
+<div><a href="http://www.hangar5.pt" target="_blank"><img alt="IMG" src="images-pubs/004.jpg"></a></div>
+<div><a href="http://montedaprovenca.com" target="_blank"><img alt="IMG" src="images-pubs/005.jpg"></a></div>
+<div><a href="http://lawrenceshotel.com/?lang=pt_PT&page_id=4" target="_blank"><img alt="IMG" src="images-pubs/006.jpg"></a></div>
+<div><a href="http://www.elcristo.pt" target="_blank"><img alt="IMG" src="images-pubs/007.jpg"></a></div>
+<div><a href="http://www.belouratennis.com/bta" target="_blank"><img alt="IMG" src="images-pubs/008.jpg"></a></div>
+<div><a href="http://www.madeirabrightstarhotel.com" target="_blank"><img alt="IMG" src="images-pubs/009.jpg"></a></div>
+<div><a href="http://www.rota-dos-cetaceos.pt" target="_blank"><img alt="IMG" src="images-pubs/010.jpg"></a></div>
+<div><a href="http://www.palacioestorilhotel.com" target="_blank"><img alt="IMG" src="images-pubs/011.jpg"></a></div>
+<div><a href="http://www.boatcenter.pt" target="_blank"><img alt="IMG" src="images-pubs/012.jpg"></a></div>
+<div><a href="http://www.facebook.com/pg/acontece.restaurante" target="_blank"><img alt="IMG" src="images-pubs/013.jpg"></a></div>
+<div><a href="http://www.montedatorre.pt" target="_blank"><img alt="IMG" src="images-pubs/014.jpg"></a></div>
+<div><a href="http://www.guinness.com" target="_blank"><img alt="IMG" src="images-pubs/015.jpg"></a></div>
+<div><a href="http://www.romariadebaco.pt" target="_blank"><img alt="IMG" src="images-pubs/016.jpg"></a></div>
+<div><a href="http://www.bacalhoa.com" target="_blank"><img alt="IMG" src="images-pubs/017.jpg"></a></div>
+</div>
+		
+<!-- Carousel Scrolling -->
+<script type="text/javascript">
+$('.carousel').slick({
+lazyLoad: 'ondemand',  
+arrows: true,
+prevArrow: '<img alt="<<" class="slick-prev" style="width:20px; height:20px; cursor:pointer; cursor:hand;" src="images/arrow_left.png">',
+nextArrow: '<img alt=">>" class="slick-next" style="width:20px; height:20px; cursor:pointer; cursor:hand;" src="images/arrow_right.png">',
+dots: false,
+vertical: false,
+autoplay: true,
+infinite: true,
+speed: 300,
+slidesToShow: 10,
+centerMode: true,
+variableWidth: true,
+adaptiveHeight: false,
+pauseOnFocus: true,
+focusOnSelect: true
+});
+</script>
+<!-- /Carousel Scrolling -->
+
+</body>
+</html>

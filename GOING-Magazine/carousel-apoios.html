@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Carousel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex" />
+<!-- Carousel CSS -->
+<link type="text/css" href="js/slick-1.6.0/slick/jorge-theme.css" rel="stylesheet">
+<!-- Javascript -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/slick-1.6.0/slick/slick.min.js"></script>
+<style type="text/css">
+body {
+cursor:default;
+border:0px;
+background:#transparent;
+background-color:rgba(0,0,0,0.0);
+color:#000000;
+overflow:hidden;
+overflow-x:hidden;
+overflow-y:hidden;
+margin:0px;
+margin-top:0px;
+}
+</style>
+</head>
+<body style="background:#transparent;" oncontextmenu="return false;">
+
+<div id="carousel" class="carousel" style="margin-left:40px; margin-right:40px;">
+<div><a href="http://www.cm-cascais.pt" target="_blank"><img alt="IMG" src="images-apoios/001.jpg"></a></div>
+<div><a href="http://www.emb-marrocos.pt" target="_blank"><img alt="IMG" src="images-apoios/002.jpg"></a></div>
+<div><a href="http://www.tenis.pt" target="_blank"><img alt="IMG" src="images-apoios/003.jpg"></a></div>
+<div><a href="http://www.cm-elvas.pt" target="_blank"><img alt="IMG" src="images-apoios/004.jpg"></a></div>
+<div><a href="http://www.cm-cascais.pt" target="_blank"><img alt="IMG" src="images-apoios/005.jpg"></a></div>
+<div><a href="https://www.tourismireland.com" target="_blank"><img alt="IMG" src="images-apoios/006.jpg"></a></div>
+<div><a href="http://www.turismodoalgarve.pt" target="_blank"><img alt="IMG" src="images-apoios/007.jpg"></a></div>
+<div><a href="http://www.turismodoalgarve.pt" target="_blank"><img alt="IMG" src="images-apoios/008.jpg"></a></div>
+<div><a href="http://www.cm-cascais.pt" target="_blank"><img alt="IMG" src="images-apoios/009.jpg"></a></div>
+<div><a href="https://www.guinness.com" target="_blank"><img alt="IMG" src="images-apoios/010.jpg"></a></div>
+<div><a href="https://www.mun-montijo.pt" target="_blank"><img alt="IMG" src="images-apoios/011.jpg"></a></div>
+<div><a href="https://www.tourismireland.com" target="_blank"><img alt="IMG" src="images-apoios/012.jpg"></a></div>
+<div><a href="http://www.cm-golega.pt" target="_blank"><img alt="IMG" src="images-apoios/013.jpg"></a></div>
+</div>
+		
+<!-- Carousel Scrolling -->
+<script type="text/javascript">
+$('.carousel').slick({
+lazyLoad: 'ondemand',  
+arrows: true,
+prevArrow: '<img alt="<<" class="slick-prev" style="width:20px; height:20px; cursor:pointer; cursor:hand;" src="images/arrow_left.png">',
+nextArrow: '<img alt=">>" class="slick-next" style="width:20px; height:20px; cursor:pointer; cursor:hand;" src="images/arrow_right.png">',
+dots: false,
+vertical: false,
+autoplay: true,
+infinite: true,
+speed: 300,
+slidesToShow: 10,
+centerMode: true,
+variableWidth: true,
+adaptiveHeight: false,
+pauseOnFocus: true,
+focusOnSelect: true
+});
+</script>
+<!-- /Carousel Scrolling -->
+
+</body>
+</html>
