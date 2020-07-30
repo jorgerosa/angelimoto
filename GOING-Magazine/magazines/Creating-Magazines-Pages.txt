@@ -1,0 +1,26 @@
+
+
+------------------------------------------------------------------------------------------------------------
+CREATING MAGAZINE PAGES FOR THE WEBSITE. (FOR THE SITE´S FLIPBOOK)
+------------------------------------------------------------------------------------------------------------
+
+1) Software: INDESIGN (http://www.adobe.com/products/indesign.html)
+   a) Export pages in PDF format.
+      Set: Select PDF preset "Website". Export full magazine, pages (not spreads), and Without bleed areas.
+
+
+2) Software: ADOBE ACROBAT PRO (https://acrobat.adobe.com/us/en/acrobat/acrobat-pro.html)
+   a) "File" --> "Save as Other" --> "Image" --> "JPEG", then...
+      Set: RGB:Embed profile + Colorspace:RGB + Settings:300dpi
+
+
+3) Software: BULK RENAME UTILITY (http://www.bulkrenameutility.co.uk)
+   a) At "Replace(3)" box: Replace "1_Page_" with "".
+   b) Copy/Move to location (13) box: "the new destination path".
+   c) click "Rename" button.
+
+
+4) Finally we only need to edit "index.html". (No need to edit any other "html" document)
+
+
+------------------------------------------------------------------------------------------------------------
