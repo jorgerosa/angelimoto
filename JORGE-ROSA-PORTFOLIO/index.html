@@ -2,6 +2,11 @@
 <html>
 <head>
 <title>Jorge Rosa - Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jorge Rosa - Portfolio">
+<meta name="author" content="Jorge Rosa">
+<meta name="robots" content="index" />
 
 <!--
 CODE CALL FROM https://sites.google.com/site/jorgerosaportfolio
@@ -78,8 +83,18 @@ td {
 	text-align: left;
 }
 
+#iframe1 {
+	/* For the flipbook iframe */
+    border-collapse: collapse;
+	border: 0px solid white;
+	height: 550px;
+    width: 800px;
+	overflow: hidden;
+	text-align: center;
+}
+
 #iframe_stuff {
-	border: 0px solid black;
+	border: 0px solid white;
 	/* padding-bottom: 10px; */
     height: auto;
     width: auto;
@@ -256,6 +271,7 @@ More than the published magazine, they have a TV talk show <b>Conversas Imprová
 
 </td>
 </tr>
+
 <tr>
 <td id="td_stuff">
 
@@ -276,6 +292,20 @@ You can visite the magazine´s old website, developed using only Html and Java. 
 
 
 </div>
+
+</td>
+</tr>
+
+<tr>
+<td id="td_stuff" colspan="2">
+
+<div id="div_flipbook">
+<!-- <iframe name="iframe1" class="iframe1" src="magazines.html?magazinenumber=3&pagestotal=84"></iframe> -->
+Just a random magazine paging example:<br>
+<i>(Use may use your mouse, or the cursor keys, to navigate. It may take a while to load!)</i><br>
+<iframe id="iframe1" name="iframe1" class="iframe1" src="https://jorgerosa.github.io/angelimoto/GOING-Magazine/magazines.html?magazinenumber=2&pagestotal=100"></iframe>
+</div>
+
 
 </td>
 </tr>
