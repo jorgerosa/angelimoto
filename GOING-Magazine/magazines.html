@@ -83,6 +83,9 @@ setTimeout(loadApp, 10);
 return;
 }
 
+// Disable bottom slider:
+$('#disable').click(function(){ $('#slide').slider('disable') });
+
 // Get the query string "pagestotal":
 function getParameterByName(name, url) {
 if (!url) url = window.location.href;
