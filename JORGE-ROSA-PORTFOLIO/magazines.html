@@ -105,7 +105,7 @@ flipbook.turn({
 		
 // Magazine width (Edited in "magazine.css" too)
 // width: 318*2,
-width: 400*2,
+width: 800,
 // Magazine height (Edited in "magazine.css" too)
 // height: 450,
 height: 550,
@@ -125,7 +125,7 @@ pages: pagestotal,
 when: {
 turning: function(event, page, view) {	
 // Play Sound
-// flip.playclip(); <!-- enble this for sound -->
+flip.playclip(); <!-- enble this for sound -->
 // Stuff:
 var book = $(this),
 currentPage = book.turn('page'),
