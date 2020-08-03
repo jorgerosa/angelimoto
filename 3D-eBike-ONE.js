@@ -19,7 +19,7 @@
 	
 	// Internet Browser has WebGl?...
 	if (!Detector.webgl){
-	document.getElementById('info').innerHTML = 'INFORMA«√O:<br />O seu navegador n„o suporta WebGL.<br />N„o È possÌvel apresentar o modelo em 3D.';
+	document.getElementById('info').innerHTML = 'INFORMA√á√ÉO:<br />O seu navegador n√£o suporta WebGL.<br />N√£o √© poss√≠vel apresentar o modelo em 3D.';
 	};
 	
 	
@@ -182,7 +182,7 @@
 	loadingmanager.onLoad = function () {	
 	progressbar.style.display = 'none';      // Hide
 	progressbar.style.visibility = 'hidden'; // Hide
-	// document.getElementById('info').innerHTML = 'Bot„o esquerdo do RATO: <strong>RotaÁ„o</strong>';
+	// document.getElementById('info').innerHTML = 'Bot√£o esquerdo do RATO: <strong>Rota√ß√£o</strong>';
 	console.log('All items were loaded!');   // Write to console...	
 	};
 	// Error...
@@ -438,7 +438,7 @@
 	
 
 	
-	
+	/*
 	// 3) 2D Stuff: Create Sprites
 	var spriteTitleTextureLoader = new THREE.TextureLoader(loadingmanager).load(path+'maps/sprite_title.png', function(material) {	
 	material = new THREE.SpriteMaterial({ map:spriteTitleTextureLoader }); // SpriteMaterial == No affected by lights
@@ -450,7 +450,8 @@
 	// sprite.material.side = THREE.BackSide;
 	sprite.castShadow = false;
 	sprite.receiveShadow = false;	
-	});	
+	});
+	*/
 	
 	
 	}; // End: fill()
