@@ -79,8 +79,8 @@
 	// Camera: (Normal)
 	camera = new THREE.PerspectiveCamera(25, window.innerWidth/window.innerHeight, 1.0, 3000); // Normal FOV is 45, PerspectiveCamera( fov, aspect, near, far )
 	scene.add(camera); // Attach first!
-	camera.position.set(0, -110.0, distance);
-	// camera.position.set(0, 64, distance);
+	camera.position.set(0, 110.0, distance);
+	// camera.position.set(0, -110.0, distance);
 	// camera.target.set(0, 77, 0); // view direction perpendicular to XY-plane
 	camera.castShadow = false;
 	camera.receiveShadow = false;	
@@ -187,7 +187,7 @@
 	loadingmanager.onLoad = function () {	
 	progressbar.style.display = 'none';      // Hide
 	progressbar.style.visibility = 'hidden'; // Hide
-	// document.getElementById('info').innerHTML = 'Bot„o esquerdo do RATO: <strong>RotaÁ„o</strong>';
+	// document.getElementById('info').innerHTML = 'Bot√£o esquerdo do RATO: <strong>Rota√ß√£o</strong>';
 	console.log('All items loaded...');   // Write to console...	
 	};
 	// Error...
