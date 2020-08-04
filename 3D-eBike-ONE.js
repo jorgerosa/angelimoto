@@ -79,7 +79,7 @@
 	// Camera: (Normal)
 	camera = new THREE.PerspectiveCamera(25, window.innerWidth/window.innerHeight, 1.0, 5000); // Normal FOV is 45, PerspectiveCamera( fov, aspect, near, far )
 	scene.add(camera); // Attach first!
-	camera.position.set(0, 120, distance);
+	camera.position.set(0, 100, distance);
 	// camera.position.set(0, 64, distance);
 	// camera.target.set(0, 77, 0); // view direction perpendicular to XY-plane
 	camera.castShadow = false;
@@ -121,7 +121,7 @@
 	controls.enablePan = false;
 	controls.enableDamping = false;
 	// Movements:
-	controls.autoRotateSpeed = 3.0;
+	controls.autoRotateSpeed = 5.0;
 	controls.dampingFactor = 0.25; // 0.25 is default
 	controls.rotationSpeed = 0.5;
 	controls.movementSpeed = 0.5;
