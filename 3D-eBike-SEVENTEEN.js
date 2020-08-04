@@ -438,7 +438,6 @@
 	
 
 	
-	/*
 	// 3) 2D Stuff: Create Sprites
 	var spriteTitleTextureLoader = new THREE.TextureLoader(loadingmanager).load(path+'maps/sprite_title.png', function(material) {	
 	material = new THREE.SpriteMaterial({ map:spriteTitleTextureLoader }); // SpriteMaterial == No affected by lights
@@ -451,7 +450,7 @@
 	sprite.castShadow = false;
 	sprite.receiveShadow = false;	
 	});
-	*/
+
 	
 	
 	}; // End: fill()
