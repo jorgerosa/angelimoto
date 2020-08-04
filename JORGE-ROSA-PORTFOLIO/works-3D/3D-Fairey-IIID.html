@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<title>3D MODELS - © 2018 Jorge Rosa</title>
+<meta charset="UTF-8" />
+<!-- 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="s-web-app-capable" content="yes"/>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+-->
+<style>
+body {
+font-family:Monospace;
+font-size:8px;
+color:#BBBBBB;
+background-color:#000000;
+margin:0px;
+overflow:hidden;
+}
+#info {
+color:#BBBBBB;
+position:absolute;
+top:10px;
+width:100%;
+text-align:center;
+z-index:100;
+display:block;		
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
+#info a, .button {
+font-weight:bold;
+color:#FFFFFF;
+text-decoration:none;
+width:100%;
+text-align:center;
+}
+<!--
+#progressbar {
+width:100px;
+height:500px;
+background:#000000;
+border:none;
+}
+-->
+</style>
+</head>
+<body>	
+<!-- HTML Displayers -->
+<!-- <div id="progressbar"></div> -->
+<!-- 
+<div id="info">1922 - First Flight from Europe to the South Atlantic - Flight from Portugal to Brazil<br />
+Pilot: Gago Coutinho - Navigator: Sacadura Cabral - Planes: FAIREY IIID - Lusitania, Pátria and Santa Cruz<br />
+3D Models and Art: Jorge Rosa with love to ASCR | <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank">Portfolio</a> | </div>
+-->
+<!-- 3D Core -->
+<script type="text/javascript" src="THREE/Detector.js" charset="UTF-8"></script>
+<script type="text/javascript" src="THREE/BUILD/three.min.js" charset="UTF-8"></script> 	
+<script type="text/javascript" src="THREE/libs/stats.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="THREE/Mirror.js" charset="UTF-8"></script>
+<script type="text/javascript" src="THREE/controls/OrbitControls.js" charset="UTF-8"></script>	
+<!-- Loaders -->
+<script type="text/javascript" src="THREE/loaders/MTLLoader.js" charset="UTF-8"></script>
+<script type="text/javascript" src="THREE/loaders/OBJLoader.js" charset="UTF-8"></script>
+<!-- The 3D Scene -->
+<script type="text/javascript" src="3D-Fairey-IIID.js" charset="ISO-8859-1"></script>
+</body>
+</html>
