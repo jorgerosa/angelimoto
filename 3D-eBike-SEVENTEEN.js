@@ -11,7 +11,7 @@
 	
 	// This Model Specific Variables:
 	var path = '3D-eBike-SEVENTEEN/';
-	var distance = 88;
+	var distance = 68;
 
 	// --------------------------------------------------------------------------
 	// --------------------------------------------------------------------------
@@ -79,7 +79,7 @@
 	// Camera: (Normal)
 	camera = new THREE.PerspectiveCamera(25, window.innerWidth/window.innerHeight, 1.0, 5000); // Normal FOV is 45, PerspectiveCamera( fov, aspect, near, far )
 	scene.add(camera); // Attach first!
-	camera.position.set(0, 180, distance);
+	camera.position.set(0, 140, distance);
 	// camera.position.set(0, 64, distance);
 	// camera.target.set(0, 77, 0); // view direction perpendicular to XY-plane
 	camera.castShadow = false;
@@ -93,10 +93,10 @@
 	light1.castShadow = true;
 	light1.receiveShadow = false;
 	// light1.shadowMapVisible = true;
-	light1.shadow.mapSize.width  = 512; // 1024
-	light1.shadow.mapSize.height = 512; // 1024
+	light1.shadow.mapSize.width  = 1024; // 1024
+	light1.shadow.mapSize.height = 1024; // 1024
 	light1.shadow.camera.near = 1;
-	light1.shadow.camera.far = 100;
+	light1.shadow.camera.far = 5000;
 	light1.shadow.camera.fov = THREE.Math.radToDeg(2*light1.angle);	
 	light1.intensity = 1.00;
 	// Light 1 Target:

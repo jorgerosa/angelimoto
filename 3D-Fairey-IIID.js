@@ -98,7 +98,7 @@
 	light1.shadow.camera.near = 1;
 	light1.shadow.camera.far = 3000;
 	light1.shadow.camera.fov = THREE.Math.radToDeg(2*light1.angle);	
-	light1.intensity = 0.30;
+	light1.intensity = 0.50;
 	
 	/*
 	// Light 1 Target:
