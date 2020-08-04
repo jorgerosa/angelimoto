@@ -121,7 +121,7 @@
 	controls.enablePan = false;
 	controls.enableDamping = false;
 	// Movements:
-	controls.autoRotateSpeed = 1.0;
+	controls.autoRotateSpeed = 3.0;
 	controls.dampingFactor = 0.25; // 0.25 is default
 	controls.rotationSpeed = 0.5;
 	controls.movementSpeed = 0.5;
