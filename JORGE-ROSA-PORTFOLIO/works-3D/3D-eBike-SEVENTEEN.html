@@ -39,17 +39,32 @@ text-decoration:none;
 width:100%;
 text-align:center;
 }
+#progressbar_container {
+background-color:#000000;
+color:#ffffff;
+border:0px solid #000000;
+width:100%;
+height:100%;
+align-items:center;
+text-align:center;
+font-size:12px;
+}
 #progressbar {
+display: inline-block;
 width:100px;
-height:500px;
-background:#000000;
-border:none;
+height:20px;
+color:#eeeeee;
+background-color:#aaaaaa;
+border:1px solid #000000;
 }
 </style>
 </head>
 <body>	
 <!-- HTML Displayers -->
+<div id="progressbar_container">
+<p><br>Loading...<br></p>
 <div id="progressbar"></div>
+</div>
 <!-- <div id="info">© 2018 ANGELIMOTO - All Rights Reserved<br />Visite-nos no: | <a href="https://www.facebook.com/angelimoto" target="_blank">Facebook</a> | <a href="https://www.youtube.com/watch?v=SsfP0nUO_xw&list=PLvz_LOqCiDlZ6nkewS3T3On0VFx4kPQ3C&index=9" target="_blank">Youtube</a> | </div> -->
 <!-- 3D Core -->
 <script type="text/javascript" src="THREE/Detector.js" charset="UTF-8"></script>
