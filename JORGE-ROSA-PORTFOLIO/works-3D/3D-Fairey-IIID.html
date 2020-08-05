@@ -50,12 +50,15 @@ text-align:center;
 font-size:12px;
 }
 #progressbar {
-display: inline-block;
+display:inline-block;
 width:100px;
 height:20px;
-color:#eeeeee;
+color:#ffffff;
 background-color:#aaaaaa;
 border:1px solid #000000;
+align-items:center;
+text-align:center;
+font-size:12px;
 }
 </style>
 </head>
@@ -63,8 +66,7 @@ border:1px solid #000000;
 
 <!-- HTML Displayers -->
 <div id="progressbar_container">
-<p><br>Loading 3D...<br></p>
-<div id="progressbar"></div>
+<div id="progressbar"><p><br>Loading 3D...<br></p></div>
 </div>
 
 <!-- 
@@ -258,12 +260,9 @@ Pilot: Gago Coutinho - Navigator: Sacadura Cabral - Planes: FAIREY IIID - Lusita
 	// Function: Create 3D World	
 	function fill() {	
 	
-	// Loading manager:
-	var loadingmanager = new THREE.LoadingManager();
-	
-	/*
 	// Progressbar:
 	var progressbar = document.getElementById('progressbar');	
+	var loadingmanager = new THREE.LoadingManager();
 	// Loading...
 	loadingmanager.onProgress = function (item, loaded, total) {
 	progressbar.style.width = (loaded/total*100) + '%';
@@ -274,15 +273,14 @@ Pilot: Gago Coutinho - Navigator: Sacadura Cabral - Planes: FAIREY IIID - Lusita
 	progressbar.style.display = 'none';      // Hide
 	progressbar.style.visibility = 'hidden'; // Hide
 	// document.getElementById('info').innerHTML = 'Botão esquerdo do RATO: <strong>Rotação</strong>';
-	console.log('All items loaded...');   // Write to console...	
+	console.log('All items were loaded!');   // Write to console...	
 	};
 	// Error...
 	loadingmanager.onError = function () {
 	progressbar.style.display = 'none';        // Hide
 	progressbar.style.visibility = 'hidden';   // Hide
-    console.log('Loading error...'); // Write to console...
+    console.log('There has been an error...'); // Write to console...
 	};
-	*/	
 
 	
 	// Tool: Degrees Function
