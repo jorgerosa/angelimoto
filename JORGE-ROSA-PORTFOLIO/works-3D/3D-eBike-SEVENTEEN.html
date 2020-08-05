@@ -11,7 +11,7 @@
 <style>
 body {
 font-family: Arial, Helvetica, sans-serif;
-font-size:12px;
+font-size:14px;
 color:#BBBBBB;
 background-color:#000000;
 margin:0px;
@@ -39,34 +39,43 @@ text-decoration:none;
 width:100%;
 text-align:center;
 }
-#progressbar_container {
-background-color:#000000;
-color:#ffffff;
-border:0px solid #000000;
-width:100%;
-height:100%;
-align-items:center;
-text-align:center;
-}
+
+/*
 #progressbar {
-display:inline-block;
-width:60px;
+width:30px;
 height:20px;
-color:#cccccc;
-background-color:#aaaaaa;
+color:#ffffff;
+background-color:Red;
 border:1px solid #cccccc;
 align-items:center;
 text-align:center;
-margin-top:20px;
-margin-bottom:20px;
+margin: 0 auto;
+}
+*/
+
+#container_gif {
+width:200px;
+height:200px;
+position: fixed;
+color:#ffffff;
+background-color: #000000;
+top: 50%;
+left: 50%;
+margin-top: -100px;
+margin-left: -100px;
+border:0px solid #000000;
+}
+#loading_gif {
+border:0px solid #000000;
 }
 </style>
 </head>
 <body>	
 
 <!-- HTML Displayers -->
-<div id="progressbar_container">
-<div id="progressbar"><p><br><br><b>Loading...</b><br><br><br></p></div>
+<!-- <div id="progressbar"></div> -->
+<div id="container_gif">
+<img id="loading_gif" src="loading.gif" alt="Loading...">
 </div>
 
 <!-- <div id="info">© 2018 ANGELIMOTO - All Rights Reserved<br />Visite-nos no: | <a href="https://www.facebook.com/angelimoto" target="_blank">Facebook</a> | <a href="https://www.youtube.com/watch?v=SsfP0nUO_xw&list=PLvz_LOqCiDlZ6nkewS3T3On0VFx4kPQ3C&index=9" target="_blank">Youtube</a> | </div> -->
@@ -253,6 +262,7 @@ margin-bottom:20px;
 	function fill() {	
 	
 	// Progressbar:
+	/*
 	var progressbar = document.getElementById('progressbar');	
 	var loadingmanager = new THREE.LoadingManager();
 	// Loading...
@@ -273,6 +283,34 @@ margin-bottom:20px;
 	progressbar.style.visibility = 'hidden';   // Hide
     console.log('There has been an error...'); // Write to console...
 	};	
+	*/	
+
+	// Animated Loading GIF:
+	var container_gif = document.getElementById('container_gif');
+	var loading_gif = document.getElementById('loading_gif');	
+	var loadingmanager = new THREE.LoadingManager();
+	// Loading...
+	loadingmanager.onProgress = function (item, loaded, total) {
+	console.log(item, loaded, total); // Write to console...
+	};
+	// Loaded...
+	loadingmanager.onLoad = function () {	
+	container_gif.style.display = 'none';       // Hide
+	container_gif.style.visibility = 'hidden';  // Hide
+	loading_gif.style.display = 'none';         // Hide
+	loading_gif.style.visibility = 'hidden';    // Hide
+	// document.getElementById('info').innerHTML = 'Botão esquerdo do RATO: <strong>Rotação</strong>';
+	console.log('All items were loaded!');      // Write to console...	
+	};
+	// Error...
+	loadingmanager.onError = function () {
+	container_gif.style.display = 'none';       // Hide
+	container_gif.style.visibility = 'hidden';  // Hide
+	loading_gif.style.display = 'none';         // Hide
+	loading_gif.style.visibility = 'hidden';    // Hide
+    console.log('There has been an error...');  // Write to console...
+	};
+	
 	
 	// Tool: Degrees Function
 	var setDegrees = function(degree) { return degree*(Math.PI/180); };
