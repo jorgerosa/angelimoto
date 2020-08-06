@@ -10,5 +10,5 @@ newmtl Plane
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.4044 0.4044 0.4044
 	Ke 0.0000 0.0000 0.0000
-	map_Ka Plane-Fairey-IIID.jpg
-	map_Kd Plane-Fairey-IIID.jpg
+	map_Ka maps\Plane-Fairey-IIID.jpg
+	map_Kd maps\Plane-Fairey-IIID.jpg
