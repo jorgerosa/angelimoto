@@ -1,5 +1,5 @@
 - Click in the next URL to see the above code runnig in all its 3D glory in your web browser:
-Note: Your web browsr must have support to WebGL. 
+(Note: Your web browser must have support to WebGL) 
 
 https://jorgerosa.github.io/angelimoto
 
