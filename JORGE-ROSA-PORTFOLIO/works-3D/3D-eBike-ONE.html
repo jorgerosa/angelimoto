@@ -321,7 +321,7 @@ border: 0px solid #000000;
 	
 	
 	// 1) 3D Model: Create the SKY (Background)
-	var skygeometry = new THREE.SphereGeometry(4000, 12, 12);
+	var skygeometry = new THREE.SphereGeometry(1000, 12, 12);
 	skytexture = new THREE.TextureLoader(loadingmanager).load(path+'maps/sky.jpg', function(material) {
     material = new THREE.MeshBasicMaterial({ map:skytexture }); // MeshBasicMaterial == No affected by lights
 	// material = new THREE.MeshLambertMaterial({ map:skytexture, envMap:scene.background, combine:THREE.MixOperation, reflectivity: .5 });
