@@ -1,12 +1,13 @@
-1) CLICK THIS URL, TO SEE THE ABOVE CODE AND THE 3D MODELS IN YOUR INTERNET BROWSER:
+- Click in the next URL to see the above code runnig in all its 3D glory in your web browser:
+Note: Your web browsr must have support to WebGL. 
 
 https://jorgerosa.github.io/angelimoto
 
-2) CLICK THIS URL, TO SEE MY PORTFOLIO YOUR INTERNET BROWSER:
+- Click in the next URL to see my portfolio:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO
 
-3) MORE: A FULL SMALL PROJECT USING THE "FAIREY-IIID" 3D MODEL FOR DOWNLOAD: (Includes the model, textures, binary file (".exe" file), audios, source code, working files, etc.. Its interactive, was developed in C++, and could be used as a cool "screensaver" too!... There are related videos, images, etc... Have Fun!...)
+- MORE: A FULL SMALL PROJECT USING THE "FAIREY-IIID" 3D MODEL FOR DOWNLOAD: (Includes the model, textures, binary file (".exe" file), audios, source code, working files, etc.. Its interactive, was developed in C++, and could be used as a cool "screensaver" too!... There are related videos, images, etc... Have Fun!...)
 
 https://sourceforge.net/projects/fairey-iiid-irrlicht
 
