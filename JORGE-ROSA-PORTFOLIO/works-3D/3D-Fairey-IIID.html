@@ -78,11 +78,7 @@ border: 0px solid #000000;
 <img id="loading_gif" src="loading.gif" alt="Loading...">
 </div>
 
-<!-- 
-<div id="info">1922 - First Flight from Europe to the South Atlantic - Flight from Portugal to Brazil<br />
-Pilot: Gago Coutinho - Navigator: Sacadura Cabral - Planes: FAIREY IIID - Lusitania, Pátria and Santa Cruz<br />
-3D Models and Art: Jorge Rosa with love to ASCR | <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Portfolio</a> | </div>
--->
+<div id="info"></div>
 
 <!-- 3D Core -->
 <script type="text/javascript" src="THREE/Detector.js" charset="UTF-8"></script>
@@ -115,7 +111,7 @@ Pilot: Gago Coutinho - Navigator: Sacadura Cabral - Planes: FAIREY IIID - Lusita
 	
 	// Internet Browser has WebGl?...
 	if (!Detector.webgl){
-	document.getElementById('info').innerHTML = 'INFO: Your browser does not support WebGL.';
+	document.getElementById('info').innerHTML = 'INFO:<br>Your web browser does not support WebGL';
 	};
 	
 	
