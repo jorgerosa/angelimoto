@@ -78,9 +78,7 @@ border: 0px solid #000000;
 <img id="loading_gif" src="loading.gif" alt="Loading...">
 </div>
 
-<!--
-<div id="info">© 2018 ANGELIMOTO<br />Visite-nos no: | <a href="https://www.facebook.com/angelimoto" target="_blank">Facebook</a> | <a href="https://www.youtube.com/watch?v=SsfP0nUO_xw&list=PLvz_LOqCiDlZ6nkewS3T3On0VFx4kPQ3C&index=9" target="_blank">Youtube</a> | </div>
--->
+<div id="info"></div>
 
 <!-- 3D Core -->
 <script type="text/javascript" src="THREE/Detector.js" charset="UTF-8"></script>
@@ -113,7 +111,7 @@ border: 0px solid #000000;
 	
 	// Internet Browser has WebGl?...
 	if (!Detector.webgl){
-	document.getElementById('info').innerHTML = 'INFORMAÇÃO:<br />O seu navegador não suporta WebGL.<br />Não é possível apresentar o modelo em 3D.';
+	document.getElementById('info').innerHTML = 'INFO:<br>Your web browser does not support WebGL';
 	};
 	
 	
@@ -567,8 +565,8 @@ border: 0px solid #000000;
     var sprite = new THREE.Sprite(material);	
 	camera.add(sprite); // Attach first!
 	sprite.name = 'mySpriteTitle';	
-	sprite.position.set(0, 15.8, -105);
-	sprite.scale.set(20, 10, 1.0); // imageWidth, imageHeight	
+	sprite.position.set(0, 17.8, -105);
+	sprite.scale.set(20, 10, 1.0); // x,y imageWidth, z imageHeight	
 	// sprite.material.side = THREE.BackSide;
 	sprite.castShadow = false;
 	sprite.receiveShadow = false;	
