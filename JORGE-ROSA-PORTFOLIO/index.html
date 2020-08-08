@@ -54,6 +54,17 @@ img {
 img.topicgif {
 	background-color: transparent;
 	margin-top: -8px;
+}
+img.bookgif {
+	background-color: transparent;
+	margin-top: -8px;
+	margin-right: 10px;
+	max-height: 30px;
+}
+img.modelgif {
+	background-color: transparent;
+	margin-top: -8px;
+	max-height: 50px;
 }	
 button.btn {
   margin-top: auto;
@@ -91,7 +102,7 @@ button.btn {
 				<div class="card-body">
 				<a href="https://www.facebook.com/jorge.bigarte" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
 				<p class="card-text">
-				<h2><img class="topicgif" src="./works/topic.gif"> Jorge Rosa - Portfolio</h2>
+				<h2><img class="topicgif" src="./works/gui-topic.gif"> Jorge Rosa - Portfolio</h2>
 				Portuguese Developer
 				</p>
                 </div>
@@ -166,7 +177,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
                 </div>
             </div>
             </div>
@@ -298,14 +309,14 @@ button.btn {
 	
             <div class="col">
             <div class="card h-100" style="background-color:#e1e1e1;">
-				<p class="card-text"><br>A few interactive paging examples:<br><small>(It may take a while to load)</small><br></p>
+				<p class="card-text"><br>A few interactive magazines examples:</p>
 				<div class="embed-responsive embed-responsive-16by9">				
 				<iframe name="books_demos" class="embed-responsive-item" style="text-align:top; background-color:#e1e1e1;" src="./magazines.html?magazinenumber=1&pagestotal=14"></iframe>
 				<!-- mag1 = 14 pages -->
 				</div>
 				<div class="card-body">
                 <p class="card-text">
-				Use your mouse in the pages corners or the cursor keys.<br>				
+				<img class="bookgif" src="./works/gui-book.gif"> Drag or click at the pages corners, or use the cursor keys.<br>				
 				<small>© All Copyrights Reserved <b>SunWires</b> (Cascais)</small>
 				</p>
                 </div>
@@ -323,7 +334,7 @@ button.btn {
             <div class="col">
             <div class="card h-100" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Image</h2>Compositions, Etc...</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, Etc...</p>
                 </div>
             </div>
             </div>
@@ -359,7 +370,7 @@ button.btn {
             <div class="col">
             <div class="card h-100" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Photography</h2>Casual Photography</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual Photography</p>
                 </div>
             </div>
             </div>
@@ -485,7 +496,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> 3D Models</h2>3D Interactive web</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> 3D Models</h2>3D Interactive web</p>
                 </div>
             </div>
             </div>
@@ -497,12 +508,14 @@ button.btn {
 	
 			<div class="col">			
             <div class="card h-100">				
-				<p class="card-text"><br>A few interactive 3D models examples:<br><small>(It may take a while to load)</small><br></p>
+				<p class="card-text"><br>A few interactive 3D models examples:</p>
 				<div class="embed-responsive embed-responsive-16by9">				
 				<iframe name="3D_Interactive" class="embed-responsive-item" src="works-3D/3D-eBike-ONE.html"></iframe>
 				</div>
 				<div class="card-body">
-                <p class="card-text"><b>3D Interactive</b><br>(Use your mouse over the above 3D model)</p>				
+                <p class="card-text">
+				<img class="modelgif" src="./works/gui-models.gif"> Use your mouse over the above interactive 3D models.
+				</p>				
                 </div>
 				<div class="card-footer">
 				<a href="works-3D/3D-eBike-ONE.html" target="3D_Interactive" class="btn btn-primary my-2">3D Model N1</a>
@@ -520,7 +533,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Interactive Distributable Media</h2>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Interactive Distributable Media</h2>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</p>
                 </div>
             </div>
             </div>
@@ -533,9 +546,9 @@ button.btn {
 			<div class="col">			
             <div class="card">
 				<div class="card-body">		
-				<p class="card-text">A few interactive media screenshots examples:</p>						
+				<p class="card-text">A few distributable media screenshots examples:</p>						
 				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">
-				<img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 800px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE">
+				<img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 600px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE">
 				</a>				
 				<p class="card-text"><br><b>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</b><br>
 				<small>They all automatically autorun in fullscreen mode on the user´s computers. They all contain informative texts, animations, videos, photo galleries, sound effects, background musics, utilities, many user options, many extras, etc...</small></p>	
@@ -558,7 +571,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
                 </div>
             </div>
             </div>
@@ -779,7 +792,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
                 </div>
             </div>
             </div>
@@ -829,7 +842,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
                 </div>
             </div>
             </div>
@@ -903,7 +916,7 @@ button.btn {
             <div class="col">
             <div class="card">
 				<div class="card-body">
-				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank"><img class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 800px;" src="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" alt="IMAGE"></a>
+				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank"><img class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 600px;" src="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" alt="IMAGE"></a>
                 </div>
 				<p class="card-text">
 				ANDROID Application: <b>M.A.I.O.</b><br>
@@ -920,7 +933,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Electronic Hardware</h2>Arduino | Raspberry PI</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Electronic Hardware</h2>Arduino | Raspberry PI</p>
                 </div>
             </div>
             </div>
@@ -966,7 +979,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> 2D Models</h2>Animated Muppets</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> 2D Models</h2>Animated Muppets</p>
                 </div>
             </div>
             </div>
@@ -1012,7 +1025,7 @@ button.btn {
             <div class="col">
             <div class="card" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Music</h2>Elektro Noize Experimentz</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Music</h2>Elektro Noize Experimentz</p>
                 </div>
             </div>
             </div>
@@ -1091,7 +1104,7 @@ button.btn {
             <div class="col">
             <div class="card h-100" style="background-color: #000000; color: #ffffff;">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/topic.gif"> Other Works</h2>And many more all over the web...</p>
+				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many more all over the web...</p>
                 </div>
             </div>
             </div>
@@ -1140,7 +1153,7 @@ button.btn {
             <div class="card">
 				<div class="card-body">
 				<p class="card-text" style="font-size: x-small;">
-				<i>This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
+				<i>With love to ASCR - This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
 				</p>
                 </div>
             </div>
