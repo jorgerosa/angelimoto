@@ -21,7 +21,7 @@ html, body {
 	background-color: #aaaaaa;
 }
 a.simple {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 p {
 	vertical-align: text-top;
@@ -70,7 +70,7 @@ img.modelgif {
 	max-height: 50px;
 }	
 button.btn {
-  margin-top: auto;
+	margin-top: auto;
 }
 
 
@@ -78,66 +78,77 @@ button.btn {
 /* carousel arrows: */
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-  height: 60px;
-  width: 60px;
-  /* outline: black; */
-  /* border: 1px solid black; */
-  border-radius: 50%;  
-  background-size: 100%, 100%;
-  background-image: none;
-  background-color: #000000;
+	height: 60px;
+	width: 60px;
+	/* outline: black; */
+	border: 1px solid black;
+	border-radius: 50%;  
+	background-size: 100% 100%;
+	background-image: none;
+	background-color: #000000;
 }
 .carousel-control-next-icon:after
 {
-  content: '>';
-  font-size: 35px;
-  font-weight: bold;
-  color: #ffffff;
+	content: '>';
+	font-size: 35px;
+	font-weight: bold;
+	color: #ffffff;
 }
 .carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 35px;
-  font-weight: bold;
-  color: #ffffff;
+	content: '<';
+	font-size: 35px;
+	font-weight: bold;
+	color: #ffffff;
 }
 
 /* captations (texts inside images): */
 
-.carousel-caption {
- margin-bottom: -40px;
+.carousel-caption {	
+	max-width: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    left: 0px;
+	margin-bottom: -40px;
 }
 
 /* carousel big image fully responsive: */
 
 .carousel-inner img {
-      width: 100%;
-      height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 /* carousel thumbnails (indicators): */
 
-#myCarousel_1 .carousel-indicators {
+.carousel-indicators {
     position: static;
 	margin: 1px;
-    margin-top: 5px;
+	flex-wrap: wrap;
+    justify-content: center;
 }
 
-#myCarousel_1 .carousel-indicators > li {
-  width:60px;
+
+
+.carousel-indicators > li {
+	width:50px;	
 }
 
-#myCarousel_1 .carousel-indicators li img {
+.carousel-indicators li img {
     display: block;
-    opacity: 0.60;
+	opacity: 0.80;
 }
 
-#myCarousel_1 .carousel-indicators li.active img {
-    opacity: 1.00;
+.carousel-indicators li.active img {
+    display: block;
+	opacity: 1.00;
 }
 
-#myCarousel_1 .carousel-indicators li:hover img {
-    opacity: 0.80;
+.carousel-indicators li:hover img {
+    display: block;
+	opacity: 1.00;
 }
+
+
 
 </style>
 
@@ -447,23 +458,18 @@ button.btn {
 			
 
 	</div>
-	<div class="row">	
-	
-	
-
-
-
+	<div class="row">
 
 
             <div class="col">
             <div class="card">
 				<div class="card-body">				
-				<div class="container my-4">
 
 				    <!-- Carousel -->
 					<div id="myCarousel_1" class="carousel slide" data-ride="carousel" align="center">
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
+					
+					<!-- Slides -->
+					<div class="carousel-inner">			
 					
 					<div class="carousel-item active">
 					<img src="./works/foto-01-Jorge-Rosa.jpg" alt="PHOTO">
@@ -572,137 +578,74 @@ button.btn {
 					<div class="carousel-item">
 					<img src="./works/foto-27-Jorge-Rosa.jpg" alt="PHOTO">
 					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>The Gift - Live Concert<br>Parque da Cerca</p> </div>
-					</div>
+					</div>					
 					
 					</div>
-					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#myCarousel_1" data-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
+					
+					<!-- Controls -->
+					<a class="carousel-control-prev" href="#myCarousel_1" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Prev</span>
 					</a>
-					<a class="carousel-control-next" href="#myCarousel_1" data-slide="next">
-					<span class="carousel-control-next-icon"></span>
+					<a class="carousel-control-next" href="#myCarousel_1" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
 					</a>
+					
+				    </div>	
+
+
+					
 
 					<!-- Thumbnails -->
-					<p class="card-text">
-					<ol class="carousel-indicators list-inline">
+					<ol class="carousel-indicators">
+					<div class="container-fluid">
 					
-					<li class="list-inline-item active">
-					<a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel_1"> <img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel_1"> <img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel_1"> <img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-3" data-slide-to="3" data-target="#myCarousel_1"> <img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-4" data-slide-to="4" data-target="#myCarousel_1"> <img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-5" data-slide-to="5" data-target="#myCarousel_1"> <img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-6" data-slide-to="6" data-target="#myCarousel_1"> <img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-7" data-slide-to="7" data-target="#myCarousel_1"> <img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-8" data-slide-to="8" data-target="#myCarousel_1"> <img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-9" data-slide-to="9" data-target="#myCarousel_1"> <img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-10" data-slide-to="10" data-target="#myCarousel_1"> <img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-11" data-slide-to="11" data-target="#myCarousel_1"> <img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-12" data-slide-to="12" data-target="#myCarousel_1"> <img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>					
-					<li class="list-inline-item">
-					<a id="carousel-selector-13" data-slide-to="13" data-target="#myCarousel_1"> <img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-14" data-slide-to="14" data-target="#myCarousel_1"> <img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-15" data-slide-to="15" data-target="#myCarousel_1"> <img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-16" data-slide-to="16" data-target="#myCarousel_1"> <img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-17" data-slide-to="17" data-target="#myCarousel_1"> <img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-18" data-slide-to="18" data-target="#myCarousel_1"> <img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-19" data-slide-to="19" data-target="#myCarousel_1"> <img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-20" data-slide-to="20" data-target="#myCarousel_1"> <img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-21" data-slide-to="21" data-target="#myCarousel_1"> <img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-22" data-slide-to="22" data-target="#myCarousel_1"> <img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-23" data-slide-to="23" data-target="#myCarousel_1"> <img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-24" data-slide-to="24" data-target="#myCarousel_1"> <img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-25" data-slide-to="25" data-target="#myCarousel_1"> <img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
-					<li class="list-inline-item">
-					<a id="carousel-selector-26" data-slide-to="26" data-target="#myCarousel_1"> <img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid">
-					</a>
-					</li>
+					<li class="list-inline-item active" class="selected" data-slide-to="0"  data-target="#myCarousel_1"><img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="1"  data-target="#myCarousel_1"><img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="2"  data-target="#myCarousel_1"><img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="3"  data-target="#myCarousel_1"><img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="4"  data-target="#myCarousel_1"><img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="5"  data-target="#myCarousel_1"><img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="6"  data-target="#myCarousel_1"><img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="7"  data-target="#myCarousel_1"><img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="8"  data-target="#myCarousel_1"><img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="9"  data-target="#myCarousel_1"><img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="10" data-target="#myCarousel_1"><img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="11" data-target="#myCarousel_1"><img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="12" data-target="#myCarousel_1"><img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid"></li>					
+					<li class="list-inline-item" data-slide-to="13" data-target="#myCarousel_1"><img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid"></li>					
 					
-					</ol>
-					</p>
+					<li class="list-inline-item" data-slide-to="14" data-target="#myCarousel_1"><img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="15" data-target="#myCarousel_1"><img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="16" data-target="#myCarousel_1"><img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="17" data-target="#myCarousel_1"><img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="18" data-target="#myCarousel_1"><img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="19" data-target="#myCarousel_1"><img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="20" data-target="#myCarousel_1"><img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="21" data-target="#myCarousel_1"><img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="22" data-target="#myCarousel_1"><img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="23" data-target="#myCarousel_1"><img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="24" data-target="#myCarousel_1"><img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="25" data-target="#myCarousel_1"><img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid"></li>
+					<li class="list-inline-item" data-slide-to="26" data-target="#myCarousel_1"><img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid"></li>
+
+					</div>
+					</ol>					
 					
-				    </div>
+					
+					
+					
 	
 				</div>
-				</div>
+				
+				
+
+				
+				
+				
+				
+				
 			</div>
 			</div>
 	
