@@ -18,13 +18,12 @@
 
 html {
 	margin: 0px;
-	font-size: medium;
-	background-color: #aaaaaa;
+	background-color: transparent;
 }
 body {
 	margin: 0px;
-	background-color: #aaaaaa;
-	/* background-image: url("./works/jorge-rosa-background.png"); */
+	background-color: transparent;
+	font-size: medium;	
 }
 a.simple {
 	text-decoration: underline;
@@ -32,12 +31,15 @@ a.simple {
 p {
 	vertical-align: text-top;
 }
+hr {
+	border: 1px solid rgba(0,0,0,0.20);
+}
 div.container {
-	border: 0px solid #000000;
+	border: 0px;
 }
 div.card {
 	border: 1px solid #000000;
-	background-color: #f9f9f9;
+	background-color: #defbff;
 	font-size: medium;
 	text-align: center;
 	margin: 0px;
@@ -57,10 +59,10 @@ iframe {
 	background-color: #000000;
 }
 img {
-	border: 0px solid #737373;
-	background-color: #ffffff;
+	border: 0px;
+	background-color: transparent;
 }
-img.topicgif {
+img.my_topicgif {
 	background-color: transparent;
 	margin-top: -8px;
 }
@@ -79,12 +81,20 @@ button.btn {
 	margin-top: auto;
 }
 
+#my_topic {
+	background-color: rgba(0,0,0,0.80);
+	color: #ffffff;
+}
+#my_body {
+	background-color: rgba(253,253,253,0.60);
+	color: #000000;
+}
 
 
 /* Carousel CSS */
 
-.container {
-    margin-top: 20px;
+.carousel-container {
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 .carousel-inner img {
@@ -94,28 +104,28 @@ button.btn {
 .carousel-item img {
     width: 100%;
 }
-#custCarousel .carousel-indicators {
+#my_carousel .carousel-indicators {
     position: static;
     margin-top: 0px;
 	flex-wrap: wrap;
     justify-content: center;
 }
-#custCarousel .carousel-indicators>li {
+#my_carousel .carousel-indicators>li {
     width: 60px;
 	margin: 10px;
 }
-#custCarousel .carousel-indicators li img {
+#my_carousel .carousel-indicators li img {
     display: block;
 	margin: 0px;
     opacity: 0.60;
 }
-#custCarousel .carousel-indicators li.active img {
+#my_carousel .carousel-indicators li.active img {
 	opacity: 1.00;
 }
-#custCarousel .carousel-indicators li:hover img {
+#my_carousel .carousel-indicators li:hover img {
 	opacity: 0.80;
 }
-#custCarousel .carousel-caption {	
+#my_carousel .carousel-caption {	
 	max-width: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.4);
@@ -145,40 +155,61 @@ button.btn {
 	font-weight: bold;
 	color: #ffffff;
 }
+
+/* Video CSS for PC */
+
+#bgvideo {
+	position: fixed;
+	z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+	#bgvideo {
+		width: 100%;
+		height: auto;
+	}
+}
+@media (max-aspect-ratio: 16/9){
+	#bgvideo {
+		width: auto;
+		height: 100%;
+	}
+}
+
+/* Video CSS for mobiles */
+
+@media (max-width: 767px){
+	#bgvideo {
+		display: none;
+	}
+	body {		
+		background: url('./videos/img-video.jpg');
+		background-size: cover;
+	}
+}
 </style>
 
 
 </head>
 <body>	
 
-<main role="main">
+	
+	<video id="bgvideo" poster="./videos/img-video.jpg" autoplay muted loop> 
+	<source src="./videos/ocean.mp4" type="video/mp4">
+	</video>
+				
 
-    <!--
-	<section class="jumbotron text-center">
-	<div class="container">
-    <h1 class="jumbotron-heading">Jorge Rosa - Portfolio</h1>
-    <p>
-	<b>Contains only a few examples of my work, in some different areas</b><br>
-	<i>Trying to give a meaning of life to all these wild binaries living in my computer</i><br><br>
-	<i>(To contact me, please use the email or Facebook´s messenger)</i><br>
-    Email: <b><a href="mailto:jorge.bigarte@gmail.com" target="_blank">jorge.bigarte@gmail.com</a></b>
-    </p>
-    </div>
-    </section>
-	-->
-
-    <div class="album">
+    <div class="album" style="margin: 0px; background: transparent url('./works/overlay-1.png');">
     <div class="container">
 
 	<div class="row">		
 	
 
-            <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div class="col" style="margin-top: 40px;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
 				<a href="https://www.facebook.com/jorge.bigarte" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
 				<p class="card-text">
-				<h2><img class="topicgif" src="./works/gui-topic.gif"> Jorge Rosa - Portfolio</h2>
+				<h2><img class="my_topicgif" src="./works/gui-topic.gif"> Jorge Rosa - Portfolio</h2>
 				Portuguese Developer
 				</p>
                 </div>
@@ -191,7 +222,7 @@ button.btn {
 
 		
             <div class="col">
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
 				<p>	
 				<b>Contains only a few examples of my work in many different computing-related fields</b><br>
@@ -213,7 +244,7 @@ button.btn {
 
 		
             <div class="col">
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text"><b>Programming Skills:</b></p>
                 <p class="card-text">
@@ -237,7 +268,7 @@ button.btn {
 		  
 		  
             <div class="col">
-            <div class="card" style="background-color:#ffffff;">
+            <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text"><i>(This is just a big static image, with some examples of my work)</i></p>
 				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank"><img class="card-img-top" style="border:0px;" src="./works/Jorge-Rosa-Portfolio.jpg" alt="IMAGE"></a>
@@ -251,9 +282,9 @@ button.btn {
 	
 
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
                 </div>
             </div>
             </div>
@@ -265,7 +296,7 @@ button.btn {
 			
             <div class="card-group">
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Revista INVEST</b><br><small>Portuguese Magazine</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-007.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-007.png" alt="PRESS"></a></div>
@@ -280,7 +311,7 @@ button.btn {
                 </div>
             </div>
 
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Maravilhas</b><br><small>Portuguese / International Magazine</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.jpg" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.jpg" alt="PRESS"></a></div>
@@ -291,7 +322,7 @@ button.btn {
             </div>
 				
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Notícias de Leiria</b><br><small>Portuguese Journal</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.jpg" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.jpg" alt="PRESS"></a></div>
@@ -313,7 +344,7 @@ button.btn {
 			
             <div class="card-group">
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Prime Negócios</b><br><small>Portuguese Journal</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-002.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-002.png" alt="PRESS"></a></div>
@@ -323,7 +354,7 @@ button.btn {
                 </div>
             </div>	
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>O Noti</b><br><small>Portuguese Magazine</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-003.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-003.png" alt="PRESS"></a></div>
@@ -333,7 +364,7 @@ button.btn {
                 </div>
             </div>			
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Revista Bruxinha</b><br><small>Portuguese Magazine</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-006.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-006.png" alt="PRESS"></a></div>
@@ -352,7 +383,7 @@ button.btn {
 
             <div class="card-group">
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>Jornal do Comércio</b><br><small>Portuguese Journal</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-001.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-001.png" alt="PRESS"></a></div>
@@ -362,7 +393,7 @@ button.btn {
                 </div>
             </div>		
 			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
                 <p class="card-text"><b>GOING Magazine</b><br><small>Portuguese / International Magazine</small></p>
 				<div width="100%"><a href="./works/jorge-rosa-paginacao-004.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-004.png" alt="PRESS"></a></div>
@@ -384,10 +415,10 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card h-100" style="background-color:#e1e1e1;">
+            <div id="my_body" class="card h-100">
 				<p class="card-text"><br>A few interactive magazines examples:</p>
 				<div class="embed-responsive embed-responsive-16by9">				
-				<iframe name="books_demos" class="embed-responsive-item" style="text-align:top; background-color:#e1e1e1;" src="./magazines.html?magazinenumber=1&pagestotal=14"></iframe>
+				<iframe name="books_demos" class="embed-responsive-item" style="text-align:top; background-color:transparent;" src="./magazines.html?magazinenumber=1&pagestotal=14"></iframe>
 				<!-- mag1 = 14 pages -->
 				</div>
 				<div class="card-body">
@@ -408,9 +439,9 @@ button.btn {
 	
 
             <div class="col">
-            <div class="card h-100" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, Etc...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, Etc...</p>
                 </div>
             </div>
             </div>
@@ -421,7 +452,7 @@ button.btn {
 	
 	
             <div class="col-md-6">	
-			<div class="card h-100">
+			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Luiz-Vaz-Camoes-CORES.jpg" target="_blank"><img class="card-img-top" src="./works/Luiz-Vaz-Camoes-CORES.jpg" alt="IMAGE"></a>
 				<p class="card-text"><br><b>Luís Vaz de Camões</b><br>Coloring an old illustration and image composition.</p>
@@ -430,7 +461,7 @@ button.btn {
 			</div>
 			
             <div class="col-md-6">	
-			<div class="card h-100">
+			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank"><img class="card-img-top" src="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" alt="IMAGE"></a>
 				<p class="card-text"><br><b>Monumento Afundamentos Portugueses</b><br>Photomontage and image composition.</p>
@@ -444,9 +475,9 @@ button.btn {
 	
 
             <div class="col">
-            <div class="card h-100" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual Photography Only</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual Photography Only</p>
                 </div>
             </div>
             </div>
@@ -457,12 +488,12 @@ button.btn {
 	
 	
 			<div class="col">
-            <div class="card h-100">	
+            <div id="my_body" class="card h-100">	
 	
-			<div class="container">
+			<div class="carousel-container">
 			<div class="row">
 			<div class="col-md-12">
-            <div id="custCarousel" class="carousel slide" data-ride="carousel" data-touch="true" align="center">
+            <div id="my_carousel" class="carousel slide" data-ride="carousel" data-touch="true" align="center">
                 
 				<!-- slides -->
                 <div class="carousel-inner">
@@ -577,41 +608,41 @@ button.btn {
 					</div>                 
 				
 				<!-- Left right -->
-				<a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
-				<a class="carousel-control-next" href="#custCarousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a> 
+				<a class="carousel-control-prev" href="#my_carousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
+				<a class="carousel-control-next" href="#my_carousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a> 
 				
 				</div>
 				
 				<!-- Thumbnails -->
                 <ol class="carousel-indicators list-inline">				
 				
-                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel"> <img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-1"  data-slide-to="1"  data-target="#custCarousel"> <img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-2"  data-slide-to="2"  data-target="#custCarousel"> <img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-3"  data-slide-to="3"  data-target="#custCarousel"> <img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-4"  data-slide-to="4"  data-target="#custCarousel"> <img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-5"  data-slide-to="5"  data-target="#custCarousel"> <img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-6"  data-slide-to="6"  data-target="#custCarousel"> <img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-7"  data-slide-to="7"  data-target="#custCarousel"> <img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-8"  data-slide-to="8"  data-target="#custCarousel"> <img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-9"  data-slide-to="9"  data-target="#custCarousel"> <img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-10" data-slide-to="10" data-target="#custCarousel"> <img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-11" data-slide-to="11" data-target="#custCarousel"> <img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-12" data-slide-to="12" data-target="#custCarousel"> <img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-13" data-slide-to="13" data-target="#custCarousel"> <img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-14" data-slide-to="14" data-target="#custCarousel"> <img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-15" data-slide-to="15" data-target="#custCarousel"> <img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-16" data-slide-to="16" data-target="#custCarousel"> <img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-17" data-slide-to="17" data-target="#custCarousel"> <img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-18" data-slide-to="18" data-target="#custCarousel"> <img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-19" data-slide-to="19" data-target="#custCarousel"> <img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-20" data-slide-to="20" data-target="#custCarousel"> <img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-21" data-slide-to="21" data-target="#custCarousel"> <img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-22" data-slide-to="22" data-target="#custCarousel"> <img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-23" data-slide-to="23" data-target="#custCarousel"> <img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-24" data-slide-to="24" data-target="#custCarousel"> <img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-25" data-slide-to="25" data-target="#custCarousel"> <img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-26" data-slide-to="26" data-target="#custCarousel"> <img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#my_carousel"> <img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-1"  data-slide-to="1"  data-target="#my_carousel"> <img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-2"  data-slide-to="2"  data-target="#my_carousel"> <img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-3"  data-slide-to="3"  data-target="#my_carousel"> <img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-4"  data-slide-to="4"  data-target="#my_carousel"> <img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-5"  data-slide-to="5"  data-target="#my_carousel"> <img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-6"  data-slide-to="6"  data-target="#my_carousel"> <img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-7"  data-slide-to="7"  data-target="#my_carousel"> <img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-8"  data-slide-to="8"  data-target="#my_carousel"> <img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-9"  data-slide-to="9"  data-target="#my_carousel"> <img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-10" data-slide-to="10" data-target="#my_carousel"> <img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-11" data-slide-to="11" data-target="#my_carousel"> <img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-12" data-slide-to="12" data-target="#my_carousel"> <img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-13" data-slide-to="13" data-target="#my_carousel"> <img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-14" data-slide-to="14" data-target="#my_carousel"> <img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-15" data-slide-to="15" data-target="#my_carousel"> <img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-16" data-slide-to="16" data-target="#my_carousel"> <img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-17" data-slide-to="17" data-target="#my_carousel"> <img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-18" data-slide-to="18" data-target="#my_carousel"> <img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-19" data-slide-to="19" data-target="#my_carousel"> <img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-20" data-slide-to="20" data-target="#my_carousel"> <img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-21" data-slide-to="21" data-target="#my_carousel"> <img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-22" data-slide-to="22" data-target="#my_carousel"> <img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-23" data-slide-to="23" data-target="#my_carousel"> <img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-24" data-slide-to="24" data-target="#my_carousel"> <img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-25" data-slide-to="25" data-target="#my_carousel"> <img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-26" data-slide-to="26" data-target="#my_carousel"> <img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
 					
                 </ol>				
 				
@@ -629,9 +660,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> 3D Models</h2>3D Interactive web</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 3D Models</h2>3D Interactive web</p>
                 </div>
             </div>
             </div>
@@ -642,8 +673,7 @@ button.btn {
 
 	
 			<div class="col">			
-            <div class="card h-100">				
-				<p class="card-text"><br>A few interactive 3D models examples:</p>
+            <div id="my_body" class="card h-100">				
 				<div class="embed-responsive embed-responsive-16by9">				
 				<iframe name="3D_Interactive" class="embed-responsive-item" src="works-3D/3D-eBike-ONE.html"></iframe>
 				</div>
@@ -666,9 +696,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Interactive Distributable Media</h2>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Interactive Distributable Media</h2>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</p>
                 </div>
             </div>
             </div>
@@ -679,7 +709,7 @@ button.btn {
 
 	
 			<div class="col">			
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">		
 				<p class="card-text">A few distributable media screenshots examples:</p>						
 				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">
@@ -704,9 +734,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
                 </div>
             </div>
             </div>
@@ -717,7 +747,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/knPLuCkjjc0?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -736,7 +766,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-_Ih1GK3uiE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -760,7 +790,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4z64zWKA11E?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -773,14 +803,14 @@ button.btn {
 				</p>
 				</div>
 				<div class="card-footer">				
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=52256" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
 				<a href="https://sourceforge.net/projects/pirates-the-rescue" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
                 </div>
             </div>
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qAyFq_JvNOI?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -793,7 +823,7 @@ button.btn {
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?t=39695" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a> <a href="https://sourceforge.net/projects/irrlichtmp/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a> <a href="https://sourceforge.net/projects/irrlichtmp/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
                 </div>
             </div>
 			</div>
@@ -804,7 +834,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/szthNnDYGEM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -823,7 +853,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_K8ThNRWugM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -847,7 +877,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lpI8KmQ4gBE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -862,7 +892,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9DQ062gicPg?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -882,7 +912,7 @@ button.btn {
 	
 				
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4rUGhlNCNho?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -895,13 +925,13 @@ button.btn {
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=36861&p=276732#p276732" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=36861&p=276732#p276732" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
                 </div>
             </div>
 			</div>
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GW5B4luLp7k?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -925,9 +955,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
                 </div>
             </div>
             </div>
@@ -938,7 +968,7 @@ button.btn {
 			
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oyOnf_CfoJw?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -954,7 +984,7 @@ button.btn {
 			</div>
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zWzWxBaILMQ?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -975,9 +1005,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
                 </div>
             </div>
             </div>
@@ -988,11 +1018,11 @@ button.btn {
 	
 	
 			<div class="col">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="card-body">
                 <p class="card-text">
 
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a><br>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a><br>
 				(Forum) - 3D Media Player. (New project, "source code" and "exe" file are available for download).<br>
 				(Project founder / Code and Graphics)<hr>
 				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><b>MOVE</b></a><br>
@@ -1030,7 +1060,7 @@ button.btn {
 				It´s a simple screensaver. Handles fullscreen mode, plays video files and displays current news headlights...<br>
 				(Project founder / Code and Graphics)
 				<hr>
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&amp;t=52256&amp;p=303504#p303504" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a><br>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&amp;t=52256&amp;p=303504#p303504" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a><br>
 				It´s a simple and easy game. For all family and friends to play. No skills required, it uses only 3 keys (up + down + fire) But it may require a fast computer, since all graphics are in 3D and it uses advanced 3D physics too...<br>
 				(Project founder / Code and Graphics)
 				<hr>
@@ -1049,7 +1079,7 @@ button.btn {
 		  
 		  
             <div class="col">
-            <div class="card">
+            <div id="my_body" class="card">
 				<div class="card-body">
 				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank"><img class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 600px;" src="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" alt="IMAGE"></a>
                 </div>
@@ -1066,9 +1096,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Electronic Hardware</h2>Arduino | Raspberry PI</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Electronic Hardware</h2>Arduino | Raspberry PI</p>
                 </div>
             </div>
             </div>
@@ -1079,7 +1109,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jwN24kiOXy8?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -1093,7 +1123,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IdRpxLCMnnU?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -1112,9 +1142,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> 2D Models</h2>Animated Muppets</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 2D Models</h2>Animated Muppets</p>
                 </div>
             </div>
             </div>
@@ -1125,7 +1155,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/90_eXI6tky8?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -1139,7 +1169,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qJjvoGp4Q8s?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
@@ -1158,9 +1188,9 @@ button.btn {
 	
 	
             <div class="col">
-            <div class="card" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Music</h2>Elektro Noize Experimentz</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Music</h2>Elektro Noize Experimentz</p>
                 </div>
             </div>
             </div>
@@ -1171,7 +1201,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4yrjLeibeFY?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
 				</div>
@@ -1185,7 +1215,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mfwbo1Bx1rA?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
 				</div>
@@ -1204,7 +1234,7 @@ button.btn {
 	
 	
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mr7LYTl74bY?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
 				</div>
@@ -1218,7 +1248,7 @@ button.btn {
 			</div>				
 			
 			<div class="col-md-6">			
-            <div class="card h-100">
+            <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7s1RvRAzg9A?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
 				</div>
@@ -1237,9 +1267,9 @@ button.btn {
 	
 
             <div class="col">
-            <div class="card h-100" style="background-color: #000000; color: #ffffff;">
+            <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many more all over the web...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many more all over the web...</p>
                 </div>
             </div>
             </div>
@@ -1250,7 +1280,7 @@ button.btn {
 	
 	
             <div class="col-md-6">	
-			<div class="card h-100">
+			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Dark-Metal-Skin-2.9.3-Small.jpg" target="_blank"><img class="card-img-top" src="./works/Dark-Metal-Skin-2.9.3-Small.jpg" alt="IMAGE"></a>
 				<p class="card-text"><br>
@@ -1260,13 +1290,13 @@ button.btn {
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="https://www.mixxx.org/forums/viewtopic.php?f=8&amp;t=6052" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>				
+				<a href="https://www.mixxx.org/forums/viewmy_topic.php?f=8&amp;t=6052" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>				
                 </div>
             </div>
 			</div>
 			
             <div class="col-md-6">	
-			<div class="card h-100">
+			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank"><img class="card-img-top" src="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" alt="IMAGE"></a>
 				<p class="card-text">
@@ -1284,8 +1314,8 @@ button.btn {
 	<div class="row">		
 
 
-            <div class="col">
-            <div class="card">
+            <div class="col" style="margin-bottom:40px;">
+            <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text" style="font-size: x-small;">
 				<i>With love to ASCR - This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
@@ -1300,8 +1330,6 @@ button.btn {
 
     </div>
     </div>
-
-</main>
 
 <!-- Webpage by Jorge Rosa -->
 <div style="background-color:#ffffff; color:#ffffff; opacity:0.0; width:0px; height:0px; display:none; visibility:hidden;">
