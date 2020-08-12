@@ -1,52 +1,1389 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
+<!doctype html>
+<html>
 <head>
-<title>3D MODELS - © 2018 Jorge Rosa</title>
-<meta charset="UTF-8" />
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" /> -->
-<!-- <meta name="s-web-app-capable" content="yes"/> -->
-<!-- <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"> -->
-<style>
+<title>JORGE ROSA - PORTFOLIO</title>
+<meta charset="utf-8">
+<meta name="robots" content="index"/>
+<link rel="icon" href="./index-2.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Jorge Rosa">
+<meta name="description" content="JORGE ROSA - PORTFOLIO">
+<!-- Bootstrap JAVASCRIPT and CSS -->
+<script src="./js/jquery-3.5.1.min.js"></script>
+<link href="./js/bootstrap-4.5.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="./js/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+<!-- Loading some heavy images (Replace the loading texts by the heavy images, but only after page is fully loaded) -->
+<script type="text/javascript">
+$(document).ready(function(){ $('#loading-img-01').attr('src','./works/Jorge-Rosa-Portfolio.jpg'); });
+$(document).ready(function(){ $('#loading-img-02').attr('src','./works/Luiz-Vaz-Camoes-CORES.jpg'); });
+$(document).ready(function(){ $('#loading-img-03').attr('src','./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg'); });
+$(document).ready(function(){ $('#loading-img-04').attr('src','./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg'); });
+$(document).ready(function(){ $('#loading-img-05').attr('src','./works/Dark-Metal-Skin-2.9.3-Small.jpg'); });
+$(document).ready(function(){ $('#loading-img-06').attr('src','./works/Plane-Fairey-IIID-Wallpaper-002.jpg'); });
+</script>
+
+<!-- Webpage by Jorge Rosa -->	
+<style type="text/css">
+
+/* Main CSS */
+
+html {
+	margin: 0px;
+	background-color: transparent;
+}
 body {
-font-family: Arial, Helvetica, sans-serif;
-font-size:20px;
-color:#BBBBBB;
-background-color:#000000;
-margin:0px;
-overflow:hidden;
+	margin: 0px;
+	background-color: transparent;
+	font-size: medium;	
 }
-#info {
-color:#BBBBBB;
-position:absolute;
-top:10px;
-width:100%;
-text-align:center;
-z-index:100;
-display:block;		
--webkit-touch-callout:none;
--webkit-user-select:none;
--khtml-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
-user-select:none;
+a.simple {
+	text-decoration: underline;
 }
-#info a, .button {
-font-weight:bold;
-color:#FFFFFF;
-text-decoration:none;
-width:100%;
-text-align:center;
+p {
+	vertical-align: text-top;
 }
-#progressbar {
-width:100px;
-height:500px;
-background:#000000;
-border:none;
+hr {
+	border: 1px solid rgba(0,0,0,0.30);
 }
+div.container {
+	border: 0px;
+}
+div.card {
+	border: 1px solid #000000;
+	background-color: #f5f5f5;
+	font-size: medium;
+	text-align: center;
+	margin: 0px;
+}
+div.card-group {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+div.col, div.col-md-4, div.col-md-6 {
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+iframe {
+	border: 0px solid #000000;
+	background-color: #000000;
+}
+img {
+	border: 0px;
+	background-color: transparent;
+}
+img.my_topicgif {
+	background-color: transparent;
+	margin-top: -8px;
+}
+img.bookgif {
+	background-color: transparent;
+	margin-top: -8px;
+	margin-right: 10px;
+	max-height: 30px;
+}
+img.modelgif {
+	background-color: transparent;
+	margin-top: -8px;
+	max-height: 50px;
+}	
+button.btn {
+	margin-top: auto;
+}
+#my_topic {
+	background-color: rgba(0,0,0,0.85);
+	color: #ffffff;
+}
+#my_body {
+	background-color: rgba(253,253,253,0.65);
+	color: #000000;
+}
+
+
+/* Carousel CSS */
+
+.carousel-container {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.carousel-item img {
+    width: 100%;
+}
+#my_carousel .carousel-indicators {
+    position: static;
+    margin-top: 0px;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+#my_carousel .carousel-indicators>li {
+    width: 60px;
+	margin: 10px;
+}
+#my_carousel .carousel-indicators li img {
+    display: block;
+	margin: 0px;
+    opacity: 0.60;
+}
+#my_carousel .carousel-indicators li.active img {
+	opacity: 1.00;
+}
+#my_carousel .carousel-indicators li:hover img {
+	opacity: 0.80;
+}
+#my_carousel .carousel-caption {	
+	max-width: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    left: 0px;
+	margin-bottom: -40px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	height: 60px;
+	width: 60px;
+	/* outline: black; */
+	border: 1px solid black;
+	border-radius: 50%;  
+	background-size: 100% 100%;
+	background-image: none;
+	background-color: #000000;
+}
+.carousel-control-next-icon:after
+{
+	content: '>';
+	font-size: 35px;
+	font-weight: bold;
+	color: #ffffff;
+}
+.carousel-control-prev-icon:after {
+	content: '<';
+	font-size: 35px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* Video CSS for PC */
+
+#bgvideo {
+	position: fixed;
+	z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+	#bgvideo {
+		width: 100%;
+		height: auto;
+	}
+}
+@media (max-aspect-ratio: 16/9){
+	#bgvideo {
+		width: auto;
+		height: 100%;
+	}
+}
+
+/* Video CSS for mobiles */
+
+@media (max-width: 767px){
+	#bgvideo {
+		display: none;
+	}
+	body {		
+		background: url('./videos/img-video.jpg');
+		background-size: cover;
+	}
+}
+
 </style>
+
+
 </head>
 <body>	
-<!-- HTML Displayers -->
-<div id="info"><br/><br/><br/><br/>Please, select the 3D Model to view: <br/><br/> | <a href="3D-eBike-ONE.html" target="_blank">3D MODEL N1</a> | <a href="3D-eBike-SEVENTEEN.html" target="_blank">3D MODEL N2</a> | <a href="3D-Fairey-IIID.html" target="_blank">3D MODEL N3</a> | </div>
+
+	
+	<!-- Background video -->
+	<video id="bgvideo" poster="./videos/img-video.jpg" autoplay muted loop> 
+	<source src="./videos/ocean.mp4" type="video/mp4">
+	</video>
+				
+
+	<!-- The portfolio -->
+    <div class="album" style="margin: 0px; background: transparent url('./works/overlay-1.png');">
+    <div class="container">
+
+	<div class="row">		
+	
+
+            <div class="col" style="margin-top: 40px;">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<a href="https://www.facebook.com/jorge.bigarte" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
+				<p class="card-text">
+				<h2><img class="my_topicgif" src="./works/gui-topic.gif"> Jorge Rosa - Portfolio</h2>
+				Portuguese Developer<br>
+				</p>
+                </div>
+            </div>
+            </div>
+			
+
+	</div>
+	<div class="row">
+
+
+            <div class="col">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				<p class="card-text">
+				<i>"Trying to give a meaning of life to all these wild binaries living in my computer"</i><br>
+				<i>"Por binários nunca dantes navegados"</i>
+				</p>
+				
+                </div>
+            </div>
+            </div>
+			
+
+    </div>
+	<div class="row">
+
+	
+            <div class="col">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				Email: <b><a href="mailto:jorge.bigarte@gmail.com" class="simple" target="_blank">jorge.bigarte@gmail.com</a></b>
+                </div>
+				<div class="card-footer">
+				<a href="https://www.facebook.com/jorge.bigarte" target="_blank" class="btn btn-primary my-2">Facebook</a> <a href="http://pt.linkedin.com/in/jorgerosadesign" target="_blank" class="btn btn-primary my-2">Linkedin</a> <a href="https://www.youtube.com/watch?v=3eMQdpeHZYk&amp;list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" target="_blank" class="btn btn-primary my-2">Youtube</a> <a href="http://twitter.com/jorgeerosa" target="_blank" class="btn btn-secondary my-2">Twitter</a> <a href="http://www.myspace.com/316847946" target="_blank" class="btn btn-secondary my-2">MySpace</a> <a href="http://vimeo.com/jorgerosa/videos" target="_blank" class="btn btn-secondary my-2">Vimeo</a> <a href="https://sourceforge.net/u/jorgerosa/profile" target="_blank" class="btn btn-secondary my-2">Sourceforge</a> <a href="https://github.com/jorgerosa" target="_blank" class="btn btn-secondary my-2">GitHub</a>
+				</div>
+            </div>
+            </div>
+			
+
+    </div>
+	<div class="row">
+
+		
+            <div class="col">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				<p class="card-text"><b>Programming Skills:</b></p>
+                <p class="card-text">
+				(HTML + CSS) ASP (Classic), PHP (All versions), SQL, MySQL, MariaDB, Flash (AS1,AS2,AS3), Java, Javascript, ANDROID (2.0+, 3.0+, 4.0+), ASP.Net, Ajax, Python, C, C#, C++... (Engines/Libraries: SDL, OpenGL... and using 2D and 3D graphics engines on it, eg: Ogre3D, Irrlicht... Physics: Bullet Physics), many more, etc... Operating Systems: Microsoft Windows, GNU/Linux (Ubuntu), ANDROID, etc... 
+				</p>
+				<p class="card-text"><b>Software User Skills:</b></p>
+                <p class="card-text">
+				Corel Draw, Photoshop, Gimp, Dreamweaver, 3D Studio Max, Blender, Indesign CS, Inkscape and... Many many many more ;)
+				</p>
+				<p class="card-text"><b>Idioms Skills:</b></p>
+                <p class="card-text">
+				Portuguese (native), english and french (But I also understand a few other idioms)
+				</p>
+                </div>
+            </div>
+            </div>	
+
+
+    </div>		
+    <div class="row">
+		  
+		  
+            <div class="col">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				<p class="card-text"><small><i>This is just a big static image, with some examples of my work</i></small></p>
+				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank">
+				<img id="loading-img-01" class="card-img-top" src="" alt="LOADING...">
+				</a>
+                </div>
+            </div>
+            </div>	
+
+
+    </div>		
+    <div class="row">
+	
+
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
+                </div>
+            </div>
+            </div>
+			
+
+	</div>
+	<div class="row">	
+
+			
+            <div class="card-group">
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Revista INVEST</b><br><small>Portuguese Magazine</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-007.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-007.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Business and economy - Work: Layout, paging, design, logos, illustrations, images, adverts, etc.
+				<div width="100%"><a href="./works/sic-tv-conversas-inprovaveis-001.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:100px;" src="./works/sic-tv-conversas-inprovaveis-001.png" alt="TV"></a></div>
+				<b>Revista INVEST</b> also has a TV talk show <b>Conversas Improváveis</b> done in partnership with <b>SIC Notícias</b>.
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://www.youtube.com/watch?v=bRH-_ZZQ1Ng&list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">TV Videos</a>
+                </div>
+            </div>
+
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Maravilhas</b><br><small>Portuguese / International Magazine</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc.
+				</p>
+                </div>
+            </div>
+				
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Notícias de Leiria</b><br><small>Portuguese Journal</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Leiria city local news - Work: Paging, design, logos, illustrations, images, adverts, etc.
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://www.facebook.com/jornalnoticiasdeleiria" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Facebook</a>
+                </div>				
+            </div>
+			
+            </div>	
+
+
+	</div>
+	<div class="row">	
+
+			
+            <div class="card-group">
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Prime Negócios</b><br><small>Portuguese Journal</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-002.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-002.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: National news and economy - Work: Layout, paging, design, logos, illustrations, images, adverts, etc.
+				</p>
+                </div>
+            </div>	
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>O Noti</b><br><small>Portuguese Magazine</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-003.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-003.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Didactic magazine for children - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
+				</p>
+                </div>
+            </div>			
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Revista Bruxinha</b><br><small>Portuguese Magazine</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-006.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-006.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Didactic magazine for children - Work: Paging only.
+				</p>
+                </div>
+            </div>
+			
+            </div>	
+			
+
+	</div>
+	<div class="row">	
+
+
+            <div class="card-group">
+
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Praça Stephens</b><br><small>Political Propaganda</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-008.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-008.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Political propaganda - Many different journals, outdoors, flyers, etc. Mostly for the <b>PS</b> and <b>PSD</b> political parties - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
+				</p>
+                </div>
+            </div>	
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Jornal do Comércio</b><br><small>Portuguese Journal</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-001.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-001.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Local news - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
+				</p>
+                </div>
+            </div>		
+			
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>GOING Magazine</b><br><small>Portuguese / International Magazine</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-004.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-004.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc.<br><br>
+				I also developed their webpage (Html and Javascript only)
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://jorgerosa.github.io/angelimoto/GOING-Magazine" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Webpage</a>
+                </div>
+            </div>
+			
+            </div>			
+			
+			
+	</div>
+	<div class="row" style="margin-top:10px;">
+	
+	
+            <div class="col">
+            <div id="my_body" class="card h-100">
+				<p class="card-text"><br><small><i>A few interactive magazines examples</i></small></p>
+				<div class="embed-responsive embed-responsive-16by9">				
+				<iframe name="books_demos" class="embed-responsive-item" style="text-align:top; background-color:transparent;" src="./magazines.html?magazinenumber=1&pagestotal=14"></iframe>
+				<!-- mag1 = 14 pages -->
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<img class="bookgif" src="./works/gui-book.gif"> Drag or click at the pages corners, or use the cursor keys.<br>				
+				<small>© All Copyrights Reserved <b>SunWires</b> (Cascais)</small>
+				</p>
+                </div>
+				<div class="card-footer">
+				<a href="./magazines.html?magazinenumber=1&pagestotal=14" target="books_demos" class="btn btn-primary my-2">Going N1</a> <a href="./magazines.html?magazinenumber=2&pagestotal=100" target="books_demos" class="btn btn-primary my-2">Going N2</a> <a href="./magazines.html?magazinenumber=3&pagestotal=84" target="books_demos" class="btn btn-primary my-2">Going N3</a>
+				</div>
+            </div>
+            </div>	
+
+			
+    </div>		
+    <div class="row" style="margin-top:5px;">
+	
+
+            <div class="col">
+            <div id="my_topic" class="card h-100">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, Etc...</p>
+                </div>
+            </div>
+            </div>
+			
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col-md-6">	
+			<div id="my_body" class="card h-100">
+				<div class="card-body">
+				<a href="./works/Luiz-Vaz-Camoes-CORES.jpg" target="_blank">
+				<img id="loading-img-02" class="card-img-top" src="" alt="LOADING...">
+				</a>
+				<p class="card-text"><br><b>Luís Vaz de Camões</b><br>Coloring an old illustration and image composition.</p>
+                </div>
+            </div>
+			</div>
+			
+            <div class="col-md-6">	
+			<div id="my_body" class="card h-100">
+				<div class="card-body">
+				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank">
+				<img id="loading-img-03" class="card-img-top" src="" alt="LOADING...">				
+				</a>
+				<p class="card-text"><br><b>Monumento Afundamentos Portugueses</b><br>Photomontage and image composition.</p>
+                </div>
+            </div>
+			</div>		
+			
+			
+	</div>
+	<div class="row" style="margin-top:5px;">
+	
+
+            <div class="col">
+            <div id="my_topic" class="card h-100">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual Photography Only</p>
+                </div>
+            </div>
+            </div>
+	
+	
+	</div>
+	<div class="row">
+	
+	
+			<div class="col">
+            <div id="my_body" class="card h-100">	
+	
+			<div class="carousel-container">
+			<div class="row">
+			<div class="col-md-12">
+            <div id="my_carousel" class="carousel slide" data-ride="carousel" data-touch="true" align="center">
+                
+				<!-- slides -->
+                <div class="carousel-inner">
+				
+					<div class="carousel-item active">
+					<img src="./works/foto-01-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Capela de Nossa Senhora da Encarnação<br>Founded 1588</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-02-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Moinho do Papel<br>Founded 1411</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-03-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Museu de Leiria - 2018</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-04-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">São Martinho do Porto</h3> <p>Bay and Beach - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-05-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">São Martinho do Porto</h3> <p>Docks at Bay - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-06-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Batalha</h3> <p>Viveiros S. Jorge - 2015</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-07-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Nazaré</h3> <p>Carnival Party - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-08-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Nazaré</h3> <p>Carnival Party - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-09-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Nazaré</h3> <p>Correio da Manhã TV<br>Carnival Party - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-10-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Sítio da Nazaré</h3> <p>Summer - 2020</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-11-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>William Stephens Royal Glass Factory<br>Founded 1773</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-12-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>Jardim Luís de Camões - 2010</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-13-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Fonte Luminosa - 2015</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-14-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>Hidden Kitty - 2015</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-15-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>Praça Guilherme Stephens - 2015</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-16-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>MIMO - Museu da Imagem em Movimento - 2018</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-17-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>William Stephens Arrival<br>Historical Recreation and Commemorations</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-18-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>William Stephens Arrival<br>Historical Recreation and Commemorations</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-19-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Batalha</h3> <p>Batalha Monastery<br>Founded 1385</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-20-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Batalha</h3> <p>Batalha Monastery<br>Founded 1385</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-21-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>Museu Joaquim Correia - 2017</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-22-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Leiria Cathedral<br>Tuna Académica - 2018</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-23-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Fonte Luminosa - 2016</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-24-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Sesimbra</h3> <p>Praia do Ribeiro do Cavalo<br>Parque Natural da Arrábida - 2015</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-25-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>Farratuga - Live Concert and Fireworks<br>Inside the Leiria Stadium - 2017</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-26-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Leiria</h3> <p>The Color Run - 2017</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-27-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>The Gift - Live Concert<br>Parque da Cerca - 2018</p> </div>
+					</div>                 
+				
+				<!-- Left right -->
+				<a class="carousel-control-prev" href="#my_carousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
+				<a class="carousel-control-next" href="#my_carousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a> 
+				
+				</div>
+				
+				<!-- Thumbnails -->
+                <ol class="carousel-indicators list-inline">				
+				
+                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#my_carousel"> <img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-1"  data-slide-to="1"  data-target="#my_carousel"> <img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-2"  data-slide-to="2"  data-target="#my_carousel"> <img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-3"  data-slide-to="3"  data-target="#my_carousel"> <img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-4"  data-slide-to="4"  data-target="#my_carousel"> <img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-5"  data-slide-to="5"  data-target="#my_carousel"> <img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-6"  data-slide-to="6"  data-target="#my_carousel"> <img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-7"  data-slide-to="7"  data-target="#my_carousel"> <img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-8"  data-slide-to="8"  data-target="#my_carousel"> <img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-9"  data-slide-to="9"  data-target="#my_carousel"> <img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-10" data-slide-to="10" data-target="#my_carousel"> <img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-11" data-slide-to="11" data-target="#my_carousel"> <img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-12" data-slide-to="12" data-target="#my_carousel"> <img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-13" data-slide-to="13" data-target="#my_carousel"> <img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-14" data-slide-to="14" data-target="#my_carousel"> <img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-15" data-slide-to="15" data-target="#my_carousel"> <img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-16" data-slide-to="16" data-target="#my_carousel"> <img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-17" data-slide-to="17" data-target="#my_carousel"> <img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-18" data-slide-to="18" data-target="#my_carousel"> <img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-19" data-slide-to="19" data-target="#my_carousel"> <img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-20" data-slide-to="20" data-target="#my_carousel"> <img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-21" data-slide-to="21" data-target="#my_carousel"> <img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-22" data-slide-to="22" data-target="#my_carousel"> <img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-23" data-slide-to="23" data-target="#my_carousel"> <img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-24" data-slide-to="24" data-target="#my_carousel"> <img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-25" data-slide-to="25" data-target="#my_carousel"> <img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-26" data-slide-to="26" data-target="#my_carousel"> <img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					
+                </ol>				
+				
+            </div>
+			</div>
+			</div>
+			</div>
+			
+			</div>
+			</div>
+
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 3D Low Poly Models</h2>3D Interactive web</p>
+                </div>
+            </div>
+            </div>
+
+
+	</div>
+	<div class="row">	
+
+	
+			<div class="col">			
+            <div id="my_body" class="card h-100">				
+				<div class="embed-responsive embed-responsive-16by9">				
+				<iframe name="3D_Interactive" class="embed-responsive-item" src="works-3D/3D-eBike-ONE.html"></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<img class="modelgif" src="./works/gui-models.gif"> Use your mouse to drag over the above 3D models.
+				</p>				
+                </div>
+				<div class="card-footer">
+				<a href="works-3D/3D-eBike-ONE.html" target="3D_Interactive" class="btn btn-primary my-2">3D Model N1</a>
+				<a href="works-3D/3D-eBike-SEVENTEEN.html" target="3D_Interactive" class="btn btn-primary my-2">3D Model N2</a>
+				<a href="works-3D/3D-Fairey-IIID.html" target="3D_Interactive" class="btn btn-primary my-2">3D Model N3</a>
+				</div>
+            </div>
+			</div>	
+
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Interactive Distributable Media</h2>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</p>
+                </div>
+            </div>
+            </div>
+
+
+	</div>
+	<div class="row">	
+
+	
+			<div class="col">			
+            <div id="my_body" class="card">
+				<div class="card-body">		
+				<p class="card-text"><small><i>A few distributable media screenshots examples</i></small></p>						
+				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">
+				<img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 600px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE">
+				</a>				
+				<p class="card-text"><br><b>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</b><br>
+				<small>They all automatically autorun in fullscreen mode on the user´s computers. They all contain informative texts, animations, videos, photo galleries, sound effects, background musics, utilities, many user options, many extras, etc...</small></p>	
+				</div>
+				<div class="card-footer">
+				<button onclick="document.getElementById('CD_img').src='works/Interactive-CD-01.jpg'; document.getElementById('CD_link').href='works/Interactive-CD-01.jpg';" class="btn btn-primary my-2">Media N1</button>
+				<button onclick="document.getElementById('CD_img').src='works/Interactive-CD-02.jpg'; document.getElementById('CD_link').href='works/Interactive-CD-02.jpg';" class="btn btn-primary my-2">Media N2</button>
+				<button onclick="document.getElementById('CD_img').src='works/Interactive-CD-03.jpg'; document.getElementById('CD_link').href='works/Interactive-CD-03.jpg';" class="btn btn-primary my-2">Media N3</button>
+				<button onclick="document.getElementById('CD_img').src='works/Interactive-CD-04.jpg'; document.getElementById('CD_link').href='works/Interactive-CD-04.jpg';" class="btn btn-primary my-2">Media N4</button>
+				<button onclick="document.getElementById('CD_img').src='works/Interactive-CD-05.jpg'; document.getElementById('CD_link').href='works/Interactive-CD-05.jpg';" class="btn btn-primary my-2">Media N5</button>
+				</div>
+            </div>
+			</div>
+
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/knPLuCkjjc0?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				2D Game: <b>Unknown Invaders</b><br>
+				(SFML | Free Opensource Game)<br>				
+				So, you never saw an UFO?... Here it is a simple and easy game, for all family, with a bunch of them!<br>
+				Portable, no install is required.<br>
+				</p>				
+                </div>
+				<div class="card-footer">
+				<a href="https://sourceforge.net/projects/unknown-invaders-game/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+				</div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-_Ih1GK3uiE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				2D Game: <b>Quizzy</b><br>
+				(SDL | Free Didactic Game)<br>				
+				A didactic simple game, for all family.<br>
+				Portable, no install is required.<br>
+				</p>				
+                </div>
+				<div class="card-footer">
+				<a href="https://www.facebook.com/QuizzyGame" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Facebook</a>
+				</div>
+            </div>
+			</div>	
+			
+
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4z64zWKA11E?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Game: <b>Pirates! The Rescue...</b><br>
+				(Irrlicht | Bullet Physics | Free Opensource Game)<br>				
+				Free easy game, designed specially for children. No blood, no kills, no zombies, etc.<br>
+				Portable, no install is required.<br>
+				</p>
+				</div>
+				<div class="card-footer">				
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=52256" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+				<a href="https://sourceforge.net/projects/pirates-the-rescue" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qAyFq_JvNOI?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Player: <b>Irrlicht Music Player</b><br>
+				(Irrlicht | Audiere | Free Opensource Player)<br>				
+				3D Music Player / Karaoke Player.<br>
+				Portable, no install is required.<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a> <a href="https://sourceforge.net/projects/irrlichtmp/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+                </div>
+            </div>
+			</div>
+			
+
+	</div>
+	<div class="row">
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/szthNnDYGEM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Demo: <b>Factory Demo</b>
+				<br>(Irrlicht | Audiere)<br>				
+				An very old 3D project, with some fancy features.<br>
+				Portable, no install is required. Download is a 11Mb Zip file.<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://sites.google.com/site/jorgerosaportfolio/home/3D-FABRICA.zip" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_K8ThNRWugM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Demo: <b>Fairey IIID</b><br>
+				(Irrlicht | Audiere | Free Opensource Demo)<br>				
+				Be with the Portuguese Gago Coutinho pilot, on his greatest historical adventure.<br>
+				Portable, no install is required.<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+                </div>
+            </div>
+			</div>
+			
+			
+    </div>
+	<div class="row">
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lpI8KmQ4gBE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Demo: <b>Marinha Grande</b>
+				<br>(Ogre 3D)<br>				
+				An very old 3D internal project about Marinha Grande city.<br>
+				</p>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9DQ062gicPg?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Game: <b>Pinball Arcade Machine</b><br>
+				(Ogre 3D | Bullet Physics | Ubuntu GNU/Linux)<br>				
+				An very old 3D internal arcade machine project.<br>
+				</p>
+                </div>
+            </div>
+			</div>
+			
+			
+    </div>
+	<div class="row">	
+	
+				
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4rUGhlNCNho?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Game: <b>Truck</b>
+				<br>(Irrlicht | Bullet Physics)<br>				
+				An very old 3D game project for children<br>
+				Only some C++ code is available.<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=36861&p=276732#p276732" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+                </div>
+            </div>
+			</div>
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GW5B4luLp7k?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Game: <b>Turbo Motocross</b><br>
+				(SDL)<br>				
+				An very old project. Developed in partnership with Jason Gauci<br>
+				(Google Research Labs / Apple Data Scientist)<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://www.facebook.com/turbo.motocross" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Facebook</a>
+                </div>
+            </div>
+			</div>
+
+			
+    </div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+			
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oyOnf_CfoJw?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				2D Game: <b>Pinball Game</b>
+				<br>(Box2D Physics)<br>				
+				Just a boring testing and debugging video.<br>
+				Testing a 2D pinball game.
+				</p>
+				</div>
+            </div>
+			</div>
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zWzWxBaILMQ?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				3D Game: <b>Football Game</b>
+				<br>(Irrlicht | Bullet Physics)<br>				
+				Just a boring testing and debugging video.<br>
+				This football game has national and club teams. Men and women players. The target is to have lots of fun, fast and simple playability.
+				</p>
+				</div>
+            </div>
+			</div>
+			
+			
+	</div>	
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col">			
+            <div id="my_body" class="card h-100">
+				<div class="card-body">
+                <p class="card-text">
+
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a><br>
+				(Forum) - 3D Media Player. (New project, "source code" and "exe" file are available for download).<br>
+				(Project founder / Code and Graphics)<hr>
+				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><b>MOVE</b></a><br>
+				Mixxx Visual Effects - 3D Visuals. New project, "source code" and "exe" file are available for download.<br>
+				(Project founder / Code and Graphics)
+				<hr>
+				<a href="https://sourceforge.net/projects/uemmc/" class="simple" target="_blank"><b>UEMMC</b></a><br>
+				UE Minimal Media Converter - Portable tool (no installation required) to convert between many many audio and video formats.<br>
+				(Project founder / Code)
+				<hr>
+				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple" target="_blank"><b>MONITOR</b></a><br>
+				Monitors for CCTV - IP Cameras, etc - Portable application (no installation required) to view and record video from cameras, etc, etc.<br>
+				(Project founder / Code)<hr>
+				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple" target="_blank"><b>iteam</b></a><br>
+				(Forum) - Game. Similar to gunbound and worms classic games.<br>
+				(Graphics leader)
+				<hr>
+				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple" target="_blank"><b>isoccer</b></a><br>
+				(Forum) - Game. Similar to sensible soccer classic game.<br>
+				(Project founder)
+				<hr>
+				<a href="http://www.ubuntugames.org" class="simple" target="_blank"><b>ubuntugames.org</b></a><br>
+				News and reviews, focusing on GNU/Linux (Ubuntu) games.<br>
+				(Colaborator / Moderator)
+				<hr>
+				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple" target="_blank"><b>FlaQuizTV</b></a><br>
+				It´s a full free flash quiz game, that i´m still developing for all community, and it intends to be fun for all family. (.SWF,.FLA and . EXE available for download)<br>
+				(Project founder / Code and Graphics)
+				<hr>
+				<a href="https://sourceforge.net/projects/mini-office/" class="simple" target="_blank"><b>Mini Office</b></a><br>
+				It´s a simple office application, only helps on VAT calculations in a simple and very fast way. Still... it has some other small fancy features too...<br>
+				(Project founder / Code and Graphics)
+				<hr>
+				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple" target="_blank"><b>Screensaver</b></a><br>
+				It´s a simple screensaver. Handles fullscreen mode, plays video files and displays current news headlights...<br>
+				(Project founder / Code and Graphics)
+				<hr>
+				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&amp;t=52256&amp;p=303504#p303504" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a><br>
+				It´s a simple and easy game. For all family and friends to play. No skills required, it uses only 3 keys (up + down + fire) But it may require a fast computer, since all graphics are in 3D and it uses advanced 3D physics too...<br>
+				(Project founder / Code and Graphics)
+				<hr>
+				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple" target="_blank"><b>Fairey IIID</b></a><br>
+				(Gago Coutinho e Sacadura Cabral) - It´s a simple app. Only developed to share the code, coud be used as a cool "screensaver" too...<br>
+				(Project founder / Code and Graphics)
+
+				</p>
+                </div>
+            </div>
+			</div>			
+			
+
+	</div>	
+    <div class="row">
+		  
+		  
+            <div class="col">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank">
+				<img id="loading-img-04" class="card-img-top" src="" alt="LOADING...">	
+				</a>
+                </div>
+				<p class="card-text">
+				ANDROID Application: <b>M.A.I.O.</b><br>
+				An old app used only for marketing use purposes <i>(My only app example on the web)</i><br><br>
+				</p>
+            </div>
+            </div>	
+
+
+    </div>	
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Electronic Hardware</h2>Arduino | Raspberry PI</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jwN24kiOXy8?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				Arduino UNO: <b>Speedometer</b><br>
+				Gauge for electric vehicles<br>
+				</p>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IdRpxLCMnnU?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				Arduino UNO: <b>Locker</b><br>
+				Digital locker for doors<br>				
+				</p>
+                </div>
+            </div>
+			</div>	
+			
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 2D Models</h2>Animated Muppets</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/90_eXI6tky8?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Pantomineiro Joel</b><br>
+				Music By: Pedro Olívio<br>
+				</p>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qJjvoGp4Q8s?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Os Fudinhas</b><br>
+				Music By: Amigos do Nico<br>				
+				</p>
+                </div>
+            </div>
+			</div>	
+			
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col">
+            <div id="my_topic" class="card">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Music</h2>Elektro Noize Experimentz</p>
+                </div>
+            </div>
+            </div>
+			
+			
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4yrjLeibeFY?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Voyage</b><br>
+				(100 Expressão)<br>
+				</p>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mfwbo1Bx1rA?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Meninas Vamos ao Vira</b><br>
+				(Portuguese Traditional Music)<br>				
+				</p>
+                </div>
+            </div>
+			</div>	
+			
+
+	</div>
+	<div class="row">	
+	
+	
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Mr7LYTl74bY?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Crown Of Thorns</b><br>
+				(100 Expressão)<br>
+				</p>
+                </div>
+            </div>
+			</div>				
+			
+			<div class="col-md-6">			
+            <div id="my_body" class="card h-100">
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7s1RvRAzg9A?list=PL5E8x5IWx2VJ7oITpXlzc3dGOcj1iYL7o" allowfullscreen></iframe>
+				</div>
+				<div class="card-body">
+                <p class="card-text">
+				<b>Summer Night</b><br>
+				(100 Expressão)<br>				
+				</p>
+                </div>
+            </div>
+			</div>	
+			
+
+	</div>
+    <div class="row">
+	
+
+            <div class="col">
+            <div id="my_topic" class="card h-100">
+				<div class="card-body">
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many more all over the web...</p>
+                </div>
+            </div>
+            </div>
+			
+
+	</div>
+	<div class="row">
+	
+	
+            <div class="col-md-6">	
+			<div id="my_body" class="card h-100">
+				<div class="card-body">
+				<a href="./works/Dark-Metal-Skin-2.9.3-Small.jpg" target="_blank">
+				<img id="loading-img-05" class="card-img-top" src="" alt="LOADING...">				
+				</a>
+				<p class="card-text"><br>
+				MIXXX: <b>Dark Metal Skin</b><br>
+				An elaborated skin, with many fancy functions, that I´ve developed for this great and free DJ software, that I use.<br>
+				(Graphics are 100% Vectorial / SVG. All created using Inkscape)<br>
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://www.mixxx.org/forums/viewmy_topic.php?f=8&amp;t=6052" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>				
+                </div>
+            </div>
+			</div>
+			
+            <div class="col-md-6">	
+			<div id="my_body" class="card h-100">
+				<div class="card-body">
+				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank">
+				<img id="loading-img-06" class="card-img-top" src="" alt="LOADING...">	
+				</a>
+				<p class="card-text">
+				<br><b>Wallpapers</b><br>Miscelaneous, very old ones.
+				</p>
+				</div>
+				<div class="card-footer">
+				<a href="https://my.desktopnexus.com/jorgerosa/uploads" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Website</a>				
+                </div>
+            </div>
+			</div>		
+			
+			
+	</div>	
+	<div class="row">		
+
+
+            <div class="col" style="margin-bottom:40px;">
+            <div id="my_body" class="card">
+				<div class="card-body">
+				<p class="card-text" style="font-size: small;">
+				<i>With love to ASCR - This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
+				</p>
+                </div>
+            </div>
+            </div>
+			
+
+    </div>
+
+
+    </div>
+    </div>
+
+<!-- Webpage by Jorge Rosa -->
+<div style="background-color:#ffffff; color:#ffffff; opacity:0.0; width:0px; height:0px; display:none; visibility:hidden;">
+Jorge Rosa - Portfolio - Portuguese Developer Freelancer - keywords - tags - key, word, words, google, gmail, gtalk, messanger, msn, &nbsp;jorge.bigarte@gmail.com, jorgerosadesign@gmail.com, jorgerosa, jorgeerosa, jorge.bigarte, bigarte, jorgerosadesign, design, &nbsp;jorge, rosa, jorge rosa, job, jobs, email, e-mail, mail, gmail, google, bigarte, FlaQuizTV, free, open, game, games, jogo, jogos, gratuito, gratuitos, criança, crianças, kid, kids, toda, familia, família, all, idade, idades, age, ages, family, simples, fácil, sofia, completo, completos, full, source, c, python, cpp, c+, cp, c++, cpp, c#, sharp, csharp, c-sharp, dot, web, net, .net, flash, banners, windows, apache, php, sql, mysql, asp, asp.net, data, databases, bases, dados, 2d, 25d, 2.5d, 2,5d, 3d, 4d, studio, studios, estudio, estúdio, foto, montage, montagem, tratamento, tratador, max, irrlicht, ogre, linux, iteam, isoccer, licence, opensource, freelancer, web, webdesign, webdesigner, webmaster, website, websites, sites, pc, desktop, application, applications, aplicação, aplicações, nuvem, cloud, informatica, informáticas, informatico, informático, computador, pc, pessoal, mesa, foto, fotos, montage, montagem, portugal, portuguesa, portugues, português, portuguese, cadima, national, nacional, pai, free, lancer, ana, free-lancer, freelancer, part, time, part-time, full, full-time, centro, lisbon, lisboa, coimbra, leiria, oporto, porto, europe, design, designer, programador, programação, internet, net, web, informática, informático, computador, computadores, pc, gnu, multi, independent, independant, platform, platforms, linux, ubuntu, mac, aplicações, software, hardware, desenho, art, arte, arts, artes, grafica, gráficas, arranjo, production, producao, produção, grafica, gráfica, gráfico, grafismo, tratamento, desenvolvimento, graphics, cartoon, cartoons, digital, logo, logotypes, logotipo, logotipos, logótipo, logótipos, corporate, image, images, imagem, imagens, estacionario, tiragem, ficha, técnica, jornalistas, jornalismo, fotografia, fotoreportagem, reportagem, publicação, periodica, periódica, periocidade, diário, semanário, semanal, mensal, mensalmente, anual, estacionário, marca, pequena, pequenas, media, médias, empresa, empresas, pme, pmes, press, news, magazine, magazines, paper, indesign, photoshop, corel, draw, scribus, publish, published, print, page, pages, página, paginação, paginador, pro, profissional, jornal, jornais, revista, revistas, ebooks, e-books, book, books, pdf, jpg, tif, eps, gif, library, biblioteca, bibliotecas, linha, linhas, antiga, ancient, classic, classica, clássica, modern, moderno, modernas, traco, tracos, traço, traços, livro, rosa, livros, capa, contra, cover, covers, open, source, desktop, publishing, desktop publishing, service, services, serviço, serviços, profissional, profissionais, imprensa, escrita, pro, flyers, catalog, catalogue, catálogos, interactivo, interactive, interactife, cd, usb, dvd, media, agência, agências, publicidade, agency, multi, multimedia, multi média, media, média, midia, mídia, tv, televisão, Concepção de layout e produção, interior, exterior, interiores, exteriores, montra, montras, cartao, cartoes, cartões, apresentacao, apresentação, comerciais, comercial, anuncios, anúncios, announces, video, edição, digital, dígital, paper, papel, browser, editor, realizador, realização, trabalho, trabalhos, exemplo, exemplos, portfolio, portofolio, port, folio, curriculum, vitae, curriculo, currículo, técnica, técnico, tecnico, creative, creativo, criativo, examples, show, show case, case, show-case, on, online, on-line, line, download, downloads, descarregar, comunicar, comunicacao, comunicação, marketing, client, clientes, clients, layout, layouts, space, espaco, espaços, area, areas, scratch, scratches, criar, criacao, criação, criador, de, noticias, notícias, producao, produção, artistica, artística, concepcao, concecao, concepção, conceção, work, 2006, material, promoção, promocional, cartaz, cartazes, indoor, outdoor, outdoors, invite, invitations, convite, convites, personalizado, personalizados, tabela, tabelas, precos, preços, preçarios, publicidade, anúncio, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+</div>
+
+
+
+
 </body>
 </html>
