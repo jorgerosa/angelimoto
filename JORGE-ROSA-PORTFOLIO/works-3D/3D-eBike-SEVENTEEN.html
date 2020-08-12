@@ -53,7 +53,9 @@ margin: 0 auto;
 }
 */
 
-#container_gif {
+/* Loading */
+
+#loading_container {
 width: 50px;
 height: 50px;
 position: fixed;
@@ -65,7 +67,7 @@ margin-top: -25px;
 margin-left: -25px;
 border: 0px solid #000000;
 }
-#loading_gif {
+#loading_image {
 border: 0px solid #000000;
 }
 </style>
@@ -74,9 +76,7 @@ border: 0px solid #000000;
 
 <!-- HTML Displayers -->
 <!-- <div id="progressbar"></div> -->
-<div id="container_gif">
-<img id="loading_gif" src="loading.gif" alt="Loading...">
-</div>
+<div id="loading_container"><img id="loading_image" src="loading.gif" alt="Loading..."></div>
 
 <div id="info"></div>
 
@@ -287,8 +287,8 @@ border: 0px solid #000000;
 	*/	
 
 	// Animated Loading GIF:
-	var container_gif = document.getElementById('container_gif');
-	var loading_gif = document.getElementById('loading_gif');	
+	var loading_container = document.getElementById('loading_container');
+	var loading_image = document.getElementById('loading_image');	
 	var loadingmanager = new THREE.LoadingManager();
 	// Loading...
 	loadingmanager.onProgress = function (item, loaded, total) {
@@ -296,20 +296,20 @@ border: 0px solid #000000;
 	};
 	// Loaded...
 	loadingmanager.onLoad = function () {	
-	container_gif.style.display = 'none';       // Hide
-	container_gif.style.visibility = 'hidden';  // Hide
-	loading_gif.style.display = 'none';         // Hide
-	loading_gif.style.visibility = 'hidden';    // Hide
+	loading_container.style.display = 'none';       // Hide
+	loading_container.style.visibility = 'hidden';  // Hide
+	loading_image.style.display = 'none';           // Hide
+	loading_image.style.visibility = 'hidden';      // Hide
 	// document.getElementById('info').innerHTML = 'Botão esquerdo do RATO: <strong>Rotação</strong>';
-	console.log('All items were loaded!');      // Write to console...	
+	console.log('All items were loaded!');          // Write to console...	
 	};
 	// Error...
 	loadingmanager.onError = function () {
-	container_gif.style.display = 'none';       // Hide
-	container_gif.style.visibility = 'hidden';  // Hide
-	loading_gif.style.display = 'none';         // Hide
-	loading_gif.style.visibility = 'hidden';    // Hide
-    console.log('There has been an error...');  // Write to console...
+	loading_container.style.display = 'none';      // Hide
+	loading_container.style.visibility = 'hidden'; // Hide
+	loading_image.style.display = 'none';          // Hide
+	loading_image.style.visibility = 'hidden';     // Hide
+    console.log('There has been an error...');     // Write to console...
 	};
 	
 	
