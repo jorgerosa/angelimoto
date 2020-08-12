@@ -12,7 +12,7 @@
 <script src="./js/jquery-3.5.1.min.js"></script>
 <link href="./js/bootstrap-4.5.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="./js/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
-<!-- Loading some heavy images (Replace the light thumbnails by the real heavy ones) -->
+<!-- Loading some heavy images (Replace the loading texts by the heavy images, but only after page is fully loaded) -->
 <script type="text/javascript">
 $(document).ready(function(){ $('#loading-img-01').attr('src','./works/Jorge-Rosa-Portfolio.jpg'); });
 $(document).ready(function(){ $('#loading-img-02').attr('src','./works/Luiz-Vaz-Camoes-CORES.jpg'); });
@@ -204,11 +204,13 @@ button.btn {
 <body>	
 
 	
+	<!-- Background video -->
 	<video id="bgvideo" poster="./videos/img-video.jpg" autoplay muted loop> 
 	<source src="./videos/ocean.mp4" type="video/mp4">
 	</video>
 				
 
+	<!-- The portfolio -->
     <div class="album" style="margin: 0px; background: transparent url('./works/overlay-1.png');">
     <div class="container">
 
@@ -406,6 +408,16 @@ button.btn {
 
 
             <div class="card-group">
+
+            <div id="my_body" class="card">
+				<div class="card-body">
+                <p class="card-text"><b>Praça Stephens</b><br><small>Political Propaganda</small></p>
+				<div width="100%"><a href="./works/jorge-rosa-paginacao-008.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-008.png" alt="PRESS"></a></div>
+				<p class="card-text">
+				Topics: Political propaganda - Pagined many different journals, outdoors, flyers, etc. for political parties, such as <b>PS</b>, <b>PSD</b> and others. Work: Paging, design, logos, illustrations, draws, images, adverts, etc.
+				</p>
+                </div>
+            </div>	
 			
             <div id="my_body" class="card">
 				<div class="card-body">
