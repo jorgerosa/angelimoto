@@ -204,6 +204,23 @@ button.btn {
 	}
 }
 
+
+/* Mouser over linkable images CSS */
+
+.my_zoom { 
+	opacity: 0.98;
+	overflow: hidden; 
+	margin: 0 auto; 
+}      
+.my_zoom img { 
+	opacity: 0.98;
+	width: 100%; 
+	transition: 0.2s all ease-in-out; 
+}      
+.my_zoom:hover img { 
+	opacity: 1.00;
+	transform: scale(1.01); 
+}
 </style>
 
 
@@ -297,19 +314,19 @@ button.btn {
 
     </div>		
     <div class="row">
-		  
-		  
+
+
             <div class="col">
             <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text"><small><i>This is just a big static image, with some examples of my work</i></small></p>
-				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank">
-				<img id="loading-img-01" class="card-img-top" src="" alt="LOADING...">
+				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank">				
+				<div class="my_zoom"> <img id="loading-img-01" class="card-img-top" src="" alt="LOADING..."> </div>				
 				</a>
                 </div>
             </div>
-            </div>	
-
+            </div>
+			
 
     </div>		
     <div class="row">
@@ -513,8 +530,8 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Luiz-Vaz-Camoes-CORES.jpg" target="_blank">
-				<img id="loading-img-02" class="card-img-top" src="" alt="LOADING...">
-				</a>
+				<div class="my_zoom"> <img id="loading-img-02" class="card-img-top" src="" alt="LOADING..."> </div>	
+				</a>	
 				<p class="card-text"><br><b>Luís Vaz de Camões</b><br>Coloring an old illustration and image composition.</p>
                 </div>
             </div>
@@ -524,7 +541,7 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank">
-				<img id="loading-img-03" class="card-img-top" src="" alt="LOADING...">				
+				<div class="my_zoom"> <img id="loading-img-03" class="card-img-top" src="" alt="LOADING..."> </div>		
 				</a>
 				<p class="card-text"><br><b>Monumento Afundamentos Portugueses</b><br>Photomontage and image composition.</p>
                 </div>
@@ -789,8 +806,8 @@ button.btn {
             <div id="my_body" class="card">
 				<div class="card-body">		
 				<p class="card-text"><small><i>A few distributable media screenshots examples</i></small></p>						
-				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">
-				<img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid; max-width: 700px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE">
+				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">				
+				<div class="my_zoom"> <img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid; max-width: 700px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE"> </div>				
 				</a>				
 				<p class="card-text"><br><b>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</b><br>
 				<small>They all automatically autorun in fullscreen mode on the user´s computers. They all contain informative texts, animations, videos, photo galleries, sound effects, background musics, utilities, many user options, many extras, etc...</small></p>	
@@ -1263,7 +1280,7 @@ button.btn {
             <div id="my_body" class="card">
 				<div class="card-body">
 				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank">
-				<img id="loading-img-04" class="card-img-top" style="max-width:700px;" src="" alt="LOADING...">	
+				<div class="my_zoom"> <img id="loading-img-04" class="card-img-top" style="max-width:700px;" src="" alt="LOADING..."> </div>		
 				</a>
 				<p class="card-text">
 				<br>
@@ -1467,7 +1484,7 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Dark-Metal-Skin-2.9.3-Small.jpg" target="_blank">
-				<img id="loading-img-05" class="card-img-top" src="" alt="LOADING...">				
+				<div class="my_zoom"> <img id="loading-img-05" class="card-img-top" src="" alt="LOADING..."> </div>				
 				</a>
 				<p class="card-text"><br>
 				MIXXX: <b>Dark Metal Skin</b><br>
@@ -1485,7 +1502,7 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Plane-Fairey-IIID-Wallpaper-002.jpg" target="_blank">
-				<img id="loading-img-06" class="card-img-top" src="" alt="LOADING...">	
+				<div class="my_zoom"> <img id="loading-img-06" class="card-img-top" src="" alt="LOADING..."> </div>
 				</a>
 				<p class="card-text">
 				<br><b>Wallpapers</b><br>Miscelaneous, very old ones.
