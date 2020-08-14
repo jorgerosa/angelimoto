@@ -19,6 +19,18 @@ overflow-x:hidden;
 overflow-y:hidden;
 margin:0px;
 }
+
+.my_hidden {
+background-color:transparent;
+color:#ffffff;
+opacity:0.0;
+width:0px;
+height:0px;
+display:none;
+visibility:hidden;
+}
+
+
 </style>
 </head>
 <body style="background:transparent;" oncontextmenu="return false;">
@@ -26,10 +38,12 @@ margin:0px;
 <!-- <a href="magazines.html?magazinenumber=3&pagestotal=84" >exemplo</a> -->
  
 <div id="canvas">
-<div class="zoom-icon zoom-icon-in"></div>
+<div class="my_hidden">
+<!-- <div class="zoom-icon zoom-icon-in"></div> -->
+</div>
 <div class="magazine-viewport">
 <div class="container">
-<div class="magazine" style="vertical-align:top; margin-top:0px;">
+<div class="magazine" style="margin:0px; vertical-align:top; margin-top:0px;">
 
 <!-- Next button -->
 <!-- <div ignore="1" class="next-button"></div> -->
@@ -38,7 +52,8 @@ margin:0px;
 
 </div>
 </div>
-<div class="bottom">
+<!-- <div class="bottom"> -->
+<div class="my_hidden">
 <div id="slider-bar" class="turnjs-slider">
 <div id="slider"></div>
 </div>
@@ -105,12 +120,12 @@ flipbook.turn({
 		
 // Magazine width (Edited in "magazine.css" too)
 // width: 318*2,
-width: 800,
+width: 1300,
 // Magazine height (Edited in "magazine.css" too)
 // height: 450,
-height: 550,
+height: 900,
 // Page Flip duration in millisecond
-duration: 1000,
+duration: 800,
 // Enables gradients
 gradients: true,			
 // Auto center this flipbook
