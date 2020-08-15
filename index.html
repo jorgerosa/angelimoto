@@ -9,12 +9,12 @@
 <meta name="author" content="Jorge Rosa">
 <meta name="description" content="JORGE ROSA - PORTFOLIO">
 <!-- Bootstrap JAVASCRIPT and CSS -->
-<script src="./js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
 <link href="./js/bootstrap-4.5.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
-<script src="./js/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
 <!-- Loading some heavy images (Replace the loading texts by the heavy images, but only after page is fully loaded) -->
 <script type="text/javascript">
-$(document).ready(function(){ $('#loading-img-01').attr('src','./works/Jorge-Rosa-Portfolio.jpg'); });
+$(document).ready(function(){ $('#loading-img-01').attr('src','./works/thumbnails/Jorge-Rosa-Portfolio.jpg'); });
 $(document).ready(function(){ $('#loading-img-02').attr('src','./works/Luiz-Vaz-Camoes-CORES.jpg'); });
 $(document).ready(function(){ $('#loading-img-03').attr('src','./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg'); });
 $(document).ready(function(){ $('#loading-img-04').attr('src','./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg'); });
@@ -56,14 +56,15 @@ div.card {
 	margin: 0px;
 }
 div.card-group {
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 div.col, div.col-md-4, div.col-md-6 {
 	margin-bottom: 10px;
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-top: 0px;
+	padding: 5px; /* space between cards horizontaly */
 }
 iframe {
 	border: 0px solid #000000;
@@ -76,6 +77,12 @@ img {
 img.my_topicgif {
 	background-color: transparent;
 	margin-top: -8px;
+}
+img.my_smallimg {
+	background-color: transparent;
+	margin-top: -4px;
+	margin-right: 5px;
+	max-width: 24px;
 }
 img.bookgif {
 	background-color: transparent;
@@ -197,6 +204,23 @@ button.btn {
 	}
 }
 
+
+/* Mouser over linkable images CSS */
+
+.my_zoom { 
+	opacity: 0.98;
+	overflow: hidden; 
+	margin: 0 auto; 
+}      
+.my_zoom img { 
+	opacity: 0.98;
+	width: 100%; 
+	transition: 0.2s all ease-in-out; 
+}      
+.my_zoom:hover img { 
+	opacity: 1.00;
+	transform: scale(1.01); 
+}
 </style>
 
 
@@ -222,8 +246,8 @@ button.btn {
 				<div class="card-body">
 				<a href="https://www.facebook.com/jorge.bigarte" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
 				<p class="card-text">
-				<h2><img class="my_topicgif" src="./works/gui-topic.gif"> Jorge Rosa - Portfolio</h2>
-				Portuguese Developer<br>
+				<h2>Jorge Rosa - Portfolio</h2><br>
+				<p><img class="my_smallimg" src="./works/gui-portugal.png"> Portuguese Developer</p>
 				</p>
                 </div>
             </div>
@@ -270,15 +294,16 @@ button.btn {
             <div class="col">
             <div id="my_body" class="card">
 				<div class="card-body">
-				<p class="card-text"><b>Programming Skills:</b></p>
+				<p class="card-text"><b>Programming skills:</b></p>
                 <p class="card-text">
-				(HTML + CSS) ASP (Classic), PHP (All versions), SQL, MySQL, MariaDB, Flash (AS1,AS2,AS3), Java, Javascript, ANDROID (2.0+, 3.0+, 4.0+), ASP.Net, Ajax, Python, C, C#, C++... (Engines/Libraries: SDL, OpenGL... and using 2D and 3D graphics engines on it, eg: Ogre3D, Irrlicht... Physics: Bullet Physics), many more, etc... Operating Systems: Microsoft Windows, GNU/Linux (Ubuntu), ANDROID, etc... 
+				(HTML + CSS) ASP (Classic), PHP (All versions), SQL, MySQL, MariaDB, Flash (ActionScript AS1,AS2,AS3), Java, Javascript, ANDROID (2.0+, 3.0+, 4.0+), ASP.Net, Ajax, Python, C, C++, C#, etc. Libraries: SDL, SFML, OpenGL, etc. 2D and 3D graphics engines eg: Ogre 3D, Irrlicht, etc. Physics: Bullet Physics, Box2D Physics, etc. Operating Systems: Microsoft Windows, GNU/Linux (Ubuntu), ANDROID, etc. Some "vintage" ones too, such as Workbench (Commodore Amiga), Sinclair BASIC and Machine Code (ZX Spectrum), etc.
 				</p>
-				<p class="card-text"><b>Software User Skills:</b></p>
+				<p class="card-text"><b>Software user:</b></p>
                 <p class="card-text">
-				Corel Draw, Photoshop, Gimp, Dreamweaver, 3D Studio Max, Blender, Indesign CS, Inkscape and... Many many many more ;)
+				IDE: MS Visual Studio, Eclipse, Atom, Notepad++, Code::Blocks, SharpDevelop, Adobe Dreamweaver, Android Studio, Arduino IDE...<br>
+				Software: Corel Draw, Inkscape, Photoshop, Gimp, 3D Studio Max, Blender, Indesign CS, Scribus and many many more...
 				</p>
-				<p class="card-text"><b>Idioms Skills:</b></p>
+				<p class="card-text"><b>Idioms:</b></p>
                 <p class="card-text">
 				Portuguese (native), english and french (But I also understand a few other idioms)
 				</p>
@@ -288,20 +313,41 @@ button.btn {
 
 
     </div>		
-    <div class="row">
-		  
-		  
+    <div class="row">	
+	
+	
+			<div class="col">			
+            <div id="my_body" class="card h-100">
+				<div class="card-body">
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-000.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="/zxspectrum.html" class="simple" target="_blank"><b>ZX Spectrum 48K</b></a> - My first computer<br>
+				Manufactured by Timex Corporation, this was my very first computer, and now he lives here, in the internet. It has an astonishing amount of Ram of 48Kb, and a fast CPU running at an incredibles 3.5 MHz. Reads data from the glorious cassettes. I´ve also included some of the very firsts games that I played. Make him a visit, you will have fun too.
+				</p>
+				</div>
+				
+				</div>
+			</div>
+			</div>				
+				
+
+	</div>
+	<div class="row">	
+	
+	
             <div class="col">
             <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text"><small><i>This is just a big static image, with some examples of my work</i></small></p>
-				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank">
-				<img id="loading-img-01" class="card-img-top" src="" alt="LOADING...">
+				<a href="./works/Jorge-Rosa-Portfolio.jpg" target="_blank">				
+				<div class="my_zoom"> <img id="loading-img-01" class="card-img-top" src="" alt="LOADING..."> </div>				
 				</a>
                 </div>
             </div>
-            </div>	
-
+            </div>
+			
 
     </div>		
     <div class="row">
@@ -310,7 +356,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, Magazines, Etc...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Press Published Works</h2>Journals, magazines, etc...</p>
                 </div>
             </div>
             </div>
@@ -320,29 +366,37 @@ button.btn {
 	<div class="row">	
 
 			
-            <div class="card-group">
+            <div class="card-group">			
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Revista INVEST</b><br><small>Portuguese Magazine</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-007.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-007.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Revista INVEST</b></h5>
+                <p class="card-text"><small>Portuguese Magazine</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-007.png" alt="PRESS"></div>
 				<p class="card-text">
-				Topics: Business and economy - Work: Layout, paging, design, logos, illustrations, images, adverts, etc.
-				<div width="100%"><a href="./works/sic-tv-conversas-inprovaveis-001.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:100px;" src="./works/sic-tv-conversas-inprovaveis-001.png" alt="TV"></a></div>
-				<b>Revista INVEST</b> also has a TV talk show <b>Conversas Improváveis</b> done in partnership with <b>SIC Notícias</b>.
+				Topics: Business and economy - Work: Layout, paging, design, logos, illustrations, images, adverts, etc. Also developed their old website.
 				</p>
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:100px; margin-right:10px;" src="./works/sic-tv-conversas-inprovaveis-001.png" alt="TV">
+				<p class="text-left">
+				<b>Revista INVEST</b> also has a TV talk show named <b>Conversas Improváveis</b> produced in partnership with the <b>SIC Notícias</b> TV news channel.</p>
+				</div>
+				
 				</div>
 				<div class="card-footer">
 				<a href="https://www.youtube.com/watch?v=bRH-_ZZQ1Ng&list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">TV Videos</a>
                 </div>
             </div>
+				
 
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Maravilhas</b><br><small>Portuguese / International Magazine</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Maravilhas</b></h5>
+                <p class="card-text"><small>Portuguese / International Magazine</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></div>
 				<p class="card-text">
-				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc.
+				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc. Also developed their webpage.
 				</p>
                 </div>
             </div>
@@ -350,8 +404,9 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Notícias de Leiria</b><br><small>Portuguese Journal</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-000.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Notícias de Leiria</b></h5>
+                <p class="card-text"><small>Portuguese Journal</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-000.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: Leiria city local news - Work: Paging, design, logos, illustrations, images, adverts, etc.
 				</p>
@@ -372,8 +427,9 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Prime Negócios</b><br><small>Portuguese Journal</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-002.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-002.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Prime Negócios</b></h5>
+                <p class="card-text"><small>Portuguese Journal</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-002.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: National news and economy - Work: Layout, paging, design, logos, illustrations, images, adverts, etc.
 				</p>
@@ -382,8 +438,9 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>O Noti</b><br><small>Portuguese Magazine</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-003.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-003.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>O Noti</b></h5>
+                <p class="card-text"><small>Portuguese Magazine</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-003.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: Didactic magazine for children - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
 				</p>
@@ -392,8 +449,9 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Revista Bruxinha</b><br><small>Portuguese Magazine</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-006.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-006.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Revista Bruxinha</b></h5>
+                <p class="card-text"><small>Portuguese Magazine</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-006.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: Didactic magazine for children - Work: Paging only.
 				</p>
@@ -411,8 +469,9 @@ button.btn {
 
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Praça Stephens</b><br><small>Political Propaganda</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-008.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-008.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Praça Stephens</b></h5>
+                <p class="card-text"><small>Political Propaganda</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-008.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: Political propaganda - Many different journals, outdoors, flyers, etc. Mostly for the <b>PS</b> and <b>PSD</b> political parties - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
 				</p>
@@ -421,8 +480,9 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>Jornal do Comércio</b><br><small>Portuguese Journal</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-001.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-001.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>Jornal do Comério</b></h5>
+                <p class="card-text"><small>Portuguese Journal</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-001.png" alt="PRESS"></div>
 				<p class="card-text">
 				Topics: Local news - Work: Layout, paging, design, logos, illustrations, draws, images, adverts, etc.
 				</p>
@@ -431,11 +491,11 @@ button.btn {
 			
             <div id="my_body" class="card">
 				<div class="card-body">
-                <p class="card-text"><b>GOING Magazine</b><br><small>Portuguese / International Magazine</small></p>
-				<div width="100%"><a href="./works/jorge-rosa-paginacao-004.png" target="_blank"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-004.png" alt="PRESS"></a></div>
+				<h5 class="card-title"><b>GOING Magazine</b></h5>
+                <p class="card-text"><small>Portuguese / International Magazine</small></p>
+				<div width="100%"><img class="card-img-top" style="background-color:transparent; max-width:220px;" src="./works/jorge-rosa-paginacao-004.png" alt="PRESS"></div>
 				<p class="card-text">
-				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc.<br><br>
-				I also developed their webpage (Html and Javascript only)
+				Topics: Discovery, adventures, travels - Work: Layout, paging, design, logos, illustrations, images, adverts, photos, etc. Also developed their webpage.
 				</p>
 				</div>
 				<div class="card-footer">
@@ -477,7 +537,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, Etc...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Image</h2>Compositions, etc...</p>
                 </div>
             </div>
             </div>
@@ -491,8 +551,8 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Luiz-Vaz-Camoes-CORES.jpg" target="_blank">
-				<img id="loading-img-02" class="card-img-top" src="" alt="LOADING...">
-				</a>
+				<div class="my_zoom"> <img id="loading-img-02" class="card-img-top" src="" alt="LOADING..."> </div>	
+				</a>	
 				<p class="card-text"><br><b>Luís Vaz de Camões</b><br>Coloring an old illustration and image composition.</p>
                 </div>
             </div>
@@ -502,7 +562,7 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank">
-				<img id="loading-img-03" class="card-img-top" src="" alt="LOADING...">				
+				<div class="my_zoom"> <img id="loading-img-03" class="card-img-top" src="" alt="LOADING..."> </div>		
 				</a>
 				<p class="card-text"><br><b>Monumento Afundamentos Portugueses</b><br>Photomontage and image composition.</p>
                 </div>
@@ -517,7 +577,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual Photography Only</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Photography</h2>Casual photography only</p>
                 </div>
             </div>
             </div>
@@ -552,7 +612,7 @@ button.btn {
 					</div>
 					<div class="carousel-item">
 					<img src="./works/foto-04-Jorge-Rosa.jpg" alt="PHOTO">
-					<div class="carousel-caption"> <h3 class="h3-responsive">São Martinho do Porto</h3> <p>Bay and Beach - 2020</p> </div>
+					<div class="carousel-caption"> <h3 class="h3-responsive">São Pedro de Moel</h3> <p>The forest after the big fire - 2017</p> </div>
 					</div>
 					<div class="carousel-item">
 					<img src="./works/foto-05-Jorge-Rosa.jpg" alt="PHOTO">
@@ -645,7 +705,19 @@ button.btn {
 					<div class="carousel-item">
 					<img src="./works/foto-27-Jorge-Rosa.jpg" alt="PHOTO">
 					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>The Gift - Live Concert<br>Parque da Cerca - 2018</p> </div>
-					</div>                 
+					</div>					
+					<div class="carousel-item">
+					<img src="./works/foto-28-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">São Pedro de Moel</h3> <p>Beach View - 2014</p> </div>
+					</div>
+					<div class="carousel-item">
+					<img src="./works/foto-29-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">São Pedro de Moel</h3> <p>Fountain - 2014</p> </div>
+					</div> 
+					<div class="carousel-item">
+					<img src="./works/foto-30-Jorge-Rosa.jpg" alt="PHOTO">
+					<div class="carousel-caption"> <h3 class="h3-responsive">Marinha Grande</h3> <p>Parque da Cerca - 2014</p> </div>
+					</div> 					
 				
 				<!-- Left right -->
 				<a class="carousel-control-prev" href="#my_carousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
@@ -656,33 +728,36 @@ button.btn {
 				<!-- Thumbnails -->
                 <ol class="carousel-indicators list-inline">				
 				
-                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#my_carousel"> <img src="./works/foto-01-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-1"  data-slide-to="1"  data-target="#my_carousel"> <img src="./works/foto-02-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-2"  data-slide-to="2"  data-target="#my_carousel"> <img src="./works/foto-03-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-3"  data-slide-to="3"  data-target="#my_carousel"> <img src="./works/foto-04-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-4"  data-slide-to="4"  data-target="#my_carousel"> <img src="./works/foto-05-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-5"  data-slide-to="5"  data-target="#my_carousel"> <img src="./works/foto-06-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-6"  data-slide-to="6"  data-target="#my_carousel"> <img src="./works/foto-07-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-7"  data-slide-to="7"  data-target="#my_carousel"> <img src="./works/foto-08-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-8"  data-slide-to="8"  data-target="#my_carousel"> <img src="./works/foto-09-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-                    <li class="list-inline-item"> <a id="carousel-selector-9"  data-slide-to="9"  data-target="#my_carousel"> <img src="./works/foto-10-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-10" data-slide-to="10" data-target="#my_carousel"> <img src="./works/foto-11-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-11" data-slide-to="11" data-target="#my_carousel"> <img src="./works/foto-12-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-12" data-slide-to="12" data-target="#my_carousel"> <img src="./works/foto-13-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-13" data-slide-to="13" data-target="#my_carousel"> <img src="./works/foto-14-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-14" data-slide-to="14" data-target="#my_carousel"> <img src="./works/foto-15-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-15" data-slide-to="15" data-target="#my_carousel"> <img src="./works/foto-16-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-16" data-slide-to="16" data-target="#my_carousel"> <img src="./works/foto-17-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-17" data-slide-to="17" data-target="#my_carousel"> <img src="./works/foto-18-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-18" data-slide-to="18" data-target="#my_carousel"> <img src="./works/foto-19-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-19" data-slide-to="19" data-target="#my_carousel"> <img src="./works/foto-20-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-20" data-slide-to="20" data-target="#my_carousel"> <img src="./works/foto-21-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-21" data-slide-to="21" data-target="#my_carousel"> <img src="./works/foto-22-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-22" data-slide-to="22" data-target="#my_carousel"> <img src="./works/foto-23-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-23" data-slide-to="23" data-target="#my_carousel"> <img src="./works/foto-24-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-24" data-slide-to="24" data-target="#my_carousel"> <img src="./works/foto-25-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-25" data-slide-to="25" data-target="#my_carousel"> <img src="./works/foto-26-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
-					<li class="list-inline-item"> <a id="carousel-selector-26" data-slide-to="26" data-target="#my_carousel"> <img src="./works/foto-27-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#my_carousel"> <img src="./works/thumbnails/foto-01-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-1"  data-slide-to="1"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-02-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-2"  data-slide-to="2"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-03-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-3"  data-slide-to="3"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-04-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-4"  data-slide-to="4"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-05-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-5"  data-slide-to="5"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-06-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-6"  data-slide-to="6"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-07-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-7"  data-slide-to="7"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-08-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-8"  data-slide-to="8"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-09-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+                    <li class="list-inline-item"> <a id="carousel-selector-9"  data-slide-to="9"  data-target="#my_carousel"> <img src="./works/thumbnails/foto-10-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-10" data-slide-to="10" data-target="#my_carousel"> <img src="./works/thumbnails/foto-11-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-11" data-slide-to="11" data-target="#my_carousel"> <img src="./works/thumbnails/foto-12-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-12" data-slide-to="12" data-target="#my_carousel"> <img src="./works/thumbnails/foto-13-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-13" data-slide-to="13" data-target="#my_carousel"> <img src="./works/thumbnails/foto-14-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-14" data-slide-to="14" data-target="#my_carousel"> <img src="./works/thumbnails/foto-15-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-15" data-slide-to="15" data-target="#my_carousel"> <img src="./works/thumbnails/foto-16-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-16" data-slide-to="16" data-target="#my_carousel"> <img src="./works/thumbnails/foto-17-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-17" data-slide-to="17" data-target="#my_carousel"> <img src="./works/thumbnails/foto-18-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-18" data-slide-to="18" data-target="#my_carousel"> <img src="./works/thumbnails/foto-19-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-19" data-slide-to="19" data-target="#my_carousel"> <img src="./works/thumbnails/foto-20-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-20" data-slide-to="20" data-target="#my_carousel"> <img src="./works/thumbnails/foto-21-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-21" data-slide-to="21" data-target="#my_carousel"> <img src="./works/thumbnails/foto-22-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-22" data-slide-to="22" data-target="#my_carousel"> <img src="./works/thumbnails/foto-23-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-23" data-slide-to="23" data-target="#my_carousel"> <img src="./works/thumbnails/foto-24-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-24" data-slide-to="24" data-target="#my_carousel"> <img src="./works/thumbnails/foto-25-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-25" data-slide-to="25" data-target="#my_carousel"> <img src="./works/thumbnails/foto-26-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-26" data-slide-to="26" data-target="#my_carousel"> <img src="./works/thumbnails/foto-27-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>					
+					<li class="list-inline-item"> <a id="carousel-selector-27" data-slide-to="27" data-target="#my_carousel"> <img src="./works/thumbnails/foto-28-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-28" data-slide-to="28" data-target="#my_carousel"> <img src="./works/thumbnails/foto-29-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
+					<li class="list-inline-item"> <a id="carousel-selector-29" data-slide-to="29" data-target="#my_carousel"> <img src="./works/thumbnails/foto-30-Jorge-Rosa.jpg" class="img-fluid"> </a> </li>
 					
                 </ol>				
 				
@@ -702,7 +777,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 3D Low Poly Models</h2>3D Interactive web</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 3D Low Poly Modeling</h2>3D models for games and interactive web</p>
                 </div>
             </div>
             </div>
@@ -752,8 +827,8 @@ button.btn {
             <div id="my_body" class="card">
 				<div class="card-body">		
 				<p class="card-text"><small><i>A few distributable media screenshots examples</i></small></p>						
-				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">
-				<img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid #aaaaaa; max-width: 600px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE">
+				<a id="CD_link" name="CD_link" href="./works/Interactive-CD-01.jpg" target="_blank">				
+				<div class="my_zoom"> <img id="CD_img" name="CD_img" class="card-img-top" style="border: 0px solid; max-width: 700px;" src="./works/Interactive-CD-01.jpg" alt="IMAGE"> </div>				
 				</a>				
 				<p class="card-text"><br><b>Interactive media for mass distribution on: CD-ROMs, DVD-ROMs, USB sticks</b><br>
 				<small>They all automatically autorun in fullscreen mode on the user´s computers. They all contain informative texts, animations, videos, photo galleries, sound effects, background musics, utilities, many user options, many extras, etc...</small></p>	
@@ -776,7 +851,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Desktop Software</h2>Windows | GNU/Linux</p>
                 </div>
             </div>
             </div>
@@ -792,9 +867,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/knPLuCkjjc0?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Unknown Invaders</b> - 2D Game</h5>
                 <p class="card-text">
-				2D Game: <b>Unknown Invaders</b><br>
-				(SFML | Free Opensource Game)<br>				
+				(Project founder / Dev all the code and graphics)<br>
+				Tech: C++ | SFML | Free Opensource Game<br>				
 				So, you never saw an UFO?... Here it is a simple and easy game, for all family, with a bunch of them!<br>
 				Portable, no install is required.<br>
 				</p>				
@@ -811,9 +887,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-_Ih1GK3uiE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
-                <p class="card-text">
-				2D Game: <b>Quizzy</b><br>
-				(SDL | Free Didactic Game)<br>				
+				<h5 class="card-title"><b>Quizzy</b> - 2D Game</h5>
+                <p class="card-text">		
+				(Project founder / Dev all the code and graphics)<br>
+				Tech: C++ | SDL | Free Didactic Game<br>					
 				A didactic simple game, for all family.<br>
 				Portable, no install is required.<br>
 				</p>				
@@ -835,15 +912,17 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4z64zWKA11E?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Pirates! The Rescue...</b> - 3D Game</h5>
                 <p class="card-text">
-				3D Game: <b>Pirates! The Rescue...</b><br>
-				(Irrlicht | Bullet Physics | Free Opensource Game)<br>				
+				(Project founder / Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Bullet Physics | Free Opensource Game<br>				
 				Free easy game, designed specially for children. No blood, no kills, no zombies, etc.<br>
 				Portable, no install is required.<br>
 				</p>
 				</div>
-				<div class="card-footer">				
-				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=52256" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+				<div class="card-footer">
+				<a href="https://www.youtube.com/watch?v=_wBOeY-5InU&list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL&index=58" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Making Of Video</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
 				<a href="https://sourceforge.net/projects/pirates-the-rescue" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
                 </div>
             </div>
@@ -855,15 +934,16 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qAyFq_JvNOI?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Irrlicht Music Player</b> - 3D Player</h5>
                 <p class="card-text">
-				3D Player: <b>Irrlicht Music Player</b><br>
-				(Irrlicht | Audiere | Free Opensource Player)<br>				
+				(Project founder / Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Audiere | Free Opensource Player<br>				
 				3D Music Player / Karaoke Player.<br>
 				Portable, no install is required.<br>
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a> <a href="https://sourceforge.net/projects/irrlichtmp/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=39695" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a> <a href="https://sourceforge.net/projects/irrlichtmp/" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Download</a>
                 </div>
             </div>
 			</div>
@@ -879,9 +959,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/szthNnDYGEM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Factory Demo</b> - 3D Demo</h5>
                 <p class="card-text">
-				3D Demo: <b>Factory Demo</b>
-				<br>(Irrlicht | Audiere)<br>				
+				(Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Audiere<br>				
 				An very old 3D project, with some fancy features.<br>
 				Portable, no install is required. Download is a 11Mb Zip file.<br>
 				</p>
@@ -895,13 +976,14 @@ button.btn {
 			<div class="col-md-6">			
             <div id="my_body" class="card h-100">
 				<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_K8ThNRWugM?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2V5cNFZT2OI?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Fairey IIID</b> - 3D Demo</h5>
                 <p class="card-text">
-				3D Demo: <b>Fairey IIID</b><br>
-				(Irrlicht | Audiere | Free Opensource Demo)<br>				
-				Be with the Portuguese Gago Coutinho pilot, on his greatest historical adventure.<br>
+				(Project founder / Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Audiere | Free Opensource Demo<br>				
+				Be with the Portuguese Gago Coutinho and Sacadura Cabral, on their greatest historical adventure.<br>
 				Portable, no install is required.<br>
 				</p>
 				</div>
@@ -922,9 +1004,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lpI8KmQ4gBE?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Marinha Grande</b> - 3D Demo</h5>
                 <p class="card-text">
-				3D Demo: <b>Marinha Grande</b>
-				<br>(Ogre 3D)<br>				
+				(Dev all the code and 3D graphics)<br>
+				Tech: C++ | Ogre 3D<br>				
 				An very old 3D internal project about Marinha Grande city.<br>
 				</p>
                 </div>
@@ -937,9 +1020,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9DQ062gicPg?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Pinball Arcade Machine</b> - 3D Game</h5>
                 <p class="card-text">
-				3D Game: <b>Pinball Arcade Machine</b><br>
-				(Ogre 3D | Bullet Physics | Ubuntu GNU/Linux)<br>				
+				(Dev all the code and 3D graphics)<br>
+				Tech: C++ | Ogre 3D | Bullet Physics | Ubuntu GNU/Linux<br>				
 				An very old 3D internal arcade machine project.<br>
 				</p>
                 </div>
@@ -957,15 +1041,16 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4rUGhlNCNho?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Truck</b> - 3D Game</h5>
                 <p class="card-text">
-				3D Game: <b>Truck</b>
-				<br>(Irrlicht | Bullet Physics)<br>				
+				(Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Bullet Physics<br>				
 				An very old 3D game project for children<br>
 				Only some C++ code is available.<br>
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&t=36861&p=276732#p276732" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=36861&p=276732#p276732" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>
                 </div>
             </div>
 			</div>
@@ -976,11 +1061,11 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GW5B4luLp7k?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Turbo Motocross</b> - 2D Game</h5>
                 <p class="card-text">
-				3D Game: <b>Turbo Motocross</b><br>
-				(SDL)<br>				
-				An very old project. Developed in partnership with Jason Gauci<br>
-				(Google Research Labs / Apple Data Scientist)<br>
+				(Dev graphics only)<br>
+				Tech: C++ | SDL | Box2D<br>				
+				An very old project. Developed in partnership with Jason Gauci (Google Research Labs / Apple Data Scientist)<br>
 				</p>
 				</div>
 				<div class="card-footer">
@@ -997,7 +1082,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU\Linux</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Experimental Software</h2>Windows | GNU/Linux</p>
                 </div>
             </div>
             </div>
@@ -1013,9 +1098,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oyOnf_CfoJw?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Pinball Game</b> - 2D Game</h5>
                 <p class="card-text">
-				2D Game: <b>Pinball Game</b>
-				<br>(Box2D Physics)<br>				
+				(Dev all the code and graphics)<br>
+				Tech: C++ | Box2D Physics<br>				
 				Just a boring testing and debugging video.<br>
 				Testing a 2D pinball game.
 				</p>
@@ -1029,9 +1115,10 @@ button.btn {
 				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zWzWxBaILMQ?list=PLnhzSMPecj1HXo5IGrNFYiGyy6fHZYPTL" allowfullscreen></iframe>
 				</div>
 				<div class="card-body">
+				<h5 class="card-title"><b>Football</b> - 3D Game</h5>
                 <p class="card-text">
-				3D Game: <b>Football Game</b>
-				<br>(Irrlicht | Bullet Physics)<br>				
+				(Dev all the code and 3D graphics)<br>
+				Tech: C++ | Irrlicht | Bullet Physics<br>				
 				Just a boring testing and debugging video.<br>
 				This football game has national and club teams. Men and women players. The target is to have lots of fun, fast and simple playability.
 				</p>
@@ -1047,68 +1134,160 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Software</h2>Windows | GNU\Linux | Opensource</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> More Software And Others</h2>Windows | GNU/Linux | Opensource</p>
                 </div>
             </div>
             </div>
 			
 			
 	</div>
-	<div class="row">	
+	<div class="row">		
 	
 	
 			<div class="col">			
             <div id="my_body" class="card h-100">
 				<div class="card-body">
-                <p class="card-text">
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-001.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a> - 3D Player<br>(Forum) - IMP - Irrlicht Media Player. New 3D project, "source code" and binary (.exe) file are available for download. Tech: C++ | Irrlicht | Audiere.<br>
+				(Project founder / Dev all the code and 3D graphics)
+				</p>
+				</div>				
+				
+				<hr>
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-002.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><b>MOVE</b></a> - 3D Visuals<br>
+				MOVE - Mixxx Ogre Visual Effects - 3D Visuals. New 3D project, "source code" and binary (.exe) file are available for download. Tech: C++ | Ogre 3D.<br>
+				(Project founder / Dev all the code and 3D graphics)
+				</p>
+				</div>				
+				
+				<hr>				
 
-				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a><br>
-				(Forum) - 3D Media Player. (New project, "source code" and "exe" file are available for download).<br>
-				(Project founder / Code and Graphics)<hr>
-				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><b>MOVE</b></a><br>
-				Mixxx Visual Effects - 3D Visuals. New project, "source code" and "exe" file are available for download.<br>
-				(Project founder / Code and Graphics)
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-003.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/uemmc/" class="simple" target="_blank"><b>UEMMC</b></a> - Media Utility<br>
+				UEMMC - Ultra Easy Minimal Media Converter - Portable tool (no installation required) to convert between many many audio and video formats. Tech: C# | ffmpeg.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>				
+				
 				<hr>
-				<a href="https://sourceforge.net/projects/uemmc/" class="simple" target="_blank"><b>UEMMC</b></a><br>
-				UE Minimal Media Converter - Portable tool (no installation required) to convert between many many audio and video formats.<br>
-				(Project founder / Code)
+
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-004.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple" target="_blank"><b>MONITOR</b></a> - Video Utility<br>
+				Monitors for CCTV - IP Cameras, etc - Portable application (no installation required) - It can play, record, auto split files, handles multiple instances (multiple monitors), handles MRL for media input (such as IP Cameras, Radio stations, TVs), accepts many streaming protocols like: rtsp, rtmp, mms, http, avi, mp3, etc... Tech: C# | VLC Library.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>				
+				
 				<hr>
-				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple" target="_blank"><b>MONITOR</b></a><br>
-				Monitors for CCTV - IP Cameras, etc - Portable application (no installation required) to view and record video from cameras, etc, etc.<br>
-				(Project founder / Code)<hr>
-				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple" target="_blank"><b>iteam</b></a><br>
+
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-013.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple" target="_blank"><b>iteam</b></a> - <b>Game not functional yet!</b><br>
 				(Forum) - Game. Similar to gunbound and worms classic games.<br>
 				(Graphics leader)
+				</p>
+				</div>
+				
 				<hr>
-				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple" target="_blank"><b>isoccer</b></a><br>
+
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-005.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple" target="_blank"><b>isoccer</b></a> - <b>Game not functional yet!</b><br>
 				(Forum) - Game. Similar to sensible soccer classic game.<br>
 				(Project founder)
-				<hr>
-				<a href="http://www.ubuntugames.org" class="simple" target="_blank"><b>ubuntugames.org</b></a><br>
-				News and reviews, focusing on GNU/Linux (Ubuntu) games.<br>
-				(Colaborator / Moderator)
-				<hr>
-				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple" target="_blank"><b>FlaQuizTV</b></a><br>
-				It´s a full free flash quiz game, that i´m still developing for all community, and it intends to be fun for all family. (.SWF,.FLA and . EXE available for download)<br>
-				(Project founder / Code and Graphics)
-				<hr>
-				<a href="https://sourceforge.net/projects/mini-office/" class="simple" target="_blank"><b>Mini Office</b></a><br>
-				It´s a simple office application, only helps on VAT calculations in a simple and very fast way. Still... it has some other small fancy features too...<br>
-				(Project founder / Code and Graphics)
-				<hr>
-				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple" target="_blank"><b>Screensaver</b></a><br>
-				It´s a simple screensaver. Handles fullscreen mode, plays video files and displays current news headlights...<br>
-				(Project founder / Code and Graphics)
-				<hr>
-				<a href="http://irrlicht.sourceforge.net/forum/viewmy_topic.php?f=6&amp;t=52256&amp;p=303504#p303504" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a><br>
-				It´s a simple and easy game. For all family and friends to play. No skills required, it uses only 3 keys (up + down + fire) But it may require a fast computer, since all graphics are in 3D and it uses advanced 3D physics too...<br>
-				(Project founder / Code and Graphics)
-				<hr>
-				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple" target="_blank"><b>Fairey IIID</b></a><br>
-				(Gago Coutinho e Sacadura Cabral) - It´s a simple app. Only developed to share the code, coud be used as a cool "screensaver" too...<br>
-				(Project founder / Code and Graphics)
-
 				</p>
+				</div>
+				
+				<hr>
+
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-006.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="http://www.ubuntugames.org" class="simple" target="_blank"><b>Ubuntu Games.org</b></a> - Website (old)<br>
+				News and reviews, focusing on GNU/Linux (Ubuntu) games.<br>
+				(Colaborator / Website moderator)
+				</p>
+				</div>
+				
+				<hr>
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-007.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple" target="_blank"><b>FlaQuizTV</b></a> - 2D Game<br>
+				It´s a full free flash quiz game, that i´m still developing for all community, and it intends to be fun for all family. (.Swf,.Fla and binary (.exe) files are all available for download) Tech: Adobe Flash ActionScript.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>
+				
+				<hr>				
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-008.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/mini-office/" class="simple" target="_blank"><b>Mini Office</b></a> - Utility<br>
+				It´s a simple office application, only helps on VAT calculations in a simple and very fast way. Still... it has some other small fancy features too... Tech: C#.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>
+				
+				<hr>
+
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-009.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple" target="_blank"><b>Screensaver</b></a> - Utility<br>
+				It´s a simple screensaver. Handles fullscreen mode, plays video files and displays current news headlights... Tech: C#.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>
+				
+				<hr>				
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-010.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a> - 3D Game<br>
+				It´s a simple and easy game. For all family and friends to play. No skills required, it uses only 3 keys (up + down + fire) But it may require a fast computer, since all graphics are in 3D and it uses advanced 3D physics too... Tech: C++ | Irrlicht | Audiere | Bullet Physics.<br>
+				(Project founder / Dev all the code and 3D graphics)
+				</p>
+				</div>
+				
+				<hr>
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-011.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple" target="_blank"><b>Fairey IIID</b></a> - 3D Demo<br>
+				(Gago Coutinho and Sacadura Cabral) - It´s a simple demo. Only developed to share the code, coud be used as a cool "screensaver" too... Tech: C++ | Irrlicht -and- Javascript version available too.<br>
+				(Project founder / Dev all the code and 3D graphics)
+				</p>
+				</div>
+
+				<hr>
+				
+				<div class="clearfix">
+				<img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-012.jpg" alt="IMAGE">
+				<p class="text-left">
+				<a href="https://sourceforge.net/projects/ana-library/" class="simple" target="_blank"><b>ANA Library</b></a> - Utility<br>
+				PDF Reader (It converts PDFs to JPGs first, to be able to read it). Browse for your PDF files, and it should be converted into images and stored in the bookshelve. Tech: C# | Ghostscript.<br>
+				(Project founder / Dev all the code and graphics)
+				</p>
+				</div>
+				
                 </div>
             </div>
 			</div>			
@@ -1122,13 +1301,14 @@ button.btn {
             <div id="my_body" class="card">
 				<div class="card-body">
 				<a href="./works/GOOGLE_SITES_ANDROID_MAIO_DEMO.jpg" target="_blank">
-				<img id="loading-img-04" class="card-img-top" src="" alt="LOADING...">	
+				<div class="my_zoom"> <img id="loading-img-04" class="card-img-top" style="max-width:700px;" src="" alt="LOADING..."> </div>		
 				</a>
-                </div>
 				<p class="card-text">
+				<br>
 				ANDROID Application: <b>M.A.I.O.</b><br>
-				An old app used only for marketing use purposes <i>(My only app example on the web)</i><br><br>
+				An old app used for marketing use purposes only <i>(My only example, no download is available)</i>
 				</p>
+                </div>				
             </div>
             </div>	
 
@@ -1186,7 +1366,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 2D Models</h2>Animated Muppets</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> 2D Modeling</h2>2D Characters for games and videos</p>
                 </div>
             </div>
             </div>
@@ -1311,7 +1491,7 @@ button.btn {
             <div class="col">
             <div id="my_topic" class="card h-100">
 				<div class="card-body">
-				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many more all over the web...</p>
+				<p class="card-text"><h2><img class="my_topicgif" src="./works/gui-topic.gif"> Other Works</h2>And many many more all over the web...</p>
                 </div>
             </div>
             </div>
@@ -1325,7 +1505,7 @@ button.btn {
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
 				<a href="./works/Dark-Metal-Skin-2.9.3-Small.jpg" target="_blank">
-				<img id="loading-img-05" class="card-img-top" src="" alt="LOADING...">				
+				<div class="my_zoom"> <img id="loading-img-05" class="card-img-top" src="" alt="LOADING..."> </div>				
 				</a>
 				<p class="card-text"><br>
 				MIXXX: <b>Dark Metal Skin</b><br>
@@ -1334,7 +1514,7 @@ button.btn {
 				</p>
 				</div>
 				<div class="card-footer">
-				<a href="https://www.mixxx.org/forums/viewmy_topic.php?f=8&amp;t=6052" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>				
+				<a href="https://www.mixxx.org/forums/viewtopic.php?f=8&t=6052" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary my-2">Forum</a>				
                 </div>
             </div>
 			</div>
@@ -1342,8 +1522,8 @@ button.btn {
             <div class="col-md-6">	
 			<div id="my_body" class="card h-100">
 				<div class="card-body">
-				<a href="./works/JORGEROSA_PORTUGAL_TITANIC_ADAMASTOR_3.jpg" target="_blank">
-				<img id="loading-img-06" class="card-img-top" src="" alt="LOADING...">	
+				<a href="./works/Plane-Fairey-IIID-Wallpaper-002.jpg" target="_blank">
+				<div class="my_zoom"> <img id="loading-img-06" class="card-img-top" src="" alt="LOADING..."> </div>
 				</a>
 				<p class="card-text">
 				<br><b>Wallpapers</b><br>Miscelaneous, very old ones.
@@ -1364,7 +1544,7 @@ button.btn {
             <div id="my_body" class="card">
 				<div class="card-body">
 				<p class="card-text" style="font-size: small;">
-				<i>With love to ASCR - This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
+				<i><b>With love to ASCR</b> - This portfolio is hosted at <a href="https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO" target="_blank">Github</a> and at the <a href="https://sites.google.com/site/jorgerosaportfolio" target="_blank" rel="nofollow">Google sites</a></i>
 				</p>
                 </div>
             </div>
@@ -1378,7 +1558,7 @@ button.btn {
     </div>
 
 <!-- Webpage by Jorge Rosa -->
-<div style="background-color:#ffffff; color:#ffffff; opacity:0.0; width:0px; height:0px; display:none; visibility:hidden;">
+<div style="background-color:transparent; color:#ffffff; opacity:0.0; width:0px; height:0px; display:none; visibility:hidden;">
 Jorge Rosa - Portfolio - Portuguese Developer Freelancer - keywords - tags - key, word, words, google, gmail, gtalk, messanger, msn, &nbsp;jorge.bigarte@gmail.com, jorgerosadesign@gmail.com, jorgerosa, jorgeerosa, jorge.bigarte, bigarte, jorgerosadesign, design, &nbsp;jorge, rosa, jorge rosa, job, jobs, email, e-mail, mail, gmail, google, bigarte, FlaQuizTV, free, open, game, games, jogo, jogos, gratuito, gratuitos, criança, crianças, kid, kids, toda, familia, família, all, idade, idades, age, ages, family, simples, fácil, sofia, completo, completos, full, source, c, python, cpp, c+, cp, c++, cpp, c#, sharp, csharp, c-sharp, dot, web, net, .net, flash, banners, windows, apache, php, sql, mysql, asp, asp.net, data, databases, bases, dados, 2d, 25d, 2.5d, 2,5d, 3d, 4d, studio, studios, estudio, estúdio, foto, montage, montagem, tratamento, tratador, max, irrlicht, ogre, linux, iteam, isoccer, licence, opensource, freelancer, web, webdesign, webdesigner, webmaster, website, websites, sites, pc, desktop, application, applications, aplicação, aplicações, nuvem, cloud, informatica, informáticas, informatico, informático, computador, pc, pessoal, mesa, foto, fotos, montage, montagem, portugal, portuguesa, portugues, português, portuguese, cadima, national, nacional, pai, free, lancer, ana, free-lancer, freelancer, part, time, part-time, full, full-time, centro, lisbon, lisboa, coimbra, leiria, oporto, porto, europe, design, designer, programador, programação, internet, net, web, informática, informático, computador, computadores, pc, gnu, multi, independent, independant, platform, platforms, linux, ubuntu, mac, aplicações, software, hardware, desenho, art, arte, arts, artes, grafica, gráficas, arranjo, production, producao, produção, grafica, gráfica, gráfico, grafismo, tratamento, desenvolvimento, graphics, cartoon, cartoons, digital, logo, logotypes, logotipo, logotipos, logótipo, logótipos, corporate, image, images, imagem, imagens, estacionario, tiragem, ficha, técnica, jornalistas, jornalismo, fotografia, fotoreportagem, reportagem, publicação, periodica, periódica, periocidade, diário, semanário, semanal, mensal, mensalmente, anual, estacionário, marca, pequena, pequenas, media, médias, empresa, empresas, pme, pmes, press, news, magazine, magazines, paper, indesign, photoshop, corel, draw, scribus, publish, published, print, page, pages, página, paginação, paginador, pro, profissional, jornal, jornais, revista, revistas, ebooks, e-books, book, books, pdf, jpg, tif, eps, gif, library, biblioteca, bibliotecas, linha, linhas, antiga, ancient, classic, classica, clássica, modern, moderno, modernas, traco, tracos, traço, traços, livro, rosa, livros, capa, contra, cover, covers, open, source, desktop, publishing, desktop publishing, service, services, serviço, serviços, profissional, profissionais, imprensa, escrita, pro, flyers, catalog, catalogue, catálogos, interactivo, interactive, interactife, cd, usb, dvd, media, agência, agências, publicidade, agency, multi, multimedia, multi média, media, média, midia, mídia, tv, televisão, Concepção de layout e produção, interior, exterior, interiores, exteriores, montra, montras, cartao, cartoes, cartões, apresentacao, apresentação, comerciais, comercial, anuncios, anúncios, announces, video, edição, digital, dígital, paper, papel, browser, editor, realizador, realização, trabalho, trabalhos, exemplo, exemplos, portfolio, portofolio, port, folio, curriculum, vitae, curriculo, currículo, técnica, técnico, tecnico, creative, creativo, criativo, examples, show, show case, case, show-case, on, online, on-line, line, download, downloads, descarregar, comunicar, comunicacao, comunicação, marketing, client, clientes, clients, layout, layouts, space, espaco, espaços, area, areas, scratch, scratches, criar, criacao, criação, criador, de, noticias, notícias, producao, produção, artistica, artística, concepcao, concecao, concepção, conceção, work, 2006, material, promoção, promocional, cartaz, cartazes, indoor, outdoor, outdoors, invite, invitations, convite, convites, personalizado, personalizados, tabela, tabelas, precos, preços, preçarios, publicidade, anúncio, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
 </div>
 
