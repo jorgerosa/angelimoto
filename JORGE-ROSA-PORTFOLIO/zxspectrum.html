@@ -18,15 +18,13 @@
 <script type="text/javascript">
 
 	$(function() {
-		var jsspeccy = JSSpeccy('jsspeccy-viewport',
-			{ 'autostart': true },
-			{ 'autoload': true },
-			{ 'scaleFactor': 2 }
-		);		
+		var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true } );		
 		
+		/*
 		jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);		
 		jsspeccy.setAudioState(true);
-		jsspeccy.activateKeyboard();		
+		jsspeccy.activateKeyboard();
+		*/		
 		
 		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
 		
