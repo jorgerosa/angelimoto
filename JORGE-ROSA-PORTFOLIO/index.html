@@ -215,11 +215,26 @@ button.btn {
 .my_zoom img { 
 	opacity: 0.98;
 	width: 100%; 
-	transition: 0.2s all ease-in-out; 
+	transition: 0.25s all ease-in-out; 
 }      
 .my_zoom:hover img { 
 	opacity: 1.00;
 	transform: scale(1.01); 
+}
+
+.my_zoom_small { 
+	opacity: 0.98;
+	overflow: hidden; 
+	margin: 0 auto; 
+}      
+.my_zoom_small img { 
+	opacity: 0.98;
+	width: 100%; 
+	transition: 0.10s all ease-in-out; 
+}      
+.my_zoom_small:hover img { 
+	opacity: 1.00;
+	transform: scale(1.02); 
 }
 </style>
 
@@ -244,7 +259,7 @@ button.btn {
             <div class="col" style="margin-top: 40px;">
             <div id="my_topic" class="card">
 				<div class="card-body">
-				<a href="https://www.facebook.com/jorge.bigarte" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
+				<a href="https://www.facebook.com/jorge.bigarte" class="my_zoom" target="_blank"> <img src="./works/jorge-rosa-avatar.png" style="border:0px; width:150px; height:150px; background-color:transparent;" alt="IMAGE"> </a>
 				<p class="card-text">
 				<h2>Jorge Rosa - Portfolio</h2><br>
 				<p><img class="my_smallimg" src="./works/gui-portugal.png"> Portuguese Developer</p>
@@ -321,7 +336,7 @@ button.btn {
 				<div class="card-body">
 				
 				<div class="clearfix">
-				<a href="./zxspectrum.html" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-000.jpg" alt="IMAGE"></a>
+				<a href="./zxspectrum.html" class="simple my_zoom_small" target="_blank"> <img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-000.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="./zxspectrum.html" class="simple" target="_blank"><b>ZX Spectrum 48K</b></a> - My first computer. Make him a visit, you will have fun too.<br>
 				Manufactured by Timex Corporation, now lives here, in the internet. It has an astonishing amount of Ram of 48Kb, and a fast CPU running at an incredibles 3.5 MHz. Reads data from the glorious cassettes. I´ve also included some of the very firsts games that I played. Make him a visit, you will have fun too.
@@ -1149,7 +1164,7 @@ button.btn {
 				<div class="card-body">
 				
 				<div class="clearfix">
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=39695" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-001.jpg" alt="IMAGE"></a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=39695" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-001.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=39695" class="simple" target="_blank"><b>Irrlicht Media Player</b></a> - 3D Player<br>(Forum) - IMP - Irrlicht Media Player. New 3D project, "source code" and binary (.exe) file are available for download. Tech: C++ | Irrlicht | Audiere.<br>
 				(Project founder / Dev all the code and 3D graphics)
@@ -1159,7 +1174,7 @@ button.btn {
 				<hr>
 				
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-002.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-002.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/mve-mixxx-visual-effects/" class="simple" target="_blank"><b>MOVE</b></a> - 3D Visuals<br>
 				MOVE - Mixxx Ogre Visual Effects - 3D Visuals. New 3D project, "source code" and binary (.exe) file are available for download. Tech: C++ | Ogre 3D.<br>
@@ -1170,7 +1185,7 @@ button.btn {
 				<hr>				
 
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/uemmc/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-003.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/uemmc/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-003.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/uemmc/" class="simple" target="_blank"><b>UEMMC</b></a> - Media Utility<br>
 				UEMMC - Ultra Easy Minimal Media Converter - Portable tool (no installation required) to convert between many many audio and video formats. Tech: C# | ffmpeg.<br>
@@ -1181,7 +1196,7 @@ button.btn {
 				<hr>
 
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-004.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-004.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/fm-cctv-ip-camera/" class="simple" target="_blank"><b>MONITOR</b></a> - Video Utility<br>
 				Monitors for CCTV - IP Cameras, etc - Portable application (no installation required) - It can play, record, auto split files, handles multiple instances (multiple monitors), handles MRL for media input (such as IP Cameras, Radio stations, TVs), accepts many streaming protocols like: rtsp, rtmp, mms, http, avi, mp3, etc... Tech: C# | VLC Library.<br>
@@ -1192,7 +1207,7 @@ button.btn {
 				<hr>
 
 				<div class="clearfix">
-				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-013.jpg" alt="IMAGE"></a>
+				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-013.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://ubuntuforums.org/showthread.php?t=427011&amp;page=2" class="simple" target="_blank"><b>iteam</b></a> - <b>Game not functional yet!</b><br>
 				(Forum) - Game. Similar to gunbound and worms classic games.<br>
@@ -1203,7 +1218,7 @@ button.btn {
 				<hr>
 
 				<div class="clearfix">
-				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-005.jpg" alt="IMAGE">
+				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-005.jpg" alt="IMAGE">
 				<p class="text-left"></a>
 				<a href="https://ubuntuforums.org/showthread.php?t=747426" class="simple" target="_blank"><b>isoccer</b></a> - <b>Game not functional yet!</b><br>
 				(Forum) - Game. Similar to sensible soccer classic game.<br>
@@ -1214,7 +1229,7 @@ button.btn {
 				<hr>
 
 				<div class="clearfix">
-				<a href="http://www.ubuntugames.org" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-006.jpg" alt="IMAGE"></a>
+				<a href="http://www.ubuntugames.org" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-006.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="http://www.ubuntugames.org" class="simple" target="_blank"><b>Ubuntu Games.org</b></a> - Website (old)<br>
 				News and reviews, focusing on GNU/Linux (Ubuntu) games.<br>
@@ -1225,7 +1240,7 @@ button.btn {
 				<hr>
 				
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-007.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-007.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/flaquiztv/" class="simple" target="_blank"><b>FlaQuizTV</b></a> - 2D Game<br>
 				It´s a full free flash quiz game, that i´m still developing for all community, and it intends to be fun for all family. (.Swf,.Fla and binary (.exe) files are all available for download) Tech: Adobe Flash ActionScript.<br>
@@ -1236,7 +1251,7 @@ button.btn {
 				<hr>				
 				
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/mini-office/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-008.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/mini-office/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-008.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/mini-office/" class="simple" target="_blank"><b>Mini Office</b></a> - Utility<br>
 				It´s a simple office application, only helps on VAT calculations in a simple and very fast way. Still... it has some other small fancy features too... Tech: C#.<br>
@@ -1247,7 +1262,7 @@ button.btn {
 				<hr>
 
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-009.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-009.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/sn-screensaver-news/" class="simple" target="_blank"><b>Screensaver</b></a> - Utility<br>
 				It´s a simple screensaver. Handles fullscreen mode, plays video files and displays current news headlights... Tech: C#.<br>
@@ -1258,7 +1273,7 @@ button.btn {
 				<hr>				
 				
 				<div class="clearfix">
-				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-010.jpg" alt="IMAGE"></a>
+				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-010.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="http://irrlicht.sourceforge.net/forum/viewtopic.php?f=6&t=52256" class="simple" target="_blank"><b>Pirates! The Rescue...</b></a> - 3D Game<br>
 				It´s a simple and easy game. For all family and friends to play. No skills required, it uses only 3 keys (up + down + fire) But it may require a fast computer, since all graphics are in 3D and it uses advanced 3D physics too... Tech: C++ | Irrlicht | Audiere | Bullet Physics.<br>
@@ -1269,7 +1284,7 @@ button.btn {
 				<hr>
 				
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-011.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-011.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/fairey-iiid-irrlicht/" class="simple" target="_blank"><b>Fairey IIID</b></a> - 3D Demo<br>
 				(Gago Coutinho and Sacadura Cabral) - It´s a simple demo. Only developed to share the code, coud be used as a cool "screensaver" too... Tech: C++ | Irrlicht -and- Javascript version available too.<br>
@@ -1280,7 +1295,7 @@ button.btn {
 				<hr>
 				
 				<div class="clearfix">
-				<a href="https://sourceforge.net/projects/ana-library/" class="simple" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-012.jpg" alt="IMAGE"></a>
+				<a href="https://sourceforge.net/projects/ana-library/" class="simple my_zoom_small" target="_blank"><img class="float-left" style="background-color:transparent; max-width:200px; margin-right:20px;" src="./works/jorge-rosa-my-software-012.jpg" alt="IMAGE"></a>
 				<p class="text-left">
 				<a href="https://sourceforge.net/projects/ana-library/" class="simple" target="_blank"><b>ANA Library</b></a> - Utility<br>
 				PDF Reader (It converts PDFs to JPGs first, to be able to read it). Browse for your PDF files, and it should be converted into images and stored in the bookshelve. Tech: C# | Ghostscript.<br>
