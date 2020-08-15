@@ -18,22 +18,18 @@
 <script type="text/javascript">
 
 	$(function() {
-		var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true }, { 'autoload': true } );		
-		
-		/*
+		var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true, 'autoload': true, 'scaleFactor': 2 } );		
 		jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);		
 		jsspeccy.setAudioState(true);
-		jsspeccy.activateKeyboard();
-		*/		
+		jsspeccy.activateKeyboard();		
 		
-		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
-		
+		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });		
 	
 	$('#example-games').change(function() {
 		jsspeccy.reset();
 		var filename = $(this).val();
 		/* if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); } */
-		if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, {'autoload': true} ); }
+		if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true } ); }
 		})
 	});
 
