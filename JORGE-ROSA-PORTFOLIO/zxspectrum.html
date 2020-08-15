@@ -51,9 +51,12 @@ body {
 	background-color: #000000;
 	font-size: medium;	
 }
-.btn{
+.btn, .btn-dark, .btn-dark:hover, .btn-dark:active, .btn-dark:visited {
 	margin: 0px;
 	margin-top: 6px;
+	color: #959595 !important;
+    background-color: #131313 !important;
+	border: 1px solid #000000;
 }
 
 
@@ -77,7 +80,8 @@ body {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	margin-top: 90px;
+	margin: 0px;
+	margin-top: 20px;
 }	
 .box{
 	z-index: 1;
@@ -91,7 +95,7 @@ body {
 .at-top{
 	z-index: 2;
 	margin: 0px;
-	margin-top: -50px;
+	margin-top: -52px;
 	opacity: 1.0;
 }
 
@@ -102,15 +106,27 @@ body {
 	max-width: 1255px;
 	width: 1255px;
 }
+
+.center-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50%, -50%);  
+  margin-top: 558px;  
+  z-index: 999;
+}
 	
 </style>
 </head>
 <body>
 
 	
-	<!-- ZX Spectrum -->
+	
 	<div class="global">
 	
+	
+	<!-- ZX Spectrum -->
 	<div class="box">	
 		<div class="d-flex justify-content-center" style="overflow:hidden;">		
 		<div id="jsspeccy-viewport"></div>
@@ -123,24 +139,16 @@ body {
 		</div>
 	</div>	
 	
-	</div>	
 	
 	
 	
-    <div class="album">
-    <div class="container">
+	
 
-	<div class="row" style="margin-top:510px; z-index:100; position:relative;">	
-
-            <div class="col">
-            <div class="card h-100" style="background-color:transparent;">
-			<div class="card-body" style="text-align:center;;">
-			
+			<div class="center-contents">			
 		
 			<!-- INI: ZX Spectrum Controls -->
-			<div id="jsspeccy">	
-			
-			<div class="toolbar">
+			<div id="jsspeccy">				
+			<div class="toolbar" style="text-align:center; width:350px; max-width:350px; min-width:350px;">
 						
 			<select class="select-model btn btn-dark btn-sm"></select>						
 			
@@ -167,25 +175,24 @@ body {
 				<option value="Tetris.z80">Tetris</option>
 				<option value="TurricanII.z80">Turrican II</option>
 				
-			</select>
+			</select>			
 			
 			<!-- <button class="stop-start btn btn-dark btn-sm" title="Stop / start">Pause</button> -->
 			<button class="reset btn btn-dark btn-sm" title="Reset the Spectrum">Reset</button>
 			<button class="audio btn btn-dark btn-sm" title="Audio on/off">Audio On/Off</button>
 			
+			</div>			
+			</div>
+			<!-- END: ZX Spectrum Controls -->
+
 			</div>
 			
-			</div>
-			<!-- END: ZX Spectrum Controls -->			
-			
-			</div>
-            </div>				
-            </div>			
+ 		
 
 	</div>
 	
-	</div>
-	</div>
+	
+	</div>	
     
 </body>	
 </html>
