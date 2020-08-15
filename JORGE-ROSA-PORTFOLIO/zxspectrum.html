@@ -22,13 +22,11 @@
 			{ 'autostart': true },
 			{ 'autoload': true },
 			{ 'scaleFactor': 2 }
-		);
-		
+		);		
 		
 		jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);		
 		jsspeccy.setAudioState(true);
-		jsspeccy.activateKeyboard();
-		
+		jsspeccy.activateKeyboard();		
 		
 		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
 		
@@ -36,7 +34,7 @@
 	$('#example-games').change(function() {
 		jsspeccy.reset();
 		var filename = $(this).val();
-		/* if (filename) { jsspeccy.loadFromUrl( 'http://jsspeccy.zxdemo.org/games/' + filename, {'autoload': true} ); } */
+		/* if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); } */
 		if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, {'autoload': true} ); }
 		})
 	});
@@ -112,19 +110,12 @@ body {
 </head>
 <body>
 
-
-
-
 	
-	
-	<!-- Controls -->
+
     <div class="album">
     <div class="container">
 	
-	<div class="row">
-	
-	
-	
+	<div class="row">	
 	
 	
 	<!-- ZX Spectrum -->
@@ -132,18 +123,17 @@ body {
 	
 	<div class="box">	
 		<div class="d-flex justify-content-center" style="overflow:hidden;">		
-			<div id="jsspeccy-viewport"></div>
+		<div id="jsspeccy-viewport"></div>
 		</div>	
 	</div>
 	
     <div class="box at-top">
 		<div class="d-flex justify-content-center" style="overflow:hidden;">					
-			<img class="tv" src="./zxspectrum/TV.png" alt="">			
+		<img class="tv" src="./zxspectrum/TV.png" alt="">			
 		</div>
 	</div>	
 	
 	</div>	
-	
 	
 	
 	
@@ -158,21 +148,34 @@ body {
 			<!-- INI: ZX Spectrum Controls -->
 			<div id="jsspeccy">	
 			
-			<div class="toolbar" style="width:100%;">
+			<div class="toolbar">
 						
 			<select class="select-model btn btn-dark btn-sm"></select>						
 			
 			<select id="example-games" class="btn btn-dark btn-sm">
+			
 				<option value="" selected>Select a cassette...</option>
-				<option value="Arkanoid - Revenge Of Doh (1988)(Imagine Software).z80">Arkanoid - Revenge Of Doh</option>
-				<option value="Chuckie Egg (1983)(A & F Software).z80">Chuckie Egg</option>
-				<option value="Commando (1985)(Elite Systems)(128k).z80">Commando</option>
-				<option value="Football Manager (1982)(Addictive Games).z80">Football Manager</option>
-				<option value="Formula One Simulator (1983)(CRL Group)[a].z80">Formula One Simulator</option>
-				<option value="Ghosts 'n' Goblins (1986)(Elite Systems).z80">Ghosts 'n' Goblins</option>
-				<option value="Green Beret (1986)(Imagine Software)(128k).z80">Green Beret</option>
-				<option value="Hungry_Horace_1982_Psion.z80">Hungry Horace</option>
-				<option value="Pac-Man (1983)(Atarisoft).z80">Pac-Man</option>
+				
+				<option value="Arkanoid-RevengeOfDoh(1988)(Imagine).z80">48K - Arkanoid - Revenge Of Doh</option>
+				<option value="ChuckieEgg(1983)(AFSoftware).z80">48K - Chuckie Egg</option>
+				<option value="Commando(1985)(Elite)(128k).z80">48K - Commando</option>
+				<option value="FootballManager1(1982)(Addictive).z80">48K - Football Manager</option>
+				<option value="FootballManager2(1988)(Addictive).z80">48K - Football Manager 2</option>
+				<option value="FootballManager3(1991)(Addictive).z80">48K - Football Manager 3</option>
+				<option value="FormulaOneSimulator(1983)(CRL).z80">48K - Formula One Simulator</option>
+				<option value="GhostsGoblins(1986)(Elite).z80">48K - Ghosts n GOblins</option>								
+				<option value="HungryHorace1982(Psion).z80">48K - Hungry Horace</option>
+				<option value="Pac-Man(1983)(Atarisoft).z80">48K - Pac-Man</option>
+				<option value="PacmanRevenge(1988)(Idem).z80">48K - Pac-Man Revenge</option>				
+				<option value="Penetrator(1982)(Melbourne).z80">48K - Penetrator</option>
+				<option value="PinballPower(1989)(Mastertronic).z80">48K - Pinball Power</option>
+				<option value="SpaceIntruders(1982)(Quicksilva).z80">48K - Space Intruders</option>
+				<option value="SpaceInvaders(19xx).z80">48K - Space Invaders</option>
+				<option value="Turmoil(1984)(Bug-Byte).z80">48K - Turmoil</option>
+				
+				<option value="Green Beret(1986)(Imagine)(128k).z80">128K - Green Beret</option>
+				<option value="Pang2(1990)(Ocean)(128k).z80">128K - Pang 2</option>				
+				
 			</select>
 			
 			<!-- <button class="stop-start btn btn-dark btn-sm" title="Stop / start">Pause</button> -->
@@ -192,9 +195,6 @@ body {
 	
 	</div>
 	</div>
-	
-	
-    
     
 </body>	
 </html>
