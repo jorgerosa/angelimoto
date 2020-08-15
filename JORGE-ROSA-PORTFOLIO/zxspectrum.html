@@ -1,0 +1,200 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<title>ZX Spectrum</title>
+<!-- <meta name="viewport" content="width=1050, user-scalable=no" /> -->
+<meta name="robots" content="noindex" />
+<link rel="icon" href="./index-2.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap JAVASCRIPT and CSS -->
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+<link href="./js/bootstrap-4.5.2-dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="./js/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+<!-- ZX Spectrum -- Demo: http://jsspeccy.zxdemo.org -->
+<script type="text/javascript" src="./js/jsspeccy-dist-2.2.1/jdataview.js"></script>
+<script type="text/javascript" src="./js/jsspeccy-dist-2.2.1/jsspeccy-core.min.js"></script>
+<script type="text/javascript" src="./js/jsspeccy-dist-2.2.1/ui.js"></script>
+
+<script type="text/javascript">
+
+	$(function() {
+		var jsspeccy = JSSpeccy('jsspeccy-viewport',
+			{ 'autostart': true },
+			{ 'autoload': true },
+			{ 'scaleFactor': 2 }
+		);
+		
+		
+		jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);		
+		jsspeccy.setAudioState(true);
+		jsspeccy.activateKeyboard();
+		
+		
+		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
+		
+	
+	$('#example-games').change(function() {
+		jsspeccy.reset();
+		var filename = $(this).val();
+		/* if (filename) { jsspeccy.loadFromUrl( 'http://jsspeccy.zxdemo.org/games/' + filename, {'autoload': true} ); } */
+		if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, {'autoload': true} ); }
+		})
+	});
+
+</script>
+
+
+
+
+<style type="text/css">
+
+
+/* Main CSS */
+
+html {
+	margin: 0px;
+	background-color: #000000;
+}
+body {
+	margin: 0px;
+	background-color: #000000;
+	font-size: medium;	
+}
+
+
+
+/* ZX Spectrum */
+
+#speccy {
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+
+
+/* Div Overlaping Div */
+
+.global{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin-top: 90px;
+}	
+.box{
+	z-index: 1;
+	width: 100%;
+	height: 100%;            
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0px;
+}
+.at-top{
+	z-index: 2;
+	margin: 0px;
+	margin-top: -50px;
+	opacity: 1.0;
+}
+
+/* TV image */
+
+.tv{
+	min-width: 1255px;
+	max-width: 1255px;
+	width: 1255px;
+}
+	
+</style>
+</head>
+<body>
+
+
+
+
+	
+	
+	<!-- Controls -->
+    <div class="album">
+    <div class="container">
+	
+	<div class="row">
+	
+	
+	
+	
+	
+	<!-- ZX Spectrum -->
+	<div class="global">
+	
+	<div class="box">	
+		<div class="d-flex justify-content-center" style="overflow:hidden;">		
+			<div id="jsspeccy-viewport"></div>
+		</div>	
+	</div>
+	
+    <div class="box at-top">
+		<div class="d-flex justify-content-center" style="overflow:hidden;">					
+			<img class="tv" src="./zxspectrum/TV.png" alt="">			
+		</div>
+	</div>	
+	
+	</div>	
+	
+	
+	
+	
+	</div>
+	<div class="row" style="margin-top:510px; z-index:100; position:relative;">	
+
+            <div class="col">
+            <div class="card h-100" style="background-color:transparent;">
+			<div class="card-body" style="text-align:center;;">
+			
+		
+			<!-- INI: ZX Spectrum Controls -->
+			<div id="jsspeccy">	
+			
+			<div class="toolbar" style="width:100%;">
+						
+			<select class="select-model btn btn-dark btn-sm"></select>						
+			
+			<select id="example-games" class="btn btn-dark btn-sm">
+				<option value="" selected>Select a cassette...</option>
+				<option value="Arkanoid - Revenge Of Doh (1988)(Imagine Software).z80">Arkanoid - Revenge Of Doh</option>
+				<option value="Chuckie Egg (1983)(A & F Software).z80">Chuckie Egg</option>
+				<option value="Commando (1985)(Elite Systems)(128k).z80">Commando</option>
+				<option value="Football Manager (1982)(Addictive Games).z80">Football Manager</option>
+				<option value="Formula One Simulator (1983)(CRL Group)[a].z80">Formula One Simulator</option>
+				<option value="Ghosts 'n' Goblins (1986)(Elite Systems).z80">Ghosts 'n' Goblins</option>
+				<option value="Green Beret (1986)(Imagine Software)(128k).z80">Green Beret</option>
+				<option value="Hungry_Horace_1982_Psion.z80">Hungry Horace</option>
+				<option value="Pac-Man (1983)(Atarisoft).z80">Pac-Man</option>
+			</select>
+			
+			<!-- <button class="stop-start btn btn-dark btn-sm" title="Stop / start">Pause</button> -->
+			<button class="reset btn btn-dark btn-sm" title="Reset the Spectrum">Reset</button>
+			<button class="audio btn btn-dark btn-sm" title="Audio on/off">Audio On/Off</button>
+			
+			</div>
+			
+			</div>
+			<!-- END: ZX Spectrum Controls -->			
+			
+			</div>
+            </div>				
+            </div>			
+
+	</div>
+	
+	</div>
+	</div>
+	
+	
+    
+    
+</body>	
+</html>
