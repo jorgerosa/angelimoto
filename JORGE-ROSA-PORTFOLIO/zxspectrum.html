@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
 $(function() {
-	var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true } );		
+	var jsspeccy = JSSpeccy( 'jsspeccy-viewport', { 'autostart': true } );		
 	JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
 	jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);
 	/* jsspeccy.setAudioState(true); */
@@ -29,7 +29,9 @@ $('#example-games').change(function() {
 	if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true } ); }
 	})
 });
+</script>
 
+<script type="text/javascript">
 function showHideDiv() {
 	var elem = document.getElementById('div_keyboard');
 	if (elem.style.display == 'none') {
@@ -56,11 +58,18 @@ body {
 	background-color: #000000;
 	font-size: medium;	
 }
-.btn, .btn-dark, .btn-dark:hover, .btn-dark:active, .btn-dark:visited {
+.btn, .btn-dark, .btn-dark:active, .btn-dark:visited {
 	margin: 0px;
 	margin-top: 6px;
 	color: #959595 !important;
     background-color: #131313 !important;
+	border: 1px solid #000000;
+}
+.btn-dark:hover {
+	margin: 0px;
+	margin-top: 6px;
+	color: #959595 !important;
+    background-color: #202020 !important;
 	border: 1px solid #000000;
 }
 p {
