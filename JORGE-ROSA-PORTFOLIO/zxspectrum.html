@@ -16,29 +16,25 @@
 <script type="text/javascript" src="./js/jsspeccy-dist-2.2.1/ui.js"></script>
 
 <script type="text/javascript">
-
-	$(function() {
-		var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true } );		
-		JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
-		jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);
-		/* jsspeccy.setAudioState(true); */
-		/* jsspeccy.activateKeyboard();  */	
-				
+$(function() {
+	var jsspeccy = JSSpeccy('jsspeccy-viewport', { 'autostart': true } );		
+	JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
+	jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);
+	/* jsspeccy.setAudioState(true); */
+	/* jsspeccy.activateKeyboard();  */				
 	
-	$('#example-games').change(function() {
-		var filename = $(this).val();
-		/* if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); } */
-		if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true, 'autostart': true } ); }
-		})
-	});
-
+$('#example-games').change(function() {
+	var filename = $(this).val();
+	/* if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); } */
+	if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true } ); }
+	})
+});
 </script>
 
 
 
 
 <style type="text/css">
-
 
 /* Main CSS */
 
@@ -59,7 +55,6 @@ body {
 	border: 1px solid #000000;
 }
 
-
 /* ZX Spectrum */
 
 #speccy {
@@ -72,17 +67,16 @@ body {
 	-ms-interpolation-mode: nearest-neighbor;
 }
 
-
 /* Div Overlaping Div */
 
-.global{
+.global {
 	width: 100%;
 	height: 100%;
 	position: relative;
 	margin: 0px;
 	margin-top: 20px;
 }	
-.box{
+.box {
 	z-index: 1;
 	width: 100%;
 	height: 100%;            
@@ -91,7 +85,7 @@ body {
 	left: 0;
 	margin: 0px;
 }
-.at-top{
+.at-top {
 	z-index: 2;
 	margin: 0px;
 	margin-top: -52px;
@@ -100,26 +94,34 @@ body {
 
 /* TV image */
 
-.tv{
+.tv {
 	min-width: 1255px;
 	max-width: 1255px;
 	width: 1255px;
 }
 
-.center-contents {
-  position: absolute;
-  top: 50%;
+.footer-center-contents {
+  /* position: absolute; top: 50%; */
+  position: fixed;
   left: 50%;
   transform: translate(-50% , -50%);
   -webkit-transform: translate(-50%, -50%);  
-  margin-top: 558px;  
-  z-index: 999;
+  z-index: 999;  
+  
+  bottom: -10px;
+  width: 100%;
+  
+  margin: 0px;
+  padding: 10px;
+  
+  border: 0px solid transparent;
+  background-color: rgba(0,0,0,0.60);
 }
+
 	
 </style>
 </head>
 <body>
-
 	
 	
 	<div class="global">
@@ -138,12 +140,8 @@ body {
 		</div>
 	</div>	
 	
-	
-	
-	
-	
 
-			<div class="center-contents">			
+			<div class="footer-center-contents">			
 		
 			<!-- INI: ZX Spectrum Controls -->
 			<div id="jsspeccy">				
@@ -239,10 +237,8 @@ body {
 
 			</div>
 			
- 		
 
-	</div>
-	
+	</div>	
 	
 	</div>	
     
