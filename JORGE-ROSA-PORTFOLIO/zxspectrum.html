@@ -17,31 +17,48 @@
 
 <script type="text/javascript">
 $(function() {
-	var jsspeccy = JSSpeccy( 'jsspeccy-viewport', { 'autostart': true } );		
-	JSSpeccy.UI({ container: 'jsspeccy', controller: jsspeccy });
+	var jsspeccy = JSSpeccy( 'jsspeccy-viewport', { 
+					'autostart': true,
+                    'autoload': true,
+					'border': true,
+					'dragToLoad': false,
+                    'scaleFactor': 2
+					} );		
+	JSSpeccy.UI({ container: 'jsspeccy-ui', controller: jsspeccy });
 	jsspeccy.setModel(JSSpeccy.Spectrum.MODEL_48K);
 	/* jsspeccy.setAudioState(true); */
 	/* jsspeccy.activateKeyboard();  */				
 	
 $('#example-games').change(function() {
 	var filename = $(this).val();
-	/* if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); } */
-	if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true } ); }
+	if (filename) { jsspeccy.loadFromUrl( 'https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/zxspectrum/roms/' + filename, {'autoload': true} ); }
+	/* if (filename) { jsspeccy.loadFromUrl( './zxspectrum/roms/' + filename, { 'autoload': true } ); } */
 	})
 });
-</script>
 
-<script type="text/javascript">
+
 function showHideDiv() {
-	var elem = document.getElementById('div_keyboard');
-	if (elem.style.display == 'none') {
-    elem.style.display = 'block';
+	var e1 = document.getElementById('div_keyboard');
+	var e2 = document.getElementById('but_keyboard');
+	if (e1.style.display == 'none') {
+    e1.style.display = 'block';
+	e2.innerText = 'Keys: Show';
 	} else {
-	elem.style.display = 'none';
+	e1.style.display = 'none';
+	e2.innerText = 'Keys: Hide';
+	};
+};
+
+
+function audioSet() {
+	var e = document.getElementById('but_audio');
+	if (e.innerText == 'Audio: ON') {
+    e.innerText = 'Audio: OFF';
+	} else {
+	e.innerText = 'Audio: ON';
 	};
 };
 </script>
-
 
 
 
@@ -88,9 +105,16 @@ a:hover {
 	color: #ffffff;
 }
 
+
+
+
 /* ZX Spectrum */
 
-#speccy {
+
+#jsspeccy-viewport {
+
+	/* Improves video quality and sharpness */
+	/*
 	image-rendering: optimizeSpeed;
 	image-rendering: -moz-crisp-edges;
 	image-rendering: -o-crisp-edges;
@@ -98,11 +122,11 @@ a:hover {
 	image-rendering: crisp-edges;
 	image-rendering: pixelated;
 	-ms-interpolation-mode: nearest-neighbor;
+	*/
 }
 
+
 /* Div Overlaping Div */
-
-
 
 .global {
 	width: 100%;
@@ -112,7 +136,7 @@ a:hover {
 	margin-top: 20px;
 }	
 .box {
-	z-index: 1;
+	z-index: -1;
 	width: 100%;
 	height: 100%;            
 	position: absolute;
@@ -121,7 +145,7 @@ a:hover {
 	margin: 0px;
 }
 .at-top {
-	z-index: 2;
+	z-index: 1;
 	margin: 0px;
 	margin-top: -52px;
 	opacity: 1.0;
@@ -130,9 +154,11 @@ a:hover {
 /* TV image */
 
 .tv {
+
 	min-width: 1255px;
 	max-width: 1255px;
 	width: 1255px;
+
 }
 
 .footer-center-contents {
@@ -150,7 +176,7 @@ a:hover {
 	background-color: rgba(0,0,0,0.60);
 }
 
-.div_keyboard_class {
+.div_key_class {
 	position: relative;
 	left: 50%;
 	transform: translate(-50% , 0%);
@@ -164,6 +190,13 @@ a:hover {
 }
 
 	
+/*	
+select#example-games option[value="3D Tanx (Prism).tzx"] { background-image:url('zxspectrum/cassette.jpg'); }
+select#example-games option[value="3D-Interceptor.tzx" ] { background-image:url('zxspectrum/cassette.jpg'); }
+select#example-games option[value="11-A-SIDE.TAP"      ] { background-image:url('zxspectrum/cassette.jpg'); }
+*/
+
+
 </style>
 </head>
 <body>
@@ -180,24 +213,24 @@ a:hover {
 	
     <div class="box at-top">
 		<div class="d-flex justify-content-center" style="overflow:hidden;">					
-		<img class="tv" src="./zxspectrum/TV.png" alt="">			
+		<img class="tv" src="./zxspectrum/TV.png" alt=" ">			
 		</div>
 	</div>
 	
 
 			<div class="footer-center-contents">
 		
-			<!-- INI: ZX Spectrum Controls -->
-			<div id="jsspeccy">
+			<!-- INI: ZX Spectrum UI -->
+			<div id="jsspeccy-ui">
 	
 			<div class="toolbar" style="text-align:center; width:100%;">
 
 			<!-- Keyboard -->	
-			<div id="div_keyboard" class="div_keyboard_class">
+			<div id="div_keyboard" class="div_key_class">
 			<img style="max-width:100%; max-height:100%;" src="./zxspectrum/KEYBOARD.png"> 
 			</div>			
 						
-			<button class="btn btn-dark btn-sm" style="" onclick="javascript:showHideDiv();">Keyboard</button>
+			<button id="but_keyboard" class="btn btn-dark btn-sm" onclick="showHideDiv();">Keys: Hide</button>
 			
 			<select class="select-model btn btn-dark btn-sm"></select>						
 			
@@ -206,7 +239,7 @@ a:hover {
 				<!-- Test ROMs here: https://jsspeccy.zxdemo.org -->
 			
 				<option value="" selected>Select one cassette...</option>
-							
+										
 				<option value="3D Tanx (Prism).tzx">3D Tanx</option>
 				<option value="3D-Interceptor.tzx">3D Interceptor</option>
 				<option value="11-A-SIDE.TAP">11 A Side</option>
@@ -425,11 +458,11 @@ a:hover {
 			
 			<!-- <button class="stop-start btn btn-dark btn-sm" title="Stop / start">Pause</button> -->			
 			<button class="reset btn btn-dark btn-sm">Reset</button>
-			<button class="audio btn btn-dark btn-sm">Audio On/Off</button>
+			<button id="but_audio" class="audio btn btn-dark btn-sm" onclick="audioSet();">Audio: ON</button>
 			
 			</div>			
 			</div>
-			<!-- END: ZX Spectrum Controls -->
+			<!-- END: ZX Spectrum UI -->
 
 			<p><b>This page is part of Jorge Rosa - <a href="./index.html" target="_blank">PORTFOLIO</a></b></p>
 			
@@ -437,6 +470,8 @@ a:hover {
 			
 
 	</div>	
+	
+
 	
 </body>	
 </html>
