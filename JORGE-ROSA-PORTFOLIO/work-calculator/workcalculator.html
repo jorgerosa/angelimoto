@@ -227,11 +227,11 @@ function reset(){
 	
 	document.getElementById('gru').value = '0';
 	document.getElementById('cpk').value = '0.00';
-	document.getElementById('tem').value = '1';
-	document.getElementById('deh').value = '0.10';
-	document.getElementById('eeh').value = '0.10';
-	document.getElementById('ogh').value = '0.10';
-	document.getElementById('moh').value = '5.00';
+	document.getElementById('tem').value = '0';
+	document.getElementById('deh').value = '0.00';
+	document.getElementById('eeh').value = '0.00';
+	document.getElementById('ogh').value = '0.00';
+	document.getElementById('moh').value = '0.00';
 	document.getElementById('ode').value = '0.00';
 	document.getElementById('mlu').value = '0.00';
 	document.getElementById('iva').value = '0.00';
@@ -285,23 +285,23 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright">Demorou: </td><td class="aleft"> <input id="tem" type="text" value="1" onchange="calcular();"> horas</td>
+	<td class="aright">Demorou: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="calcular();"> horas</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.10" onchange="calcular();"> €</td>
+	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.10" onchange="calcular();"> €</td>
+	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.10" onchange="calcular();"> €</td>			
+	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="calcular();"> €</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="5.00" onchange="calcular();"> €</td>
+	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
 	
 	<tr>
@@ -325,7 +325,7 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright">Margem lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="calcular();"> %</td>
+	<td class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="calcular();"> %</td>
 	</tr>
 	
 	<tr>
