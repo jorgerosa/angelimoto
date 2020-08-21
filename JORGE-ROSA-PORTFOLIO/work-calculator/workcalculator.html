@@ -224,18 +224,6 @@ function calcular(){
 	document.getElementById('tot').value = c.toFixed(2);
 }
 
-
-var nVatRate = 0.2;// This is the rate of VAT in the UK at present, 20%
-
-function VatAmountFromGross(nGrossAmount){
-    return nGrossAmount / (1 + (1 / nVatRate));
-}
-
-function VatAmountFromNet(nNetAmount){
-    return nNetAmount * (1 + nVatRate);
-}
-
-
 function reset(){
 	
 	document.getElementById('gru').value = '0';
@@ -252,7 +240,7 @@ function reset(){
 	document.getElementById('par1').value = '0.00';
 	document.getElementById('par2').value = '0.00';
 	document.getElementById('par3').value = '0.00';
-	document.getElementById('tot').value = '0.00';
+	document.getElementById('tot').value  = '0.00';
 }
 
 </script>
@@ -290,7 +278,7 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright label">Material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Parcial - Material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -318,7 +306,7 @@ function reset(){
 	</tr>
 	
 	<tr>
-	<td class="aright label">Gastos por Hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Parcial - Gastos por Hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
 	</tr>
 
 	<tr>
@@ -330,7 +318,7 @@ function reset(){
 	</tr>
 	
 	<tr>
-	<td class="aright label">Diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Parcial - Diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
