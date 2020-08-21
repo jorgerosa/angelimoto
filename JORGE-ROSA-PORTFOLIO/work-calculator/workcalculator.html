@@ -206,22 +206,34 @@ function calcular(){
 
 	k = parseFloat(document.getElementById('mlu').value);
 	document.getElementById('mlu').value = k.toFixed(2);
-	if(c>0 && k>0){
-	l = ((c - k) / 100) * k; // totalValue = price * ( (100-discount) / 100 )
-	c = c + l;
+	if(c>0.0 && k>0.0){
+	var temp = (c/100)*(k+100);
+	c = temp;
 	};	
 
 	m = parseFloat(document.getElementById('iva').value);
 	document.getElementById('iva').value = m.toFixed(2);
-	if(c>0 && m>0){
-	n = ((c - m) / 100) * m; // totalValue = price * ( (100-discount) / 100 )
-	c = c + n;
+	if(c>0.0 && m>0.0){
+	var temp = (c/100)*(m+100);
+	c = temp;
 	};
 
 	/* Total */
 	
 	document.getElementById('tot').value = c.toFixed(2);
 }
+
+
+var nVatRate = 0.2;// This is the rate of VAT in the UK at present, 20%
+
+function VatAmountFromGross(nGrossAmount){
+    return nGrossAmount / (1 + (1 / nVatRate));
+}
+
+function VatAmountFromNet(nNetAmount){
+    return nNetAmount * (1 + nVatRate);
+}
+
 
 function reset(){
 	
@@ -277,7 +289,7 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -305,7 +317,7 @@ function reset(){
 	</tr>
 	
 	<tr>
-	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Gastos por Hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
 	</tr>
 
 	<tr>
@@ -317,7 +329,7 @@ function reset(){
 	</tr>
 	
 	<tr>
-	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -333,7 +345,7 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
+	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
 	</tr>			   
             
 	</table>
