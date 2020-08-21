@@ -1,0 +1,321 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<title>Calculator</title>
+<!-- <meta name="viewport" content="width=1050, user-scalable=no" /> -->
+<meta name="robots" content="noindex" />
+<link rel="icon" href="./index-2.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	background-color: #e0e0e0;
+	color: #000000;
+	margin:10px;	
+}
+
+.table_N1 {
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 2px;
+	width: 430px;
+	min-width: 430px;
+	overflow: hidden;
+}
+
+.table_N2 {
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 2px;
+	width: 200px;
+	min-width: 200px;
+	overflow: hidden;
+}
+
+tr, td {
+	border: 0px solid #ff0000;
+	padding: 4px;
+}
+
+input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	text-align: right;
+	border: 1px solid #000000;
+	background-color: #ebfdff;
+	color: #01003f;
+	max-width:80px;
+}
+
+.input_calc {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	text-align: center;
+	border: 1px solid #000000;
+	background-color: #cccccc;
+	color: #000000;
+	max-width:80px;
+}
+
+form { 
+	text-align: center;
+}
+
+.header {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+	padding: 10px;
+	padding-bottom: 0px;
+}
+
+.coment {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+	font-size: small;
+	padding: 5px;
+}
+
+.topico {
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+}
+
+.aright {
+	text-align: right;
+}
+
+.aleft {
+	text-align: left;
+}
+
+.outerdiv {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+	  
+.innerdiv1 {
+	display: inline-block;
+	margin: 0 auto;
+}
+.innerdiv2 {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+p {
+	z-index: 910;
+	margin-top: 10px;
+	font-size: x-small;
+	color: #909090;	
+	width: 100%;
+	text-align: center;
+}
+
+a, a:link, a:visited, a:active {
+	color: #909090;
+	text-decoration: underline;
+}
+a:hover {
+	color: #000000;
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+
+function calcular(){
+	var a,b,c,d,e,f,g,h,i,j,k,l,m,n;
+	
+	/* Mat metros */
+	a = Number(document.getElementById('mus').value);
+	b = Number(document.getElementById('mpm').value);
+	c = a * b;
+	
+	/* Gastos por hora */
+	d = Number(document.getElementById('tem').value);	
+	e = Number(document.getElementById('deh').value);
+	f = Number(document.getElementById('eeh').value);
+	g = Number(document.getElementById('ogh').value);
+	h = Number(document.getElementById('moh').value);
+	i = d * (e + f + g + h);
+	c = c + i;
+
+	/* Diversos */
+	j = Number(document.getElementById('ode').value);
+	c = c + j;
+
+	k = Number(document.getElementById('mlu').value);
+	if(c>0 && k>0){
+	l = ((c - k) / 100) * k; // totalValue = price * ( (100-discount) / 100 )
+	c = c + l;
+	};
+	
+
+	m = Number(document.getElementById('iva').value);
+	if(c>0 && m>0){
+	n = ((c - m) / 100) * m; // totalValue = price * ( (100-discount) / 100 )
+	c = c + n;
+	};	
+	
+	document.getElementById('tot').value = c;
+}
+
+function reset(){
+	
+	document.getElementById('mus').value = '0';
+	document.getElementById('mpm').value = '0';
+	document.getElementById('tem').value = '1';
+	document.getElementById('deh').value = '0.10';
+	document.getElementById('eeh').value = '0.10';
+	document.getElementById('ogh').value = '0.10';
+	document.getElementById('moh').value = '5.00';
+	document.getElementById('ode').value = '0';
+	document.getElementById('mlu').value = '0';
+	document.getElementById('iva').value = '0';
+	document.getElementById('tot').value = '0';
+}
+
+</script>
+
+
+</head>
+<body>
+
+
+<div class="outerdiv">
+<div class="innerdiv1">
+
+
+
+	<table class="table_N1">
+
+	<tr>
+	<td class="header" colspan="2"><b>CUSTOS DE IMPRESSÃO EM 3D<b></td>
+	</tr>
+
+	<tr>
+	<td class="coment" colspan="2">Inserir só números e pontos</td>
+	</tr>
+	
+	<tr>
+	<td class="topico" colspan="2">Material</td>
+	</tr>
+
+	<tr>	
+	<td class="aright">Metros usados: </td><td class="aleft"> <input id="mus" type="text" value="0"> metros </td>
+	</tr>
+	
+	<tr>
+	<td class="aright">Custo por metro: </td><td class="aleft"> <input id="mpm" type="text" value="0"> €</td>
+	</tr>
+			
+	<tr>
+	<td class="topico" colspan="2">Gastos por Hora</td>
+	</tr>
+
+	<tr>
+	<td class="aright">Demorou: </td><td class="aleft"> <input id="tem" type="text" value="1"> horas</td>
+	</tr>
+	
+	<tr>
+	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.10"> €</td>
+	</tr>
+			
+	<tr>
+	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.10"> €</td>
+	</tr>
+			
+	<tr>
+	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.10"> €</td>			
+	</tr>
+			
+	<tr>
+	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="5.00"> €</td>
+	</tr>
+
+	<tr>
+	<td class="topico" colspan="2">Diversos</td>
+	</tr>
+			
+	<tr>
+	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0"> €</td>
+	</tr>
+
+	<tr>
+	<td class="aright">Margem lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0"> %</td>
+	</tr>
+	
+	<tr>
+	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="20"> %</td>
+	</tr>
+
+	<tr>
+	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> </td><td class="aleft"> <b><input id="tot" type="text" value="0"> €</b> </td>
+	</tr>			   
+            
+	</table>
+		 
+
+</div>
+<div class="innerdiv2">
+
+
+<form name="calcGlobal">
+	<table class="table_N2">
+	<tr>
+	<td class="topico" colspan="4">Calculadora</td>
+	</tr>
+	<tr>
+	<td colspan="4">
+	<input type="text" name="display" id="display" style="min-width:180px;" disabled>
+	</td>
+	</tr>
+	<tr>
+	<td><input class="input_calc" type="button" name="one" value="1" onclick="calcGlobal.display.value += '1'"></td>
+	<td><input class="input_calc" type="button" name="two" value="2" onclick="calcGlobal.display.value += '2'"></td>
+	<td><input class="input_calc" type="button" name="three" value="3" onclick="calcGlobal.display.value += '3'"></td>
+	<td><input class="input_calc" type="button" name="plus" value="+" onclick="calcGlobal.display.value += '+'"></td>
+	</tr>
+	<tr>
+	<td><input class="input_calc" type="button" name="four" value="4" onclick="calcGlobal.display.value += '4'"></td>
+	<td><input class="input_calc" type="button" name="five" value="5" onclick="calcGlobal.display.value += '5'"></td>
+	<td><input class="input_calc" type="button" name="six" value="6" onclick="calcGlobal.display.value += '6'"></td>
+	<td><input class="input_calc" type="button" name="minus" value="-" onclick="calcGlobal.display.value += '-'"></td>
+	</tr>
+	<tr>
+	<td><input class="input_calc" type="button" name="seven" value="7" onclick="calcGlobal.display.value += '7'"></td>
+	<td><input class="input_calc" type="button" name="eight" value="8" onclick="calcGlobal.display.value += '8'"></td>
+	<td><input class="input_calc" type="button" name="nine" value="9" onclick="calcGlobal.display.value += '9'"></td>
+	<td><input class="input_calc" type="button" name="times" value="x" onclick="calcGlobal.display.value += '*'"></td>
+	</tr>
+	<tr>
+	<td><input class="input_calc" type="button" id="clear" name="clear" value="C" onclick="calcGlobal.display.value = ''"></td>
+	<td><input class="input_calc" type="button" name="zero" value="0" onclick="calcGlobal.display.value += '0'"></td>
+	<td><input class="input_calc" type="button" name="doit" value="=" onclick="calcGlobal.display.value = eval(calcGlobal.display.value)"></td>
+	<td><input class="input_calc" type="button" name="div" value="/" onclick="calcGlobal.display.value += '/'"></td>
+	</tr>
+	</table>
+</form>
+
+
+
+</div>
+</div>
+
+<p><b>This page is part of Jorge Rosa - <a href="../index.html" target="_blank">PORTFOLIO</a> | For <a href="https://www.facebook.com/groups/3dprintingportugal" target="_blank">3D PRINTING PORTUGAL</a></b></p>
+
+</body>
+</html>
