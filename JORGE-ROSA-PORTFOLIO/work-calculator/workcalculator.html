@@ -53,6 +53,26 @@ input {
 	max-width:80px;
 }
 
+#par1, #par2, #par3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	text-align: right;
+	border: 1px solid #909090;
+	background-color: #e7e7e7;
+	color: #707070;
+	max-width:80px;
+}
+
+#tot, #display {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	text-align: right;
+	border: 1px solid #909090;
+	background-color: #e7e7e7;
+	color: #000000;
+	max-width:80px;
+}
+
 .input_calc {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
@@ -98,6 +118,11 @@ form {
 	text-align: left;
 }
 
+.label {
+	color: #909090;
+}
+
+
 .outerdiv {
 	width: 100%;
 	height: 100%;
@@ -138,54 +163,83 @@ a:hover {
 
 function calcular(){
 	var a,b,c,d,e,f,g,h,i,j,k,l,m,n;
+	var p1,p2,p3;
 	
 	/* Mat metros */
-	a = Number(document.getElementById('mus').value);
-	b = Number(document.getElementById('mpm').value);
-	c = a * b;
+	
+	a = parseFloat(document.getElementById('gru').value);
+	// document.getElementById('gru').value = a.toFixed(2);
+	
+	b = parseFloat(document.getElementById('cpk').value);
+	document.getElementById('cpk').value = b.toFixed(2);
+	c = a * b / 1000;
+	c = c;
+	
+	document.getElementById('par1').value = c.toFixed(2); // Parcial 1
 	
 	/* Gastos por hora */
-	d = Number(document.getElementById('tem').value);	
-	e = Number(document.getElementById('deh').value);
-	f = Number(document.getElementById('eeh').value);
-	g = Number(document.getElementById('ogh').value);
-	h = Number(document.getElementById('moh').value);
-	i = d * (e + f + g + h);
+	
+	d = parseFloat(document.getElementById('tem').value);
+	// document.getElementById('tem').value = d.toFixed(2);	
+	e = parseFloat(document.getElementById('deh').value);
+	document.getElementById('deh').value = e.toFixed(2);	
+	f = parseFloat(document.getElementById('eeh').value);
+	document.getElementById('eeh').value = f.toFixed(2);
+	g = parseFloat(document.getElementById('ogh').value);
+	document.getElementById('ogh').value = g.toFixed(2);
+	h = parseFloat(document.getElementById('moh').value);
+	document.getElementById('moh').value = h.toFixed(2);
+	i = d * (e + f + g + h);	
 	c = c + i;
+	
+	document.getElementById('par2').value = i.toFixed(2); // Parcial 2	
 
 	/* Diversos */
-	j = Number(document.getElementById('ode').value);
+	
+	j = parseFloat(document.getElementById('ode').value);
+	document.getElementById('ode').value = j.toFixed(2);
 	c = c + j;
+	
+	document.getElementById('par3').value = j.toFixed(2);; // Parcial 3	
+	
+	/* Interno */
 
-	k = Number(document.getElementById('mlu').value);
+	k = parseFloat(document.getElementById('mlu').value);
+	document.getElementById('mlu').value = k.toFixed(2);
 	if(c>0 && k>0){
 	l = ((c - k) / 100) * k; // totalValue = price * ( (100-discount) / 100 )
 	c = c + l;
-	};
-	
+	};	
 
-	m = Number(document.getElementById('iva').value);
+	m = parseFloat(document.getElementById('iva').value);
+	document.getElementById('iva').value = m.toFixed(2);
 	if(c>0 && m>0){
 	n = ((c - m) / 100) * m; // totalValue = price * ( (100-discount) / 100 )
 	c = c + n;
-	};	
+	};
+
+	/* Total */
 	
-	document.getElementById('tot').value = c;
+	document.getElementById('tot').value = c.toFixed(2);
 }
 
 function reset(){
 	
-	document.getElementById('mus').value = '0';
-	document.getElementById('mpm').value = '0';
+	document.getElementById('gru').value = '0';
+	document.getElementById('cpk').value = '0.00';
 	document.getElementById('tem').value = '1';
 	document.getElementById('deh').value = '0.10';
 	document.getElementById('eeh').value = '0.10';
 	document.getElementById('ogh').value = '0.10';
 	document.getElementById('moh').value = '5.00';
-	document.getElementById('ode').value = '0';
-	document.getElementById('mlu').value = '0';
-	document.getElementById('iva').value = '0';
-	document.getElementById('tot').value = '0';
+	document.getElementById('ode').value = '0.00';
+	document.getElementById('mlu').value = '0.00';
+	document.getElementById('iva').value = '0.00';
+	
+	document.getElementById('par1').value = '0.00';
+	document.getElementById('par2').value = '0.00';
+	document.getElementById('par3').value = '0.00';
+	document.getElementById('tot').value = '0.00';
 }
 
 </script>
@@ -203,7 +257,7 @@ function reset(){
 	<table class="table_N1">
 
 	<tr>
-	<td class="header" colspan="2"><b>CUSTOS DE IMPRESSÃO EM 3D<b></td>
+	<td class="header" colspan="2"><b>CUSTOS DE IMPRESSÃO EM 3D</b></td>
 	</tr>
 
 	<tr>
@@ -215,35 +269,43 @@ function reset(){
 	</tr>
 
 	<tr>	
-	<td class="aright">Metros usados: </td><td class="aleft"> <input id="mus" type="text" value="0"> metros </td>
+	<td class="aright">Gramas usadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="calcular();"> gramas </td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Custo por metro: </td><td class="aleft"> <input id="mpm" type="text" value="0"> €</td>
+	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
-			
+
+	<tr>
+	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	</tr>
+	
 	<tr>
 	<td class="topico" colspan="2">Gastos por Hora</td>
 	</tr>
 
 	<tr>
-	<td class="aright">Demorou: </td><td class="aleft"> <input id="tem" type="text" value="1"> horas</td>
+	<td class="aright">Demorou: </td><td class="aleft"> <input id="tem" type="text" value="1" onchange="calcular();"> horas</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.10"> €</td>
+	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.10" onchange="calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.10"> €</td>
+	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.10" onchange="calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.10"> €</td>			
+	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.10" onchange="calcular();"> €</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="5.00"> €</td>
+	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="5.00" onchange="calcular();"> €</td>
+	</tr>
+	
+	<tr>
+	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
 	</tr>
 
 	<tr>
@@ -251,19 +313,27 @@ function reset(){
 	</tr>
 			
 	<tr>
-	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0"> €</td>
-	</tr>
-
-	<tr>
-	<td class="aright">Margem lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0"> %</td>
+	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="20"> %</td>
+	<td class="aright label">Parcial: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	</tr>
+	
+	<tr>
+	<td class="topico" colspan="2">Internos</td>
 	</tr>
 
 	<tr>
-	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> </td><td class="aleft"> <b><input id="tot" type="text" value="0"> €</b> </td>
+	<td class="aright">Margem lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="calcular();"> %</td>
+	</tr>
+	
+	<tr>
+	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="20.00" onchange="calcular();"> %</td>
+	</tr>
+
+	<tr>
+	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
 	</tr>			   
             
 	</table>
@@ -280,32 +350,32 @@ function reset(){
 	</tr>
 	<tr>
 	<td colspan="4">
-	<input type="text" name="display" id="display" style="min-width:180px;" disabled>
+	<input type="text" id="display" style="min-width:180px;" disabled>
 	</td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" name="one" value="1" onclick="calcGlobal.display.value += '1'"></td>
-	<td><input class="input_calc" type="button" name="two" value="2" onclick="calcGlobal.display.value += '2'"></td>
-	<td><input class="input_calc" type="button" name="three" value="3" onclick="calcGlobal.display.value += '3'"></td>
-	<td><input class="input_calc" type="button" name="plus" value="+" onclick="calcGlobal.display.value += '+'"></td>
+	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.display.value += '1'"></td>
+	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.display.value += '2'"></td>
+	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.display.value += '3'"></td>
+	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.display.value += '+'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" name="four" value="4" onclick="calcGlobal.display.value += '4'"></td>
-	<td><input class="input_calc" type="button" name="five" value="5" onclick="calcGlobal.display.value += '5'"></td>
-	<td><input class="input_calc" type="button" name="six" value="6" onclick="calcGlobal.display.value += '6'"></td>
-	<td><input class="input_calc" type="button" name="minus" value="-" onclick="calcGlobal.display.value += '-'"></td>
+	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.display.value += '4'"></td>
+	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.display.value += '5'"></td>
+	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.display.value += '6'"></td>
+	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.display.value += '-'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" name="seven" value="7" onclick="calcGlobal.display.value += '7'"></td>
-	<td><input class="input_calc" type="button" name="eight" value="8" onclick="calcGlobal.display.value += '8'"></td>
-	<td><input class="input_calc" type="button" name="nine" value="9" onclick="calcGlobal.display.value += '9'"></td>
-	<td><input class="input_calc" type="button" name="times" value="x" onclick="calcGlobal.display.value += '*'"></td>
+	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.display.value += '7'"></td>
+	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.display.value += '8'"></td>
+	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.display.value += '9'"></td>
+	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.display.value += '*'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" id="clear" name="clear" value="C" onclick="calcGlobal.display.value = ''"></td>
-	<td><input class="input_calc" type="button" name="zero" value="0" onclick="calcGlobal.display.value += '0'"></td>
-	<td><input class="input_calc" type="button" name="doit" value="=" onclick="calcGlobal.display.value = eval(calcGlobal.display.value)"></td>
-	<td><input class="input_calc" type="button" name="div" value="/" onclick="calcGlobal.display.value += '/'"></td>
+	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.display.value = ''"></td>
+	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.display.value += '0'"></td>
+	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.display.value = eval(calcGlobal.display.value)"></td>
+	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.display.value += '/'"></td>
 	</tr>
 	</table>
 </form>
