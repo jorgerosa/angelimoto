@@ -53,12 +53,14 @@ body {
 	overflow: hidden;
 }
 .table_N4 {
+	margin-top: 5px;
 	border: 1px solid #000000;
-	background-color: #ffffff;
+	background-color: #000000;
 	color: #000000;
 	padding: 2px;
 	width: 450px;
 	min-width: 450px;
+	max-width: 450px;
 	overflow: hidden;
 }
 tr, td {
@@ -458,17 +460,17 @@ function showvideo() {
             
 	</table>	
 	
-	<table id="live_radio" class="table_N4" style="background-color:#000000; display:none; width:450px; max-width:450px; margin:0px; padding:0px;">
+	<table id="live_radio" class="table_N4" style="display:none;">
 	<tr style="width:450px; max-width:450px; margin:0px; padding:0px;">
-	<td style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<td style="width:450px; max-width:450px; margin:0px; padding:0px; text-align:center;">
 	<iframe id="iframeN1" width="450" height="80" src="https://ice04.fluidstream.net:80/fluid7108.aac?FLID=1" frameborder="0"></iframe>
 	</td>
 	</tr>	
 	</table>
 	
-	<table id="live_video" class="table_N4" style="background-color:#000000; display:none; width:450px; max-width:450px; margin:0px; padding:0px;">
+	<table id="live_video" class="table_N4" style="display:none;">
 	<tr style="width:450px; max-width:450px; margin:0px; padding:0px;">
-	<td style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<td style="width:450px; max-width:450px; margin:0px; padding:0px; text-align:center;">
 	<iframe id="iframeN2" width="450" height="250" src="https://www.youtube.com/embed/faTo2WoZ4hU" frameborder="0" allow="accelerometer; encrypted-media;"></iframe>
 	</td>
 	</tr>	
@@ -527,10 +529,10 @@ function showvideo() {
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal', '_blank');">FACEBOOK</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">LIVE RADIO</button> </td>
+	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">RADIO EM DIRECTO</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo();">LIVE TV</button> </td>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo();">TV EM DIRECTO</button> </td>
 	</tr>	
 	<tr>
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">ENTRETIMENTO</button> </td>
