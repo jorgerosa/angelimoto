@@ -338,11 +338,18 @@ function showvideo() {
 	};
 };
 
+function playsound() {
+	var sound = document.getElementById('sound');
+	sound.play();
+};
+
 </script>
 
 
 </head>
 <body onload="javascript:starttime();">
+
+<audio id="sound" src="./click.ogg"></audio>
 
 <div class="outerdiv">
 <div class="innerdiv1">
@@ -359,7 +366,7 @@ function showvideo() {
 	</tr>
 
 	<tr>
-	<td class="coment" colspan="2">Inserir só números e pontos</td>
+	<td class="coment" colspan="2">Versão: 27-08-2020 | Inserir só números e pontos</td>
 	</tr>
 	
 	<tr>
@@ -439,7 +446,7 @@ function showvideo() {
 	</tr>
 
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="javascript:reset(); javascript:playsound();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound();">CALCULAR</button> </td>
 	</tr>
 	
 	<tr>
@@ -455,7 +462,7 @@ function showvideo() {
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="javascript:reset(); javascript:playsound();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound();">CALCULAR</button> </td>
 	</tr>
             
 	</table>	
@@ -492,28 +499,28 @@ function showvideo() {
 	</td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.ecra.value += '1'"></td>
-	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.ecra.value += '2'"></td>
-	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.ecra.value += '3'"></td>
-	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.ecra.value += '+'"></td>
+	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.ecra.value += '1'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.ecra.value += '2'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.ecra.value += '3'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.ecra.value += '+'; javascript:playsound();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.ecra.value += '4'"></td>
-	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.ecra.value += '5'"></td>
-	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.ecra.value += '6'"></td>
-	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.ecra.value += '-'"></td>
+	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.ecra.value += '4'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.ecra.value += '5'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.ecra.value += '6'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.ecra.value += '-'; javascript:playsound();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.ecra.value += '7'"></td>
-	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.ecra.value += '8'"></td>
-	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.ecra.value += '9'"></td>
-	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.ecra.value += '*'"></td>
+	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.ecra.value += '7'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.ecra.value += '8'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.ecra.value += '9'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.ecra.value += '*'; javascript:playsound();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.ecra.value = ''"></td>
-	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.ecra.value += '0'"></td>
-	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value)"></td>
-	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.ecra.value += '/'"></td>
+	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.ecra.value = ''; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.ecra.value += '0'; javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value); javascript:playsound();"></td>
+	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.ecra.value += '/'; javascript:playsound();"></td>
 	</tr>
 	</table>
 	</form>
@@ -526,16 +533,16 @@ function showvideo() {
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
 	</tr>
 	<tr>
-	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">FACEBOOK</button> </td>
+	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsound();">FACEBOOK</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">RADIO EM DIRECTO</button> </td>
+	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsound();">RADIO EM DIRECTO</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo();">TV EM DIRECTO</button> </td>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsound();">TV EM DIRECTO</button> </td>
 	</tr>	
 	<tr>
-	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">ENTRETIMENTO</button> </td>
+	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsound();">ENTRETIMENTO</button> </td>
 	</tr>
 	</table>
 
