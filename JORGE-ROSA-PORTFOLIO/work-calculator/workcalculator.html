@@ -298,6 +298,7 @@ function startTime() {
 	var h = today.getHours();
 	var m = today.getMinutes();
 	var s = today.getSeconds();
+	h = checkTime(h);
 	m = checkTime(m);
 	s = checkTime(s);
 	document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
@@ -305,7 +306,7 @@ function startTime() {
 };
 
 function checkTime(i) {
-	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	if (i < 10) {i = "0" + i}; 
 	return i;
 };
 
@@ -474,12 +475,16 @@ function checkTime(i) {
 </form>
 
 
+
 	<table class="table_N3">	
 	<tr>
 	<td class="topico">Sala de espera</td>
 	</tr>
 	<tr>
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
+	</tr>
+	<tr>
+	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://ice04.fluidstream.net:80/fluid7108.aac?FLID=1', '_blank');">LIVE RADIO</button> </td>
 	</tr>
 	<tr>
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal', '_blank');">FACEBOOK</button> </td>
