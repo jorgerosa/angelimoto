@@ -170,7 +170,7 @@ a:hover {
 <script type="text/javascript">
 
 function calcular(){
-	var a,b,c,d,e,f,g,h,i,j,k,l;
+	var a,b,c,d,e,f,g,h,i,j,k,l,m;
 	var p1,p2,p3;
 	var x1,x2;
 	
@@ -209,7 +209,13 @@ function calcular(){
 	document.getElementById('ode').value = j.toFixed(2);
 	c = c + j;
 	
-	document.getElementById('par3').value = j.toFixed(2);; // Parcial 3	
+	m = parseFloat(document.getElementById('pde').value);
+	document.getElementById('pde').value = m.toFixed(2);
+	c = c + m;
+	
+	var temp = j + m;
+	
+	document.getElementById('par3').value = temp.toFixed(2);; // Parcial 3	
 	
 	/* Interno */
 
@@ -252,6 +258,7 @@ function reset(){
 	document.getElementById('ogh').value = '0.00';
 	document.getElementById('moh').value = '0.00';
 	document.getElementById('ode').value = '0.00';
+	document.getElementById('pde').value = '0.00';
 	document.getElementById('mlu').value = '0.00';
 	document.getElementById('iva').value = '0.00';
 	
@@ -337,6 +344,10 @@ function reset(){
 			
 	<tr>
 	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="calcular();"> €</td>
+	</tr>
+
+	<tr>
+	<td class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="calcular();"> €</td>
 	</tr>
 	
 	<tr>
