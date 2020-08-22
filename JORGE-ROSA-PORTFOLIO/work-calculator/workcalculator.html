@@ -48,7 +48,7 @@ input {
 	color: #01003f;
 	max-width:80px;
 }
-#par1, #par2, #par3 {
+#par1, #par2, #par3, #xva {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
@@ -57,7 +57,7 @@ input {
 	color: #707070;
 	max-width:80px;
 }
-#tot, #display {
+#tot, #xva, #display {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	font-weight: bold;
@@ -145,6 +145,7 @@ a:hover {
 function calcular(){
 	var a,b,c,d,e,f,g,h,i,j,k,l,m,n;
 	var p1,p2,p3;
+	var x1,x2;
 	
 	/* Mat metros */
 	
@@ -202,6 +203,18 @@ function calcular(){
 	/* Total */
 	
 	document.getElementById('tot').value = c.toFixed(2);
+	
+	/* Extras */
+	
+	x1 = parseFloat(document.getElementById('xnp').value); // Pecas
+	document.getElementById('xnp').value = x1.toFixed(0);
+	document.getElementById('xva').value = '0.00';
+	
+	if(x1>0 && c>0.0){
+	x2 = c/x1; // Preco por Pecas
+	document.getElementById('xva').value = x2.toFixed(2);
+	};
+	
 }
 
 function reset(){
@@ -221,6 +234,9 @@ function reset(){
 	document.getElementById('par2').value = '0.00';
 	document.getElementById('par3').value = '0.00';
 	document.getElementById('tot').value  = '0.00';
+	
+	document.getElementById('xnp').value  = '0';
+	document.getElementById('xva').value  = '0.00';
 }
 
 </script>
@@ -316,8 +332,28 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="aright"> <button onclick="reset();">RESET</button> <button onclick="calcular();">CALCULAR</button> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
-	</tr>			   
+	<td class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
+	</tr>
+
+	<tr>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
+	</tr>
+	
+	<tr>
+	<td class="topico" colspan="2">Extras</td>
+	</tr>
+			
+	<tr>
+	<td class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="calcular();"> peças</td>
+	</tr>
+	
+	<tr>
+	<td class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
+	</tr>	
+	
+	<tr>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
+	</tr>
             
 	</table>
 		 
