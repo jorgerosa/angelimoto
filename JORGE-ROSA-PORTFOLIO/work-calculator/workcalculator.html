@@ -29,8 +29,8 @@ body {
 	background-color: #ffffff;
 	color: #000000;
 	padding: 2px;
-	width: 430px;
-	min-width: 430px;
+	width: 450px;
+	min-width: 450px;
 	overflow: hidden;
 }
 .table_N2 {
@@ -50,6 +50,15 @@ body {
 	padding: 2px;
 	width: 210px;
 	min-width: 210px;
+	overflow: hidden;
+}
+.table_N4 {
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 2px;
+	width: 450px;
+	min-width: 450px;
 	overflow: hidden;
 }
 tr, td {
@@ -292,7 +301,7 @@ function reset(){
 	document.getElementById('xva').value  = '0.00';
 };
 
-function starttime() {
+function starttime(){
 	var today = new Date();
 	var h = today.getHours();
 	var m = today.getMinutes();
@@ -300,13 +309,31 @@ function starttime() {
 	h = checktime(h);
 	m = checktime(m);
 	s = checktime(s);
-	document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+	document.getElementById('clock').innerHTML = h + ':' + m + ':' + s;
 	var t = setTimeout(starttime, 500);
 };
 
-function checktime(i) {
-	if (i < 10) {i = "0" + i}; 
+function checktime(i){
+	if(i<10) {i = '0' + i}; 
 	return i;
+};
+
+function showradio() {
+	var e = document.getElementById('live_radio');
+	if (e.style.display === 'none') {
+    e.style.display = 'block';
+	} else {
+	e.style.display = 'none';
+	};
+};
+
+function showvideo() {
+	var e = document.getElementById('live_video');
+	if (e.style.display === 'none') {
+    e.style.display = 'block';
+	} else {
+	e.style.display = 'none';
+	};
 };
 
 </script>
@@ -330,7 +357,7 @@ function checktime(i) {
 	</tr>
 
 	<tr>
-	<td class="coment" colspan="2">Uso: Inserir só números e pontos</td>
+	<td class="coment" colspan="2">Inserir só números e pontos</td>
 	</tr>
 	
 	<tr>
@@ -338,15 +365,15 @@ function checktime(i) {
 	</tr>
 
 	<tr>	
-	<td class="aright">Gramas usadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();"> gramas </td>
+	<td class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();"> gramas </td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
+	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();"> € / kg</td>
 	</tr>
 
 	<tr>
-	<td class="aright label">Parcial - Material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Total do material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -354,27 +381,27 @@ function checktime(i) {
 	</tr>
 
 	<tr>
-	<td class="aright">A impressão demorou: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();"> horas</td>
+	<td class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();"> horas</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
+	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
+	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>			
+	<td class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
+	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 	
 	<tr>
-	<td class="aright label">Parcial - Gastos por Hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Total dos custos por hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> € / h</td>
 	</tr>
 
 	<tr>
@@ -382,7 +409,7 @@ function checktime(i) {
 	</tr>
 			
 	<tr>
-	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
+	<td class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 
 	<tr>
@@ -390,7 +417,7 @@ function checktime(i) {
 	</tr>
 	
 	<tr>
-	<td class="aright label">Parcial - Diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	<td class="aright label">Total dos diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -429,6 +456,22 @@ function checktime(i) {
 	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular();">CALCULAR</button> </td>
 	</tr>
             
+	</table>	
+	
+	<table id="live_radio" class="table_N4" style="background-color:#000000; display:none; width:450px; max-width:450px; margin:0px; padding:0px;">
+	<tr style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<td style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<iframe id="iframeN1" width="450" height="80" src="https://ice04.fluidstream.net:80/fluid7108.aac?FLID=1" frameborder="0"></iframe>
+	</td>
+	</tr>	
+	</table>
+	
+	<table id="live_video" class="table_N4" style="background-color:#000000; display:none; width:450px; max-width:450px; margin:0px; padding:0px;">
+	<tr style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<td style="width:450px; max-width:450px; margin:0px; padding:0px;">
+	<iframe id="iframeN2" width="450" height="250" src="https://www.youtube.com/embed/faTo2WoZ4hU" frameborder="0" allow="accelerometer; encrypted-media;"></iframe>
+	</td>
+	</tr>	
 	</table>
 		 
 
@@ -481,11 +524,14 @@ function checktime(i) {
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
 	</tr>
 	<tr>
-	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://ice04.fluidstream.net:80/fluid7108.aac?FLID=1', '_blank');">LIVE RADIO</button> </td>
-	</tr>
-	<tr>
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal', '_blank');">FACEBOOK</button> </td>
 	</tr>
+	<tr>
+	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">LIVE RADIO</button> </td>
+	</tr>
+	<tr>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo();">LIVE TV</button> </td>
+	</tr>	
 	<tr>
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">ENTRETIMENTO</button> </td>
 	</tr>
