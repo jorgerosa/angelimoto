@@ -52,17 +52,27 @@ input {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
-	border: 1px solid #909090;
-	background-color: #e7e7e7;
+	border: 0px solid #909090;
+	background-color: #ffffff;
 	color: #707070;
 	max-width:80px;
 }
-#tot, #xva, #display {
+#display {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	font-weight: bold;
 	text-align: right;
 	border: 1px solid #909090;
+	background-color: #e7e7e7;
+	color: #000000;
+	max-width:80px;
+}
+#tot, #xva {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+	text-align: right;
+	border: 0px solid #909090;
 	background-color: #e7e7e7;
 	color: #000000;
 	max-width:80px;
@@ -74,10 +84,24 @@ input {
 	border: 1px solid #000000;
 	background-color: #cccccc;
 	color: #000000;
-	max-width:80px;
+	max-width: 80px;
+	cursor: pointer;
 }
 form { 
 	text-align: center;
+}
+button {
+	font-weight: bold;
+	padding: 6px;
+	margin: 6px;
+	cursor: pointer;
+}
+.header2 {
+	background-color: #003e61;
+	color: #ffffff;
+	font-size: large;
+	text-align: center;
+	padding: 20px;
 }
 .header {
 	background-color: #ffffff;
@@ -85,6 +109,9 @@ form {
 	text-align: center;
 	padding: 10px;
 	padding-bottom: 0px;
+}
+.finalrow {
+	background-color: #e7e7e7;
 }
 .coment {
 	background-color: #ffffff;
@@ -143,7 +170,7 @@ a:hover {
 <script type="text/javascript">
 
 function calcular(){
-	var a,b,c,d,e,f,g,h,i,j,k,l,m,n;
+	var a,b,c,d,e,f,g,h,i,j,k,l;
 	var p1,p2,p3;
 	var x1,x2;
 	
@@ -193,10 +220,10 @@ function calcular(){
 	c = temp;
 	};	
 
-	m = parseFloat(document.getElementById('iva').value);
-	document.getElementById('iva').value = m.toFixed(2);
-	if(c>0.0 && m>0.0){
-	var temp = (c/100)*(m+100);
+	l = parseFloat(document.getElementById('iva').value);
+	document.getElementById('iva').value = l.toFixed(2);
+	if(c>0.0 && l>0.0){
+	var temp = (c/100)*(l+100);
 	c = temp;
 	};
 
@@ -213,12 +240,10 @@ function calcular(){
 	if(x1>0 && c>0.0){
 	x2 = c/x1; // Preco por Pecas
 	document.getElementById('xva').value = x2.toFixed(2);
-	};
-	
+	};	
 }
 
-function reset(){
-	
+function reset(){	
 	document.getElementById('gru').value = '0';
 	document.getElementById('cpk').value = '0.00';
 	document.getElementById('tem').value = '0';
@@ -237,8 +262,7 @@ function reset(){
 	
 	document.getElementById('xnp').value  = '0';
 	document.getElementById('xva').value  = '0.00';
-}
-
+};
 </script>
 
 
@@ -252,7 +276,7 @@ function reset(){
 	<table class="table_N1">
 
 	<tr>
-	<td class="header" colspan="2"><b>3D PRINTING PORTUGAL</b></td>
+	<td class="header2" colspan="2"><b>3D PRINTING PORTUGAL</b></td>
 	</tr>
 	
 	<tr>
@@ -260,7 +284,7 @@ function reset(){
 	</tr>
 
 	<tr>
-	<td class="coment" colspan="2">Inserir só números e pontos</td>
+	<td class="coment" colspan="2">Uso: Inserir só números e pontos</td>
 	</tr>
 	
 	<tr>
@@ -331,11 +355,11 @@ function reset(){
 	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="calcular();"> %</td>
 	</tr>
 
-	<tr>
+	<tr class="finalrow">
 	<td class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
 	</tr>
 
-	<tr>
+	<tr class="finalrow">
 	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
 	</tr>
 	
@@ -347,11 +371,11 @@ function reset(){
 	<td class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="calcular();"> peças</td>
 	</tr>
 	
-	<tr>
+	<tr class="finalrow">
 	<td class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
 	</tr>	
 	
-	<tr>
+	<tr class="finalrow">
 	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
 	</tr>
             
