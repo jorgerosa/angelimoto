@@ -72,17 +72,18 @@ input {
 	border: 0px solid #909090;
 	background-color: #ffffff;
 	color: #707070;
-	max-width:80px;
+	max-width: 80px;
 }
-#display {
+#ecra {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	font-weight: bold;
 	text-align: right;
+	padding: 8px;
+	margin: 0px;
 	border: 1px solid #909090;
 	background-color: #e7e7e7;
 	color: #000000;
-	max-width:80px;
 }
 #tot, #xva {
 	font-family: Arial, Helvetica, sans-serif;
@@ -409,7 +410,7 @@ function checktime(i) {
 	</tr>
 
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="javascript:calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular();">CALCULAR</button> </td>
 	</tr>
 	
 	<tr>
@@ -425,7 +426,7 @@ function checktime(i) {
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="javascript:calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular();">CALCULAR</button> </td>
 	</tr>
             
 	</table>
@@ -435,43 +436,42 @@ function checktime(i) {
 <div class="innerdiv2">
 
 
-<form name="calcGlobal">
+	<form name="calcGlobal">
 	<table class="table_N2">
 	<tr>
 	<td class="topico" colspan="4">Calculadora</td>
 	</tr>
 	<tr>
 	<td colspan="4">
-	<input type="text" id="display" style="min-width:180px;" disabled>
+	<input type="text" id="ecra" style="min-width:90%;" disabled>
 	</td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.display.value += '1'"></td>
-	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.display.value += '2'"></td>
-	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.display.value += '3'"></td>
-	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.display.value += '+'"></td>
+	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.ecra.value += '1'"></td>
+	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.ecra.value += '2'"></td>
+	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.ecra.value += '3'"></td>
+	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.ecra.value += '+'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.display.value += '4'"></td>
-	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.display.value += '5'"></td>
-	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.display.value += '6'"></td>
-	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.display.value += '-'"></td>
+	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.ecra.value += '4'"></td>
+	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.ecra.value += '5'"></td>
+	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.ecra.value += '6'"></td>
+	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.ecra.value += '-'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.display.value += '7'"></td>
-	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.display.value += '8'"></td>
-	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.display.value += '9'"></td>
-	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.display.value += '*'"></td>
+	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.ecra.value += '7'"></td>
+	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.ecra.value += '8'"></td>
+	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.ecra.value += '9'"></td>
+	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.ecra.value += '*'"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.display.value = ''"></td>
-	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.display.value += '0'"></td>
-	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.display.value = eval(calcGlobal.display.value)"></td>
-	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.display.value += '/'"></td>
+	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.ecra.value = ''"></td>
+	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.ecra.value += '0'"></td>
+	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value)"></td>
+	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.ecra.value += '/'"></td>
 	</tr>
 	</table>
-</form>
-
+	</form>
 
 	<table class="table_N3">	
 	<tr>
