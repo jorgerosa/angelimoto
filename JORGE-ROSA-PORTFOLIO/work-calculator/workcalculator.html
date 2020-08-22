@@ -22,7 +22,7 @@ body {
 	font-size: medium;
 	background-color: transparent;
 	color: #000000;
-	margin:20px;	
+	margin: 30px;	
 }
 .table_N1 {
 	border: 1px solid #000000;
@@ -168,7 +168,7 @@ button {
 .signature {
 	margin-top: 10px;
 	font-size: x-small;
-	color: #909090;	
+	color: #626262;	
 	width: 100%;
 	text-align: center;
 }
@@ -179,15 +179,13 @@ button {
 	text-align: center;
 }
 a, a:link, a:visited, a:active {
-	color: #909090;
+	color: #626262;
 	text-decoration: underline;
 }
 a:hover {
 	color: #000000;
 }
 </style>
-
-
 
 <script type="text/javascript">
 
@@ -196,7 +194,7 @@ function calcular(){
 	var p1,p2,p3;
 	var x1,x2;
 	
-	/* Mat metros */
+	/* Material Kg */
 	
 	a = parseFloat(document.getElementById('gru').value);
 	// document.getElementById('gru').value = a.toFixed(2);
@@ -208,7 +206,7 @@ function calcular(){
 	
 	document.getElementById('par1').value = c.toFixed(2); // Parcial 1
 	
-	/* Gastos por hora */
+	/* Custos por hora */
 	
 	d = parseFloat(document.getElementById('tem').value);
 	// document.getElementById('tem').value = d.toFixed(2);	
@@ -293,19 +291,19 @@ function reset(){
 	document.getElementById('xva').value  = '0.00';
 };
 
-function startTime() {
+function starttime() {
 	var today = new Date();
 	var h = today.getHours();
 	var m = today.getMinutes();
 	var s = today.getSeconds();
-	h = checkTime(h);
-	m = checkTime(m);
-	s = checkTime(s);
+	h = checktime(h);
+	m = checktime(m);
+	s = checktime(s);
 	document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
-	var t = setTimeout(startTime, 500);
+	var t = setTimeout(starttime, 500);
 };
 
-function checkTime(i) {
+function checktime(i) {
 	if (i < 10) {i = "0" + i}; 
 	return i;
 };
@@ -314,7 +312,7 @@ function checkTime(i) {
 
 
 </head>
-<body onload="startTime()">
+<body onload="javascript:starttime();">
 
 <div class="outerdiv">
 <div class="innerdiv1">
@@ -339,11 +337,11 @@ function checkTime(i) {
 	</tr>
 
 	<tr>	
-	<td class="aright">Gramas usadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="calcular();"> gramas </td>
+	<td class="aright">Gramas usadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();"> gramas </td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 
 	<tr>
@@ -355,23 +353,23 @@ function checkTime(i) {
 	</tr>
 
 	<tr>
-	<td class="aright">A impressão demorou: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="calcular();"> horas</td>
+	<td class="aright">A impressão demorou: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();"> horas</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="calcular();"> €</td>			
+	<td class="aright">Outros gastos / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 	
 	<tr>
@@ -383,11 +381,11 @@ function checkTime(i) {
 	</tr>
 			
 	<tr>
-	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Outras despesas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 
 	<tr>
-	<td class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="calcular();"> €</td>
+	<td class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="javascript:calcular();"> €</td>
 	</tr>
 	
 	<tr>
@@ -399,11 +397,11 @@ function checkTime(i) {
 	</tr>
 
 	<tr>
-	<td class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="calcular();"> %</td>
+	<td class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="javascript:calcular();"> %</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="calcular();"> %</td>
+	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="javascript:calcular();"> %</td>
 	</tr>
 
 	<tr class="finalrow">
@@ -411,7 +409,7 @@ function checkTime(i) {
 	</tr>
 
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="javascript:calcular();">CALCULAR</button> </td>
 	</tr>
 	
 	<tr>
@@ -419,7 +417,7 @@ function checkTime(i) {
 	</tr>
 			
 	<tr>
-	<td class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="calcular();"> peças</td>
+	<td class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="javascript:calcular();"> peças</td>
 	</tr>
 	
 	<tr class="finalrow">
@@ -427,7 +425,7 @@ function checkTime(i) {
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="calcular();">CALCULAR</button> </td>
+	<td class="aright"> <button onclick="reset();">RESET ALL</button>  </td><td class="aleft"> <button onclick="javascript:calcular();">CALCULAR</button> </td>
 	</tr>
             
 	</table>
@@ -475,7 +473,6 @@ function checkTime(i) {
 </form>
 
 
-
 	<table class="table_N3">	
 	<tr>
 	<td class="topico">Sala de espera</td>
@@ -493,8 +490,6 @@ function checkTime(i) {
 	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">ENTRETIMENTO</button> </td>
 	</tr>
 	</table>
-
-
 
 
 </div>
