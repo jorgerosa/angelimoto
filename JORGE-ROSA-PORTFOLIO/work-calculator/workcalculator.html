@@ -109,7 +109,7 @@ tr, td {
 	padding: 5px;
 	cursor: pointer;
 }
-#par1, #par2, #par3, #xva {
+#par1, #par2, #par2b, #par3, #xva {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
@@ -225,7 +225,10 @@ a:hover {
 <script type="text/javascript">
 
 function calcular(){
-	var a,b,c,d,e,f,g,h,i,j,k,l,m,p1,p2,p3,x1,x2;
+	var a,b,c,d,e,f,g,h,i,j,k,l,m,p1,p2,p2b,p3,x1,x2;
+	
+	/* Percentagens em valor */
+	p2b = 0;
 	
 	/* Material Kg */	
 	
@@ -270,27 +273,32 @@ function calcular(){
 	
 	document.getElementById('par3').value = temp.toFixed(2);; // Parcial 3	
 	
-	/* Interno */
+	/* Percentagens */
 
 	k = parseFloat(document.getElementById('mlu').value);
 	document.getElementById('mlu').value = k.toFixed(2);
 	if(c>0.0 && k>0.0){
 	var temp = (c/100)*(k+100);
+	p2b += (temp-c);	
 	c = temp;
+	
 	};	
 
 	l = parseFloat(document.getElementById('iva').value);
 	document.getElementById('iva').value = l.toFixed(2);
-	if(c>0.0 && l>0.0){
+	if(c>0.0 && l>0.0){	
 	var temp = (c/100)*(l+100);
+	p2b += (temp-c);
 	c = temp;
 	};
 
 	/* Total */
 	
+	document.getElementById('par2b').value = p2b.toFixed(2);
+	
 	document.getElementById('tot').value = c.toFixed(2);
 	
-	/* Extras */
+	/* Quandidade */
 	
 	x1 = parseFloat(document.getElementById('xnp').value); // Pecas
 	document.getElementById('xnp').value = x1.toFixed(0);
@@ -317,6 +325,7 @@ function reset(){
 	
 	document.getElementById('par1').value = '0.00';
 	document.getElementById('par2').value = '0.00';
+	document.getElementById('par2b').value = '0.00';
 	document.getElementById('par3').value = '0.00';
 	document.getElementById('tot').value  = '0.00';
 	
@@ -394,9 +403,10 @@ function idiomPT() {
 	document.getElementById('txt_18').innerHTML = 'Despesas diversas:';
 	document.getElementById('txt_19').innerHTML = 'Portes de envio:';
 	document.getElementById('txt_20').innerHTML = 'Total dos diversos:';	
-	document.getElementById('txt_21').innerHTML = 'Internos';
+	document.getElementById('txt_21').innerHTML = 'Percentagens';
 	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
 	document.getElementById('txt_23').innerHTML = 'Impostos (IVA):';
+	document.getElementById('txt_23b').innerHTML = 'Total das percentagens:';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
 	document.getElementById('txt_25').innerHTML = 'Quantidade';
 	document.getElementById('txt_26').innerHTML = 'Número de peças:';
@@ -442,9 +452,10 @@ function idiomEN() {
 	document.getElementById('txt_18').innerHTML = 'Other expenses:';
 	document.getElementById('txt_19').innerHTML = 'Shipping:';
 	document.getElementById('txt_20').innerHTML = 'Others total:';	
-	document.getElementById('txt_21').innerHTML = 'Internal';
+	document.getElementById('txt_21').innerHTML = 'Percentages';
 	document.getElementById('txt_22').innerHTML = 'Intended profit margin:';
 	document.getElementById('txt_23').innerHTML = 'Taxes (VAT):';
+	document.getElementById('txt_23b').innerHTML = 'Percentages total:';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
 	document.getElementById('txt_25').innerHTML = 'Quantity';
 	document.getElementById('txt_26').innerHTML = 'Items quantity:';
@@ -584,7 +595,7 @@ var selectall = function(s) {
 	</tr>
 	
 	<tr>
-	<td id="txt_21" class="topico" colspan="2">Internos</td>
+	<td id="txt_21" class="topico" colspan="2">Percentagens</td>
 	</tr>
 
 	<tr>
@@ -593,6 +604,10 @@ var selectall = function(s) {
 	
 	<tr>
 	<td id="txt_23" class="aright">Impostos (IVA): </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	</tr>
+	
+	<tr>
+	<td id="txt_23b" class="aright label">Total das percentagens: </td><td class="aleft label"> <input id="par2b" type="text" value="0.00" disabled> €</td>
 	</tr>
 
 	<tr class="finalrow">
