@@ -77,6 +77,7 @@ tr, td {
 	background-color: #ebfdff;
 	color: #01003f;
 	max-width:80px;
+	padding: 3px;
 	cursor: text;
 }
 .userinput:hover {
@@ -393,7 +394,7 @@ function idiomPT() {
 	document.getElementById('txt_20').innerHTML = 'Total dos diversos:';	
 	document.getElementById('txt_21').innerHTML = 'Internos';
 	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
-	document.getElementById('txt_23').innerHTML = 'IVA:';
+	document.getElementById('txt_23').innerHTML = 'Impostos (IVA):';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
 	document.getElementById('txt_25').innerHTML = 'Extras';
 	document.getElementById('txt_26').innerHTML = 'Número de peças:';
@@ -434,8 +435,8 @@ function idiomEN() {
 	document.getElementById('txt_19').innerHTML = 'Shipping:';
 	document.getElementById('txt_20').innerHTML = 'Others total:';	
 	document.getElementById('txt_21').innerHTML = 'Internal';
-	document.getElementById('txt_22').innerHTML = 'Profit margin:';
-	document.getElementById('txt_23').innerHTML = 'VAT:';
+	document.getElementById('txt_22').innerHTML = 'Intended profit margin:';
+	document.getElementById('txt_23').innerHTML = 'Taxes (VAT):';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
 	document.getElementById('txt_25').innerHTML = 'Extras';
 	document.getElementById('txt_26').innerHTML = 'Items quantity:';
@@ -559,7 +560,7 @@ function idiomEN() {
 	</tr>
 	
 	<tr>
-	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_23" class="aright">Impostos (IVA): </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 
 	<tr class="finalrow">
