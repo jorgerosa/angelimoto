@@ -101,6 +101,14 @@ tr, td {
 	color: #000000;
 	cursor: pointer;
 }
+.selectlist {
+	width: 100%;
+	border: 1px solid #000000;
+	background-color: #dddddd;
+	color: #000000;
+	padding: 5px;
+	cursor: pointer;
+}
 #par1, #par2, #par3, #xva {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
@@ -220,6 +228,11 @@ var digitsonly = function(i) {
     /* Only numbers and dots alloewd */
 	i.value = i.value.replace(/[^\d.]|\.(?=.*\.)/g, '');
 	if (i.value == ''){ i.value = 0; };
+};
+
+var gotourl = function(u) {
+	/* Goto selected url */
+	if (u.value){ window.open(u.value, '_blank'); };
 };
 
 function calcular(){
@@ -408,10 +421,16 @@ function idiomPT() {
 	
 	document.getElementById('txt_40').innerHTML = 'Calculadora';
 	document.getElementById('txt_41').innerHTML = 'Sala de espera';
-	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
-	document.getElementById('sradio').innerHTML = 'RADIO EM DIRECTO';
-	document.getElementById('svideo').innerHTML = 'TV EM DIRECTO';
-	document.getElementById('txt_43').innerHTML = 'JOGOS';
+	document.getElementById('txt_42').innerHTML = 'Facebook';
+	document.getElementById('sradio').innerHTML = 'Radio em directo';
+	document.getElementById('svideo').innerHTML = 'TV em directo';
+	document.getElementById('txt_43').innerHTML = 'Jogos';
+	
+	document.getElementById('txt_44').innerHTML = 'Mundo do STL';
+	document.getElementById('mopt00').innerHTML = 'Lista de modelos 3D ...';
+	document.getElementById('sopt00').innerHTML = 'Lista de software gratuito ...';
+	document.getElementById('sopt09').innerHTML = 'Instrucções para todos eles';
+	document.getElementById('lopt00').innerHTML = 'Lista de lojas ...';
 };
 
 function idiomEN() {
@@ -450,10 +469,16 @@ function idiomEN() {
 	
 	document.getElementById('txt_40').innerHTML = 'Calculator';
 	document.getElementById('txt_41').innerHTML = 'Waiting room';
-	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
-	document.getElementById('sradio').innerHTML = 'LIVE RADIO';
-	document.getElementById('svideo').innerHTML = 'LIVE TV';
-	document.getElementById('txt_43').innerHTML = 'GAMES';
+	document.getElementById('txt_42').innerHTML = 'Facebook';
+	document.getElementById('sradio').innerHTML = 'Live radio';
+	document.getElementById('svideo').innerHTML = 'Live TV';
+	document.getElementById('txt_43').innerHTML = 'Games';
+	
+	document.getElementById('txt_44').innerHTML = 'STL World';
+	document.getElementById('mopt00').innerHTML = '3D models list...';
+	document.getElementById('sopt00').innerHTML = 'Free software ...';
+	document.getElementById('sopt09').innerHTML = 'Tutorials for all';
+	document.getElementById('lopt00').innerHTML = 'Shops list ...';
 };
 
 </script>
@@ -658,20 +683,80 @@ function idiomEN() {
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
 	</tr>
 	<tr>
-	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsoundN1();">FACEBOOK</button> </td>
+	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsoundN1();">Facebook</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsoundN1();">RADIO EM DIRECTO</button> </td>
+	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsoundN1();">Radio em directo</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsoundN1();">TV EM DIRECTO</button> </td>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsoundN1();">TV em directo</button> </td>
 	</tr>	
 	<tr>
-	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">JOGOS</button> </td>
+	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">Jogos</button> </td>
 	</tr>
 	</table>
 
-
+	<table class="table_N3">
+	<tr>
+	<td id="txt_44" class="topico">Mundo do STL</td>
+	</tr>
+	<tr>
+	<td>
+	
+	<select id="modelslist" class="selectlist" onchange="javascript:gotourl(this);">		
+	<option id="mopt00" value="" selected>Lista de modelos 3D ...</option>										
+	<option id="mopt01" value="https://cults3d.com/en/3d-model/home/print-in-place-spring-loaded-box">Spring box</option>
+	<option id="mopt02" value="https://cults3d.com/en/3d-model/game/volkswagen-bus-1970s">Volkswagen van</option>
+	<option id="mopt03" value="https://cults3d.com/en/3d-model/tool/covid-19-prusa">Anti-virus prusa</option>
+	<option id="mopt04" value="https://cults3d.com/en/3d-model/gadget/modular-mounting-system">Support for cameras</option>
+	<option id="mopt05" value="https://cults3d.com/en/3d-model/various/customizable-rugged-waterproof-box">Waterproof box</option>
+	<option id="mopt06" value="https://cults3d.com/en/3d-model/tool/print-in-place-pcb-holder-gripper">PCB Holder</option>
+	<option id="mopt07" value="https://cults3d.com/en/3d-model/tool/3d-printer-tool-holder-v3-0">Tool holder</option>
+	<option id="mopt08" value="https://cults3d.com/en/3d-model/game/tic-tac-toe-ferryteacher">Tic tac toe</option>
+	<option id="mopt09" value="https://cults3d.com/en/3d-model/tool/jb-ultimate-spool-holder-2020">Spool holder</option>
+	<option id="mopt10" value="https://www.thingiverse.com/thing:4360406">Mini water pump</option>
+	</select>
+	
+	</td>
+	</tr>
+	<tr>
+	<td>
+	
+	<select id="softwarelist" class="selectlist" onchange="javascript:gotourl(this);">		
+	<option id="sopt00" value="" selected>Lista de software gratuito ...</option>										
+	<option id="sopt01" value="http://amabilis.com/downloads/">3D Crafter</option>
+	<option id="sopt02" value="https://www.blender.org/download/">Blender</option>
+	<option id="sopt03" value="https://wiki.freecadweb.org/Main_Page">FreeCAD</option>
+	<option id="sopt04" value="https://www.meshlab.net/">Meshlab</option>
+	<option id="sopt05" value="http://www.meshmixer.com/">Meshmixer</option>
+	<option id="sopt06" value="https://stephaneginier.com/sculptgl/">SculpGL (Online)</option>
+	<option id="sopt07" value="https://www.sketchup.com/">SketchUp Make</option>
+	<option id="sopt08" value="http://www.wings3d.com/">Wings 3D</option>
+	<option id="sopt09" value="https://top3dshop.com/blog/best-free-stl-editors">Instrucções para todos eles</option>
+	</select>
+	
+	</td>
+	</tr>
+	<tr>
+	<td>
+	
+	<select id="lojaslist" class="selectlist" onchange="javascript:gotourl(this);">		
+	<option id="lopt00" value="" selected>Lista de lojas ...</option>										
+	<option id="lopt01" value="https://evolt.pt/product-category/impressao-3d/filamentos-3d/">Evolt</option>
+	<option id="lopt02" value="https://www.barandela.pt/filamentos-impress%C3%A3o-3d-175">Barandela</option>
+	<option id="lopt03" value="https://mauser.pt/catalog/index.php?cPath=2207_2402_2308">Mauser</option>
+	<option id="lopt04" value="https://www.dowire.pt/">DoWire</option>
+	<option id="lopt05" value="https://www.castroelectronica.pt/en/loja-virtual/impressora-3d">Castro Electrónica</option>
+	<option id="lopt06" value="https://www.leroymerlin.pt/pesquisa/filamento">Leroy Merlin</option>
+	<option id="lopt07" value="https://www.makers.pt/categoria/made-in-portugal/">Makers</option>
+	<option id="lopt08" value="https://www.impresoras3d.com/pt/">Impressoras3D</option>
+	</select>
+	
+	</td>
+	</tr>
+	</table>
+	
+	
 </div>
 </div>
 
