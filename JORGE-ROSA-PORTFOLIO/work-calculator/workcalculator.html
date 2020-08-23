@@ -111,8 +111,8 @@ tr, td {
 }
 #ecra {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: medium;
-	font-weight: bold;
+	font-size: large;
+	/* font-weight: bold; */
 	text-align: right;
 	padding: 6px;
 	margin: 0px;
@@ -605,39 +605,42 @@ function idiomEN() {
 <div class="innerdiv2">
 
 
-	<form name="calcGlobal">
+	<form name="calcform">
 	<table class="table_N2">
 	<tr>
 	<td id="txt_40" class="topico" colspan="4">Calculadora</td>
 	</tr>
 	<tr>
 	<td colspan="4">
-	<input type="text" id="ecra" style="min-width:90%;" disabled>
+	<input type="text" id="ecra" style="width:92%;" placeholder="0" disabled>
 	</td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="1" onclick="calcGlobal.ecra.value += '1'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="2" onclick="calcGlobal.ecra.value += '2'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="3" onclick="calcGlobal.ecra.value += '3'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="+" onclick="calcGlobal.ecra.value += '+'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="4" onclick="calcGlobal.ecra.value += '4'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="5" onclick="calcGlobal.ecra.value += '5'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="6" onclick="calcGlobal.ecra.value += '6'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="-" onclick="calcGlobal.ecra.value += '-'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="7" onclick="calcGlobal.ecra.value += '7'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="8" onclick="calcGlobal.ecra.value += '8'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="9" onclick="calcGlobal.ecra.value += '9'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="x" onclick="calcGlobal.ecra.value += '*'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="C" onclick="calcGlobal.ecra.value = ''; javascript:playsoundN2();"></td>
-	<td><input class="calcinput" type="button" value="0" onclick="calcGlobal.ecra.value += '0'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value); javascript:playsoundN3();"></td>
-	<td><input class="calcinput" type="button" value="/" onclick="calcGlobal.ecra.value += '/'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsoundN2();"></td>
+	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/'; javascript:playsoundN1();"></td>
+	</tr>
+	<tr>
+	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsoundN3();"></td>
 	</tr>
 	</table>
 	</form>
