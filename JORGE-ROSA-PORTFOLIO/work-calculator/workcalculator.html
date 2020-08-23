@@ -86,6 +86,19 @@ tr, td {
 	color: #01003f;
 	cursor: text;
 }
+.usertextarea {
+	border: 0px solid #b6b6b6;
+	background-color: #ffffff;
+	color: #01003f;
+	font-size: large;
+	width: 95%;
+	min-width: 95%;
+	height: 60px;
+	min-height: 60px;
+	margin: 0px;
+	padding: 4px;
+	cursor: text;
+};
 .calcinput {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
@@ -428,6 +441,9 @@ function idiomPT() {
 	document.getElementById('sopt00').innerHTML = 'Lista de software gratuito ...';
 	document.getElementById('sopt09').innerHTML = 'Instrucções para todos eles';
 	document.getElementById('lopt00').innerHTML = 'Lista de lojas ...';
+	
+	document.getElementById('txt_50').innerHTML = 'Notas';
+	document.getElementById('txt_51').innerHTML = 'Gravar';
 };
 
 function idiomEN() {
@@ -475,6 +491,9 @@ function idiomEN() {
 	document.getElementById('sopt00').innerHTML = 'Free software list ...';
 	document.getElementById('sopt09').innerHTML = 'Tutorials for all';
 	document.getElementById('lopt00').innerHTML = 'Shops list ...';
+	
+	document.getElementById('txt_50').innerHTML = 'Notes';
+	document.getElementById('txt_51').innerHTML = 'Save';
 };
 
 var digitsonly = function(i) {
@@ -495,11 +514,46 @@ var selectall = function(s) {
 	if (s.value == '0' || s.value == '0.00'){ s.select(); };
 };
 
+function checkCookie() {
+    var md = getCookie(); 
+	if(md == null) { md = setCookie(); };
+	if(md != null) { document.getElementById('notas').value = md; };
+};
+
+function setCookie() {
+	var v = document.getElementById('notas').value;
+    var cookie = 'myData=' + encodeURIComponent(v);
+    cookie += '; max-age=' + (90*24*60*60);        
+    document.cookie = cookie;
+};
+
+function getCookie() {
+    var arr = document.cookie.split(';');    
+    for(var i=0; i<arr.length; i++) {
+    var cookiePair = arr[i].split('=');
+    if('myData' == cookiePair[0].trim()) { 	
+	return decodeURIComponent(cookiePair[1]);
+	};
+    };
+    return null;	
+};
+
+/* Do these function only AFTER page is fully loaded */
+window.addEventListener('load', function(){   
+   starttime();
+   checkCookie();
+});
+
+/* Do these function when page is closed (unloaded) */
+window.addEventListener('beforeunload', function (e) {
+	setCookie();
+});
+
 </script>
 
 
 </head>
-<body onload="javascript:starttime();">
+<body>
 
 <audio id="soundN1" src="./clickN1.ogg"></audio>
 <audio id="soundN2" src="./clickN2.ogg"></audio>
@@ -770,6 +824,20 @@ var selectall = function(s) {
 	</tr>
 	</table>
 	
+	<table class="table_N3">
+	<tr>
+	<td id="txt_50" class="topico">Notas</td>
+	</tr>
+	
+	<tr>
+	<td><textarea id="notas" name="notas" class="usertextarea">...</textarea></td>
+	</tr>
+	
+	<tr>
+	<td> <button id="txt_51" style="width:100%; margin:0px; display:none;" onclick="javascript:setCookie(); javascript:playsoundN3();">Gravar</button> </td>
+	</tr>
+	
+	</table>
 	
 </div>
 </div>
