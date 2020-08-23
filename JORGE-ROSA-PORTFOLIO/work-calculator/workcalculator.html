@@ -98,7 +98,7 @@ tr, td {
 	margin: 0px;
 	padding: 4px;
 	cursor: text;
-};
+}
 .calcinput {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
@@ -517,11 +517,11 @@ var selectall = function(s) {
 function checkCookie() {
     var md = getCookie(); 
 	if(md == null) { md = setCookie(); };
-	if(md != null) { document.getElementById('notas').value = md; };
+	if(md != null) { document.getElementById('usertextarea').value = md; };
 };
 
 function setCookie() {
-	var v = document.getElementById('notas').value;
+	var v = document.getElementById('usertextarea').value;
     var cookie = 'myData=' + encodeURIComponent(v);
     cookie += '; max-age=' + (90*24*60*60);        
     document.cookie = cookie;
@@ -830,7 +830,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	
 	<tr>
-	<td><textarea id="notas" name="notas" class="usertextarea">...</textarea></td>
+	<td><textarea id="usertextarea" class="usertextarea" onkeyup="javascript:playsoundN1();">...</textarea></td>
 	</tr>
 	
 	<tr>
