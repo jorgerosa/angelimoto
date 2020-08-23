@@ -215,10 +215,13 @@ a:hover {
 
 <script type="text/javascript">
 
+var digitsonly = function(i) {
+    /* Only numbers and dots alloewd */
+	i.value = i.value.replace(/[^\d.]|\.(?=.*\.)/g, '');
+};
+
 function calcular(){
-	var a,b,c,d,e,f,g,h,i,j,k,l,m;
-	var p1,p2,p3;
-	var x1,x2;
+	var a,b,c,d,e,f,g,h,i,j,k,l,m,p1,p2,p3,x1,x2;
 	
 	/* Material Kg */
 	
@@ -406,7 +409,7 @@ function idiomPT() {
 	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
 	document.getElementById('sradio').innerHTML = 'RADIO EM DIRECTO';
 	document.getElementById('svideo').innerHTML = 'TV EM DIRECTO';
-	document.getElementById('txt_43').innerHTML = 'ENTERTIMENTO';
+	document.getElementById('txt_43').innerHTML = 'JOGOS';
 };
 
 function idiomEN() {
@@ -448,7 +451,7 @@ function idiomEN() {
 	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
 	document.getElementById('sradio').innerHTML = 'LIVE RADIO';
 	document.getElementById('svideo').innerHTML = 'LIVE TV';
-	document.getElementById('txt_43').innerHTML = 'ENTERTAINMENT';
+	document.getElementById('txt_43').innerHTML = 'GAMES';
 };
 
 </script>
@@ -491,11 +494,11 @@ function idiomEN() {
 	</tr>
 
 	<tr>	
-	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
+	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
+	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
 	</tr>
 
 	<tr>
@@ -507,23 +510,23 @@ function idiomEN() {
 	</tr>
 
 	<tr>
-	<td id="txt_10" class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
+	<td id="txt_10" class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
+	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 	
 	<tr>
@@ -535,11 +538,11 @@ function idiomEN() {
 	</tr>
 			
 	<tr>
-	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 
 	<tr>
-	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 	
 	<tr>
@@ -551,11 +554,11 @@ function idiomEN() {
 	</tr>
 
 	<tr>
-	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 	
 	<tr>
-	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 
 	<tr class="finalrow">
@@ -571,7 +574,7 @@ function idiomEN() {
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onchange="javascript:digitsonly(this); javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr class="finalrow">
@@ -662,7 +665,7 @@ function idiomEN() {
 	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsoundN1();">TV EM DIRECTO</button> </td>
 	</tr>	
 	<tr>
-	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">ENTERTIMENTO</button> </td>
+	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">JOGOS</button> </td>
 	</tr>
 	</table>
 
