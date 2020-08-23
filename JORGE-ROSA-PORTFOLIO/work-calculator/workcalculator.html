@@ -353,6 +353,90 @@ function playsoundN3() {
 	soundN3.play();
 };
 
+function idiomPT() {
+	document.getElementById('txt_02').innerHTML = '<b>Calculadora de custos em impressão 3D</b>';
+	document.getElementById('txt_03').innerHTML = 'Versão: 27-08-2020 | Inserir só números e pontos';	
+	document.getElementById('txt_04').innerHTML = 'Material';
+	document.getElementById('txt_05').innerHTML = 'Gramas utilizadas:';
+	document.getElementById('txt_06').innerHTML = ' gramas';
+	document.getElementById('txt_07').innerHTML = 'Custo por Kilograma:';
+	document.getElementById('txt_08').innerHTML = 'Total do material:';	
+	document.getElementById('txt_09').innerHTML = 'Custos por hora';
+	document.getElementById('txt_10').innerHTML = 'Tempo da impressão:';
+	document.getElementById('txt_11').innerHTML = ' horas';
+	document.getElementById('txt_12').innerHTML = 'Desgaste do equipamento / hora:';
+	document.getElementById('txt_13').innerHTML = 'Energia eléctrica / hora:';
+	document.getElementById('txt_14').innerHTML = 'Outras despesas / hora:';
+	document.getElementById('txt_15').innerHTML = 'Mão de obra / hora:';
+	document.getElementById('txt_16').innerHTML = 'Total dos custos por hora:';	
+	document.getElementById('txt_17').innerHTML = 'Diversos';
+	document.getElementById('txt_18').innerHTML = 'Despesas diversas:';
+	document.getElementById('txt_19').innerHTML = 'Portes de envio:';
+	document.getElementById('txt_20').innerHTML = 'Total dos diversos:';	
+	document.getElementById('txt_21').innerHTML = 'Internos';
+	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
+	document.getElementById('txt_23').innerHTML = 'IVA:';
+	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
+	document.getElementById('txt_25').innerHTML = 'Extras';
+	document.getElementById('txt_26').innerHTML = 'Número de peças:';
+	document.getElementById('txt_27').innerHTML = ' peças';
+	document.getElementById('txt_28').innerHTML = '<b>Valor por peça:</b>';
+	
+	document.getElementById('txt_30').innerHTML = 'LIMPAR';
+	document.getElementById('txt_31').innerHTML = 'CALCULAR';
+	document.getElementById('txt_32').innerHTML = 'LIMPAR';
+	document.getElementById('txt_33').innerHTML = 'CALCULAR';
+	
+	document.getElementById('txt_40').innerHTML = 'Calculadora';
+	document.getElementById('txt_41').innerHTML = 'Sala de espera';
+	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
+	document.getElementById('sradio').innerHTML = 'RADIO EM DIRECTO';
+	document.getElementById('svideo').innerHTML = 'TV EM DIRECTO';
+	document.getElementById('txt_43').innerHTML = 'ENTERTIMENTO';
+};
+
+function idiomEN() {
+	document.getElementById('txt_02').innerHTML = '<b>3D Printing costs calculator</b>';
+	document.getElementById('txt_03').innerHTML = 'Version: 27-08-2020 | Input only dots and numbers';	
+	document.getElementById('txt_04').innerHTML = 'Material';
+	document.getElementById('txt_05').innerHTML = 'Needed grams:';
+	document.getElementById('txt_06').innerHTML = ' grams';
+	document.getElementById('txt_07').innerHTML = 'Cost per Kilogram:';
+	document.getElementById('txt_08').innerHTML = 'Material total:';	
+	document.getElementById('txt_09').innerHTML = 'Costs per hour';
+	document.getElementById('txt_10').innerHTML = 'Printing duration:';
+	document.getElementById('txt_11').innerHTML = ' hours';
+	document.getElementById('txt_12').innerHTML = 'Equipment degradation / hour:';
+	document.getElementById('txt_13').innerHTML = 'Electric energy / hour:';
+	document.getElementById('txt_14').innerHTML = 'Other expenses / hour:';
+	document.getElementById('txt_15').innerHTML = 'Labor / hour:';
+	document.getElementById('txt_16').innerHTML = 'Costs per hour total:';	
+	document.getElementById('txt_17').innerHTML = 'Others';
+	document.getElementById('txt_18').innerHTML = 'Other expenses:';
+	document.getElementById('txt_19').innerHTML = 'Shipping:';
+	document.getElementById('txt_20').innerHTML = 'Others total:';	
+	document.getElementById('txt_21').innerHTML = 'Internal';
+	document.getElementById('txt_22').innerHTML = 'Profit margin:';
+	document.getElementById('txt_23').innerHTML = 'VAT:';
+	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
+	document.getElementById('txt_25').innerHTML = 'Extras';
+	document.getElementById('txt_26').innerHTML = 'Items quantity:';
+	document.getElementById('txt_27').innerHTML = ' items';
+	document.getElementById('txt_28').innerHTML = '<b>Value per item:</b>';
+	
+	document.getElementById('txt_30').innerHTML = 'CLEAR';
+	document.getElementById('txt_31').innerHTML = 'CALCULATE';
+	document.getElementById('txt_32').innerHTML = 'CLEAR';
+	document.getElementById('txt_33').innerHTML = 'CALCULATE';
+	
+	document.getElementById('txt_40').innerHTML = 'Calculator';
+	document.getElementById('txt_41').innerHTML = 'Waiting room';
+	document.getElementById('txt_42').innerHTML = 'FACEBOOK';
+	document.getElementById('sradio').innerHTML = 'LIVE RADIO';
+	document.getElementById('svideo').innerHTML = 'LIVE TV';
+	document.getElementById('txt_43').innerHTML = 'ENTERTAINMENT';
+};
+
 </script>
 
 
@@ -366,115 +450,117 @@ function playsoundN3() {
 <div class="outerdiv">
 <div class="innerdiv1">
 
-
 	<table class="table_N1">
-
 	<tr>
-	<td class="header2" colspan="2"><b>3D PRINTING PORTUGAL</b></td>
+	<td id="txt_01" class="header2" colspan="2">
+	<p><b>3D PRINTING PORTUGAL</b></p>
+	<button style="margin:0px; width:30%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
+	<button style="margin:0px; width:30%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
+	</td>
 	</tr>
 	
 	<tr>
-	<td class="header" colspan="2"><b>Calculadora de custos em impressão 3D</b></td>
+	<td id="txt_02" class="header" colspan="2"><b>Calculadora de custos em impressão 3D</b></td>
 	</tr>
 
 	<tr>
-	<td class="coment" colspan="2">Versão: 27-08-2020 | Inserir só números e pontos</td>
+	<td id="txt_03" class="coment" colspan="2">Versão: 27-08-2020 | Inserir só números e pontos</td>
 	</tr>
 	
 	<tr>
-	<td class="topico" colspan="2">Material</td>
+	<td id="txt_04" class="topico" colspan="2">Material</td>
 	</tr>
 
 	<tr>	
-	<td class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> gramas </td>
+	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
+	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
 	</tr>
 
 	<tr>
-	<td class="aright label">Total do material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	<td id="txt_08" class="aright label">Total do material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
-	<td class="topico" colspan="2">Custos por hora</td>
+	<td id="txt_09" class="topico" colspan="2">Custos por hora</td>
 	</tr>
 
 	<tr>
-	<td class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> horas</td>
+	<td id="txt_10" class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
 	</tr>
 	
 	<tr>
-	<td class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
+	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 	
 	<tr>
-	<td class="aright label">Total dos custos por hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> € / h</td>
+	<td id="txt_16" class="aright label">Total dos custos por hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> € / h</td>
 	</tr>
 
 	<tr>
-	<td class="topico" colspan="2">Diversos</td>
+	<td id="txt_17" class="topico" colspan="2">Diversos</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 
 	<tr>
-	<td class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 	
 	<tr>
-	<td class="aright label">Total dos diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	<td id="txt_20" class="aright label">Total dos diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
-	<td class="topico" colspan="2">Internos</td>
+	<td id="txt_21" class="topico" colspan="2">Internos</td>
 	</tr>
 
 	<tr>
-	<td class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 	
 	<tr>
-	<td class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 
 	<tr class="finalrow">
-	<td class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
+	<td id="txt_24" class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
 	</tr>
 
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="javascript:reset(); javascript:playsoundN2();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
+	<td class="aright"> <button id="txt_30" onclick="javascript:reset(); javascript:playsoundN2();">LIMPAR</button>  </td><td class="aleft"> <button id="txt_31" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
 	</tr>
 	
 	<tr>
-	<td class="topico" colspan="2">Extras</td>
+	<td id="txt_25" class="topico" colspan="2">Extras</td>
 	</tr>
 			
 	<tr>
-	<td class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> peças</td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr class="finalrow">
-	<td class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
+	<td id="txt_28" class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button onclick="javascript:reset(); javascript:playsoundN2();">RESET ALL</button>  </td><td class="aleft"> <button style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
+	<td class="aright"> <button id="txt_32" onclick="javascript:reset(); javascript:playsoundN2();">LIMPAR</button>  </td><td class="aleft"> <button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
 	</tr>
             
 	</table>	
@@ -503,7 +589,7 @@ function playsoundN3() {
 	<form name="calcGlobal">
 	<table class="table_N2">
 	<tr>
-	<td class="topico" colspan="4">Calculadora</td>
+	<td id="txt_40" class="topico" colspan="4">Calculadora</td>
 	</tr>
 	<tr>
 	<td colspan="4">
@@ -539,13 +625,13 @@ function playsoundN3() {
 
 	<table class="table_N3">	
 	<tr>
-	<td class="topico">Sala de espera</td>
+	<td id="txt_41" class="topico">Sala de espera</td>
 	</tr>
 	<tr>
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
 	</tr>
 	<tr>
-	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsoundN1();">FACEBOOK</button> </td>
+	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsoundN1();">FACEBOOK</button> </td>
 	</tr>
 	<tr>
 	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsoundN1();">RADIO EM DIRECTO</button> </td>
@@ -554,7 +640,7 @@ function playsoundN3() {
 	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsoundN1();">TV EM DIRECTO</button> </td>
 	</tr>	
 	<tr>
-	<td> <button style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">ENTRETIMENTO</button> </td>
+	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">ENTERTIMENTO</button> </td>
 	</tr>
 	</table>
 
