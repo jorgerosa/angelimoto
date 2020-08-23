@@ -320,7 +320,7 @@ function reset(){
 	document.getElementById('par3').value = '0.00';
 	document.getElementById('tot').value  = '0.00';
 	
-	document.getElementById('xnp').value  = '1';
+	document.getElementById('xnp').value  = '0';
 	document.getElementById('xva').value  = '0.00';
 };
 
@@ -604,7 +604,7 @@ var selectall = function(s) {
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="1" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr class="finalrow">
