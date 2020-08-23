@@ -224,17 +224,6 @@ a:hover {
 
 <script type="text/javascript">
 
-var digitsonly = function(i) {
-    /* Only numbers and dots alloewd */
-	i.value = i.value.replace(/[^\d.]|\.(?=.*\.)/g, '');
-	if (i.value == ''){ i.value = 0; };
-};
-
-var gotourl = function(u) {
-	/* Goto selected url */
-	if (u.value){ window.open(u.value, '_blank'); };
-};
-
 function calcular(){
 	var a,b,c,d,e,f,g,h,i,j,k,l,m,p1,p2,p3,x1,x2;
 	
@@ -479,6 +468,18 @@ function idiomEN() {
 	document.getElementById('sopt00').innerHTML = 'Free software list ...';
 	document.getElementById('sopt09').innerHTML = 'Tutorials for all';
 	document.getElementById('lopt00').innerHTML = 'Shops list ...';
+};
+
+var digitsonly = function(i) {
+    /* Only numbers and dots alloewd */
+	i.value = i.value.replace(/[^\d.]|\.(?=.*\.)/g, '');
+	if (i.value == ''){ i.value = 0; };
+};
+
+var gotourl = function(u) {
+	/* Goto selected url */
+	playsoundN1();
+	if (u.value){ window.open(u.value, '_blank'); };
 };
 
 </script>
