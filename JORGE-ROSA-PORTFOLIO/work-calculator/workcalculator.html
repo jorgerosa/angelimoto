@@ -16,13 +16,15 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	cursor: default;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	background-color: transparent;
 	color: #000000;
-	margin: 5px;	
+	margin: 5px;
+	cursor: default;	
 }
 .table_N1 {
 	border: 1px solid #000000;
@@ -67,14 +69,36 @@ tr, td {
 	border: 0px solid #ff0000;
 	padding: 2px;
 }
-input {
+.userinput {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
-	border: 1px solid #000000;
+	border: 1px solid #b6b6b6;
 	background-color: #ebfdff;
 	color: #01003f;
 	max-width:80px;
+	cursor: text;
+}
+.userinput:hover {
+	border: 1px solid #000000;
+	background-color: #ebfdff;
+	color: #01003f;
+	cursor: text;
+}
+.calcinput {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+	text-align: center;
+	border: 1px solid #bbbbbb;
+	background-color: #dddddd;
+	color: #000000;
+	width: 44px;
+}
+.calcinput:hover {
+	border: 1px solid #000000;
+	background-color: #dddddd;
+	color: #000000;
+	cursor: pointer;
 }
 #par1, #par2, #par3, #xva {
 	font-family: Arial, Helvetica, sans-serif;
@@ -105,16 +129,6 @@ input {
 	background-color: #e7e7e7;
 	color: #000000;
 	max-width:80px;
-}
-.input_calc {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: large;
-	text-align: center;
-	border: 1px solid #000000;
-	background-color: #cccccc;
-	color: #000000;
-	max-width: 80px;
-	cursor: pointer;
 }
 form { 
 	text-align: center;
@@ -477,11 +491,11 @@ function idiomEN() {
 	</tr>
 
 	<tr>	
-	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
+	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
+	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
 	</tr>
 
 	<tr>
@@ -493,23 +507,23 @@ function idiomEN() {
 	</tr>
 
 	<tr>
-	<td id="txt_10" class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
+	<td id="txt_10" class="aright">Tempo da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
+	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
 	</tr>
 	
 	<tr>
@@ -521,11 +535,11 @@ function idiomEN() {
 	</tr>
 			
 	<tr>
-	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 
 	<tr>
-	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
 	</tr>
 	
 	<tr>
@@ -537,11 +551,11 @@ function idiomEN() {
 	</tr>
 
 	<tr>
-	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 	
 	<tr>
-	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_23" class="aright">IVA: </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
 	</tr>
 
 	<tr class="finalrow">
@@ -557,7 +571,7 @@ function idiomEN() {
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr class="finalrow">
@@ -602,28 +616,28 @@ function idiomEN() {
 	</td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="1" onclick="calcGlobal.ecra.value += '1'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="2" onclick="calcGlobal.ecra.value += '2'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="3" onclick="calcGlobal.ecra.value += '3'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="+" onclick="calcGlobal.ecra.value += '+'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="1" onclick="calcGlobal.ecra.value += '1'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="2" onclick="calcGlobal.ecra.value += '2'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="3" onclick="calcGlobal.ecra.value += '3'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="+" onclick="calcGlobal.ecra.value += '+'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="4" onclick="calcGlobal.ecra.value += '4'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="5" onclick="calcGlobal.ecra.value += '5'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="6" onclick="calcGlobal.ecra.value += '6'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="-" onclick="calcGlobal.ecra.value += '-'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="4" onclick="calcGlobal.ecra.value += '4'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="5" onclick="calcGlobal.ecra.value += '5'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="6" onclick="calcGlobal.ecra.value += '6'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="-" onclick="calcGlobal.ecra.value += '-'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="7" onclick="calcGlobal.ecra.value += '7'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="8" onclick="calcGlobal.ecra.value += '8'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="9" onclick="calcGlobal.ecra.value += '9'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="x" onclick="calcGlobal.ecra.value += '*'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="7" onclick="calcGlobal.ecra.value += '7'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="8" onclick="calcGlobal.ecra.value += '8'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="9" onclick="calcGlobal.ecra.value += '9'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="x" onclick="calcGlobal.ecra.value += '*'; javascript:playsoundN1();"></td>
 	</tr>
 	<tr>
-	<td><input class="input_calc" type="button" value="C" onclick="calcGlobal.ecra.value = ''; javascript:playsoundN2();"></td>
-	<td><input class="input_calc" type="button" value="0" onclick="calcGlobal.ecra.value += '0'; javascript:playsoundN1();"></td>
-	<td><input class="input_calc" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value); javascript:playsoundN3();"></td>
-	<td><input class="input_calc" type="button" value="/" onclick="calcGlobal.ecra.value += '/'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="C" onclick="calcGlobal.ecra.value = ''; javascript:playsoundN2();"></td>
+	<td><input class="calcinput" type="button" value="0" onclick="calcGlobal.ecra.value += '0'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="=" onclick="calcGlobal.ecra.value = eval(calcGlobal.ecra.value); javascript:playsoundN3();"></td>
+	<td><input class="calcinput" type="button" value="/" onclick="calcGlobal.ecra.value += '/'; javascript:playsoundN1();"></td>
 	</tr>
 	</table>
 	</form>
