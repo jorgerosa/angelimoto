@@ -320,7 +320,7 @@ function reset(){
 	document.getElementById('par3').value = '0.00';
 	document.getElementById('tot').value  = '0.00';
 	
-	document.getElementById('xnp').value  = '0';
+	document.getElementById('xnp').value  = '1';
 	document.getElementById('xva').value  = '0.00';
 };
 
@@ -398,7 +398,7 @@ function idiomPT() {
 	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
 	document.getElementById('txt_23').innerHTML = 'Impostos (IVA):';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
-	document.getElementById('txt_25').innerHTML = 'Extras';
+	document.getElementById('txt_25').innerHTML = 'Quantidade';
 	document.getElementById('txt_26').innerHTML = 'Número de peças:';
 	document.getElementById('txt_27').innerHTML = ' peças';
 	document.getElementById('txt_28').innerHTML = '<b>Valor por peça:</b>';
@@ -446,7 +446,7 @@ function idiomEN() {
 	document.getElementById('txt_22').innerHTML = 'Intended profit margin:';
 	document.getElementById('txt_23').innerHTML = 'Taxes (VAT):';
 	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
-	document.getElementById('txt_25').innerHTML = 'Extras';
+	document.getElementById('txt_25').innerHTML = 'Quantity';
 	document.getElementById('txt_26').innerHTML = 'Items quantity:';
 	document.getElementById('txt_27').innerHTML = ' items';
 	document.getElementById('txt_28').innerHTML = '<b>Value per item:</b>';
@@ -598,17 +598,13 @@ var selectall = function(s) {
 	<tr class="finalrow">
 	<td id="txt_24" class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
 	</tr>
-
-	<tr class="finalrow">
-	<td class="aright"> <button id="txt_30" onclick="javascript:reset(); javascript:playsoundN2();">LIMPAR</button>  </td><td class="aleft"> <button id="txt_31" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
-	</tr>
 	
 	<tr>
-	<td id="txt_25" class="topico" colspan="2">Extras</td>
+	<td id="txt_25" class="topico" colspan="2">Quantidade</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="1" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr class="finalrow">
