@@ -24,6 +24,8 @@ body {
 	background-color: transparent;
 	color: #000000;
 	margin: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	cursor: default;	
 }
 .table_N1 {
@@ -436,14 +438,16 @@ function idiomPT() {
 	document.getElementById('svideo').innerHTML = 'TV em directo';
 	document.getElementById('txt_43').innerHTML = 'Jogos';
 	
-	document.getElementById('txt_44').innerHTML = 'Mundo do STL';
+	document.getElementById('txt_44').innerHTML = 'Mundo 3D';
 	document.getElementById('mopt00').innerHTML = 'Lista de modelos 3D ...';
 	document.getElementById('sopt00').innerHTML = 'Lista de software gratuito ...';
-	document.getElementById('sopt09').innerHTML = 'Instrucções para todos eles';
+	document.getElementById('sopt08').innerHTML = 'Instrucções para todos eles';
 	document.getElementById('lopt00').innerHTML = 'Lista de lojas ...';
 	
 	document.getElementById('txt_50').innerHTML = 'Notas';
 	document.getElementById('txt_51').innerHTML = 'Gravar';
+	
+	document.getElementById('txt_60').innerHTML = 'Ferramentas 3D';
 };
 
 function idiomEN() {
@@ -486,14 +490,16 @@ function idiomEN() {
 	document.getElementById('svideo').innerHTML = 'Live TV';
 	document.getElementById('txt_43').innerHTML = 'Games';
 	
-	document.getElementById('txt_44').innerHTML = 'STL World';
+	document.getElementById('txt_44').innerHTML = '3D World';
 	document.getElementById('mopt00').innerHTML = '3D models list ...';
 	document.getElementById('sopt00').innerHTML = 'Free software list ...';
-	document.getElementById('sopt09').innerHTML = 'Tutorials for all';
+	document.getElementById('sopt08').innerHTML = 'Tutorials for all';
 	document.getElementById('lopt00').innerHTML = 'Shops list ...';
 	
 	document.getElementById('txt_50').innerHTML = 'Notes';
 	document.getElementById('txt_51').innerHTML = 'Save';
+	
+	document.getElementById('txt_60').innerHTML = '3D Tools';
 };
 
 var digitsonly = function(i) {
@@ -571,8 +577,8 @@ window.addEventListener('beforeunload', function (e) {
 
 	<tr>
 	<td class="finalrow" colspan="2">
-	<button style="margin:0px; width:35%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
-	<button style="margin:0px; width:35%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
+	<button style="margin:0px; width:30%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
+	<button style="margin:0px; width:30%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
 	</td>
 	</tr>
 	
@@ -763,11 +769,24 @@ window.addEventListener('beforeunload', function (e) {
 	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">Jogos</button> </td>
 	</tr>
 	</table>
+	
+	<table class="table_N3">	
+	<tr>
+	<td id="txt_60" class="topico">Ferramentas 3D</td>
+	</tr>
+	
+	<tr>
+	<td> <button id="txt_61" style="width:100%; margin:0px;" value="https://stephaneginier.com/sculptgl" onclick="javascript:playsoundN1(); javascript:gotourl(this);">Sculpt GL</button> </td>
+	</tr>
+	
+	</table>
+	
 
 	<table class="table_N3">
 	<tr>
-	<td id="txt_44" class="topico">Mundo do STL</td>
+	<td id="txt_44" class="topico">Mundo 3D</td>
 	</tr>
+	
 	<tr>
 	<td>
 	
@@ -796,11 +815,10 @@ window.addEventListener('beforeunload', function (e) {
 	<option id="sopt02" value="https://www.blender.org/download/">Blender</option>
 	<option id="sopt03" value="https://wiki.freecadweb.org/Main_Page">FreeCAD</option>
 	<option id="sopt04" value="https://www.meshlab.net/">Meshlab</option>
-	<option id="sopt05" value="http://www.meshmixer.com/">Meshmixer</option>
-	<option id="sopt06" value="https://stephaneginier.com/sculptgl/">SculpGL (Online)</option>
-	<option id="sopt07" value="https://www.sketchup.com/">SketchUp Make</option>
-	<option id="sopt08" value="http://www.wings3d.com/">Wings 3D</option>
-	<option id="sopt09" value="https://top3dshop.com/blog/best-free-stl-editors">Instrucções para todos eles</option>
+	<option id="sopt05" value="http://www.meshmixer.com/">Meshmixer</option>	
+	<option id="sopt06" value="https://www.sketchup.com/">SketchUp Make</option>
+	<option id="sopt07" value="http://www.wings3d.com/">Wings 3D</option>
+	<option id="sopt08" value="https://top3dshop.com/blog/best-free-stl-editors">Instrucções para todos eles</option>
 	</select>
 	
 	</td>
