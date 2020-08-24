@@ -395,9 +395,13 @@ function playsound(s) {
 	var soundN1 = document.getElementById('soundN1');
 	var soundN2 = document.getElementById('soundN2');
 	var soundN3 = document.getElementById('soundN3');
-	if(s==1){ soundN1.play(); };
-	if(s==2){ soundN2.play(); };
-	if(s==3){ soundN3.play(); };
+	var soundPT = document.getElementById('soundPT');
+	var soundEN = document.getElementById('soundEN');
+	if(s==1 ){ soundN1.play(); };
+	if(s==2 ){ soundN2.play(); };
+	if(s==3 ){ soundN3.play(); };
+	if(s==10){ soundPT.play(); };
+	if(s==11){ soundEN.play(); };
 };
 
 /* Keyboard audios */
@@ -581,6 +585,8 @@ window.addEventListener('beforeunload', function (e) {
 <audio id="soundN1" src="./clickN1.ogg"></audio>
 <audio id="soundN2" src="./clickN2.ogg"></audio>
 <audio id="soundN3" src="./clickN3.ogg"></audio>
+<audio id="soundPT" src="./idiomPT.ogg"></audio>
+<audio id="soundEN" src="./idiomEN.ogg"></audio>
 
 <div class="outerdiv">
 <div class="innerdiv1">
@@ -594,8 +600,8 @@ window.addEventListener('beforeunload', function (e) {
 
 	<tr>
 	<td class="finalrow" colspan="2">
-	<button style="margin:0px; width:25%;" onclick="javascript:idiomEN(); javascript:playsound(1);">English</button>
-	<button style="margin:0px; width:25%;" onclick="javascript:idiomPT(); javascript:playsound(1);">Português</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomEN(); javascript:playsound(11);">English</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomPT(); javascript:playsound(10);">Português</button>
 	</td>
 	</tr>
 	
