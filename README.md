@@ -1,16 +1,16 @@
-:ballot_box_with_check: Click in the next URL to see the above code runnig in all its **3D glory in your web browser**:
+:ballot_box_with_check: Click in the next URL to see the above code runnig in all its **3D Glory In Your Web Browser**:
 
 https://jorgerosa.github.io/angelimoto
 
 <hr>
 
-:ballot_box_with_check: Online **3D printing costs calculator**:
+:ballot_box_with_check: Online **3D Printing - Costs Calculator**:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/work-calculator/workcalculator.html
 
 <hr>
 
-:ballot_box_with_check: Click in the next URL to see **my portfolio**:
+:ballot_box_with_check: Click in the next URL to see **My Portfolio**:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO
 
