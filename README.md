@@ -1,16 +1,16 @@
-- [x] Click in the next URL to see the above code runnig in all its **3D glory in your web browser**:
+ :point_right: Click in the next URL to see the above code runnig in all its **3D glory in your web browser**:
 
 https://jorgerosa.github.io/angelimoto
 
 <hr>
 
-- [x] Online **3D printing costs calculator**:
+ :point_right: Online **3D printing costs calculator**:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/work-calculator/workcalculator.html
 
 <hr>
 
-- [x] Click in the next URL to see **my portfolio**:
+ :point_right: Click in the next URL to see **my portfolio**:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO
 
