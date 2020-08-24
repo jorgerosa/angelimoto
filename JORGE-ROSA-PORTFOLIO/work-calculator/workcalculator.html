@@ -389,15 +389,6 @@ function showradio() {
 	};
 };
 
-function showvideo() {
-	var e = document.getElementById('live_video');
-	if (e.style.display === 'none') {
-    e.style.display = 'block';
-	} else {
-	e.style.display = 'none';
-	};
-};
-
 /* Inputs audios */
 function playsound(s) {
 	var soundN1 = document.getElementById('soundN1');
@@ -431,7 +422,7 @@ var keyboard = function (e) {
 
 function idiomPT() {
 	document.getElementById('txt_02').innerHTML = '<b>Calculadora de custos em impressão 3D</b>';
-	document.getElementById('txt_03').innerHTML = 'Versão: 23-08-2020';	
+	document.getElementById('txt_03').innerHTML = 'Versão: 24-08-2020';	
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Gramas utilizadas:';
 	document.getElementById('txt_06').innerHTML = ' gramas';
@@ -485,7 +476,7 @@ function idiomPT() {
 
 function idiomEN() {
 	document.getElementById('txt_02').innerHTML = '<b>3D Printing costs calculator</b>';
-	document.getElementById('txt_03').innerHTML = 'Version: 23-08-2020';	
+	document.getElementById('txt_03').innerHTML = 'Version: 24-08-2020';	
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Needed grams:';
 	document.getElementById('txt_06').innerHTML = ' grams';
@@ -742,18 +733,8 @@ window.addEventListener('beforeunload', function (e) {
 	</td>
 	</tr>	
 	</table>
-	
-	<table id="live_video" class="table_N4" style="display:none;">
-	<tr style="width:410px; max-width:410px; margin:0px; padding:0px;">
-	<td style="width:410px; max-width:410px; margin:0px; padding:0px; text-align:center;">
-	
-	<iframe id="iframeN2" width="410" height="250" src="https://www.youtube.com/embed/LITSGYymJuU" frameborder="0" allow="accelerometer; encrypted-media;"></iframe>
 
-	</td>
-	</tr>	
-	</table>
-		 
-
+ 
 </div>
 <div class="innerdiv2">
 
@@ -818,7 +799,7 @@ window.addEventListener('beforeunload', function (e) {
 	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsound(1);">Radio em directo</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsound(1);">TV em directo</button> </td>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank'); javascript:playsound(1);">TV em directo</button> </td>
 	</tr>	
 	<tr>
 	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsound(1);">Jogos</button> </td>
