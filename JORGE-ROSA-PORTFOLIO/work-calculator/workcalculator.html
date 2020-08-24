@@ -75,21 +75,21 @@ tr, td {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
-	border: 1px solid #b6b6b6;
-	background-color: #ebfdff;
+	border: 1px solid #b4c9d1;
+	background-color: #f5feff;
 	color: #01003f;
 	max-width:80px;
 	padding: 3px;
 	cursor: text;
 }
 .userinput:hover {
-	border: 1px solid #000000;
-	background-color: #ebfdff;
+	border: 1px solid #006287;
+	background-color: #f5feff;
 	color: #01003f;
 	cursor: text;
 }
 .usertextarea {
-	border: 0px solid #b6b6b6;
+	border: 0px solid #b4c9d1;
 	background-color: #ffffff;
 	color: #01003f;
 	font-size: large;
@@ -133,6 +133,13 @@ tr, td {
 	color: #707070;
 	max-width: 80px;
 }
+.horizontalline {
+	padding: 0px;
+	margin: 0px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border: 1px solid #000000;
+}
 #ecra {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
@@ -150,7 +157,7 @@ tr, td {
 	font-weight: bold;
 	text-align: right;
 	border: 0px solid #909090;
-	background-color: #e7e7e7;
+	background-color: transparent;
 	color: #000000;
 	max-width:80px;
 }
@@ -178,7 +185,7 @@ button {
 	padding-bottom: 0px;
 }
 .finalrow {
-	background-color: #e7e7e7;
+	background-color: #e8e8e8;
 }
 .coment {
 	background-color: #ffffff;
@@ -577,8 +584,8 @@ window.addEventListener('beforeunload', function (e) {
 
 	<tr>
 	<td class="finalrow" colspan="2">
-	<button style="margin:0px; width:30%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
-	<button style="margin:0px; width:30%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
 	</td>
 	</tr>
 	
@@ -587,7 +594,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 
 	<tr>
-	<td id="txt_03" class="coment" colspan="2">Versão: 23-08-2020</td>
+	<td id="txt_03" class="signature" colspan="2">Versão: 23-08-2020</td>
 	</tr>
 	
 	<tr>
@@ -666,8 +673,16 @@ window.addEventListener('beforeunload', function (e) {
 	<td id="txt_23b" class="aright label">Total das percentagens: </td><td class="aleft label"> <input id="par2b" type="text" value="0.00" disabled> €</td>
 	</tr>
 
-	<tr class="finalrow">
+	<tr>
+	<td colspan="2" style="margin:0px; padding:0px;"> <hr class="horizontalline"> </td>
+	</tr>
+	
+	<tr>
 	<td id="txt_24" class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
+	</tr>
+	
+	<tr>
+	<td colspan="2" style="margin:0px; padding:0px;"> <hr class="horizontalline"> </td>
 	</tr>
 	
 	<tr>
@@ -678,7 +693,7 @@ window.addEventListener('beforeunload', function (e) {
 	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
-	<tr class="finalrow">
+	<tr>
 	<td id="txt_28" class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
 	</tr>	
 	
