@@ -390,20 +390,30 @@ function showvideo() {
 	};
 };
 
-function playsoundN1() {
+/* Inputs audios */
+function playsound(s) {
 	var soundN1 = document.getElementById('soundN1');
-	soundN1.play();
-};
-
-function playsoundN2() {
 	var soundN2 = document.getElementById('soundN2');
-	soundN2.play();
+	var soundN3 = document.getElementById('soundN3');
+	if(s==1){ soundN1.play(); };
+	if(s==2){ soundN2.play(); };
+	if(s==3){ soundN3.play(); };
 };
 
-function playsoundN3() {
-	var soundN3 = document.getElementById('soundN3');
-	soundN3.play();
+/* Keyboard audios */
+/*
+var keyboard = function (e) {
+    if (e.which === 13 || e.keyCode === 13) { // Enter
+        playsound(3);
+        return false;
+    };
+	if (e.which === 9 || e.keyCode === 9) { // Tab
+        playsound(3);
+        return false;
+    };
+    return true;
 };
+*/
 
 function idiomPT() {
 	document.getElementById('txt_02').innerHTML = '<b>Calculadora de custos em impressão 3D</b>';
@@ -518,7 +528,7 @@ var digitsonly = function(i) {
 
 var gotourl = function(u) {
 	/* Goto selected url or not */
-	playsoundN1();
+	playsound(1);
 	if (u.value){ window.open(u.value, '_blank'); };
 };
 
@@ -584,8 +594,8 @@ window.addEventListener('beforeunload', function (e) {
 
 	<tr>
 	<td class="finalrow" colspan="2">
-	<button style="margin:0px; width:25%;" onclick="javascript:idiomEN(); javascript:playsoundN1();">English</button>
-	<button style="margin:0px; width:25%;" onclick="javascript:idiomPT(); javascript:playsoundN1();">Português</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomEN(); javascript:playsound(1);">English</button>
+	<button style="margin:0px; width:25%;" onclick="javascript:idiomPT(); javascript:playsound(1);">Português</button>
 	</td>
 	</tr>
 	
@@ -602,11 +612,11 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 
 	<tr>	
-	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_06"> gramas </span></td>
+	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"><span id="txt_06"> gramas </span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / kg</td>
+	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> € / kg</td>
 	</tr>
 
 	<tr>
@@ -618,23 +628,23 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 
 	<tr>
-	<td id="txt_10" class="aright">Duração da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_11"> horas</span></td>
+	<td id="txt_10" class="aright">Duração da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"><span id="txt_11"> horas</span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>			
+	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> € / h</td>
+	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> € / h</td>
 	</tr>
 	
 	<tr>
@@ -646,11 +656,11 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 			
 	<tr>
-	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> €</td>
 	</tr>
 
 	<tr>
-	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> €</td>
+	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> €</td>
 	</tr>
 	
 	<tr>
@@ -662,11 +672,11 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 
 	<tr>
-	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> %</td>
 	</tr>
 	
 	<tr>
-	<td id="txt_23" class="aright">Impostos (IVA): </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"> %</td>
+	<td id="txt_23" class="aright">Impostos (IVA): </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"> %</td>
 	</tr>
 	
 	<tr>
@@ -690,7 +700,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsoundN1();"><span id="txt_27"> peças</span></td>
+	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();" onkeypress="javascript:playsound(1);"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr>
@@ -698,7 +708,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button id="txt_32" onclick="javascript:reset(); javascript:playsoundN2();">LIMPAR</button>  </td><td class="aleft"> <button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsoundN3();">CALCULAR</button> </td>
+	<td class="aright"> <button id="txt_32" onclick="javascript:reset(); javascript:playsound(2);">LIMPAR</button>  </td><td class="aleft"> <button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound(3);">CALCULAR</button> </td>
 	</tr>
             
 	</table>	
@@ -735,31 +745,31 @@ window.addEventListener('beforeunload', function (e) {
 	</td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+'; javascript:playsound(1);"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-'; javascript:playsound(1);"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*'; javascript:playsound(1);"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsoundN2();"></td>
-	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.'; javascript:playsoundN1();"></td>
-	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/'; javascript:playsoundN1();"></td>
+	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsound(2);"></td>
+	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.'; javascript:playsound(1);"></td>
+	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/'; javascript:playsound(1);"></td>
 	</tr>
 	<tr>
-	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsoundN3();"></td>
+	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsound(3);"></td>
 	</tr>
 	</table>
 	</form>
@@ -772,16 +782,16 @@ window.addEventListener('beforeunload', function (e) {
 	<td> <p id="clock" class="clok"> 00:00:00 </p> </td>
 	</tr>
 	<tr>
-	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsoundN1();">Facebook</button> </td>
+	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank'); javascript:playsound(1);">Facebook</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsoundN1();">Radio em directo</button> </td>
+	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio(); javascript:playsound(1);">Radio em directo</button> </td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsoundN1();">TV em directo</button> </td>
+	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:showvideo(); javascript:playsound(1);">TV em directo</button> </td>
 	</tr>	
 	<tr>
-	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsoundN1();">Jogos</button> </td>
+	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank'); javascript:playsound(1);">Jogos</button> </td>
 	</tr>
 	</table>
 	
@@ -791,7 +801,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	
 	<tr>
-	<td> <button id="txt_61" style="width:100%; margin:0px;" value="https://stephaneginier.com/sculptgl" onclick="javascript:playsoundN1(); javascript:gotourl(this);">Sculpt GL</button> </td>
+	<td> <button id="txt_61" style="width:100%; margin:0px;" value="https://stephaneginier.com/sculptgl" onclick="javascript:playsound(1); javascript:gotourl(this);">Sculpt GL</button> </td>
 	</tr>
 	
 	</table>
@@ -863,11 +873,11 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	
 	<tr>
-	<td><textarea id="usertextarea" class="usertextarea" onkeyup="javascript:playsoundN1();">...</textarea></td>
+	<td><textarea id="usertextarea" class="usertextarea" onkeyup="javascript:playsound(1);">...</textarea></td>
 	</tr>
 	
 	<tr>
-	<td> <button id="txt_51" style="width:100%; margin:0px; display:none;" onclick="javascript:setCookie(); javascript:playsoundN3();">Gravar</button> </td>
+	<td> <button id="txt_51" style="width:100%; margin:0px; display:none;" onclick="javascript:setCookie(); javascript:playsound(3);">Gravar</button> </td>
 	</tr>
 	
 	</table>
