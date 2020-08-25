@@ -1,5 +1,5 @@
 <hr>
-Repository contents:
+This single repository contains:
 <hr>
 
 Online models runnig in all their 3D glory in **Your Web Browser**:
