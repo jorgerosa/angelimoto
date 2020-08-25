@@ -1,4 +1,4 @@
-Click in the next URL to see the above code runnig in all its **3D Glory In Your Web Browser**:
+Click in the url to see the 3D models runnig in all its **3D Glory In Your Web Browser**:
 
  :open_file_folder: https://jorgerosa.github.io/angelimoto
 
@@ -10,7 +10,7 @@ Online **3D Printing - Costs Calculator**:
 
 <hr>
 
-Click in the next URL to see **My Portfolio**:
+Click to see my **Portfolio**:
 
  :open_file_folder: https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO
 
