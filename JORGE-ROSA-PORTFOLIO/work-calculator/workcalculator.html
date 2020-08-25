@@ -185,14 +185,14 @@ button {
 	color: #ffffff;
 	font-size: large;
 	text-align: center;
-	padding: 15px;	
+	padding: 40px;	
 }
 .header2 {
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
-	padding: 20px;
-	padding-bottom: 20px;
+	padding: 23px;
+	padding-bottom: 23px;
 }
 .finalrow {
 	background-color: #e8e8e8;
@@ -483,6 +483,9 @@ function idiomPT() {
 	document.getElementById('txt_51').innerHTML = 'Gravar';
 	
 	document.getElementById('txt_60').innerHTML = 'Ferramentas 3D';
+	
+	document.getElementById('txt_70').innerHTML = 'Computador';
+	document.getElementById('txt_71').innerHTML = 'Calculadora';
 };
 
 // ------------------------------------------------------------------------------
@@ -537,6 +540,9 @@ function idiomEN() {
 	document.getElementById('txt_51').innerHTML = 'Save';
 	
 	document.getElementById('txt_60').innerHTML = '3D Tools';
+	
+	document.getElementById('txt_70').innerHTML = 'Computer';
+	document.getElementById('txt_71').innerHTML = 'Calculator';
 };
 
 // ------------------------------------------------------------------------------
@@ -927,35 +933,43 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></td>
-	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></td>
-	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></td>
-	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></td>
-	</tr>
-	<tr>
-	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></td>
-	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></td>
-	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></td>
-	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></td>
-	</tr>
-	<tr>
 	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7';"></td>
 	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8';"></td>
 	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9';"></td>
-	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>
+	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>	
 	</tr>
-	<tr>
+	<tr>	
+	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></td>
+	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></td>
+	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></td>
+	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></td>	
+	</tr>
+	<tr>	
+	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></td>
+	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></td>
+	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></td>
+	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></td>	
+	</tr>
+	<tr>	
 	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = ''; javascript:playsound(2); blinkText2();"></td>
 	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></td>
 	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></td>
-	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>
+	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>	
 	</tr>
 	<tr>
 	<td colspan="4"><input class="calcinput" style="width:100%; padding:5px;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); if(isNaN(calcform.ecra.value)){ calcform.ecra.value = ''; }; javascript:playsound(3); blinkText2();"></td>
 	</tr>
 	</table>
 	</form>
-
+	
+	<table class="table_N3">	
+	<tr>
+	<td id="txt_70" class="topico">Computador</td>
+	</tr>	
+	<tr>
+	<td> <button id="txt_71" type="button" style="width:100%; margin:0px;" onclick="javascript:window.open('calculator:///', '_self');">Calculadora</button> </td>
+	</tr>	
+	</table>	
 	
 	<table class="table_N3">	
 	<tr>
