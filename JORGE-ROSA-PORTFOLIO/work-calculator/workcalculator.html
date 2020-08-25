@@ -811,10 +811,12 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<tr>
 	<td> 
 	
+	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
 	<canvas id="analogclock" width="150" height="150" style="border:0px; margin:0px; padding:0px;"></canvas>
 	
 	<script type="text/javascript">
 	
+	/* Global vars */
 	var canvas = document.getElementById("analogclock");
 	var ctx = canvas.getContext("2d");
 	var radius = canvas.height / 2;
@@ -822,32 +824,35 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	radius = radius * 0.90;
 	setInterval(drawClock, 1000);
 
+	/* Draw Everything */
 	function drawClock() {
-	  drawFace(ctx, radius);
-	  drawNumbers(ctx, radius);
-	  drawTime(ctx, radius);
+		drawFace(ctx, radius);
+		drawNumbers(ctx, radius);
+		drawTime(ctx, radius);
 	};
 
+	/* Draw Face */
 	function drawFace(ctx, radius) {  
-	  ctx.beginPath();
-	  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-	  ctx.fillStyle = '#ffffff';
-	  ctx.fill();
-	  ctx.lineWidth = radius*0.01;
-	  // ctx.stroke();
-	  ctx.beginPath();
-	  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-	  ctx.fillStyle = '#333333';
-	  ctx.fill();	  
+		ctx.beginPath();
+		ctx.arc(0, 0, radius, 0, 2*Math.PI);
+		ctx.fillStyle = '#ffffff';
+		ctx.fill();
+		ctx.lineWidth = radius*0.01;
+		// ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+		ctx.fillStyle = '#333333';
+		ctx.fill();	  
 	};
 
+	/* Draw the numbers */
 	function drawNumbers(ctx, radius) {
-	  var ang;
-	  var num;
-	  ctx.font = radius*0.15 + "px arial";
-	  ctx.textBaseline="middle";
-	  ctx.textAlign="center";
-	  for(num = 1; num < 13; num++){
+		var ang;
+		var num;
+		ctx.font = radius*0.15 + "px arial";
+		ctx.textBaseline="middle";
+		ctx.textAlign="center";
+		for(num = 1; num < 13; num++){
 		ang = num * Math.PI / 6;
 		ctx.rotate(ang);
 		ctx.translate(0, -radius*0.85);
@@ -856,13 +861,14 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 		ctx.rotate(ang);
 		ctx.translate(0, radius*0.85);
 		ctx.rotate(-ang);
-	  };
+		};
 	};
 
+	/* Calculate the needed values to draw the hands */
 	function drawTime(ctx, radius){
 		var now = new Date();
 		var hour = now.getHours();
-		var minute = now.getMinutes();
+		minute = now.getMinutes();
 		var second = now.getSeconds();
 		// Hours
 		hour=hour%12;
@@ -878,6 +884,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 		drawHand(ctx, second, radius*0.9, radius*0.01);
 	};
 
+	/* Draw Hands */
 	function drawHand(ctx, pos, length, width) {
 		ctx.beginPath();
 		ctx.lineWidth = width;
