@@ -422,7 +422,7 @@ var keyboard = function (e) {
 
 function idiomPT() {
 	document.getElementById('txt_02').innerHTML = '<b>Calculadora de custos em impressão 3D</b>';
-	document.getElementById('txt_03').innerHTML = 'Versão: 24-08-2020';	
+	document.getElementById('txt_03').innerHTML = 'Versão: 25-08-2020';	
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Gramas utilizadas:';
 	document.getElementById('txt_06').innerHTML = ' gramas';
@@ -476,7 +476,7 @@ function idiomPT() {
 
 function idiomEN() {
 	document.getElementById('txt_02').innerHTML = '<b>3D Printing costs calculator</b>';
-	document.getElementById('txt_03').innerHTML = 'Version: 24-08-2020';	
+	document.getElementById('txt_03').innerHTML = 'Version: 25-08-2020';	
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Needed grams:';
 	document.getElementById('txt_06').innerHTML = ' grams';
@@ -571,12 +571,29 @@ function getCookie() {
 
 // ------------------------------------------------------------------------------
 
+function color1() {
+	var ele = document.querySelectorAll(".blink");
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000"; };
+};
+
+function color2() {
+	var ele = document.querySelectorAll(".blink");
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#cccccc"; };
+};
+
+function blinkText() {
+	for(var i=60; i<200; i=i+60) { setTimeout("color2()", i); setTimeout("color1()", i+30); };
+};
+
+// ------------------------------------------------------------------------------
+
 /* Add event listener */
 window.addEventListener('keydown', checkKeyPressed, false);
 
 function checkKeyPressed(e) {
-	if (e.keyCode != '13') { playsound(1); }; // All keys
-	if (e.keyCode == '13') { playsound(3); }; // Enter key
+	if (e.keyCode != '13' && e.keyCode != '9') { playsound(1); }; // All keys
+	if (e.keyCode == '13') { playsound(3); blinkText(); }; // Enter key
+	if (e.keyCode == '9' ) { playsound(3); blinkText(); }; // Tab key
 };
 
 /* Add event listener */
@@ -716,7 +733,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	
 	<tr>
-	<td id="txt_24" class="aright"> <b>TOTAL:</b> </td><td class="aleft"> <b><input id="tot" type="text" value="0.00" disabled> €</b> </td>
+	<td id="txt_24" class="aright blink"> <b>TOTAL:</b> </td><td class="aleft"> <b><input class="blink" id="tot" type="text" value="0.00" disabled><span class="blink"> €</span></b> </td>
 	</tr>
 	
 	<tr>
@@ -732,11 +749,15 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	
 	<tr>
-	<td id="txt_28" class="aright"><b>Valor por peça:</b> </td><td class="aleft"> <input id="xva" type="text" value="0.00" disabled><b> €</b></td>
+	<td id="txt_28" class="aright blink"><b>Valor por peça:</b> </td><td class="aleft"> <b><input class="blink" id="xva" type="text" value="0.00" disabled><span class="blink"> €</span></b></td>
 	</tr>	
 	
 	<tr class="finalrow">
-	<td class="aright"> <button id="txt_32" onclick="javascript:reset(); javascript:playsound(2);">LIMPAR</button>  </td><td class="aleft"> <button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound(3);">CALCULAR</button> </td>
+	<td class="aright">	
+	<button id="txt_32" onclick="javascript:reset(); javascript:playsound(2); blinkText();">LIMPAR</button>
+	</td><td class="aleft">
+	<button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound(3); blinkText();">CALCULAR</button>	
+	</td>
 	</tr>
             
 	</table>	
