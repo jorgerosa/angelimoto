@@ -568,18 +568,34 @@ function getCookie() {
 
 // ------------------------------------------------------------------------------
 
-function color1() {
-	var ele = document.querySelectorAll(".blink");
-	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000"; };
-};
-
-function color2() {
+function colora() {
 	var ele = document.querySelectorAll(".blink");
 	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#cccccc"; };
 };
 
-function blinkText() {
-	for(var i=60; i<200; i=i+60) { setTimeout("color2()", i); setTimeout("color1()", i+30); };
+function colorb() {
+	var ele = document.querySelectorAll(".blink");
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000";};
+};
+
+function blinkText1() {
+	for(var i=60; i<180; i=i+60) { setTimeout("colora()", i); setTimeout("colorb()", i+30); };
+};
+
+// ------------------------------------------------------------------------------
+
+function colorc() {
+	var ele = document.querySelectorAll(".pisca");
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#cccccc"; };
+};
+
+function colord() {
+	var ele = document.querySelectorAll(".pisca");
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000"; };
+};
+
+function blinkText2() {
+	for(var i=60; i<180; i=i+60) { setTimeout("colorc()", i); setTimeout("colord()", i+30); };
 };
 
 // ------------------------------------------------------------------------------
@@ -589,8 +605,8 @@ window.addEventListener('keydown', checkKeyPressed, false);
 
 function checkKeyPressed(e) {
 	if (e.keyCode != '13' && e.keyCode != '9') { playsound(1); }; // All keys
-	if (e.keyCode == '13') { playsound(3); blinkText(); }; // Enter key
-	if (e.keyCode == '9' ) { playsound(3); blinkText(); }; // Tab key
+	if (e.keyCode == '13') { playsound(3); blinkText1(); }; // Enter key
+	if (e.keyCode == '9' ) { playsound(3); blinkText1(); }; // Tab key
 };
 
 /* Add event listener */
@@ -741,9 +757,9 @@ window.addEventListener('beforeunload', function (e) {
 	
 	<tr class="finalrow">
 	<td class="aright">	
-	<button id="txt_32" onclick="javascript:reset(); javascript:playsound(2); blinkText();">LIMPAR</button>
+	<button id="txt_32" onclick="javascript:reset(); javascript:playsound(2); blinkText1();">LIMPAR</button>
 	</td><td class="aleft">
-	<button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound(3); blinkText();">CALCULAR</button>	
+	<button id="txt_33" style="width:100%; margin:0px;" onclick="javascript:calcular(); javascript:playsound(3); blinkText1();">CALCULAR</button>	
 	</td>
 	</tr>
             
@@ -874,7 +890,7 @@ window.addEventListener('beforeunload', function (e) {
 	</tr>
 	<tr>
 	<td colspan="4">
-	<input type="text" id="ecra" style="width:92%;" placeholder="0" disabled>
+	<input type="text" id="ecra" class="pisca" style="width:92%;" placeholder="0" disabled>
 	</td>
 	</tr>
 	<tr>
@@ -896,13 +912,13 @@ window.addEventListener('beforeunload', function (e) {
 	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsound(2);"></td>
+	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = ''; javascript:playsound(2); blinkText2();"></td>
 	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></td>
 	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></td>
 	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>
 	</tr>
 	<tr>
-	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsound(3);"></td>
+	<td colspan="4"><input class="calcinput" style="width:100%; padding:5px;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); if(isNaN(calcform.ecra.value)){ calcform.ecra.value = ''; }; javascript:playsound(3); blinkText2();"></td>
 	</tr>
 	</table>
 	</form>
