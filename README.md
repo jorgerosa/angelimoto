@@ -10,7 +10,7 @@ https://jorgerosa.github.io/angelimoto
 
 <hr>
 
-:black_heart: Online / Offline (standalone) **3D Printing - Costs / Profits Calculator**:
+:black_heart: Online/Offline (standalone html file) **3D Printing - Costs / Profits Calculator**:
 
 https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/work-calculator/workcalculator.html
 
