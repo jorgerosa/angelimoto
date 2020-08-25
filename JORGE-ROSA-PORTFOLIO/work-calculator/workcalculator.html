@@ -452,7 +452,7 @@ function idiomPT() {
 	document.getElementById('txt_33').innerHTML = 'CALCULAR';
 	
 	document.getElementById('txt_40').innerHTML = 'Calculadora';
-	document.getElementById('txt_41').innerHTML = 'Sala de espera';
+	document.getElementById('txt_41').innerHTML = 'Entertimento';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
 	document.getElementById('sradio').innerHTML = 'Radio em directo';
 	document.getElementById('svideo').innerHTML = 'TV em directo';
@@ -505,7 +505,7 @@ function idiomEN() {
 	document.getElementById('txt_33').innerHTML = 'CALCULATE';
 	
 	document.getElementById('txt_40').innerHTML = 'Calculator';
-	document.getElementById('txt_41').innerHTML = 'Waiting room';
+	document.getElementById('txt_41').innerHTML = 'Entertainment';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
 	document.getElementById('sradio').innerHTML = 'Live radio';
 	document.getElementById('svideo').innerHTML = 'Live TV';
@@ -762,49 +762,9 @@ window.addEventListener('beforeunload', function (e) {
 <div class="innerdiv2">
 
 
-	<form name="calcform">
-	<table class="table_N2">
+	<table class="table_N3" style="margin-bottom:5px;">	
 	<tr>
-	<td id="txt_40" class="topico" colspan="4">Calculadora</td>
-	</tr>
-	<tr>
-	<td colspan="4">
-	<input type="text" id="ecra" style="width:92%;" placeholder="0" disabled>
-	</td>
-	</tr>
-	<tr>
-	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></td>
-	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></td>
-	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></td>
-	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></td>
-	</tr>
-	<tr>
-	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></td>
-	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></td>
-	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></td>
-	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></td>
-	</tr>
-	<tr>
-	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7';"></td>
-	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8';"></td>
-	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9';"></td>
-	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>
-	</tr>
-	<tr>
-	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsound(2);"></td>
-	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></td>
-	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></td>
-	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>
-	</tr>
-	<tr>
-	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsound(3);"></td>
-	</tr>
-	</table>
-	</form>
-
-	<table class="table_N3">	
-	<tr>
-	<td id="txt_41" class="topico">Sala de espera</td>
+	<td id="txt_41" class="topico">Entertimento</td>
 	</tr>
 	<tr>
 	<td> 
@@ -906,6 +866,47 @@ window.addEventListener('beforeunload', function (e) {
 	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button> </td>
 	</tr>
 	</table>
+
+	<form name="calcform">
+	<table class="table_N2">
+	<tr>
+	<td id="txt_40" class="topico" colspan="4">Calculadora</td>
+	</tr>
+	<tr>
+	<td colspan="4">
+	<input type="text" id="ecra" style="width:92%;" placeholder="0" disabled>
+	</td>
+	</tr>
+	<tr>
+	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></td>
+	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></td>
+	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></td>
+	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></td>
+	</tr>
+	<tr>
+	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></td>
+	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></td>
+	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></td>
+	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></td>
+	</tr>
+	<tr>
+	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7';"></td>
+	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8';"></td>
+	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9';"></td>
+	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>
+	</tr>
+	<tr>
+	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = '';  javascript:playsound(2);"></td>
+	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></td>
+	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></td>
+	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>
+	</tr>
+	<tr>
+	<td colspan="4"><input class="calcinput" style="width:100%;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); javascript:playsound(3);"></td>
+	</tr>
+	</table>
+	</form>
+
 	
 	<table class="table_N3">	
 	<tr>
@@ -1009,7 +1010,7 @@ Jorge Rosa - <a href="../index.html" target="_blank">PORTFOLIO</a>  |  For - <a 
 Check for updates - <a href="https://github.com/jorgerosa/angelimoto">HERE</a>  |  Offline functional single file - <a href="workcalculator.html" download>SAVE IT TO YOUR PC</a>
 </p>
 
-<p class="signature">Version: 23-08-2020</p>
+<p class="signature">Version: 25-08-2020</p>
 
 
 
