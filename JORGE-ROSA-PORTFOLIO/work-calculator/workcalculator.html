@@ -541,19 +541,19 @@ function idiomEN() {
 
 // ------------------------------------------------------------------------------
 
-/* Only numbers and dots are alloewd */
+/* Only numbers and dots are alloewd in the input fields */
 var digitsonly = function(i) {    
 	i.value = i.value.replace(/[^\d.]|\.(?=.*\.)/g, ''); /* Removes all, except numbers and dots */
 	i.value = i.value.replace(/^0+(?=\d)/, ''); /* Removes 0, placed at left */
 	if (i.value == ''){ i.value = 0; };
 };
 
-/* Goto selected url or not */
+/* Goto selected url... or not */
 var gotourl = function(u) {	
 	if (u.value){ window.open(u.value, '_blank'); };
 };
 
-/* Select all or not */
+/* Select all input values... or not */
 var selectall = function(s) {	
 	if (s.value == '0' || s.value == '0.00'){ s.select(); };
 };
@@ -599,7 +599,7 @@ function colorb() {
 	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000";};
 };
 
-/* Blink p3 */
+/* Blink p3 - Looping function */
 function blinkText1() {
 	for(var i=60; i<180; i=i+60) { setTimeout("colora()", i); setTimeout("colorb()", i+30); };
 };
@@ -618,41 +618,32 @@ function colord() {
 	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000"; };
 };
 
-/* Other Blink p3 */
+/* Other Blink p3 - Looping function */
 function blinkText2() {
 	for(var i=60; i<180; i=i+60) { setTimeout("colorc()", i); setTimeout("colord()", i+30); };
 };
 
 // ------------------------------------------------------------------------------
 
-/* Add event listener */
+/* Add event listener 1 */
 window.addEventListener('keydown', checkKeyPressed, false);
-
 function checkKeyPressed(e) {
 	if (e.keyCode != '13' && e.keyCode != '9') { playsound(1); }; // All keys
-	if (e.keyCode == '13') { playsound(3); blinkText1(); }; // Enter key
-	if (e.keyCode == '9' ) { playsound(3); blinkText1(); }; // Tab key
+	if (e.keyCode == '13') { playsound(3); blinkText1(); }; // 13 = Enter key
+	if (e.keyCode == '9' ) { playsound(3); blinkText1(); }; //  9 = Tab key
 };
 
-/* Add event listener */
+/* Add event listener 2 */
 window.addEventListener('click', checkClick, false);
+function checkClick(e) { playsound(1); };
 
-function checkClick(e) {
-	playsound(1);
-};
-
-/* Add event listener */
+/* Add event listener 3 */
 /* Do these function only AFTER page is fully loaded */
-window.addEventListener('load', function(){   
-   // digitalClock();
-   checkCookie();
-});
+window.addEventListener('load', function(){ checkCookie(); });
 
-/* Add event listener */
-/* Do these function when page is closed (unloaded) */
-window.addEventListener('beforeunload', function (e) {
-	setCookie();
-});
+/* Add event listener 4 */
+/* Do these function AFTER page is closed (unloaded) */
+window.addEventListener('beforeunload', function (e) { setCookie(); });
 
 </script>
 
