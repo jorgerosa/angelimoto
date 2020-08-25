@@ -4,7 +4,7 @@ Online models runnig in all their 3D glory in **Your Web Browser**:
 
 <hr>
 
-Online / Offline (standalone) **3D Printing - Costs Calculator**:
+Online / Offline (standalone) **3D Printing - Costs / Profits Calculator**:
 
  :open_file_folder: https://jorgerosa.github.io/angelimoto/JORGE-ROSA-PORTFOLIO/work-calculator/workcalculator.html
 
