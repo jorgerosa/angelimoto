@@ -554,8 +554,8 @@ function idiomPT() {
 	document.getElementById('txt_40').innerHTML = 'Calculadora';
 	document.getElementById('txt_41').innerHTML = 'Entertimento';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	document.getElementById('sradio').innerHTML = 'Radio em directo';
-	document.getElementById('svideo').innerHTML = 'TV em directo';
+	document.getElementById('sradio').innerHTML = 'Rádio';
+	document.getElementById('svideo').innerHTML = 'TV';
 	document.getElementById('txt_43').innerHTML = 'Jogos';
 	
 	document.getElementById('txt_44').innerHTML = 'Mundo 3D';
@@ -616,8 +616,8 @@ function idiomEN() {
 	document.getElementById('txt_40').innerHTML = 'Calculator';
 	document.getElementById('txt_41').innerHTML = 'Entertainment';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	document.getElementById('sradio').innerHTML = 'Live radio';
-	document.getElementById('svideo').innerHTML = 'Live TV';
+	document.getElementById('sradio').innerHTML = 'Radio';
+	document.getElementById('svideo').innerHTML = 'TV';
 	document.getElementById('txt_43').innerHTML = 'Games';
 	
 	document.getElementById('txt_44').innerHTML = '3D World';
@@ -976,10 +976,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 
 	<table class="table_N3" style="margin-bottom:5px;">	
 	<tr>
-	<td class="topico"><a href="javascript:visibility('showEnt');"><img class="imageeye" src="">&nbsp;<span id="txt_41">Entertimento</span></a></td>
+	<td class="topico" colspan="2"><a href="javascript:visibility('showEnt');"><img class="imageeye" src="">&nbsp;<span id="txt_41">Entertimento</span></a></td>
 	</tr>
+	
 	<tr>
-	<td> 
+	<td colspan="2"> 
 	
 	<div class="showEnt">
 	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
@@ -1075,18 +1076,15 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</td>
 	</tr>
 	<tr>
-	<td><div class="showEnt"><button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button></div></td>
+	<td colspan="2"><div class="showEnt"><button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button></div></td>
 	</tr>
 
 	<tr>
-	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:window.open('https://radioonline.com.pt/m80', '_blank');">Radio em directo</button></div></td>
-	</tr>
-
-	<tr>
-	<td><div class="showEnt"><button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV em directo</button></div></td>
+	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:window.open('https://radioonline.com.pt/m80', '_blank');">Rádio</button> </div></td><td><div class="showEnt"><button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV</button></div></td>
 	</tr>	
 	<tr>
-	<td><div class="showEnt"><button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button></div></td>
+	<td colspan="2"><div class="showEnt"><button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button></div></td>
+	
 	</tr>
 	</table>
 	
