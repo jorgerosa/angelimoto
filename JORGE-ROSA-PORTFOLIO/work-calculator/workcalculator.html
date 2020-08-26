@@ -44,9 +44,9 @@ body {
 	background-color: #ffffff;
 	color: #000000;
 	padding: 1px;
-	width: 410px;
-	min-width: 410px;
-	max-width: 410px;
+	width: 400px;
+	min-width: 400px;
+	max-width: 400px;
 	overflow: hidden;
 }
 .table_N2 {
@@ -54,9 +54,9 @@ body {
 	background-color: #ffffff;
 	color: #000000;
 	padding: 1px;
-	width: 210px;
-	min-width: 210px;
-	max-width: 410px;
+	width: 400px;
+	min-width: 400px;
+	max-width: 400px;
 	overflow: hidden;
 }
 .table_N3 {
@@ -65,9 +65,9 @@ body {
 	background-color: #ffffff;
 	color: #000000;
 	padding: 1px;
-	width: 210px;
-	min-width: 210px;
-	max-width: 410px;
+	width: 400px;
+	min-width: 400px;
+	max-width: 400px;
 	overflow: hidden;
 }
 .table_N4 {
@@ -76,9 +76,9 @@ body {
 	background-color: #000000;
 	color: #000000;
 	padding: 1px;
-	width: 410px;
-	min-width: 410px;
-	max-width: 410px;
+	width: 400px;
+	min-width: 400px;
+	max-width: 400px;
 	overflow: hidden;
 }
 tr, td {
@@ -92,7 +92,7 @@ tr, td {
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width: 80px;
+	max-width: 70px;
 	padding: 6px;
 	margin: 0px;
 	margin-top: 2px;
@@ -105,18 +105,18 @@ tr, td {
 	color: #01003f;
 	cursor: text;
 }
-.userinputsmall {
+.userinputs2 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width: 65px;
+	max-width: 100px;
 	padding: 6px;
 	cursor: text;
 }
-.userinputsmall:hover {
+.userinputs2:hover {
 	border: 1px solid #006287;
 	background-color: #f5feff;
 	color: #01003f;
@@ -142,7 +142,8 @@ tr, td {
 	border: 1px solid #bbbbbb;
 	background-color: #dddddd;
 	color: #000000;
-	width: 44px;
+	height: 38px;
+	width: 100%;
 }
 .calcinput:hover {
 	border: 1px solid #000000;
@@ -176,14 +177,15 @@ tr, td {
 }
 #ecra {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: large;
+	font-size: x-large;
 	/* font-weight: bold; */
 	text-align: right;
-	padding: 6px;
+	padding: 8px;
 	margin: 0px;
 	border: 1px solid #909090;
 	background-color: #f6f6f6;
 	color: #000000;
+	width: 95%;
 }
 #tot, #xva {
 	font-family: Arial, Helvetica, sans-serif;
@@ -207,19 +209,19 @@ button {
 .header1 {
 	background-color: #172c3b;
 	color: #ffffff;
-	font-size: large;
+	font-size: x-large;
 	text-align: center;
 	padding: 0px;	
-	padding-top: 20px;	
-	padding-bottom: 20px;	
+	padding-top: 30px;	
+	padding-bottom: 30px;	
 }
 .header2 {
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
 	padding: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .finalrow {
 	background-color: #e8e8e8;
@@ -235,13 +237,15 @@ button {
 	background-color: #000000;
 	color: #ffffff;
 	text-align: center;
-	padding: 10px;
+	padding: 2px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 .minimos {
-	color: #000000;
+	color: #565656;
 	text-align: center;
 	padding: 5px;
-	font-size: x-small;
+	font-size: small;
 }
 .aright {
 	text-align: right;
@@ -309,13 +313,13 @@ a:hover {
 	margin-right: 0px;
 	margin-bottom: -5px;
 }
-.minimostotal {
+.total2 {
 	border: 0px;
 	font-size: large;
 	text-align: right;
 	background-color: transparent;
 	color: #000000;
-	width: 85px;
+	width: 110px;
 	margin: 0px;
 	padding: 0px;
 }
@@ -572,9 +576,9 @@ function idiomPT() {
 	document.getElementById('txt_70').innerHTML = 'Computador';
 	document.getElementById('txt_71').innerHTML = 'Calculadora';
 	
-	document.getElementById('txt_80').innerHTML = 'Consumo<br>da impressora';
+	document.getElementById('txt_80').innerHTML = 'Consumo eléctrico da impressora';
 	document.getElementById('txt_81').innerHTML = 'Preço do kW contratado por hora';
-	document.getElementById('txt_82').innerHTML = 'Watts por hora<br>(Ver na fonte de alimentação)';
+	document.getElementById('txt_82').innerHTML = 'Watts por hora (Ver na fonte de alimentação)';
 	document.getElementById('txt_83').innerHTML = 'Calcular';
 };
 
@@ -634,9 +638,9 @@ function idiomEN() {
 	document.getElementById('txt_70').innerHTML = 'Computer';
 	document.getElementById('txt_71').innerHTML = 'Calculator';
 	
-	document.getElementById('txt_80').innerHTML = 'Printer<br>power consumption';
+	document.getElementById('txt_80').innerHTML = 'Printer electric power consumption';
 	document.getElementById('txt_81').innerHTML = 'kW cost per hour';
-	document.getElementById('txt_82').innerHTML = 'Watts per hour<br>(Check in the power supply)';
+	document.getElementById('txt_82').innerHTML = 'Watts per hour (Check in the power supply)';
 	document.getElementById('txt_83').innerHTML = 'Calculate';
 };
 
@@ -984,7 +988,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	
 	<div class="showEnt">
 	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
-	<canvas id="analogclock" width="150" height="150" style="border:0px; margin:0px; padding:0px;"></canvas>
+	<canvas id="analogclock" width="240" height="240" style="border:0px; margin:0px; padding:0px;"></canvas>
 	
 	<script type="text/javascript">
 	
@@ -1007,13 +1011,13 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	function drawFace(ctx, radius) {  
 		ctx.beginPath();
 		ctx.arc(0, 0, radius, 0, 2*Math.PI);
-		ctx.fillStyle = '#ffffff';
+		ctx.fillStyle = '#eeeeee';
 		ctx.fill();
 		ctx.lineWidth = radius*0.01;
 		// ctx.stroke();
 		ctx.beginPath();
 		ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-		ctx.fillStyle = '#333333';
+		ctx.fillStyle = '#000000';
 		ctx.fill();	  
 	};
 
@@ -1087,25 +1091,25 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	
 	<table class="table_N3" style="margin-bottom:5px;">	
 	<tr>
-	<td colspan="2" class="topico"><a href="javascript:visibility('showCons');"><img class="imageeye" src="">&nbsp;<span id="txt_80">Consumo<br>da impressora</span></a></td>
+	<td colspan="2" class="topico"><a href="javascript:visibility('showCons');"><img class="imageeye" src="">&nbsp;<span id="txt_80">Consumo eléctrico da impressora</span></a></td>
 	</tr>	
 	<tr>
 	<td colspan="2" class="minimos"><div class="showCons"><span id="txt_81">Preço do kW contratado por hora</span></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><div class="showCons"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span>kWh:</span></div></td><td class="aleft"><div class="showCons"><input id="ene1" class="userinputsmall" type="text" value="0.00000" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> € / h</div></td>
+	<td class="aright"><div class="showCons"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span>kWh:</span></div></td><td class="aleft"><div class="showCons"><input id="ene1" class="userinputs2" type="text" value="0.00000" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> € / h</div></td>
 	</tr>
 	<tr>
-	<td colspan="2" class="minimos"><div class="showCons"><span id="txt_82">Watts por hora<br>(Ver na fonte de alimentação)</span></div></td>
+	<td colspan="2" class="minimos"><div class="showCons"><span id="txt_82">Watts por hora (Ver na fonte de alimentação)</span></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><div class="showCons"><span>Watts:</span></div></td><td class="aleft"><div class="showCons"><input id="ene2" class="userinputsmall" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> W / h</div></td>
+	<td class="aright"><div class="showCons"><span>Watts:</span></div></td><td class="aleft"><div class="showCons"><input id="ene2" class="userinputs2" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> W / h</div></td>
 	</tr>
 	<tr>
 	<td colspan="2"><div class="showCons"><hr></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><div class="showCons"><span class="piscaKW">Total:</span></div></td><td class="aleft piscaKW"><div class="showCons"><input id="enet" class="minimostotal piscaKW" type="text" value="0.00" disabled> € / h</div></td>
+	<td class="aright"><div class="showCons"><span class="piscaKW">Total:</span></div></td><td class="aleft piscaKW"><div class="showCons"><input id="enet" class="total2 piscaKW" type="text" value="0.00" disabled> € / h</div></td>
 	</tr>
 	<tr>
 	<td colspan="2"><div class="showCons"><button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">Calcular</button></div></td>
@@ -1119,7 +1123,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	<tr>
 	<td colspan="4">
-	<div class="showCalc"><input type="text" id="ecra" class="pisca" style="width:92%;" placeholder="0" disabled></div>
+	<div class="showCalc"><input type="text" id="ecra" class="pisca" placeholder="0" disabled></div>
 	</td>
 	</tr>
 	<tr>
