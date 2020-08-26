@@ -46,6 +46,7 @@ body {
 	padding: 1px;
 	width: 410px;
 	min-width: 410px;
+	max-width: 410px;
 	overflow: hidden;
 }
 .table_N2 {
@@ -55,6 +56,7 @@ body {
 	padding: 1px;
 	width: 210px;
 	min-width: 210px;
+	max-width: 410px;
 	overflow: hidden;
 }
 .table_N3 {
@@ -65,6 +67,7 @@ body {
 	padding: 1px;
 	width: 210px;
 	min-width: 210px;
+	max-width: 410px;
 	overflow: hidden;
 }
 .table_N4 {
@@ -207,16 +210,16 @@ button {
 	font-size: large;
 	text-align: center;
 	padding: 0px;	
-	padding-top: 50px;	
-	padding-bottom: 50px;	
+	padding-top: 30px;	
+	padding-bottom: 30px;	
 }
 .header2 {
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
 	padding: 0px;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .finalrow {
 	background-color: #e8e8e8;
@@ -563,7 +566,7 @@ function idiomPT() {
 	document.getElementById('txt_70').innerHTML = 'Computador';
 	document.getElementById('txt_71').innerHTML = 'Calculadora';
 	
-	document.getElementById('txt_80').innerHTML = 'Consumo da impressora';
+	document.getElementById('txt_80').innerHTML = 'Consumo<br>da impressora';
 	document.getElementById('txt_81').innerHTML = 'Preço do kW contratado por hora';
 	document.getElementById('txt_82').innerHTML = 'Watts por hora<br>(Ver na fonte de alimentação)';
 	document.getElementById('txt_83').innerHTML = 'Calcular';
@@ -625,7 +628,7 @@ function idiomEN() {
 	document.getElementById('txt_70').innerHTML = 'Computer';
 	document.getElementById('txt_71').innerHTML = 'Calculator';
 	
-	document.getElementById('txt_80').innerHTML = 'Printer consumption';
+	document.getElementById('txt_80').innerHTML = 'Printer<br>power consumption';
 	document.getElementById('txt_81').innerHTML = 'kW cost per hour';
 	document.getElementById('txt_82').innerHTML = 'Watts per hour<br>(Check in the power supply)';
 	document.getElementById('txt_83').innerHTML = 'Calculate';
@@ -675,6 +678,24 @@ function getCookie() {
 	};
     };
     return null;	
+};
+
+// ------------------------------------------------------------------------------
+
+function visibility(name) {
+  	var ele = document.getElementsByClassName(name);
+	for (var i=0; i<ele.length; i++) { 
+	if (ele[i].style.display === 'none') {
+	ele[i].style.display = 'block';
+	} else {
+	ele[i].style.display = 'none';
+	};	
+	};
+};
+
+function hideatstart(name) {
+  	var ele = document.getElementsByClassName(name);
+	for (var i=0; i<ele.length; i++) {  ele[i].style.display = 'none'; };	
 };
 
 // ------------------------------------------------------------------------------
@@ -759,7 +780,17 @@ function checkClick(e) { playsound(1); };
 
 /* Add event listener 3 */
 /* Do these function only AFTER page is fully loaded */
-window.addEventListener('load', function(){ checkCookie(); placeInfoImages(); });
+window.addEventListener('load', function(){ 
+	checkCookie();
+	placeInfoImages();
+	hideatstart('showNotas');
+	hideatstart('showMundo');	
+	hideatstart('showFerr');	
+	hideatstart('showComp');	
+	// hideatstart('showCalc');
+	// hideatstart('showCons');
+	// hideatstart('showEnt');
+});
 
 /* Add event listener 4 */
 /* Do these function AFTER page is closed (unloaded) */
@@ -927,11 +958,12 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 
 	<table class="table_N3" style="margin-bottom:5px;">	
 	<tr>
-	<td id="txt_41" class="topico">Entertimento</td>
+	<td class="topico"><a href="javascript:visibility('showEnt');">[X]</a>&nbsp;&nbsp;<span id="txt_41">Entertimento</span></td>
 	</tr>
 	<tr>
 	<td> 
 	
+	<div class="showEnt">
 	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
 	<canvas id="analogclock" width="150" height="150" style="border:0px; margin:0px; padding:0px;"></canvas>
 	
@@ -1020,106 +1052,107 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</script>
 
 	<!-- <p id="digitalclock" class="clok"> 00:00:00 </p> -->
+	</div>
 	
 	</td>
 	</tr>
 	<tr>
-	<td> <button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button> </td>
+	<td><div class="showEnt"><button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button></div></td>
 	</tr>
 	<tr>
-	<td> <button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">Radio em directo</button> </td>
+	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">Radio em directo</button></div></td>
 	</tr>
 	<tr>
-	<td> <button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV em directo</button> </td>
+	<td><div class="showEnt"><button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV em directo</button></div></td>
 	</tr>	
 	<tr>
-	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button> </td>
+	<td><div class="showEnt"><button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button></div></td>
 	</tr>
 	</table>
 	
 	<table class="table_N3" style="margin-bottom:5px;">	
 	<tr>
-	<td colspan="2" class="topico"><span id="txt_80">Consumo da impressora</span></td>
+	<td colspan="2" class="topico"><a href="javascript:visibility('showCons');">[X]</a>&nbsp;&nbsp;<span id="txt_80">Consumo<br>da impressora</span></td>
 	</tr>	
 	<tr>
-	<td colspan="2" class="minimos"><span id="txt_81">Preço do kW contratado por hora</span></td>
+	<td colspan="2" class="minimos"><div class="showCons"><span id="txt_81">Preço do kW contratado por hora</span></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span>kWh:</span></td><td class="aleft"> <input id="ene1" class="userinputsmall" type="text" value="0.00000" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> € / h</td>
+	<td class="aright"><div class="showCons"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span>kWh:</span></div></td><td class="aleft"><div class="showCons"><input id="ene1" class="userinputsmall" type="text" value="0.00000" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> € / h</div></td>
 	</tr>
 	<tr>
-	<td colspan="2" class="minimos"><span id="txt_82">Watts por hora<br>(Ver na fonte de alimentação)</span></td>
+	<td colspan="2" class="minimos"><div class="showCons"><span id="txt_82">Watts por hora<br>(Ver na fonte de alimentação)</span></div></td>
 	</tr>
 	<tr>
-	<td class="aright"> <span>Watts:</span></td><td class="aleft"> <input id="ene2" class="userinputsmall" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> W / h</td>
+	<td class="aright"><div class="showCons"><span>Watts:</span></div></td><td class="aleft"><div class="showCons"><input id="ene2" class="userinputsmall" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> W / h</div></td>
 	</tr>
 	<tr>
-	<td colspan="2"> <hr> </td>
+	<td colspan="2"><div class="showCons"><hr></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><span class="piscaKW">Total:</span></td><td class="aleft piscaKW"><input id="enet" class="minimostotal piscaKW" type="text" value="0.00" disabled> € / h</td>
+	<td class="aright"><div class="showCons"><span class="piscaKW">Total:</span></div></td><td class="aleft piscaKW"><div class="showCons"><input id="enet" class="minimostotal piscaKW" type="text" value="0.00" disabled> € / h</div></td>
 	</tr>
 	<tr>
-	<td colspan="2"> <button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">Calcular</button> </td>
+	<td colspan="2"><div class="showCons"><button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">Calcular</button></div></td>
 	</tr>	
 	</table>
 
 	<form name="calcform">
 	<table class="table_N2">
 	<tr>
-	<td id="txt_40" class="topico" colspan="4">Calculadora</td>
+	<td class="topico" colspan="4"><a href="javascript:visibility('showCalc');">[X]</a>&nbsp;&nbsp;<span id="txt_40">Calculadora</span></td>
 	</tr>
 	<tr>
 	<td colspan="4">
-	<input type="text" id="ecra" class="pisca" style="width:92%;" placeholder="0" disabled>
+	<div class="showCalc"><input type="text" id="ecra" class="pisca" style="width:92%;" placeholder="0" disabled></div>
 	</td>
 	</tr>
 	<tr>
-	<td><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7';"></td>
-	<td><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8';"></td>
-	<td><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9';"></td>
-	<td><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></td>	
+	<td><div class="showCalc"><input class="calcinput" type="button" value="7" onclick="calcform.ecra.value += '7';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="8" onclick="calcform.ecra.value += '8';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="9" onclick="calcform.ecra.value += '9';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="x" onclick="calcform.ecra.value += '*';"></div></td>	
 	</tr>
 	<tr>	
-	<td><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></td>
-	<td><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></td>
-	<td><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></td>
-	<td><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></td>	
+	<td><div class="showCalc"><input class="calcinput" type="button" value="4" onclick="calcform.ecra.value += '4';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="5" onclick="calcform.ecra.value += '5';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="6" onclick="calcform.ecra.value += '6';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="-" onclick="calcform.ecra.value += '-';"></div></td>	
 	</tr>
 	<tr>	
-	<td><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></td>
-	<td><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></td>
-	<td><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></td>
-	<td><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></td>	
+	<td><div class="showCalc"><input class="calcinput" type="button" value="1" onclick="calcform.ecra.value += '1';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="2" onclick="calcform.ecra.value += '2';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="3" onclick="calcform.ecra.value += '3';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="+" onclick="calcform.ecra.value += '+';"></div></td>	
 	</tr>
 	<tr>	
-	<td><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = ''; javascript:playsound(2); blinkText2();"></td>
-	<td><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></td>
-	<td><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></td>
-	<td><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></td>	
+	<td><div class="showCalc"><input class="calcinput" type="button" value="C" onclick="calcform.ecra.value  = ''; javascript:playsound(2); blinkText2();"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="0" onclick="calcform.ecra.value += '0';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="." onclick="calcform.ecra.value += '.';"></div></td>
+	<td><div class="showCalc"><input class="calcinput" type="button" value="/" onclick="calcform.ecra.value += '/';"></div></td>	
 	</tr>
 	<tr>
-	<td colspan="4"><input class="calcinput" style="width:100%; padding:5px;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); if(isNaN(calcform.ecra.value)){ calcform.ecra.value = ''; }; javascript:playsound(3); blinkText2();"></td>
+	<td colspan="4"><div class="showCalc"><input class="calcinput" style="width:100%; padding:5px;" type="button" value="=" onclick="calcform.ecra.value = eval(calcform.ecra.value); if(isNaN(calcform.ecra.value)){ calcform.ecra.value = ''; }; javascript:playsound(3); blinkText2();"></div></td>
 	</tr>
 	</table>
 	</form>
 	
 	<table class="table_N3">	
 	<tr>
-	<td id="txt_70" class="topico">Computador</td>
+	<td class="topico"><a href="javascript:visibility('showComp');">[X]</a>&nbsp;&nbsp;<span id="txt_70">Computador</span></td>
 	</tr>	
 	<tr>
-	<td> <button id="txt_71" type="button" style="width:100%; margin:0px;" onclick="javascript:window.open('calculator:///', '_self');">Calculadora</button> </td>
+	<td><div class="showComp"><button id="txt_71" type="button" style="width:100%; margin:0px;" onclick="javascript:window.open('calculator:///', '_self');">Calculadora</button></div></td>
 	</tr>	
 	</table>	
 	
 	<table class="table_N3">	
 	<tr>
-	<td id="txt_60" class="topico">Ferramentas 3D</td>
+	<td class="topico"><a href="javascript:visibility('showFerr');">[X]</a>&nbsp;&nbsp;<span id="txt_60">Ferramentas 3D</span></td>
 	</tr>
 	
 	<tr>
-	<td> <button id="txt_61" style="width:100%; margin:0px;" value="https://stephaneginier.com/sculptgl" onclick="javascript:gotourl(this);">Sculpt GL</button> </td>
+	<td><div class="showFerr"><button id="txt_61" style="width:100%; margin:0px;" value="https://stephaneginier.com/sculptgl" onclick="javascript:gotourl(this);">Sculpt GL</button></div></td>
 	</tr>
 	
 	</table>
@@ -1127,12 +1160,13 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 
 	<table class="table_N3">
 	<tr>
-	<td id="txt_44" class="topico">Mundo 3D</td>
+	<td class="topico"><a href="javascript:visibility('showMundo');">[X]</a>&nbsp;&nbsp;<span id="txt_44">Mundo 3D</span></td>
 	</tr>
 	
 	<tr>
 	<td>
 	
+	<div class="showMundo">
 	<select id="modelslist" class="selectlist" onchange="javascript:gotourl(this);">		
 	<option id="mopt00" value="" selected>Lista de modelos 3D ...</option>										
 	<option id="mopt01" value="https://cults3d.com/en/3d-model/home/print-in-place-spring-loaded-box">Spring box</option>
@@ -1146,12 +1180,14 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<option id="mopt09" value="https://cults3d.com/en/3d-model/tool/jb-ultimate-spool-holder-2020">Spool holder</option>
 	<option id="mopt10" value="https://www.thingiverse.com/thing:4360406">Mini water pump</option>
 	</select>
+	</div>
 	
 	</td>
 	</tr>
 	<tr>
 	<td>
 	
+	<div class="showMundo">
 	<select id="softwarelist" class="selectlist" onchange="javascript:gotourl(this);">		
 	<option id="sopt00" value="" selected>Lista de software gratuito ...</option>										
 	<option id="sopt01" value="http://amabilis.com/downloads/">3D Crafter</option>
@@ -1163,12 +1199,14 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<option id="sopt07" value="http://www.wings3d.com/">Wings 3D</option>
 	<option id="sopt08" value="https://top3dshop.com/blog/best-free-stl-editors">Instrucções para todos eles</option>
 	</select>
+	</div>
 	
 	</td>
 	</tr>
 	<tr>
 	<td>
 	
+	<div class="showMundo">	
 	<select id="lojaslist" class="selectlist" onchange="javascript:gotourl(this);">		
 	<option id="lopt00" value="" selected>Lista de lojas ...</option>										
 	<option id="lopt01" value="https://evolt.pt/product-category/impressao-3d/filamentos-3d/">Evolt</option>
@@ -1180,6 +1218,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<option id="lopt07" value="https://www.makers.pt/categoria/made-in-portugal/">Makers</option>
 	<option id="lopt08" value="https://www.impresoras3d.com/pt/">Impressoras3D</option>
 	</select>
+	</div>
 	
 	</td>
 	</tr>
@@ -1187,11 +1226,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	
 	<table class="table_N3">
 	<tr>
-	<td id="txt_50" class="topico">Notas</td>
+	<td class="topico"><a href="javascript:visibility('showNotas');">[X]</a>&nbsp;&nbsp;<span id="txt_50">Notas</span></td>
 	</tr>
 	
 	<tr>
-	<td><textarea id="usertextarea" class="usertextarea">...</textarea></td>
+	<td><div class="showNotas"><textarea id="usertextarea" class="usertextarea">...</textarea></div></td>
 	</tr>
 	
 	<tr>
