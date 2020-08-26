@@ -204,6 +204,8 @@ form {
 button {
 	font-size: large;
 	padding: 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin: 3px;
 	cursor: pointer;
 }
@@ -256,7 +258,7 @@ button {
 	text-align: left;
 }
 .label {
-	font-size: medium;
+	font-size: large;
 	color: #909090;
 	padding: 5px;
 }
@@ -582,7 +584,7 @@ function idiomPT() {
 	document.getElementById('txt_80').innerHTML = 'Consumo eléctrico da impressora';
 	document.getElementById('txt_81').innerHTML = 'Preço do kW contratado por hora';
 	document.getElementById('txt_82').innerHTML = 'Watts por hora (Ver na fonte de alimentação)';
-	document.getElementById('txt_83').innerHTML = 'Calcular';
+	document.getElementById('txt_83').innerHTML = 'CALCULAR';
 };
 
 // ------------------------------------------------------------------------------
@@ -644,7 +646,7 @@ function idiomEN() {
 	document.getElementById('txt_80').innerHTML = 'Printer electric power consumption';
 	document.getElementById('txt_81').innerHTML = 'kW cost per hour';
 	document.getElementById('txt_82').innerHTML = 'Watts per hour (Check in the power supply)';
-	document.getElementById('txt_83').innerHTML = 'Calculate';
+	document.getElementById('txt_83').innerHTML = 'CALCULATE';
 };
 
 // ------------------------------------------------------------------------------
@@ -859,7 +861,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>
-	<td id="txt_08" class="aright label">Total do material: </td><td class="aleft label"> <input id="par1" type="text" value="0.00" disabled> €</td>
+	<td id="txt_08" class="aright label">Total do material: </td><td class="aleft label"><input id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -1112,10 +1114,10 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<td colspan="2"><div class="showCons"><hr></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><div class="showCons"><span class="piscaKW">Total:</span></div></td><td class="aleft piscaKW"><div class="showCons"><input id="enet" class="total2 piscaKW" type="text" value="0.00" disabled> € / h</div></td>
+	<td class="aright"><div class="showCons"><b><span class="piscaKW">TOTAL:</span></b></div></td><td class="aleft piscaKW"><div class="showCons"><b><input id="enet" class="total2 piscaKW" type="text" value="0.00" disabled>  € / h</b></div></td>
 	</tr>
 	<tr>
-	<td colspan="2"><div class="showCons"><button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">Calcular</button></div></td>
+	<td colspan="2"><div class="showCons"><button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">CALCULAR</button></div></td>
 	</tr>	
 	</table>
 
