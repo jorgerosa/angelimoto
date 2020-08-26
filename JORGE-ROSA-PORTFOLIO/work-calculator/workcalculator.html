@@ -92,7 +92,7 @@ tr, td {
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width: 74px;
+	max-width: 85px;
 	padding: 6px;
 	margin: 0px;
 	margin-top: 2px;
@@ -212,7 +212,7 @@ button {
 .header1 {
 	background-color: #172c3b;
 	color: #ffffff;
-	font-size: x-large;
+	font-size: xx-large;
 	text-align: center;
 	padding: 0px;	
 	padding-top: 30px;	
@@ -225,6 +225,9 @@ button {
 	padding: 0px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+.zoomit {
+	font-size: x-large;
 }
 .finalrow {
 	background-color: #e8e8e8;
@@ -326,6 +329,21 @@ a:hover {
 	color: #000000;
 	width: 110px;
 	margin: 0px;
+	padding: 0px;
+}
+.userinputstotais1 {
+	font-size: x-large !important;
+	font-weight: normal !important;
+	text-align: right;
+	width: 110px !important;
+	max-width: 110px !important;
+	padding: 0px;
+}
+.userinputstotais2 {
+	font-size: x-large !important;
+	font-weight: normal !important;
+	text-align: right;
+	width: 110px !important;
 	padding: 0px;
 }
 </style>
@@ -538,10 +556,10 @@ function idiomPT() {
 	document.getElementById('txt_09').innerHTML = 'Custos por hora';
 	document.getElementById('txt_10').innerHTML = 'Duração da impressão:';
 	document.getElementById('txt_11').innerHTML = ' horas';
-	document.getElementById('txt_12').innerHTML = 'Desgaste do equipamento / hora:';
-	document.getElementById('txt_13').innerHTML = 'Energia eléctrica / hora:';
-	document.getElementById('txt_14').innerHTML = 'Outras despesas / hora:';
-	document.getElementById('txt_15').innerHTML = 'Mão de obra / hora:';
+	document.getElementById('txt_12').innerHTML = 'Desgaste do equipamento:';
+	document.getElementById('txt_13').innerHTML = 'Energia eléctrica:';
+	document.getElementById('txt_14').innerHTML = 'Outras despesas:';
+	document.getElementById('txt_15').innerHTML = 'Mão de obra:';
 	document.getElementById('txt_16').innerHTML = 'Total dos custos por hora:';	
 	document.getElementById('txt_17').innerHTML = 'Diversos';
 	document.getElementById('txt_18').innerHTML = 'Despesas diversas:';
@@ -600,10 +618,10 @@ function idiomEN() {
 	document.getElementById('txt_09').innerHTML = 'Costs per hour';
 	document.getElementById('txt_10').innerHTML = 'Printing duration:';
 	document.getElementById('txt_11').innerHTML = ' hours';
-	document.getElementById('txt_12').innerHTML = 'Equipment degradation / hour:';
-	document.getElementById('txt_13').innerHTML = 'Electric energy / hour:';
-	document.getElementById('txt_14').innerHTML = 'Other expenses / hour:';
-	document.getElementById('txt_15').innerHTML = 'Labor / hour:';
+	document.getElementById('txt_12').innerHTML = 'Equipment degradation:';
+	document.getElementById('txt_13').innerHTML = 'Electric energy:';
+	document.getElementById('txt_14').innerHTML = 'Other expenses:';
+	document.getElementById('txt_15').innerHTML = 'Labor:';
 	document.getElementById('txt_16').innerHTML = 'Costs per hour total:';	
 	document.getElementById('txt_17').innerHTML = 'Others';
 	document.getElementById('txt_18').innerHTML = 'Other expenses:';
@@ -873,19 +891,19 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td class="aright"><span id="txt_12">Desgaste do equipamento / hora:</span></td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
+	<td class="aright"><span id="txt_12">Desgaste do equipamento:</span></td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td class="aright"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span id="txt_13" class="piscaKW">Energia eléctrica / hora:</span></td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span class="piscaKW"> € / h</span></td>
+	<td class="aright"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span id="txt_13" class="piscaKW">Energia eléctrica:</span></td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span class="piscaKW"> € / h</span></td>
 	</tr>
 			
 	<tr>
-	<td class="aright"><span id="txt_14">Outras despesas / hora:</span></td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>			
+	<td class="aright"><span id="txt_14">Outras despesas:</span></td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td class="aright"><a href="https://www.dinheirovivo.pt/economia/custos-com-mao-de-obra-aumentaram-3-em-portugal/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_15">Mão de obra / hora:</span>
+	<td class="aright"><a href="https://www.dinheirovivo.pt/economia/custos-com-mao-de-obra-aumentaram-3-em-portugal/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_15">Mão de obra:</span>
 	</td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 	
@@ -930,7 +948,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td class="aright blink"> <b id="txt_24">TOTAL:</b> </td><td class="aleft"> <b><input class="blink" id="tot" type="text" value="0.00" disabled><span class="blink"> €</span></b> </td>
+	<td class="aright blink zoomit"> <b id="txt_24">TOTAL:</b> </td><td class="aleft"> <b><input class="blink userinputstotais1" id="tot" type="text" value="0.00" disabled><span class="blink zoomit"> €</span></b> </td>
 	</tr>
 	
 	<tr>
@@ -946,7 +964,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td class="aright blink"><b id="txt_28">Valor por peça:</b></td><td class="aleft"> <b><input class="blink" id="xva" type="text" value="0.00" disabled><span class="blink"> €</span></b></td>
+	<td class="aright blink zoomit"><b id="txt_28">Valor por peça:</b></td><td class="aleft"> <b><input class="blink userinputstotais1" id="xva" type="text" value="0.00" disabled><span class="blink zoomit"> €</span></b></td>
 	</tr>	
 	
 	<tr class="finalrow">
@@ -1114,7 +1132,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<td colspan="2"><div class="showCons"><hr></div></td>
 	</tr>
 	<tr>
-	<td class="aright"><div class="showCons"><b><span class="piscaKW">TOTAL:</span></b></div></td><td class="aleft piscaKW"><div class="showCons"><b><input id="enet" class="total2 piscaKW" type="text" value="0.00" disabled>  € / h</b></div></td>
+	<td class="aright"><div class="showCons"><b><span class="piscaKW zoomit">TOTAL:</span></b></div></td><td class="aleft piscaKW"><div class="showCons"><b class="zoomit"><input id="enet" class="total2 piscaKW userinputstotais2" type="text" value="0.00" disabled>  € / h</b></div></td>
 	</tr>
 	<tr>
 	<td colspan="2"><div class="showCons"><button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">CALCULAR</button></div></td>
@@ -1128,7 +1146,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	<tr>
 	<td colspan="4">
-	<div class="showCalc"><input type="text" id="ecra" class="pisca" placeholder="0" disabled></div>
+	<div class="showCalc"><input type="text" id="ecra" class="pisca zoomit" placeholder="0" disabled></div>
 	</td>
 	</tr>
 	<tr>
