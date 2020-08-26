@@ -88,11 +88,31 @@ tr, td {
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width:80px;
-	padding: 3px;
+	max-width: 80px;
+	padding: 6px;
+	margin: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	cursor: text;
 }
 .userinput:hover {
+	border: 1px solid #006287;
+	background-color: #f5feff;
+	color: #01003f;
+	cursor: text;
+}
+.userinputsmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	text-align: right;
+	border: 1px solid #b4c9d1;
+	background-color: #f5feff;
+	color: #01003f;
+	max-width: 65px;
+	padding: 6px;
+	cursor: text;
+}
+.userinputsmall:hover {
 	border: 1px solid #006287;
 	background-color: #f5feff;
 	color: #01003f;
@@ -185,14 +205,17 @@ button {
 	color: #ffffff;
 	font-size: large;
 	text-align: center;
-	padding: 40px;	
+	padding: 0px;	
+	padding-top: 100px;	
+	padding-bottom: 100px;	
 }
 .header2 {
 	background-color: #ffffff;
 	color: #000000;
 	text-align: center;
-	padding: 23px;
-	padding-bottom: 23px;
+	padding: 0px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 .finalrow {
 	background-color: #e8e8e8;
@@ -209,6 +232,12 @@ button {
 	color: #ffffff;
 	text-align: center;
 	padding: 10px;
+}
+.minimos {
+	color: #000000;
+	text-align: center;
+	padding: 5px;
+	font-size: x-small;
 }
 .aright {
 	text-align: right;
@@ -251,6 +280,24 @@ a, a:link, a:visited, a:active {
 }
 a:hover {
 	color: #000000;
+}
+.imageinfo {
+	max-width: 15px;
+	max-height: 15px;
+	border: 0px;
+	margin: 0px;
+	margin-right: 5px;
+	margin-bottom: -2px;
+}
+.minimostotal {
+	border: 0px;
+	font-size: large;
+	text-align: right;
+	background-color: transparent;
+	color: #000000;
+	width: 85px;
+	margin: 0px;
+	padding: 0px;
 }
 </style>
 
@@ -341,6 +388,33 @@ function calcular(){
 	x2 = c/x1; // Preco por Pecas
 	document.getElementById('xva').value = x2.toFixed(2);
 	};	
+};
+
+// ------------------------------------------------------------------------------
+
+/* Calculating values for energy only */
+function calcular2(){
+	var a,b,c;
+	
+	/* KWh */	
+	
+	a = parseFloat(document.getElementById('ene1').value);
+	document.getElementById('ene1').value = a.toFixed(5);
+	
+	/* Watts */
+	
+	b = parseFloat(document.getElementById('ene2').value);	
+	document.getElementById('ene2').value = b.toFixed(0);
+
+	c = (a*(b/1000));
+	
+	/* Total here */
+	document.getElementById('enet').value = c.toFixed(2);
+	
+	/* Total send */
+	document.getElementById('eeh').value = c.toFixed(2);
+	
+	
 };
 
 // ------------------------------------------------------------------------------
@@ -436,7 +510,7 @@ var keyboard = function (e) {
 
 /* Change idiom texts */
 function idiomPT() {
-	document.getElementById('txt_02').innerHTML = '<b>Calculadora de custos em impressão 3D</b>';
+	document.getElementById('txt_02').innerHTML = 'Calculadora de custos em impressão 3D';
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Gramas utilizadas:';
 	document.getElementById('txt_06').innerHTML = ' gramas';
@@ -458,11 +532,11 @@ function idiomPT() {
 	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
 	document.getElementById('txt_23').innerHTML = 'Impostos (IVA):';
 	document.getElementById('txt_23b').innerHTML = 'Total das percentagens:';
-	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
+	document.getElementById('txt_24').innerHTML = 'TOTAL:';	
 	document.getElementById('txt_25').innerHTML = 'Quantidade';
 	document.getElementById('txt_26').innerHTML = 'Número de peças:';
 	document.getElementById('txt_27').innerHTML = ' peças';
-	document.getElementById('txt_28').innerHTML = '<b>Valor por peça:</b>';
+	document.getElementById('txt_28').innerHTML = 'Valor por peça:';
 	
 	document.getElementById('txt_32').innerHTML = 'LIMPAR';
 	document.getElementById('txt_33').innerHTML = 'CALCULAR';
@@ -487,13 +561,18 @@ function idiomPT() {
 	
 	document.getElementById('txt_70').innerHTML = 'Computador';
 	document.getElementById('txt_71').innerHTML = 'Calculadora';
+	
+	document.getElementById('txt_80').innerHTML = 'Consumo da impressora';
+	document.getElementById('txt_81').innerHTML = 'Preço do kW contratado por hora';
+	document.getElementById('txt_82').innerHTML = 'Watts por hora<br>(Ver na fonte de alimentação)';
+	document.getElementById('txt_83').innerHTML = 'Calcular';
 };
 
 // ------------------------------------------------------------------------------
 
 /* Change idiom texts */
 function idiomEN() {
-	document.getElementById('txt_02').innerHTML = '<b>3D Printing costs calculator</b>';
+	document.getElementById('txt_02').innerHTML = '3D Printing costs calculator';
 	document.getElementById('txt_04').innerHTML = 'Material';
 	document.getElementById('txt_05').innerHTML = 'Needed grams:';
 	document.getElementById('txt_06').innerHTML = ' grams';
@@ -515,11 +594,11 @@ function idiomEN() {
 	document.getElementById('txt_22').innerHTML = 'Intended profit margin:';
 	document.getElementById('txt_23').innerHTML = 'Taxes (VAT):';
 	document.getElementById('txt_23b').innerHTML = 'Percentages total:';
-	document.getElementById('txt_24').innerHTML = '<b>TOTAL:</b>';	
+	document.getElementById('txt_24').innerHTML = 'TOTAL:';	
 	document.getElementById('txt_25').innerHTML = 'Quantity';
 	document.getElementById('txt_26').innerHTML = 'Items quantity:';
 	document.getElementById('txt_27').innerHTML = ' items';
-	document.getElementById('txt_28').innerHTML = '<b>Value per item:</b>';
+	document.getElementById('txt_28').innerHTML = 'Value per item:';
 	
 	document.getElementById('txt_32').innerHTML = 'CLEAR';
 	document.getElementById('txt_33').innerHTML = 'CALCULATE';
@@ -544,6 +623,11 @@ function idiomEN() {
 	
 	document.getElementById('txt_70').innerHTML = 'Computer';
 	document.getElementById('txt_71').innerHTML = 'Calculator';
+	
+	document.getElementById('txt_80').innerHTML = 'Printer consumption';
+	document.getElementById('txt_81').innerHTML = 'kW cost per hour';
+	document.getElementById('txt_82').innerHTML = 'Watts per hour<br>(Check in the power supply)';
+	document.getElementById('txt_83').innerHTML = 'Calculate';
 };
 
 // ------------------------------------------------------------------------------
@@ -562,7 +646,7 @@ var gotourl = function(u) {
 
 /* Select all input values... or not */
 var selectall = function(s) {	
-	if (s.value == '0' || s.value == '0.00'){ s.select(); };
+	if (s.value == '0' || s.value == '0.00' || s.value == '0.00000'){ s.select(); };
 };
 
 /* Cookies p1 */
@@ -596,38 +680,66 @@ function getCookie() {
 
 /* Blink p1 */
 function colora() {
-	var ele = document.querySelectorAll(".blink");
-	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#cccccc"; };
+	var ele = document.querySelectorAll('.blink');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#cccccc'; };
 };
 
 /* Blink p2 */
 function colorb() {
-	var ele = document.querySelectorAll(".blink");
-	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000";};
+	var ele = document.querySelectorAll('.blink');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#000000';};
 };
 
 /* Blink p3 - Looping function */
 function blinkText1() {
-	for(var i=60; i<180; i=i+60) { setTimeout("colora()", i); setTimeout("colorb()", i+30); };
+	for(var i=60; i<180; i=i+60) { setTimeout('colora()', i); setTimeout('colorb()', i+30); };
 };
 
 // ------------------------------------------------------------------------------
 
 /* Other Blink p1 */
 function colorc() {
-	var ele = document.querySelectorAll(".pisca");
-	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#cccccc"; };
+	var ele = document.querySelectorAll('.pisca');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#cccccc'; };
 };
 
 /* Other Blink p2 */
 function colord() {
-	var ele = document.querySelectorAll(".pisca");
-	for (var e=0; e<ele.length; e++) { ele[e].style.color = "#000000"; };
+	var ele = document.querySelectorAll('.pisca');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#000000'; };
 };
 
 /* Other Blink p3 - Looping function */
 function blinkText2() {
-	for(var i=60; i<180; i=i+60) { setTimeout("colorc()", i); setTimeout("colord()", i+30); };
+	for(var i=60; i<180; i=i+60) { setTimeout('colorc()', i); setTimeout('colord()', i+30); };
+};
+
+// ------------------------------------------------------------------------------
+
+/* Yet other Blink p1 */
+function colore() {
+	var ele = document.querySelectorAll('.piscaKW');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#cccccc'; };
+};
+
+/* Yet other Blink p2 */
+function colorf() {
+	var ele = document.querySelectorAll('.piscaKW');
+	for (var e=0; e<ele.length; e++) { ele[e].style.color = '#000000'; };
+};
+
+/* Other Blink p3 - Looping function */
+function blinkKW() {
+	for(var i=60; i<180; i=i+60) { setTimeout('colore()', i); setTimeout('colorf()', i+30); };
+};
+
+// ------------------------------------------------------------------------------
+
+function placeInfoImages() {
+	var ele = document.querySelectorAll('.imageinfo');
+	for (var e=0; e<ele.length; e++) { 
+	ele[e].src = 'data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkRBMDFBQ0JFNzM2MTFFQUJGNkNGNDk4M0JEMDZFOEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkRBMDFBQ0NFNzM2MTFFQUJGNkNGNDk4M0JEMDZFOEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCREEwMUFDOUU3MzYxMUVBQkY2Q0Y0OTgzQkQwNkU4RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCREEwMUFDQUU3MzYxMUVBQkY2Q0Y0OTgzQkQwNkU4RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq4kLAQAAAJqSURBVHjaZFNPSNphGH79aUrREtODOXaRLsG8GjNF6eC/gZJ46WASOdzBbrIOHqYgA4Xd3BioKEtIYXoZ1KIZDDo2KLwEgYjTEhEtSDQF370/mQ7zhY8Pnu95/z7vx9nY2ICVlRXY2tqC6+traLfbIJPJzGtrawaGYV4AQOPq6uq0XC5n+Xx+X6PRQDqdBsKAB/+MdZJIJJrV1VXvzMyM5eDgACqVCojFYjCbzW8o2K9qtfqx0+l8H/nwKDoQwDo6KGM0GAwK9vf3oVgsjjiwtLQEVqtVGw6HtfPz83u9Xi/M4XAA9Ho9+P1+JSJ2HA4HEnd4lEolHh8fo81mG2NarRbv7u4wl8vZvV4vgN1u59ZqtZ8UdUxiTyAQQNYymcwEvr29jd1ut0QVCiEej5v6/T6KRKIJ0tzcHCoUCqQyJ3D2FAoFzOfzb4GifEmlUlMEoVCIRqMRpVLp1Btb1WAwSDECgeD5zc0NPLXd3V04OjqCUCg09dZsNoEG9oyhtppU8hSBy+UOb1aNp0YtsVeHOTw8/EEyAPU2QXh8fBze1NaUM+kOZ2dnv5mTk5Mcj8c7d7vdE4RRsMXFxQncYDCAWq2ux2Kxr7C5uQnJZPI1ZUBavfFQSH+8vb3FnZ2dMba8vIyNRgMvLi48FosFwOVyQSQSAer9HQ0CnU4nzs7OTk3YZDJhq9XCUqn0SaVSDZeLR05ACw/39/fhh4eHYiKReO/xeF7SdgFlHpa9vr4OOp2uSnP4EI1GP9N6Akn1/2OQZECL/61er5/K5XKbz+d7RTArQ/vy8vI8m83maD3/LCwsAH0cVir4K8AAneY8m8D4yPkAAAAASUVORK5CYII=';
+	};
 };
 
 // ------------------------------------------------------------------------------
@@ -646,7 +758,7 @@ function checkClick(e) { playsound(1); };
 
 /* Add event listener 3 */
 /* Do these function only AFTER page is fully loaded */
-window.addEventListener('load', function(){ checkCookie(); });
+window.addEventListener('load', function(){ checkCookie(); placeInfoImages(); });
 
 /* Add event listener 4 */
 /* Do these function AFTER page is closed (unloaded) */
@@ -664,7 +776,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<table class="table_N1">
 	<tr>
 	<td id="txt_01" class="header1" colspan="2">
-	<p><b>3D PRINTING PORTUGAL</b></p>
+	<p><b>3D PRINTING<br>PORTUGAL</b></p>
 	</td>
 	</tr>
 
@@ -676,7 +788,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_02" class="header2" colspan="2"><b>Calculadora de custos em impressão 3D</b></td>
+	<td class="header2" colspan="2"><b id="txt_02">Calculadora de custos em impressão 3D</b></td>
 	</tr>
 	
 	<tr>
@@ -684,11 +796,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>	
-	<td id="txt_05" class="aright">Gramas utilizadas: </td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_06"> gramas </span></td>
+	<td class="aright"><span id="txt_05">Gramas utilizadas:</span></td><td class="aleft"> <input id="gru" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_06"> gramas </span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_07" class="aright">Custo por Kilograma: </td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / kg</td>
+	<td class="aright"><!-- <a href="https://www.kuantokusta.pt/search?q=filamento" target="_blank"><img class="imageinfo" src=""></a> --><span id="txt_07">Custo por Kilograma:</span></td><td class="aleft"> <input id="cpk" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / kg</td>
 	</tr>
 
 	<tr>
@@ -700,23 +812,24 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>
-	<td id="txt_10" class="aright">Duração da impressão: </td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_11"> horas</span></td>
+	<td class="aright"><span id="txt_10">Duração da impressão:</span></td><td class="aleft"> <input id="tem" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_11"> horas</span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_12" class="aright">Desgaste do equipamento / hora: </td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
+	<td class="aright"><span id="txt_12">Desgaste do equipamento / hora:</span></td><td class="aleft"> <input id="deh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 			
 	<tr>
-	<td id="txt_13" class="aright">Energia eléctrica / hora: </td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
+	<td class="aright"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span id="txt_13" class="piscaKW">Energia eléctrica / hora:</span></td><td class="aleft"> <input id="eeh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span class="piscaKW"> € / h</span></td>
 	</tr>
 			
 	<tr>
-	<td id="txt_14" class="aright">Outras despesas / hora: </td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>			
+	<td class="aright"><span id="txt_14">Outras despesas / hora:</span></td><td class="aleft"> <input id="ogh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>			
 	</tr>
 			
 	<tr>
-	<td id="txt_15" class="aright">Mão de obra / hora: </td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
+	<td class="aright"><a href="https://www.dinheirovivo.pt/economia/custos-com-mao-de-obra-aumentaram-3-em-portugal/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_15">Mão de obra / hora:</span>
+	</td><td class="aleft"> <input id="moh" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> € / h</td>
 	</tr>
 	
 	<tr>
@@ -728,11 +841,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 			
 	<tr>
-	<td id="txt_18" class="aright">Despesas diversas: </td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> €</td>
+	<td class="aright"><span id="txt_18">Despesas diversas:</span></td><td class="aleft"> <input id="ode" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> €</td>
 	</tr>
 
 	<tr>
-	<td id="txt_19" class="aright">Portes de envio: </td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> €</td>
+	<td class="aright"><a href="https://www.ctt.pt/feapl/app/open/calculator/simulation.jspx?id=3" target="_blank"><img class="imageinfo" src=""></a><span id="txt_19">Portes de envio:</span></td><td class="aleft"> <input id="pde" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> €</td>
 	</tr>
 	
 	<tr>
@@ -744,11 +857,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>
-	<td id="txt_22" class="aright">Margem de lucro pretendida: </td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
+	<td class="aright"><!-- Margem de lucro = (preço de venda – custo de produção) / (preço de venda x 100) --><a href="https://www.vendus.pt/blog/calcular-margem-lucro/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_22">Margem de lucro pretendida:</span></td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
 	</tr>
 	
 	<tr>
-	<td id="txt_23" class="aright">Impostos (IVA): </td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
+	<td class="aright"><a href="https://www.economias.pt/valor-do-iva-em-portugal/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_23">Impostos (IVA):</span></td><td class="aleft"> <input id="iva" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
 	</tr>
 	
 	<tr>
@@ -760,7 +873,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_24" class="aright blink"> <b>TOTAL:</b> </td><td class="aleft"> <b><input class="blink" id="tot" type="text" value="0.00" disabled><span class="blink"> €</span></b> </td>
+	<td class="aright blink"> <b id="txt_24">TOTAL:</b> </td><td class="aleft"> <b><input class="blink" id="tot" type="text" value="0.00" disabled><span class="blink"> €</span></b> </td>
 	</tr>
 	
 	<tr>
@@ -768,15 +881,15 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_25" class="topico" colspan="2">Quantidade</td>
+	<td class="topico" colspan="2"><span id="txt_25">Quantidade</span></td>
 	</tr>
 			
 	<tr>
-	<td id="txt_26" class="aright">Número de peças: </td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_27"> peças</span></td>
+	<td class="aright"><span id="txt_26">Número de peças:</span></td><td class="aleft"> <input id="xnp" class="userinput" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"><span id="txt_27"> peças</span></td>
 	</tr>
 	
 	<tr>
-	<td id="txt_28" class="aright blink"><b>Valor por peça:</b> </td><td class="aleft"> <b><input class="blink" id="xva" type="text" value="0.00" disabled><span class="blink"> €</span></b></td>
+	<td class="aright blink"><b id="txt_28">Valor por peça:</b></td><td class="aleft"> <b><input class="blink" id="xva" type="text" value="0.00" disabled><span class="blink"> €</span></b></td>
 	</tr>	
 	
 	<tr class="finalrow">
@@ -921,6 +1034,33 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<tr>
 	<td> <button id="txt_43" style="width:100%; margin:0px;" onclick="javascript:window.open('../zxspectrum.html', '_blank');">Jogos</button> </td>
 	</tr>
+	</table>
+	
+	<table class="table_N3">	
+	<tr>
+	<td colspan="2" class="topico"><span id="txt_80">Consumo da impressora</span></td>
+	</tr>	
+	<tr>
+	<td colspan="2" class="minimos"><span id="txt_81">Preço do kW contratado por hora</span></td>
+	</tr>
+	<tr>
+	<td class="aright"><a href="https://selectra.pt/energia/info/faq/kwh-preco" target="_blank"><img class="imageinfo" src=""></a><span>kWh:</span></td><td class="aleft"> <input id="ene1" class="userinputsmall" type="text" value="0.00000" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> € / h</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="minimos"><span id="txt_82">Watts por hora<br>(Ver na fonte de alimentação)</span></td>
+	</tr>
+	<tr>
+	<td class="aright"> <span>Watts:</span></td><td class="aleft"> <input id="ene2" class="userinputsmall" type="text" value="0" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular2();"> W / h</td>
+	</tr>
+	<tr>
+	<td colspan="2"> <hr> </td>
+	</tr>
+	<tr>
+	<td class="aright"><span class="piscaKW">Total:</span></td><td class="aleft piscaKW"><input id="enet" class="minimostotal piscaKW" type="text" value="0.00" disabled> € / h</td>
+	</tr>
+	<tr>
+	<td colspan="2"> <button id="txt_83" type="button" style="width:100%; margin:0px;" onclick="javascript:calcular2(); javascript:calcular(); javascript:playsound(3); blinkText1(); blinkKW();">Calcular</button> </td>
+	</tr>	
 	</table>
 
 	<form name="calcform">
@@ -1073,7 +1213,7 @@ Check for updates - <a href="https://github.com/jorgerosa/angelimoto">HERE</a>&n
 </i></p>
 
 <p class="signature"><i>
-Version: 25-08-2020
+Version: 26-08-2020
 </i></p>
 
 
