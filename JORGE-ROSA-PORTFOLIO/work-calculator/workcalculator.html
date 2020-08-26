@@ -548,7 +548,7 @@ function idiomPT() {
 	document.getElementById('txt_40').innerHTML = 'Calculadora';
 	document.getElementById('txt_41').innerHTML = 'Entertimento';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	document.getElementById('sradio').innerHTML = 'Radio em directo';
+	// document.getElementById('sradio').innerHTML = 'Radio em directo';
 	document.getElementById('svideo').innerHTML = 'TV em directo';
 	document.getElementById('txt_43').innerHTML = 'Jogos';
 	
@@ -610,7 +610,7 @@ function idiomEN() {
 	document.getElementById('txt_40').innerHTML = 'Calculator';
 	document.getElementById('txt_41').innerHTML = 'Entertainment';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	document.getElementById('sradio').innerHTML = 'Live radio';
+	// document.getElementById('sradio').innerHTML = 'Live radio';
 	document.getElementById('svideo').innerHTML = 'Live TV';
 	document.getElementById('txt_43').innerHTML = 'Games';
 	
@@ -934,13 +934,15 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
             
 	</table>	
 	
+	<!--
 	<table id="live_radio" class="table_N4" style="display:none;">
 	<tr style="width:410px; max-width:410px; margin:0px; padding:0px;">
 	<td style="width:410px; max-width:410px; margin:0px; padding:0px; text-align:center;">
 	<iframe id="iframeN1" width="410" height="80" src="https://ice04.fluidstream.net:80/fluid7108.aac?FLID=1" frameborder="0"></iframe>
 	</td>
 	</tr>	
-	</table>	
+	</table>
+	-->	
 	
 	<!-- Facebook API testing from https://developers.facebook.com/docs/plugins/page-plugin
 	<table id="live_facebook" class="table_N4">
@@ -1059,9 +1061,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<tr>
 	<td><div class="showEnt"><button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button></div></td>
 	</tr>
+	<!--
 	<tr>
 	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">Radio em directo</button></div></td>
 	</tr>
+	-->
 	<tr>
 	<td><div class="showEnt"><button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV em directo</button></div></td>
 	</tr>	
