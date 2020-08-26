@@ -487,16 +487,6 @@ function checktime(i){
 
 // ------------------------------------------------------------------------------
 
-/* View radio element */
-function showradio() {
-	var e = document.getElementById('live_radio');
-	if (e.style.display === 'none') {
-    e.style.display = 'block';
-	} else {
-	e.style.display = 'none';
-	};
-};
-
 /* Inputs audios */
 function playsound(s) {
 	var soundN1 = document.getElementById('soundN1');
@@ -564,7 +554,7 @@ function idiomPT() {
 	document.getElementById('txt_40').innerHTML = 'Calculadora';
 	document.getElementById('txt_41').innerHTML = 'Entertimento';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	// document.getElementById('sradio').innerHTML = 'Radio em directo';
+	document.getElementById('sradio').innerHTML = 'Radio em directo';
 	document.getElementById('svideo').innerHTML = 'TV em directo';
 	document.getElementById('txt_43').innerHTML = 'Jogos';
 	
@@ -626,7 +616,7 @@ function idiomEN() {
 	document.getElementById('txt_40').innerHTML = 'Calculator';
 	document.getElementById('txt_41').innerHTML = 'Entertainment';
 	document.getElementById('txt_42').innerHTML = 'Facebook';
-	// document.getElementById('sradio').innerHTML = 'Live radio';
+	document.getElementById('sradio').innerHTML = 'Live radio';
 	document.getElementById('svideo').innerHTML = 'Live TV';
 	document.getElementById('txt_43').innerHTML = 'Games';
 	
@@ -1087,11 +1077,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<tr>
 	<td><div class="showEnt"><button id="txt_42" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.facebook.com/groups/3dprintingportugal/889073374834235/', '_blank');">Facebook</button></div></td>
 	</tr>
-	<!--
+
 	<tr>
-	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:showradio();">Radio em directo</button></div></td>
+	<td><div class="showEnt"><button id="sradio" style="width:100%; margin:0px;" onclick="javascript:window.open('https://radioonline.com.pt/m80', '_blank');">Radio em directo</button></div></td>
 	</tr>
-	-->
+
 	<tr>
 	<td><div class="showEnt"><button id="svideo" style="width:100%; margin:0px;" onclick="javascript:window.open('https://www.youtube.com/watch?v=LITSGYymJuU', '_blank');">TV em directo</button></div></td>
 	</tr>	
