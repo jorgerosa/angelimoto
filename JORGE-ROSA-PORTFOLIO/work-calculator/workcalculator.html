@@ -214,13 +214,13 @@ button {
 	cursor: pointer;
 }
 .header1 {
-	background-color: #172c3b;
+	background-color: #0e1921;
 	color: #ffffff;
 	font-size: xx-large;
 	text-align: center;
 	padding: 0px;	
-	padding-top: 30px;	
-	padding-bottom: 30px;	
+	padding-top: 20px;	
+	padding-bottom: 20px;	
 }
 .header2 {
 	background-color: #f5f5f5;
@@ -244,7 +244,7 @@ button {
 	padding: 5px;
 }
 .topico {
-	background-color: #000000;
+	background-color: #0e1921;
 	color: #ffffff;
 	text-align: center;
 	font-size: large;
@@ -1007,17 +1007,17 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td colspan="2" style="background-color:#cccccc;"> 
+	<td colspan="2" id="tdclock" style="background-color:rgb(204,204,204);"> 
 	
 	<div class="showEnt">
 	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
-	<canvas id="analogclock" width="240" height="240" style="background-color:#cccccc; border:0px; margin:0px; padding:0px;"></canvas>
+	<canvas id="canvasclock" width="240" height="240" style="background-color:rgb(204,204,204); border:0px; margin:0px; padding:0px;"></canvas>
 	<p style="margin:0px; padding:0px; margin-bottom:10px;"><span id="txt_digitalclock">00:00:00</span></p>
 	
 	<script type="text/javascript">
 	
 	/* Global vars */
-	var canvas = document.getElementById('analogclock');
+	var canvas = document.getElementById('canvasclock');
 	var ctx = canvas.getContext('2d');
 	var radius = canvas.height / 2;
 	ctx.translate(radius, radius);
@@ -1042,9 +1042,23 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 		if (alarm == 1){
 		h = document.getElementById('userHour').value;
 		m = document.getElementById('userMinu').value;
-		if (hour == h && minute == m && minute < (m+1)){ playsound(12); };
+		if (hour == h && minute == m && minute < (m+1)){
+		playsound(12);
+		changeColor();
 		};
-	};	
+		} else {
+		document.getElementById('tdclock').style.backgroundColor = 'rgb(204, 204, 204)';
+		document.getElementById('canvasclock').style.backgroundColor = 'rgb(204, 204, 204)';
+		};
+	};
+	
+	function changeColor() {
+	var ele1 = document.getElementById('canvasclock');
+	var ele2 = document.getElementById('tdclock');
+	var done = 0;
+	if (done == 0 && ele1.style.backgroundColor == 'rgb(204, 204, 204)'){ ele1.style.backgroundColor = 'rgb(100, 100, 100)'; ele2.style.backgroundColor = 'rgb(100, 100, 100)'; done = 1; }; // Must have spaces!
+	if (done == 0 && ele1.style.backgroundColor == 'rgb(100, 100, 100)'){ ele1.style.backgroundColor = 'rgb(204, 204, 204)'; ele2.style.backgroundColor = 'rgb(204, 204, 204)'; done = 1; }; // Must have spaces!
+	};
 
 	/* Draw Everything */
 	function drawClock() {
