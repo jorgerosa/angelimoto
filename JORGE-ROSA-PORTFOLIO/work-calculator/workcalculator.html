@@ -41,7 +41,7 @@ body {
 }
 .table_N1 {
 	border: 1px solid #000000;
-	background-color: #ffffff;
+	background-color: #f5f5f5;
 	color: #000000;
 	padding: 1px;
 	width: 400px;
@@ -51,7 +51,7 @@ body {
 }
 .table_N2 {
 	border: 1px solid #000000;
-	background-color: #ffffff;
+	background-color: #f5f5f5;
 	color: #000000;
 	padding: 1px;
 	width: 400px;
@@ -62,7 +62,7 @@ body {
 .table_N3 {
 	margin-top: 5px;
 	border: 1px solid #000000;
-	background-color: #ffffff;
+	background-color: #f5f5f5;
 	color: #000000;
 	padding: 1px;
 	width: 400px;
@@ -82,21 +82,20 @@ body {
 	overflow: hidden;
 }
 tr, td {
-	border: 0px solid #ff0000;
+	border: 0px solid #f5f5f5;
 	padding: 1px;
 }
 .userinput {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
 	text-align: right;
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width: 85px;
+	max-width: 100px;
 	padding: 6px;
 	margin: 0px;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	margin-top: 4px;
+	margin-bottom: 4px;
 	cursor: text;
 }
 .userinput:hover {
@@ -106,13 +105,12 @@ tr, td {
 	cursor: text;
 }
 .userinputs2 {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
 	text-align: right;
 	border: 1px solid #b4c9d1;
 	background-color: #f5feff;
 	color: #01003f;
-	max-width: 100px;
+	max-width: 120px;
 	padding: 6px;
 	cursor: text;
 }
@@ -124,7 +122,7 @@ tr, td {
 }
 .usertextarea {
 	border: 0px solid #b4c9d1;
-	background-color: #ffffff;
+	background-color: #f5f5f5;
 	color: #01003f;
 	font-size: large;
 	width: 95%;
@@ -136,7 +134,6 @@ tr, td {
 	cursor: text;
 }
 .calcinput {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
 	text-align: center;
 	border: 1px solid #bbbbbb;
@@ -161,7 +158,6 @@ tr, td {
 	cursor: pointer;
 }
 #par1, #par2, #par2b, #par3, #xva {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	text-align: right;
 	border: 0px solid #909090;
@@ -177,7 +173,6 @@ tr, td {
 	border: 1px solid #000000;
 }
 #ecra {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: x-large;
 	/* font-weight: bold; */
 	text-align: right;
@@ -189,7 +184,6 @@ tr, td {
 	width: 95%;
 }
 #tot, #xva {
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: medium;
 	font-weight: bold;
 	text-align: right;
@@ -219,7 +213,7 @@ button {
 	padding-bottom: 30px;	
 }
 .header2 {
-	background-color: #ffffff;
+	background-color: #f5f5f5;
 	color: #000000;
 	text-align: center;
 	padding: 0px;
@@ -331,19 +325,27 @@ a:hover {
 	margin: 0px;
 	padding: 0px;
 }
+.totaisparciais {
+	background-color: #f5f5f5 !important;
+	width: 100px !important;
+	max-width: 100px !important;
+	margin: 4px;
+	margin-bottom: 4px;
+	font-size: large !important;
+}
 .userinputstotais1 {
 	font-size: x-large !important;
 	font-weight: normal !important;
 	text-align: right;
-	width: 110px !important;
-	max-width: 110px !important;
+	width: 120px !important;
+	max-width: 120px !important;
 	padding: 0px;
 }
 .userinputstotais2 {
 	font-size: x-large !important;
 	font-weight: normal !important;
 	text-align: right;
-	width: 110px !important;
+	width: 120px !important;
 	padding: 0px;
 }
 </style>
@@ -566,7 +568,7 @@ function idiomPT() {
 	document.getElementById('txt_19').innerHTML = 'Portes de envio:';
 	document.getElementById('txt_20').innerHTML = 'Total dos diversos:';	
 	document.getElementById('txt_21').innerHTML = 'Percentagens';
-	document.getElementById('txt_22').innerHTML = 'Margem de lucro pretendida:';
+	document.getElementById('txt_22').innerHTML = 'Margem de lucro:';
 	document.getElementById('txt_23').innerHTML = 'Impostos (IVA):';
 	document.getElementById('txt_23b').innerHTML = 'Total das percentagens:';
 	document.getElementById('txt_24').innerHTML = 'TOTAL:';	
@@ -628,7 +630,7 @@ function idiomEN() {
 	document.getElementById('txt_19').innerHTML = 'Shipping:';
 	document.getElementById('txt_20').innerHTML = 'Others total:';	
 	document.getElementById('txt_21').innerHTML = 'Percentages';
-	document.getElementById('txt_22').innerHTML = 'Intended profit margin:';
+	document.getElementById('txt_22').innerHTML = 'Profit margin:';
 	document.getElementById('txt_23').innerHTML = 'Taxes (VAT):';
 	document.getElementById('txt_23b').innerHTML = 'Percentages total:';
 	document.getElementById('txt_24').innerHTML = 'TOTAL:';	
@@ -858,7 +860,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	<tr>
 	<td class="finalrow" colspan="2">
 	<button style="margin:4px; width:35%;" onclick="javascript:idiomEN(); javascript:playsound(11);">English</button>
-	<button style="margin:4px; width:35%;" onclick="javascript:idiomPT(); javascript:playsound(10);">Português</button>
+	<button style="margin:4px; width:40%;" onclick="javascript:idiomPT(); javascript:playsound(10);">Português</button>
 	</td>
 	</tr>
 	
@@ -879,7 +881,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>
-	<td id="txt_08" class="aright label">Total do material: </td><td class="aleft label"><input id="par1" type="text" value="0.00" disabled> €</td>
+	<td id="txt_08" class="aright label">Total do material: </td><td class="aleft label"><input class="totaisparciais" id="par1" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -908,7 +910,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_16" class="aright label">Total dos custos por hora: </td><td class="aleft label"> <input id="par2" type="text" value="0.00" disabled> € / h</td>
+	<td id="txt_16" class="aright label">Total dos custos por hora: </td><td class="aleft label"> <input  class="totaisparciais" id="par2" type="text" value="0.00" disabled> € / h</td>
 	</tr>
 
 	<tr>
@@ -924,7 +926,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_20" class="aright label">Total dos diversos: </td><td class="aleft label"> <input id="par3" type="text" value="0.00" disabled> €</td>
+	<td id="txt_20" class="aright label">Total dos diversos: </td><td class="aleft label"> <input class="totaisparciais" id="par3" type="text" value="0.00" disabled> €</td>
 	</tr>
 	
 	<tr>
@@ -932,7 +934,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 
 	<tr>
-	<td class="aright"><!-- Margem de lucro = (preço de venda – custo de produção) / (preço de venda x 100) --><a href="https://www.vendus.pt/blog/calcular-margem-lucro/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_22">Margem de lucro pretendida:</span></td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
+	<td class="aright"><!-- Margem de lucro = (preço de venda – custo de produção) / (preço de venda x 100) --><a href="https://www.vendus.pt/blog/calcular-margem-lucro/" target="_blank"><img class="imageinfo" src=""></a><span id="txt_22">Margem de lucro:</span></td><td class="aleft"> <input id="mlu" class="userinput" type="text" value="0.00" onclick="javascript:selectall(this);" onkeyup="javascript:digitsonly(this);" onchange="javascript:calcular();"> %</td>
 	</tr>
 	
 	<tr>
@@ -940,7 +942,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td id="txt_23b" class="aright label">Total das percentagens: </td><td class="aleft label"> <input id="par2b" type="text" value="0.00" disabled> €</td>
+	<td id="txt_23b" class="aright label">Total das percentagens: </td><td class="aleft label"> <input class="totaisparciais" id="par2b" type="text" value="0.00" disabled> €</td>
 	</tr>
 
 	<tr>
@@ -977,7 +979,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	
 	<tr class="finalrow">
 	<td class="aright">	
-	<button id="txt_32" style="width:45%; padding-top:14px; padding-bottom:14px;" onclick="javascript:reset(); javascript:playsound(2); blinkText1();">LIMPAR</button>
+	<button id="txt_32" style="width:70%; padding-top:14px; padding-bottom:14px;" onclick="javascript:reset(); javascript:playsound(2); blinkText1();">LIMPAR</button>
 	</td><td class="aleft">
 	<button id="txt_33" style="width:96%; padding-top:14px; padding-bottom:14px;" onclick="javascript:calcular(); javascript:playsound(3); blinkText1();">CALCULAR</button>	
 	</td>
@@ -1015,11 +1017,11 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	</tr>
 	
 	<tr>
-	<td colspan="2"> 
+	<td colspan="2" style="background-color:#cccccc;"> 
 	
 	<div class="showEnt">
 	<!-- Where the analog clock will be placed (drawn) by the next Javascript -->
-	<canvas id="analogclock" width="240" height="240" style="border:0px; margin:0px; padding:0px;"></canvas>
+	<canvas id="analogclock" width="240" height="240" style="background-color:#cccccc; border:0px; margin:0px; padding:0px;"></canvas>
 	
 	<script type="text/javascript">
 	
@@ -1042,7 +1044,7 @@ window.addEventListener('beforeunload', function (e) { setCookie(); });
 	function drawFace(ctx, radius) {  
 		ctx.beginPath();
 		ctx.arc(0, 0, radius, 0, 2*Math.PI);
-		ctx.fillStyle = '#eeeeee';
+		ctx.fillStyle = '#f5f5f5';
 		ctx.fill();
 		ctx.lineWidth = radius*0.01;
 		// ctx.stroke();
